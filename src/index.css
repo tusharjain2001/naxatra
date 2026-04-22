@@ -1,0 +1,34 @@
+@import url('https://fonts.cdnfonts.com/css/nexa');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nexa', 'Montserrat', 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-nexa {
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+}
+
+.font-metro {
+  font-family: 'Metropolis', 'Montserrat', sans-serif;
+}
+
+/* Hero grid overlay */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 298px 277px;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #1863da; border-radius: 3px; }
