@@ -3,8 +3,8 @@ import contact from "../../assets/images/contactus.png";
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-sm bg-white/80 flex px-10 py-4 items-center justify-between">
-      <div className="h-6 w-auto">
+    <nav className="fixed left-0 top-0 z-50 flex h-[55px] w-full items-center justify-between bg-white/90 px-6 backdrop-blur-sm">
+      <div className="h-[18px] w-auto">
         <img
           src={logo}
           alt="Naxatra Labs"
@@ -12,47 +12,47 @@ export default function Navbar() {
         />
       </div>
 
-      <div className="flex items-center gap-8">
+      <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
         <a
           href="#"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Home
         </a>
         <a
           href="#products"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Products
         </a>
         <a
           href="#technology"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Technology
         </a>
         <a
           href="#case-studies"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Case Studies
         </a>
         <a
           href="#blogs"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Insights &amp; Blogs
         </a>
         <a
           href="#about"
-          className="text-[#515151] text-sm uppercase tracking-wide font-medium hover:text-[#1863da] transition-colors"
+          className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           About
         </a>
       </div>
 
       <a href="#contact">
-        <img src={contact} />
+        <img src={contact} alt="Contact us" className="h-[30px] w-auto" />
       </a>
     </nav>
   );
