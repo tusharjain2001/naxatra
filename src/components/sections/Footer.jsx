@@ -2,7 +2,8 @@ import logo from "../../assets/images/logo.png";
 import footerEllipse from "../../assets/images/footer-ellipse.svg";
 import footerSocial from "../../assets/images/footer-social.svg";
 import footerCardBg from "../../assets/images/footer-card-bg.svg";
-import footerGrid from "../../assets/images/footer-grid.svg";
+import footerLeftGrid from "../../assets/images/footer-left-grid-green.png";
+import footerRightGrid from "../../assets/images/footer-right-bg-grid.png";
 
 const quickLinks = [
   "Products",
@@ -17,46 +18,61 @@ export default function Footer() {
   return (
     <footer
       className="relative w-full overflow-hidden"
-      style={{ background: "#000", height: "763px" }}
+      style={{ background: "#000", height: "540px" }}
       id="contact"
     >
-      {/* Main content area */}
+      {/* Ellipse glow */}
       <div
-        className="absolute"
+        className="absolute pointer-events-none"
         style={{
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "687px",
-          overflow: "hidden",
+          top: "-190px",
+          left: "-118px",
+          width: "826px",
+          height: "826px",
+          opacity: 0.45,
         }}
       >
-        {/* Ellipse glow */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: "-98px",
-            left: "-56px",
-            width: "826px",
-            height: "826px",
-            opacity: 0.5,
-          }}
-        >
-          <img
-            src={footerEllipse}
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </div>
+        <img src={footerEllipse} alt="" className="w-full h-full object-contain" />
+      </div>
 
+      {/* Left grid background */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "23px",
+          left: "140px",
+          width: "610px",
+          height: "380px",
+          opacity: 0.65,
+        }}
+      >
+        <img src={footerLeftGrid} alt="" className="w-full h-full" style={{ objectFit: "cover" }} />
+      </div>
+
+      {/* Right grid background */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "23px",
+          left: "700px",
+          width: "980px",
+          height: "380px",
+          opacity: 0.42,
+        }}
+      >
+        <img src={footerRightGrid} alt="" className="w-full h-full" style={{ objectFit: "cover" }} />
+      </div>
+
+      {/* Main content area */}
+      <div className="relative z-10" style={{ maxWidth: "1640px", margin: "0 auto", paddingTop: "72px" }}>
         {/* Left dark cut-corner card */}
         <div
           className="absolute"
           style={{
-            top: "81px",
-            left: "146px",
-            width: "601px",
-            height: "468px",
+            top: "72px",
+            left: "0",
+            width: "600px",
+            height: "370px",
           }}
         >
           <img
@@ -65,61 +81,37 @@ export default function Footer() {
             className="absolute inset-0 w-full h-full"
             style={{ display: "block" }}
           />
-          <div className="relative z-10" style={{ padding: "39px 55px" }}>
-            <img
-              src={logo}
-              alt="Naxatra Labs"
-              style={{
-                height: "24px",
-                marginBottom: "20px",
-                filter: "brightness(0) invert(1)",
-              }}
-            />
+          <div className="relative z-10" style={{ padding: "42px 56px" }}>
             <h3
               className="font-nexa"
-              style={{ fontSize: "68px", lineHeight: "78px", color: "#fff" }}
+              style={{ fontSize: "52px", lineHeight: "58px", color: "#fff", fontWeight: 400 }}
             >
-              Engineering the{" "}
-              <span style={{ color: "#4dd6c4" }}>Future of Mobility</span>
+              Engineering
+              <br />
+              The <span style={{ color: "#4dd6c4" }}>Future Of</span>
+              <br />
+              <span style={{ color: "#4dd6c4" }}>Mobility</span>
             </h3>
-            <div style={{ marginTop: "32px" }}>
+            <div style={{ marginTop: "62px" }}>
               <img
                 src={footerSocial}
                 alt="Social Links"
-                style={{ height: "36px", objectFit: "contain" }}
+                style={{ width: "78px", height: "40px", objectFit: "contain", display: "block" }}
               />
             </div>
           </div>
         </div>
 
-        {/* Right grid background */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            top: "12px",
-            left: "703px",
-            right: "243px",
-            bottom: "107px",
-            opacity: 0.3,
-          }}
-        >
-          <img
-            src={footerGrid}
-            alt=""
-            className="w-full h-full"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-
         {/* Quick Links */}
-        <div className="absolute" style={{ left: "865px", top: "112px" }}>
+        <div className="absolute" style={{ left: "720px", top: "94px" }}>
           <h4
             className="font-nexa uppercase"
             style={{
               color: "#1863da",
-              fontSize: "22px",
-              lineHeight: "51.73px",
-              marginBottom: "0",
+              fontSize: "18px",
+              lineHeight: "22px",
+              marginBottom: "24px",
+              letterSpacing: "0.5px",
             }}
           >
             Quick Links
@@ -132,8 +124,8 @@ export default function Footer() {
                   className="font-nexa"
                   style={{
                     color: "#fff",
-                    fontSize: "18px",
-                    lineHeight: "51.73px",
+                    fontSize: "16px",
+                    lineHeight: "34px",
                     textDecoration: "none",
                     display: "block",
                     whiteSpace: "nowrap",
@@ -147,14 +139,15 @@ export default function Footer() {
         </div>
 
         {/* Contact Us */}
-        <div className="absolute" style={{ left: "1086px", top: "112px" }}>
+        <div className="absolute" style={{ left: "940px", top: "94px" }}>
           <h4
             className="font-nexa uppercase"
             style={{
               color: "#1863da",
-              fontSize: "22px",
-              lineHeight: "51.73px",
-              marginBottom: "0",
+              fontSize: "18px",
+              lineHeight: "22px",
+              marginBottom: "24px",
+              letterSpacing: "0.5px",
             }}
           >
             Contact Us
@@ -163,8 +156,8 @@ export default function Footer() {
             className="font-nexa"
             style={{
               color: "#fff",
-              fontSize: "18px",
-              lineHeight: "51.73px",
+              fontSize: "16px",
+              lineHeight: "52px",
               whiteSpace: "nowrap",
             }}
           >
@@ -177,14 +170,15 @@ export default function Footer() {
         </div>
 
         {/* Locate Us */}
-        <div className="absolute" style={{ left: "1418px", top: "112px" }}>
+        <div className="absolute" style={{ left: "1240px", top: "94px" }}>
           <h4
             className="font-nexa uppercase"
             style={{
               color: "#1863da",
-              fontSize: "22px",
-              lineHeight: "51.73px",
-              marginBottom: "0",
+              fontSize: "18px",
+              lineHeight: "22px",
+              marginBottom: "24px",
+              letterSpacing: "0.5px",
             }}
           >
             Locate Us
@@ -193,13 +187,12 @@ export default function Footer() {
             className="font-nexa"
             style={{
               color: "#fff",
-              fontSize: "18px",
-              lineHeight: "32px",
+              fontSize: "16px",
+              lineHeight: "26px",
               textTransform: "uppercase",
               display: "flex",
               flexDirection: "column",
-              gap: "32px",
-              marginTop: "7px",
+              gap: "30px",
             }}
           >
             <div>
