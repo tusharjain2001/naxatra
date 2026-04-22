@@ -1,6 +1,7 @@
 import ctaBg from '../../assets/images/cta-bg.svg';
 import ctaBrowseBtn from '../../assets/images/cta-browse-btn.svg';
-import ctaArrow from '../../assets/images/cta-arrow.svg';
+import learnMore from '../../assets/images/learn-more.png';
+import oneSize from '../../assets/images/one-size.png';
 
 export default function CTASection() {
   return (
@@ -27,16 +28,13 @@ export default function CTASection() {
       >
         {/* Left */}
         <div>
-          {/* Badge with brackets */}
-          <div className="flex items-center gap-3" style={{ marginBottom: '24px' }}>
-            <div style={{ width: '8px', height: '42px', borderLeft: '2px solid rgba(255,255,255,0.7)' }} />
-            <p
-              className="font-metro uppercase"
-              style={{ color: 'rgba(255,255,255,0.9)', fontSize: '24px', lineHeight: '24.45px' }}
-            >
-              One Size Doesn&apos;t Fit All. We Customize.
-            </p>
-            <div style={{ width: '8px', height: '42px', borderLeft: '2px solid rgba(255,255,255,0.7)' }} />
+          {/* Badge */}
+          <div style={{ marginBottom: '24px' }}>
+            <img
+              src={oneSize}
+              alt="One Size Doesn't Fit All. We Customize."
+              style={{ height: '42px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            />
           </div>
 
           {/* Heading */}
@@ -64,24 +62,20 @@ export default function CTASection() {
           {/* Learn More button */}
           <a
             href="#contact"
-            className="flex items-center justify-center gap-2 font-nexa capitalize"
+            aria-label="Learn More About Our Tailored Solutions"
             style={{
-              display: 'flex',
-              background: '#1863da',
-              color: '#fff',
               width: '528px',
               height: '72px',
-              padding: '16px 24px',
-              fontSize: '24px',
-              lineHeight: '20px',
-              letterSpacing: '0.24px',
-              borderRadius: '4px',
+              display: 'block',
               textDecoration: 'none',
               marginBottom: '16px',
             }}
           >
-            Learn More About Our Tailored Solutions
-            <img src={ctaArrow} alt="" style={{ width: '16px', height: '16px', marginLeft: '8px' }} />
+            <img
+              src={learnMore}
+              alt=""
+              style={{ width: '100%', height: '100%', display: 'block', objectFit: 'contain' }}
+            />
           </a>
 
           {/* Browse button with cut-corner bg */}

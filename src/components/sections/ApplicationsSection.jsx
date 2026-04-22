@@ -1,3 +1,4 @@
+import efficientMotors from '../../assets/images/efficient-motors.png';
 import scooter from '../../assets/images/scooter.jpg';
 
 const categories = [
@@ -19,16 +20,13 @@ export default function ApplicationsSection() {
           <div>
             {/* Badge */}
             <div className="flex items-center gap-3" style={{ marginBottom: '11px' }}>
-              <div style={{ width: '8px', height: '42.4px', borderLeft: '2px solid #515151' }} />
-              <p
-                className="font-metro uppercase"
-                style={{ color: '#515151', fontSize: '24px', lineHeight: '24.45px' }}
-              >
-                Efficient Motors, Cleaner Future
-              </p>
-              <div style={{ width: '8px', height: '42.4px', borderLeft: '2px solid #515151' }} />
+              <img
+                src={efficientMotors}
+                alt="Efficient Motors, Cleaner Future"
+                style={{ height: '42.4px', width: 'auto', objectFit: 'contain' }}
+              />
             </div>
-            <h2 className="font-nexa font-light" style={{ fontSize: '54px', lineHeight: '78.5px' }}>
+            <h2 className="font-nexa font-medium" style={{ fontSize: '54px', lineHeight: '78.5px' }}>
               <span style={{ color: '#000' }}>From Ground to Sky, </span>
               <span style={{ color: '#1863da' }}>We Power It All</span>
             </h2>
