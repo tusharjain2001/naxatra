@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import contact from "../../assets/images/contactus.png";
 
@@ -25,24 +26,24 @@ export default function Navbar() {
         >
           Products
         </a>
-        <a
-          href="#technology"
+        <Link
+          to="/technology"
           className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Technology
-        </a>
-        <a
-          href="#case-studies"
+        </Link>
+        <Link
+          to="/case-studies"
           className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Case Studies
-        </a>
-        <a
-          href="#blogs"
+        </Link>
+        <Link
+          to="/insights-blogs"
           className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           Insights &amp; Blogs
-        </a>
+        </Link>
         <a
           href="#about"
           className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
@@ -51,9 +52,9 @@ export default function Navbar() {
         </a>
       </div>
 
-      <a href="#contact">
+      <Link to="/contact">
         <img src={contact} alt="Contact us" className="h-[30px] w-auto" />
-      </a>
+      </Link>
     </nav>
   );
 }
