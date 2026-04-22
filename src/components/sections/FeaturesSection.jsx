@@ -16,7 +16,7 @@ const features = [
     icon: iconCompact,
     bg: featureBg1,
     title: 'Smart, Compact & More Efficient',
-    desc: 'Experience 10% higher average efficiency and 20% less weight – more power, less energy waste.',
+    desc: 'Experience 10% higher average efficiency and 20% less weight - more power, less energy waste.',
   },
   {
     icon: iconBike,
@@ -34,35 +34,29 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full bg-white" style={{ padding: '0' }}>
-      <div style={{ maxWidth: '1920px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+    <section className="w-full bg-white">
+      <div className="mx-auto max-w-[1840px] px-[clamp(20px,4.2vw,80px)] py-[clamp(46px,8vw,121px)] max-[560px]:px-[18px] max-[560px]:py-[36px]">
+        <div className="grid grid-cols-4 gap-[clamp(24px,1.9vw,35px)] max-[980px]:grid-cols-2 max-[560px]:grid-cols-1">
           {features.map((feature, i) => (
             <div
               key={i}
-              className="relative"
-              style={{ padding: '50px 62px 50px 62px' }}
+              className="relative min-h-[clamp(183px,22.25vw,427px)] px-[clamp(24px,3.3vw,62px)] py-[clamp(25px,3.6vw,70px)] max-[560px]:min-h-[220px]"
             >
-              {/* SVG cut-corner background */}
               <img
                 src={feature.bg}
                 alt=""
-                className="absolute inset-0 w-full h-full"
-                style={{ display: 'block' }}
+                className="absolute inset-0 h-full w-full"
               />
-              {/* Content */}
-              <div className="relative z-10" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <img src={feature.icon} alt="" style={{ width: '36px', height: '37px', objectFit: 'contain' }} />
-                <h3
-                  className="font-nexa capitalize"
-                  style={{ color: '#1863da', fontSize: '24.45px', lineHeight: '28.8px' }}
-                >
+              <div className="relative z-10 flex max-w-[clamp(160px,15vw,290px)] flex-col items-start">
+                <img
+                  src={feature.icon}
+                  alt=""
+                  className="h-[clamp(17px,1.9vw,37px)] w-[clamp(17px,1.9vw,37px)] object-contain"
+                />
+                <h3 className="mt-[clamp(18px,1.7vw,33px)] font-nexa text-[clamp(12px,1.28vw,24.5px)] capitalize leading-[1.18] tracking-normal text-[#1863da] font-bold">
                   {feature.title}
                 </h3>
-                <p
-                  className="font-metro"
-                  style={{ color: '#000', fontSize: '15.7px', lineHeight: '24.45px' }}
-                >
+                <p className="mt-[clamp(13px,1.25vw,24px)] font-metro text-[clamp(8px,0.82vw,15.7px)] leading-[1.55] tracking-normal text-black">
                   {feature.desc}
                 </p>
               </div>

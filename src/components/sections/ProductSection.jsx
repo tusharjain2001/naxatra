@@ -1,7 +1,7 @@
 import productMotor from '../../assets/images/product-motor.png';
 import productEllipse from '../../assets/images/product-ellipse.svg';
 import productBg from '../../assets/images/product-bg.svg';
-import ctaArrow from '../../assets/images/cta-arrow.svg';
+import viewAllProducts from '../../assets/images/view-all-products.png';
 
 export default function ProductSection() {
   return (
@@ -50,13 +50,15 @@ export default function ProductSection() {
             top: '50%',
             transform: 'translateY(-50%)',
             fontSize: '144px',
-            lineHeight: '106px',
+            lineHeight: '1.15',
             background: 'linear-gradient(90deg, #f5fafa 0%, #515151 45%, #f5fafa 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             opacity: 0.67,
             letterSpacing: '0.15em',
+            paddingTop: '18px',
+            paddingBottom: '18px',
             userSelect: 'none',
           }}
         >
@@ -80,7 +82,7 @@ export default function ProductSection() {
       {/* CTA Box */}
       <div
         className="relative mx-auto"
-        style={{ maxWidth: '1254px', marginTop: '40px', marginBottom: '0' }}
+        style={{ maxWidth: '1254px', marginTop: '40px', marginBottom: '40px' }}
       >
         <img
           src={productBg}
@@ -103,20 +105,18 @@ export default function ProductSection() {
           </p>
           <a
             href="#products"
-            className="inline-flex items-center gap-2 rounded capitalize font-nexa"
+            className="inline-flex items-center"
             style={{
               marginTop: '14px',
-              background: '#1863da',
-              color: '#ebf8f7',
-              padding: '16px 24px',
-              fontSize: '24px',
-              lineHeight: '20px',
-              letterSpacing: '0.24px',
               textDecoration: 'none',
             }}
+            aria-label="View all products"
           >
-            View All Products
-            <img src={ctaArrow} alt="" style={{ width: '16px', height: '16px' }} />
+            <img
+              src={viewAllProducts}
+              alt="View All Products"
+              style={{ width: '272px', height: '52px', display: 'block' }}
+            />
           </a>
         </div>
       </div>
