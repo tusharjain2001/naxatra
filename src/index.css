@@ -11,6 +11,8 @@ html {
 body {
   font-family: 'Nexa', 'Montserrat', 'Inter', sans-serif;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .font-nexa {
@@ -21,6 +23,4 @@ body {
   font-family: 'Metropolis', 'Montserrat', sans-serif;
 }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #1863da; border-radius: 3px; }
+::-webkit-scrollbar { display: none; }

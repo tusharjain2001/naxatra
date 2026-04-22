@@ -38,41 +38,51 @@ const milestones = [
 ];
 
 export default function JourneySection() {
-  const scrollRef = useRef(null);
+  const cardsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const onScroll = () => {
-      const cardHeight = 776;
-      const idx = Math.round(el.scrollTop / cardHeight);
-      setActiveIndex(Math.min(idx, milestones.length - 1));
+    const cards = cardsRef.current;
+    if (!cards) return;
+
+    const onCardScroll = () => {
+      const nextIndex = Math.round(cards.scrollTop / cards.clientHeight);
+      setActiveIndex(Math.min(nextIndex, milestones.length - 1));
     };
-    el.addEventListener('scroll', onScroll);
-    return () => el.removeEventListener('scroll', onScroll);
+
+    cards.addEventListener('scroll', onCardScroll, { passive: true });
+    return () => {
+      cards.removeEventListener('scroll', onCardScroll);
+    };
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden py-20 bg-[#f5fafa]">
+    <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '94px 0 120px' }}>
       {/* Background ellipse */}
       <div className="absolute top-0 -left-24 w-[788px] h-[788px] opacity-40 pointer-events-none">
         <img src={journeyEllipse} alt="" className="w-full h-full object-contain" />
       </div>
 
-      <div className="relative z-10 max-w-[1920px] mx-auto px-16">
-        {/* Left intro */}
-        <div className="flex gap-24 items-start">
-          <div className="w-[715px] sticky top-24 flex-shrink-0">
-            <p className="text-[#747474] text-xl uppercase tracking-widest mb-4">
+      <div className="relative z-10" style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 120px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '560px 1fr',
+            gap: '170px',
+            alignItems: 'start',
+          }}
+        >
+          {/* Left intro */}
+          <div style={{ position: 'sticky', top: '130px', paddingTop: '4px' }}>
+            <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
               [A journey from 2020 to beyond.]
             </p>
-            <h2 className="text-6xl font-light leading-tight mb-8">
-              <span className="text-black">The Road to </span>
-              <span className="text-[#1863da]">a Sustainable Future </span>
-              <span className="text-black">Begins Here</span>
+            <h2 className="font-nexa" style={{ fontSize: '48px', lineHeight: '50px', fontWeight: 400, marginBottom: '24px' }}>
+              <span style={{ color: '#000' }}>The Road To </span>
+              <span style={{ color: '#1863da' }}>A Sustainable Future </span>
+              <span style={{ color: '#000' }}>Begins Here</span>
             </h2>
-            <p className="text-black text-xl leading-8">
+            <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '25px', maxWidth: '530px' }}>
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
               4+ years of research, deliver industry-leading performance with uncompromising reliability.
@@ -80,31 +90,83 @@ export default function JourneySection() {
           </div>
 
           {/* Right timeline */}
-          <div className="flex-1 flex flex-col gap-0">
-            {/* Year indicator */}
-            <div className="text-center mb-4 sticky top-20 z-20 bg-[#f5fafa] py-4">
-              <p className="text-[#1863da] text-5xl font-light">{milestones[activeIndex].year}</p>
-              <p className="text-black text-lg">{milestones[activeIndex].title}</p>
-              <div className="w-8 h-8 rounded-full bg-[#1863da] mx-auto mt-2" />
-              <div className="w-0.5 h-6 bg-[#1863da]/30 mx-auto" />
+          <div style={{ width: '430px' }}>
+            <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
+              <div style={{ position: 'relative', textAlign: 'center' }}>
+                <p className="font-nexa" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
+                  {milestones[activeIndex].year}
+                </p>
+                <p className="font-metro" style={{ color: '#000', fontSize: '12px', lineHeight: '16px', marginTop: '4px' }}>
+                  {milestones[activeIndex].title}
+                </p>
+                <div style={{ position: 'relative', width: '28px', height: '43px', margin: '13px auto 0' }}>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '14px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '22px',
+                      height: '29px',
+                      background: 'rgba(24,99,218,0.12)',
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '22px',
+                      height: '22px',
+                      borderRadius: '999px',
+                      background: '#1863da',
+                      margin: '0 auto',
+                    }}
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Scrollable cards */}
             <div
-              ref={scrollRef}
-              className="flex flex-col gap-14 max-h-[748px] overflow-y-auto scroll-smooth"
-              style={{ scrollbarWidth: 'none' }}
+              ref={cardsRef}
+              style={{
+                width: '430px',
+                height: '505px',
+                overflowY: 'auto',
+                overflowX: 'hidden',
+                scrollSnapType: 'y mandatory',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+              }}
             >
               {milestones.map((m, i) => (
                 <div
                   key={i}
-                  className="rounded-xl overflow-hidden flex-shrink-0"
-                  style={{ border: '1px solid rgba(24,99,218,0.15)', background: 'rgba(255,255,255,0.7)' }}
+                  style={{
+                    height: '505px',
+                    scrollSnapAlign: 'start',
+                    scrollSnapStop: 'always',
+                  }}
                 >
-                  <img src={m.img} alt={m.title} className="w-full h-[386px] object-cover" />
-                  <div className="p-8">
-                    <h3 className="text-[#1863da] text-4xl font-light capitalize mb-3">{m.title}</h3>
-                    <p className="text-black text-lg leading-7">{m.desc}</p>
+                  <div
+                    style={{
+                      width: '370px',
+                      minHeight: '505px',
+                      background: '#fff',
+                      border: '1px solid rgba(24,99,218,0.14)',
+                      clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%)',
+                      padding: '33px 28px 38px',
+                    }}
+                  >
+                    <img
+                      src={m.img}
+                      alt={m.title}
+                      style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px' }}
+                    />
+                    <h3 className="font-nexa capitalize" style={{ color: '#1863da', fontSize: '34px', lineHeight: '38px', fontWeight: 400, marginBottom: '10px' }}>
+                      {m.title}
+                    </h3>
+                    <p className="font-metro" style={{ color: '#000', fontSize: '14px', lineHeight: '22px' }}>
+                      {m.desc}
+                    </p>
                   </div>
                 </div>
               ))}

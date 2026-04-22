@@ -12,7 +12,7 @@ const blogs = [
 
 export default function BlogsSection() {
   return (
-    <section className="w-full" style={{ background: '#f5fafa', paddingTop: '94px', paddingBottom: '0' }} id="blogs">
+    <section className="w-full" style={{ background: '#f5fafa', paddingTop: '94px', paddingBottom: '90px' }} id="blogs">
       <div style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 200px' }}>
         <h2
           className="font-nexa text-center capitalize"
