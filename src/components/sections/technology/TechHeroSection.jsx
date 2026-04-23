@@ -1,5 +1,6 @@
 import heroMotor from '../../../assets/images/hero-motor.png';
 import heroOverlay from '../../../assets/images/hero-overlay.svg';
+import connectNow from '../../../assets/images/connect-now.png';
 
 export default function TechHeroSection() {
   return (
@@ -23,7 +24,7 @@ export default function TechHeroSection() {
         className="absolute flex flex-col"
         style={{
           left: 'clamp(40px, 10vw, 191px)',
-          top: 'clamp(120px, 31.4vw, 307px)',
+          top: 'clamp(56px, 20vw, 190px)',
           gap: 'clamp(32px, 4.2vw, 80px)',
         }}
       >
@@ -50,18 +51,17 @@ export default function TechHeroSection() {
           </p>
         </div>
 
-        {/* CTA button */}
+        {/* CTA image */}
         <a
           href="#contact"
-          className="inline-flex items-center justify-center self-start bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-          style={{
-            fontSize: 'clamp(16px, 1.25vw, 24px)',
-            paddingInline: 'clamp(16px, 1.25vw, 24px)',
-            paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-            letterSpacing: '0.01em',
-          }}
+          className="self-start"
         >
-          Connect Now
+          <img
+            src={connectNow}
+            alt="Connect Now"
+            className="block h-auto object-contain"
+            style={{ width: 'clamp(160px, 18vw, 320px)' }}
+          />
         </a>
       </div>
 
@@ -69,7 +69,7 @@ export default function TechHeroSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          top: 'clamp(80px, 13.6vw, 214px)',
+          top: 'clamp(24px, 7vw, 120px)',
           right: 'clamp(40px, 6.5vw, 100px)',
           width: 'clamp(220px, 32vw, 620px)',
           aspectRatio: '729 / 537',
