@@ -1,53 +1,60 @@
 import { Link } from 'react-router-dom';
 import caseStudyCard from '../../../assets/images/case-study-card.png';
 import cardBg from '../../../assets/images/case-study-bg.svg';
+import featureGrid from '../../../assets/images/feature-grid.png';
+import readCaseCta from '../../../assets/images/read-case-cta.png';
 
 export default function CaseStudyFeatureSection() {
   return (
     <section
       className="relative w-full bg-white overflow-hidden"
-      style={{ minHeight: 'clamp(420px, 40vw, 768px)' }}
+      style={{ padding: 'clamp(48px, 7vw, 132px) clamp(20px, 6.7vw, 129px)' }}
     >
-      {/* Background card shape — centered horizontally */}
       <div
-        className="absolute pointer-events-none"
+        className="relative mx-auto overflow-hidden"
         style={{
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, calc(-50% + 1.77vw))',
-          width: 'clamp(560px, 86.7vw, 1664px)',
-          height: 'clamp(160px, 25vw, 480px)',
+          maxWidth: '1664px',
+          minHeight: 'clamp(260px, 25vw, 480px)',
         }}
       >
-        <img src={cardBg} alt="" className="w-full h-full" style={{ objectFit: 'fill' }} />
-      </div>
+        <img
+          src={cardBg}
+          alt=""
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ objectFit: 'fill' }}
+        />
 
-      {/* Content row */}
-      <div
-        className="relative mx-auto flex flex-wrap items-center justify-between"
-        style={{
-          maxWidth: '1920px',
-          minHeight: 'inherit',
-          padding: 'clamp(40px, 5.2vw, 100px) clamp(24px, 10.5vw, 201px)',
-          gap: '40px',
-        }}
-      >
-        {/* Left: title + CTA */}
+        <img
+          src={featureGrid}
+          alt=""
+          className="absolute pointer-events-none"
+          style={{
+            right: 'clamp(-8px, 0vw, 0px)',
+            top: 'clamp(12px, 1.8vw, 34px)',
+            width: 'clamp(360px, 45vw, 869px)',
+            height: 'auto',
+            zIndex: 1,
+          }}
+        />
+
         <div
-          className="flex flex-col items-start"
-          style={{ maxWidth: 'clamp(280px, 47vw, 881px)', gap: 'clamp(24px, 2.1vw, 40px)' }}
+          className="relative z-10 flex flex-col items-start"
+          style={{
+            padding: 'clamp(42px, 5.2vw, 100px) clamp(28px, 4.6vw, 88px)',
+            width: 'clamp(300px, 48vw, 920px)',
+            gap: 'clamp(18px, 1.9vw, 36px)',
+          }}
         >
           <h2
             className="font-nexa capitalize"
             style={{
-              fontSize: 'clamp(24px, 2.8vw, 54px)',
-              lineHeight: '1.26',
+              fontSize: 'clamp(24px, 2.65vw, 51px)',
+              lineHeight: '1.18',
               fontWeight: 400,
+              margin: 0,
             }}
           >
-            <span style={{ color: '#1863da' }}>
-              Boosting Power Tool Performance{' '}
-            </span>
+            <span style={{ color: '#1863da' }}>Boosting Power Tool Performance </span>
             <span style={{ color: '#000' }}>
               with Naxatra Labs' Advanced BLDC Motor Solution
             </span>
@@ -55,34 +62,35 @@ export default function CaseStudyFeatureSection() {
 
           <Link
             to="/case-studies/bldc-power-tools"
-            className="inline-flex items-center justify-center bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-            style={{
-              fontSize: 'clamp(14px, 1.25vw, 24px)',
-              paddingInline: 'clamp(16px, 1.25vw, 24px)',
-              paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-              letterSpacing: '0.01em',
-              whiteSpace: 'nowrap',
-            }}
+            className="inline-flex items-center justify-center"
           >
-            Read Case Studies
+            <img
+              src={readCaseCta}
+              alt="Read Case Studies"
+              className="block h-auto object-contain"
+              style={{ width: 'clamp(160px, 14vw, 269px)' }}
+            />
           </Link>
         </div>
 
-        {/* Right: case study card image */}
         <div
-          className="relative flex-shrink-0"
+          className="absolute"
           style={{
-            width: 'clamp(220px, 31.9vw, 612px)',
-            height: 'clamp(180px, 26vw, 500px)',
+            right: 'clamp(48px, 10.8vw, 208px)',
+            bottom: 0,
+            width: 'clamp(220px, 28vw, 538px)',
+            height: 'clamp(120px, 18.8vw, 360px)',
             overflow: 'hidden',
+            zIndex: 2,
           }}
         >
           <div
             className="absolute"
             style={{
-              left: '9.3%',
               bottom: 0,
-              width: '81.4%',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
               borderRadius: '7.6px 7.6px 0 0',
               boxShadow: '0px 0px 26.6px 0px rgba(0,0,0,0.5)',
               overflow: 'hidden',
@@ -90,7 +98,7 @@ export default function CaseStudyFeatureSection() {
           >
             <img
               src={caseStudyCard}
-              alt="Boosting Power Tool Performance — Case Study"
+              alt="Boosting Power Tool Performance - Case Study"
               className="block w-full h-auto"
             />
           </div>

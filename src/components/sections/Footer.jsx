@@ -60,24 +60,18 @@ const bodyStyle = {
 };
 
 const locateTitleStyle = {
-  color: '#fff',
-  fontSize: 'clamp(12px, 1.15vw, 22px)',
+  ...bodyStyle,
   fontWeight: 800,
-  lineHeight: 1.2,
+  lineHeight: 1.4,
   textTransform: 'uppercase',
   whiteSpace: 'nowrap',
-  margin: 0,
-  fontFamily: 'inherit',
 };
 
 const locateAddressStyle = {
-  color: '#fff',
-  fontSize: 'clamp(11px, 1.05vw, 20px)',
+  ...bodyStyle,
   lineHeight: 1.45,
   textTransform: 'none',
   whiteSpace: 'normal',
-  margin: 0,
-  fontFamily: 'inherit',
 };
 
 export default function Footer() {
@@ -196,21 +190,7 @@ export default function Footer() {
 
       {/* ── Column 4 — Locate Us ──────────────────── */}
       <div className="absolute" style={{ left: px(1418), top: py(112), width: px(430) }}>
-        <h4
-          style={{
-            color: '#1863da',
-            fontSize: 'clamp(13px, 1.55vw, 30px)',
-            lineHeight: 1,
-            fontWeight: 800,
-            margin: 0,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            whiteSpace: 'nowrap',
-            fontFamily: 'inherit',
-          }}
-        >
-          Locate Us
-        </h4>
+        <ColHeader>Locate Us</ColHeader>
 
         <div
           style={{
