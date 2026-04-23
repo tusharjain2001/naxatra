@@ -69,40 +69,66 @@ export default function AboutTeamSection() {
         }}
       >
         {/* Vision intro */}
-        <p
-          className="font-metro"
-          style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#747474', marginBottom: 'clamp(8px, 0.63vw, 12px)' }}
-        >
-          [An introduction with the team]
-        </p>
-        <h2
-          className="font-nexa text-black"
+        <div
           style={{
-            fontSize: 'clamp(28px, 3.54vw, 68px)',
-            lineHeight: '1.15',
-            fontWeight: 400,
-            marginBottom: 'clamp(16px, 1.56vw, 30px)',
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%)',
+            background: '#cbd8d5',
+            padding: '1px',
+            marginBottom: 'clamp(36px, 4.2vw, 70px)',
           }}
         >
-          A Vision for Tomorrow
-        </h2>
+          <div
+            className="grid grid-cols-1 items-center lg:grid-cols-[minmax(220px,0.9fr)_minmax(280px,1.45fr)]"
+            style={{
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%)',
+              background: '#f5fbfa',
+              minHeight: 'clamp(128px, 13vw, 220px)',
+              columnGap: 'clamp(32px, 5.4vw, 104px)',
+              rowGap: 'clamp(16px, 3vw, 32px)',
+              padding: 'clamp(24px, 3vw, 56px) clamp(30px, 6.2vw, 119px)',
+            }}
+          >
+            <div>
+              <p
+                className="font-metro text-black"
+                style={{
+                  fontSize: 'clamp(8px, 0.63vw, 12px)',
+                  lineHeight: 1.2,
+                  margin: '0 0 clamp(12px, 1vw, 18px)',
+                }}
+              >
+                [An introduction with the team]
+              </p>
+              <h2
+                className="font-nexa text-black"
+                style={{
+                  fontSize: 'clamp(22px, 2.15vw, 41px)',
+                  lineHeight: 1.18,
+                  fontWeight: 400,
+                  margin: 0,
+                }}
+              >
+                <span style={{ color: '#1863da' }}>A Vision</span> For
+                <br />
+                Tomorrow
+              </h2>
+            </div>
 
-        {/* Divider */}
-        <div style={{ height: '1px', backgroundColor: '#d9d9d9', marginBottom: 'clamp(20px, 2.08vw, 40px)' }} />
-
-        <p
-          className="font-metro text-black"
-          style={{
-            fontSize: 'clamp(13px, 1.04vw, 20px)',
-            lineHeight: '1.6',
-            maxWidth: 'clamp(300px, 68vw, 1300px)',
-            marginBottom: 'clamp(32px, 3.13vw, 60px)',
-          }}
-        >
-          Founded in 2021 by{' '}
-          <strong>Abhilash Maurya, Arnav Biswas, and Piyush Verma,</strong>{' '}
-          Naxatra Labs brings groundbreaking axial and radial flux motors technology to the world of electric mobility. From our Ahmedabad base, we craft lightweight, power-dense solutions that redefine how vehicles and industries move.
-        </p>
+            <p
+              className="font-metro text-black"
+              style={{
+                fontSize: 'clamp(8px, 0.73vw, 14px)',
+                lineHeight: 1.55,
+                margin: 0,
+                maxWidth: 'clamp(360px, 41vw, 790px)',
+              }}
+            >
+              Founded in 2021 by{' '}
+              <strong>Abhilash Maurya, Arnav Biswas, and Piyush Verma,</strong>{' '}
+              Naxatra Labs brings groundbreaking axial and radial flux motors technology to the world of electric mobility. From our Ahmedabad base, we craft lightweight, power-dense solutions that redefine how vehicles and industries move.
+            </p>
+          </div>
+        </div>
 
         {/* Our Team heading */}
         <h3

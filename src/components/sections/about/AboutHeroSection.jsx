@@ -1,4 +1,6 @@
-import heroBike from '../../../assets/images/about-hero-bike.png';
+import aboutHeroGrid from '../../../assets/images/about-hero-grid.png';
+import aboutHeroEllipse from '../../../assets/images/about-hero-ellipse.png';
+import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 
 export default function AboutHeroSection() {
   return (
@@ -6,20 +8,6 @@ export default function AboutHeroSection() {
       className="relative w-full bg-black overflow-hidden"
       style={{ minHeight: 'clamp(380px, 42.6vw, 818px)' }}
     >
-      {/* Decorative ellipse glow */}
-      <div
-        className="absolute pointer-events-none rounded-full"
-        style={{
-          width: 'clamp(300px, 43vw, 826px)',
-          height: 'clamp(300px, 43vw, 826px)',
-          top: '50%',
-          right: '-6%',
-          transform: 'translateY(-50%) rotate(-45deg)',
-          border: '1px solid rgba(77,214,196,0.2)',
-          borderRadius: '50%',
-        }}
-      />
-
       {/* Content */}
       <div
         className="relative mx-auto flex flex-wrap items-center justify-between"
@@ -56,19 +44,40 @@ export default function AboutHeroSection() {
           </p>
         </div>
 
-        {/* Right: EV bike */}
+        {/* Right: layered hero visual */}
         <div
           className="relative flex-shrink-0"
           style={{
-            width: 'clamp(240px, 40.1vw, 770px)',
-            height: 'clamp(160px, 27.3vw, 524px)',
+            width: 'clamp(340px, 45vw, 869px)',
+            aspectRatio: '869 / 590',
           }}
         >
           <img
-            src={heroBike}
+            src={aboutHeroGrid}
+            alt=""
+            className="absolute inset-0 w-full h-full object-fill pointer-events-none"
+          />
+          <img
+            src={aboutHeroEllipse}
+            alt=""
+            className="absolute z-10 h-auto object-contain pointer-events-none"
+            style={{
+              width: 'clamp(300px, 38vw, 735px)',
+              top: '50%',
+              left: '48%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+          <img
+            src={aboutHeroImage}
             alt="Naxatra Labs Electric Vehicle"
-            className="w-full h-full object-contain"
-            style={{ opacity: 0.7 }}
+            className="absolute z-20 h-auto object-contain"
+            style={{
+              width: 'clamp(240px, 40.1vw, 770px)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
           />
         </div>
       </div>

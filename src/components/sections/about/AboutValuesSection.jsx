@@ -12,96 +12,129 @@ const VALUES = [
   },
   {
     icon: iconSustainability,
-    title: 'Sustainability with Purpose',
+    title: 'Sustainability With Purpose',
     body: 'We are committed to eco-conscious engineering, reducing carbon footprints, and building a greener, more sustainable future.',
   },
   {
     icon: iconCollaboration,
-    title: 'Collaboration for Impact',
+    title: 'Collaboration For Impact',
     body: 'We partner with visionaries, industries, and experts to accelerate advancements and make electric mobility the future of transportation.',
   },
   {
     icon: iconSimplicity,
-    title: 'Simplicity in Excellence',
+    title: 'Simplicity In Excellence',
     body: 'Strip away complexity to deliver high-performance, efficient, and scalable solutions that redefine industry standards.',
   },
   {
     icon: iconPrecision,
-    title: 'Precision in Execution',
+    title: 'Precision In Execution',
     body: 'Every motor undergoes rigorous testing to ensure unmatched reliability and efficiency.',
   },
 ];
+
+const clippedCorner = 'polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%)';
+
+function ValueCard({ icon, title, body }) {
+  return (
+    <div
+      style={{
+        clipPath: clippedCorner,
+        background: '#cbd8d5',
+        padding: '1px',
+      }}
+    >
+      <div
+        className="flex flex-col items-start"
+        style={{
+          clipPath: clippedCorner,
+          background: '#f5fbfa',
+          minHeight: 'clamp(98px, 10.6vw, 150px)',
+          padding: 'clamp(16px, 1.7vw, 24px) clamp(20px, 2.2vw, 32px)',
+        }}
+      >
+        <img
+          src={icon}
+          alt=""
+          style={{
+            width: 'clamp(24px, 2.35vw, 34px)',
+            height: 'clamp(24px, 2.35vw, 34px)',
+            objectFit: 'contain',
+            marginBottom: 'clamp(10px, 0.9vw, 14px)',
+          }}
+        />
+        <h3
+          className="font-nexa capitalize"
+          style={{
+            color: '#1863da',
+            fontSize: 'clamp(16px, 1.5vw, 22px)',
+            lineHeight: 1.15,
+            fontWeight: 400,
+            margin: 0,
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          className="font-metro text-black"
+          style={{
+            fontSize: 'clamp(9px, 0.72vw, 11px)',
+            lineHeight: 1.55,
+            margin: 'clamp(5px, 0.45vw, 7px) 0 0',
+            maxWidth: 'clamp(280px, 37vw, 560px)',
+          }}
+        >
+          {body}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function AboutValuesSection() {
   return (
     <section className="w-full bg-white">
       <div
-        className="mx-auto flex flex-wrap items-start"
+        className="mx-auto flex flex-col lg:flex-row items-start"
         style={{
-          maxWidth: '1920px',
-          padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)',
-          gap: 'clamp(32px, 4.2vw, 80px)',
+          maxWidth: '1220px',
+          padding: 'clamp(42px, 6vw, 96px) clamp(24px, 5vw, 80px)',
+          gap: 'clamp(36px, 5.2vw, 82px)',
         }}
       >
-        {/* Left: sticky heading */}
         <div
           className="flex-shrink-0"
-          style={{ width: 'clamp(240px, 29.5vw, 566px)', paddingTop: 'clamp(8px, 0.83vw, 16px)' }}
+          style={{
+            width: 'clamp(260px, 29vw, 390px)',
+            paddingTop: 'clamp(0px, 0.5vw, 8px)',
+          }}
         >
           <h2
-            className="font-nexa text-black"
+            className="font-nexa capitalize text-black"
             style={{
-              fontSize: 'clamp(22px, 2.08vw, 40px)',
-              lineHeight: '1.3',
+              fontSize: 'clamp(22px, 2.3vw, 34px)',
+              lineHeight: 1.2,
               fontWeight: 400,
-              position: 'sticky',
-              top: 'calc(55px + clamp(20px, 2vw, 40px))',
+              margin: 0,
             }}
           >
-            Our commitment to innovation, precision, and sustainability drives every decision we make
+            {'Our Commitment To '}
+            <span style={{ color: '#1863da' }}>Innovation, Precision, And Sustainability</span>
+            {' Drives Every Decision We Make'}
           </h2>
         </div>
 
-        {/* Right: values list */}
         <div
           className="flex flex-col"
-          style={{ flex: '1 1 clamp(280px, 42.7vw, 820px)', gap: 0 }}
+          style={{
+            flex: '1 1 auto',
+            width: '100%',
+            maxWidth: '680px',
+            gap: 'clamp(18px, 2vw, 28px)',
+          }}
         >
-          {VALUES.map((v, i) => (
-            <div key={i}>
-              {/* Divider */}
-              <div style={{ height: '1px', backgroundColor: '#d9d9d9', marginBottom: 'clamp(20px, 2.08vw, 40px)' }} />
-              <div
-                className="flex items-start"
-                style={{ gap: 'clamp(16px, 1.56vw, 30px)', marginBottom: 'clamp(20px, 2.08vw, 40px)' }}
-              >
-                {/* Icon */}
-                <img
-                  src={v.icon}
-                  alt={v.title}
-                  className="flex-shrink-0"
-                  style={{ width: 'clamp(40px, 3.9vw, 75px)', height: 'clamp(40px, 3.9vw, 75px)', objectFit: 'contain' }}
-                />
-                {/* Text */}
-                <div className="flex flex-col" style={{ gap: 'clamp(8px, 0.83vw, 16px)' }}>
-                  <h3
-                    className="font-nexa"
-                    style={{ fontSize: 'clamp(16px, 2.08vw, 40px)', color: '#1863da', fontWeight: 400, lineHeight: '1.2' }}
-                  >
-                    {v.title}
-                  </h3>
-                  <p
-                    className="font-metro text-black"
-                    style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.6' }}
-                  >
-                    {v.body}
-                  </p>
-                </div>
-              </div>
-            </div>
+          {VALUES.map((value) => (
+            <ValueCard key={value.title} {...value} />
           ))}
-          {/* Final divider */}
-          <div style={{ height: '1px', backgroundColor: '#d9d9d9' }} />
         </div>
       </div>
     </section>
