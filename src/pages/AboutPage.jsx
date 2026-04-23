@@ -4,8 +4,8 @@ import AboutValuesSection from '../components/sections/about/AboutValuesSection'
 import AboutGoalSection from '../components/sections/about/AboutGoalSection';
 import AboutTeamSection from '../components/sections/about/AboutTeamSection';
 import AboutInvestorsSection from '../components/sections/about/AboutInvestorsSection';
-import AboutTimelineSection from '../components/sections/about/AboutTimelineSection';
 import AboutGallerySection from '../components/sections/about/AboutGallerySection';
+import JourneySection from '../components/sections/JourneySection';
 import Footer from '../components/sections/Footer';
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <AboutGoalSection />
         <AboutTeamSection />
         <AboutInvestorsSection />
-        <AboutTimelineSection />
+        <JourneySection />
         <AboutGallerySection />
         <Footer />
       </div>
