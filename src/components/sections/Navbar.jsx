@@ -4,7 +4,7 @@ import contact from "../../assets/images/navbar-contact.png";
 
 export default function Navbar() {
   const { pathname } = useLocation();
-  const isDark = pathname !== '/';
+  const isDark = pathname !== '/' && pathname !== '/products' && !pathname.startsWith('/products/');
   const linkClass = `text-[clamp(10px,0.55vw,12px)] uppercase font-medium transition-colors ${
     isDark ? 'text-white hover:text-[#8bb5ff]' : 'text-[#515151] hover:text-[#1863da]'
   }`;
@@ -31,7 +31,7 @@ export default function Navbar() {
           Home
         </Link>
         <Link
-          to="/#products"
+          to="/products"
           className={linkClass}
         >
           Products

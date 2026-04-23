@@ -121,7 +121,23 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/66efb837-00a5-46dc-b117-d26270fe22c6\" -o footer-brand-card.tmp)",
       "Read(//c/c/Users/Intel/Desktop/naxatra/src/assets/images/**)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ecc8d181-d83e-49db-ad19-fdb427233a0e\" -o footer-pin-corp.tmp)",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0985633a-b748-4913-a5bd-47185e795a0b\" -o footer-pin-mfg.tmp)"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0985633a-b748-4913-a5bd-47185e795a0b\" -o footer-pin-mfg.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/d99bcb25-4ebd-4352-84d7-a5d43981fbbe\" -o \"product-motor-rf55.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/365f0a32-f8e0-4464-bb04-d90966021fe2\" -o \"product-motor-rf66.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0f9d4fe9-102b-4d9e-bdf8-c0f585c8595d\" -o \"product-motor-af58.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/c7753128-e6ea-4fe7-8954-c13c98d4b7a9\" -o \"product-motor-pt500.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/645c6e63-e23a-43ff-bc28-cc4742918be6\" -o \"product-cta-bg.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/566490b0-9c89-4614-a735-4e13b2a24bc0\" -o \"product-icon-sustainable.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/7b178fbd-04b2-4b92-88f1-f73c56722d28\" -o \"product-icon-platforms.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/24c27fab-4f2b-420d-8de4-cc6fc83f1df5\" -o \"product-icon-engineer.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/a1e8952d-45c1-47aa-83ec-ef17b1e74ed7\" -o \"product-icon-customize.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/44b8a938-1fc0-437a-b820-e01eccad5693\" -o \"product-app-scooter.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/070bee7a-7446-4994-b64a-9a10aa63d7ce\" -o \"product-app-bike.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/1f2dcc00-d21b-465d-bc91-81877b0734d7\" -o \"product-app-sweeper.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/accc37ae-e1c2-498c-9cc1-f92c6775bdfd\" -o \"product-app-loader.png\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/9c2f5fdd-e4f7-45f1-9e40-a146a15f2928\" -o \"product-app-weeder.png\")",
+      "Bash(curl -s http://localhost:3001/products)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ecc15f96-a0d0-4af4-82c9-aecd1d951208\" -o \"product-detail-wireframe.png\")"
     ]
   }
 }
