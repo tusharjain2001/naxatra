@@ -1,4 +1,5 @@
 import cardBorder from '../../../assets/images/tech-about-image.svg';
+import techSectionTwo from '../../../assets/images/tech-sectiontwo.png';
 
 export default function TechAboutSection() {
   return (
@@ -53,16 +54,14 @@ export default function TechAboutSection() {
             {/* CTA */}
             <a
               href="#contact"
-              className="inline-flex items-center justify-center bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-              style={{
-                fontSize: 'clamp(12px, 1vw, 19px)',
-                paddingInline: 'clamp(16px, 1.25vw, 24px)',
-                paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-                letterSpacing: '0.01em',
-                whiteSpace: 'nowrap',
-              }}
+              className="inline-flex items-center justify-center"
             >
-              Learn More About Our Tailored Solutions
+              <img
+                src={techSectionTwo}
+                alt="Learn More About Our Tailored Solutions"
+                className="block h-auto object-contain"
+                style={{ width: 'clamp(220px, 30vw, 436px)' }}
+              />
             </a>
           </div>
         </div>
