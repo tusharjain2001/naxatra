@@ -27,21 +27,40 @@ const cards = [
 
 export default function WhyUsSection() {
   return (
-    <section className="w-full" style={{ background: '#1863da', paddingTop: '89px', paddingBottom: '157px' }} id="technology">
-      <div style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 211px' }}>
+    <section
+      className="w-full"
+      style={{
+        background: '#1863da',
+        paddingTop: 'clamp(48px, 4.64vw, 89px)',
+        paddingBottom: 'clamp(70px, 8.18vw, 157px)',
+      }}
+      id="technology"
+    >
+      <div style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 clamp(32px, 8.5vw, 211px)' }}>
         <h2
           className="font-nexa text-center capitalize"
-          style={{ color: '#fff', fontSize: '54px', lineHeight: '78.545px', marginBottom: '125px' }}
+          style={{
+            color: '#fff',
+            fontSize: 'clamp(40px, 2.81vw, 54px)',
+            lineHeight: 1.45,
+            marginBottom: 'clamp(54px, 6.51vw, 125px)',
+          }}
         >
           Why Us?
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 457px)', gap: '64px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+            gap: 'clamp(28px, 3.33vw, 64px)',
+          }}
+        >
           {cards.map((card, i) => (
             <div
               key={i}
               className="relative"
-              style={{ width: '457px', height: '620px' }}
+              style={{ aspectRatio: '457 / 620', minWidth: 0 }}
             >
               <img
                 src={card.bg}
@@ -49,30 +68,34 @@ export default function WhyUsSection() {
                 className="absolute inset-0 w-full h-full"
                 style={{ display: 'block' }}
               />
-              <div className="relative z-10">
+              <div
+                className="relative z-10"
+                style={{
+                  height: '100%',
+                  padding: '7.22% 6.78% 7.5%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
                 <img
                   src={card.img}
                   alt={card.title}
                   style={{
-                    position: 'absolute',
-                    top: '33px',
-                    left: '31px',
-                    width: '393px',
-                    height: '281px',
+                    width: '100%',
+                    aspectRatio: '393 / 281',
                     objectFit: 'cover',
                     borderRadius: '5.5px',
+                    flexShrink: 0,
                   }}
                 />
                 <h3
                   className="font-nexa capitalize"
                   style={{
-                    position: 'absolute',
-                    top: '349px',
-                    left: '31px',
-                    width: '393px',
                     color: '#fff',
-                    fontSize: '40px',
-                    lineHeight: '48px',
+                    fontSize: 'clamp(24px, 2.08vw, 40px)',
+                    lineHeight: 1.2,
+                    marginTop: 'clamp(16px, 1.82vw, 35px)',
+                    marginBottom: 'clamp(10px, 1.04vw, 20px)',
                   }}
                 >
                   {card.title}
@@ -80,13 +103,10 @@ export default function WhyUsSection() {
                 <p
                   className="font-metro"
                   style={{
-                    position: 'absolute',
-                    top: '468px',
-                    left: '31px',
-                    width: '373px',
                     color: '#fff',
-                    fontSize: '16px',
-                    lineHeight: '25px',
+                    fontSize: 'clamp(12px, 0.83vw, 16px)',
+                    lineHeight: 1.56,
+                    maxWidth: '95%',
                   }}
                 >
                   {card.desc}
