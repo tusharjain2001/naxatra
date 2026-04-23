@@ -1,5 +1,6 @@
-import heroMotor from '../../../assets/images/hero-motor.png';
-import heroOverlay from '../../../assets/images/hero-overlay.svg';
+import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
+import techHeroEllipse from '../../../assets/images/case-hero-ellipse.png';
+import techRightHero from '../../../assets/images/case-right-hero.png';
 
 export default function CaseStudiesHeroSection() {
   return (
@@ -27,7 +28,7 @@ export default function CaseStudiesHeroSection() {
         className="absolute flex flex-col"
         style={{
           left: 'clamp(40px, 10vw, 191px)',
-          top: 'clamp(130px, 36.4vw, 350px)',
+          top: 'clamp(56px, 20vw, 190px)',
           gap: 'clamp(16px, 1.67vw, 32px)',
         }}
       >
@@ -55,30 +56,43 @@ export default function CaseStudiesHeroSection() {
         </p>
       </div>
 
-      {/* Right: Motor diagram */}
+      {/* Right: Motor image */}
       <div
         className="absolute pointer-events-none"
         style={{
-          top: 'clamp(80px, 13.6vw, 214px)',
-          right: 'clamp(40px, 6.5vw, 100px)',
-          width: 'clamp(220px, 32vw, 620px)',
-          aspectRatio: '729 / 537',
+          top: 'clamp(16px, 5vw, 86px)',
+          right: 'clamp(-24px, 1vw, 18px)',
+          width: 'clamp(520px, 45vw, 867px)',
+          aspectRatio: '867 / 598',
         }}
       >
         <img
-          src={heroMotor}
+          src={techHeroGrid}
+          alt=""
+          className="absolute inset-0 w-full h-full object-fill"
+        />
+        <img
+          src={techHeroEllipse}
           alt="Motor Diagram"
-          className="absolute object-contain"
+          className="absolute z-10 block h-auto object-contain"
           style={{
-            width: '76.7%',
-            height: '95.3%',
-            bottom: 0,
-            left: '11.5%',
-            right: '11.8%',
-            top: '4.7%',
+            width: 'clamp(300px, 33vw, 635px)',
+            top: '51%',
+            left: '47%',
+            transform: 'translate(-50%, -50%)',
           }}
         />
-        <img src={heroOverlay} alt="" className="absolute inset-0 w-full h-full" />
+        <img
+          src={techRightHero}
+          alt="Motor Render"
+          className="absolute z-20 block h-auto object-contain"
+          style={{
+            width: 'clamp(150px, 17vw, 325px)',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
       </div>
     </section>
   );
