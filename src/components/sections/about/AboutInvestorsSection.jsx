@@ -1,60 +1,39 @@
 import logoNavi from '../../../assets/images/about-investor-logo-navi.png';
 import logoBvfl from '../../../assets/images/about-investor-logo-bvfl.png';
-import mohit from '../../../assets/images/about-investor-mohit.png';
-import himanshu from '../../../assets/images/about-investor-himanshu.png';
-import vijayShekhar from '../../../assets/images/about-investor-vijayshekhar.png';
-import aloke from '../../../assets/images/about-investor-aloke.png';
-import rajnish from '../../../assets/images/about-investor-rajnish.png';
-import sunil from '../../../assets/images/about-investor-sunil.png';
-import narayan from '../../../assets/images/about-investor-narayan.png';
+import mohit from '../../../assets/images/mohitinv.png';
+import himanshu from '../../../assets/images/himanshuenv.png';
+import vijayShekhar from '../../../assets/images/vijayenv.png';
+import aloke from '../../../assets/images/alokeinv.png';
+import rajnish from '../../../assets/images/rajnishenv.png';
+import sunil from '../../../assets/images/sunilenv.png';
+import narayan from '../../../assets/images/narayanenv.png';
 
-const ROW1 = [
-  { name: 'Mohit Tandon', role: 'Founder Delhivery', photo: mohit },
-  { name: 'Himanshu Aggarwal', role: 'Founder Aspiring Minds', photo: himanshu },
-  { name: 'Vijay Shekhar Sharma', role: 'Founder Paytm', photo: vijayShekhar },
+const TOP_INVESTORS = [
+  { name: 'Mohit Tandon', card: mohit, aspectRatio: '315 / 359' },
+  { name: 'Himanshu Aggarwal', card: himanshu, aspectRatio: '315 / 359' },
+  { name: 'Vijay Shekhar Sharma', card: vijayShekhar, aspectRatio: '291 / 358' },
 ];
 
-const ROW2 = [
-  { name: 'Aloke Bajpai', role: 'Cofounder Ixigo', photo: aloke },
-  { name: 'Rajnish Kumar', role: 'Cofounder Ixigo', photo: rajnish },
-  { name: 'Sunil Kalra', role: 'Angel Investor', photo: sunil },
-  { name: 'Narayan', role: 'Ather', photo: narayan },
+const BOTTOM_INVESTORS = [
+  { name: 'Aloke Bajpai', card: aloke },
+  { name: 'Rajnish Kumar', card: rajnish },
+  { name: 'Sunil Kalra', card: sunil },
+  { name: 'Narayan', card: narayan },
 ];
 
-function InvestorCard({ person, large }) {
+function InvestorImage({ person, size = 'regular' }) {
   return (
-    <div
-      className="relative overflow-hidden bg-white rounded"
+    <img
+      src={person.card}
+      alt={person.name}
+      className="block w-full"
       style={{
-        width: large ? 'clamp(160px, 16.4vw, 314px)' : 'clamp(140px, 15.2vw, 291px)',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-        borderRadius: 'clamp(4px, 0.3vw, 6px)',
+        aspectRatio: person.aspectRatio || '291 / 332',
+        objectFit: 'cover',
+        boxShadow: '0 3px 12px rgba(0,0,0,0.1)',
+        maxWidth: size === 'large' ? 'clamp(150px, 15.5vw, 315px)' : 'clamp(140px, 14.3vw, 291px)',
       }}
-    >
-      <img
-        src={person.photo}
-        alt={person.name}
-        className="w-full block"
-        style={{ aspectRatio: '1 / 1', objectFit: 'cover', objectPosition: 'top' }}
-      />
-      <div
-        className="flex flex-col"
-        style={{ padding: 'clamp(8px, 0.73vw, 14px) clamp(10px, 0.83vw, 16px)', background: '#fff' }}
-      >
-        <span
-          className="font-nexa text-black"
-          style={{ fontSize: 'clamp(11px, 1.09vw, 20.9px)', lineHeight: '1.4' }}
-        >
-          {person.name}
-        </span>
-        <span
-          className="font-metro"
-          style={{ fontSize: 'clamp(9px, 0.78vw, 14.9px)', color: '#2c2c2c', lineHeight: '1.6' }}
-        >
-          {person.role}
-        </span>
-      </div>
-    </div>
+    />
   );
 }
 
@@ -64,43 +43,86 @@ export default function AboutInvestorsSection() {
       <div
         className="mx-auto"
         style={{
-          maxWidth: '1920px',
-          padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)',
+          maxWidth: '1220px',
+          padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 5vw, 80px)',
         }}
       >
-        {/* Heading */}
-        <h2
-          className="font-nexa text-black"
+        <div
+          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(200px,23vw,330px)_minmax(0,1fr)]"
           style={{
-            fontSize: 'clamp(28px, 3.54vw, 68px)',
-            lineHeight: '1.15',
-            fontWeight: 400,
-            marginBottom: 'clamp(24px, 2.6vw, 50px)',
+            columnGap: 'clamp(28px, 4.8vw, 76px)',
+            rowGap: 'clamp(28px, 4vw, 48px)',
           }}
         >
-          Investors
-        </h2>
+          <div>
+            <h2
+              className="font-nexa text-black"
+              style={{
+                fontSize: 'clamp(28px, 3vw, 44px)',
+                lineHeight: 1.1,
+                fontWeight: 400,
+                margin: '0 0 clamp(10px, 1.15vw, 18px)',
+              }}
+            >
+              Investors
+            </h2>
 
-        {/* Investor logos */}
-        <div
-          className="flex flex-wrap items-center"
-          style={{ gap: 'clamp(16px, 2.08vw, 40px)', marginBottom: 'clamp(24px, 2.6vw, 50px)' }}
-        >
-          <img src={logoNavi} alt="Navi" style={{ height: 'clamp(28px, 2.6vw, 50px)', width: 'auto', objectFit: 'contain' }} />
-          <img src={logoBvfl} alt="BVFL" style={{ height: 'clamp(28px, 2.6vw, 50px)', width: 'auto', objectFit: 'contain' }} />
-        </div>
+            <div
+              className="flex flex-wrap items-start"
+              style={{
+                gap: 'clamp(20px, 2.2vw, 34px)',
+              }}
+            >
+              <img
+                src={logoNavi}
+                alt="Rainmatter"
+                style={{
+                  width: 'clamp(92px, 9.4vw, 142px)',
+                  height: 'auto',
+                  objectFit: 'contain',
+                }}
+              />
+              <img
+                src={logoBvfl}
+                alt="GVFL"
+                style={{
+                  width: 'clamp(82px, 8.4vw, 128px)',
+                  height: 'auto',
+                  objectFit: 'contain',
+                }}
+              />
+            </div>
+          </div>
 
-        {/* Row 1 — larger cards */}
-        <div
-          className="flex flex-wrap"
-          style={{ gap: 'clamp(12px, 1.56vw, 30px)', marginBottom: 'clamp(12px, 1.56vw, 30px)' }}
-        >
-          {ROW1.map((p) => <InvestorCard key={p.name} person={p} large />)}
-        </div>
+          <div>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-3"
+              style={{
+                gap: 'clamp(14px, 1.8vw, 26px)',
+                maxWidth: 'clamp(470px, 49vw, 760px)',
+                marginLeft: 0,
+                marginTop: 'clamp(48px, 5vw, 80px)',
+                marginBottom: 'clamp(16px, 1.8vw, 26px)',
+              }}
+            >
+              {TOP_INVESTORS.map((person) => (
+                <InvestorImage key={person.name} person={person} size="large" />
+              ))}
+            </div>
 
-        {/* Row 2 — smaller cards */}
-        <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.56vw, 30px)' }}>
-          {ROW2.map((p) => <InvestorCard key={p.name} person={p} />)}
+            <div
+              className="grid grid-cols-2 sm:grid-cols-4"
+              style={{
+                gap: 'clamp(14px, 1.8vw, 26px)',
+                maxWidth: 'clamp(620px, 61vw, 940px)',
+                marginLeft: 'clamp(-96px, -5vw, 0px)',
+              }}
+            >
+              {BOTTOM_INVESTORS.map((person) => (
+                <InvestorImage key={person.name} person={person} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
