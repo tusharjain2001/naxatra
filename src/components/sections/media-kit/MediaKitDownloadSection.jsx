@@ -1,4 +1,5 @@
 import cardBg from '../../../assets/images/media-kit-card-bg.svg';
+import downloadKit from '../../../assets/images/download-kit.png';
 
 export default function MediaKitDownloadSection() {
   return (
@@ -63,19 +64,31 @@ export default function MediaKitDownloadSection() {
             <a
               href="#"
               onClick={(e) => e.preventDefault()}
-              className="inline-flex items-center gap-2 bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-              style={{
-                fontSize: 'clamp(14px, 1.25vw, 24px)',
-                paddingInline: 'clamp(16px, 1.25vw, 24px)',
-                paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-                letterSpacing: '0.01em',
-                whiteSpace: 'nowrap',
-              }}
+              aria-label="Download Kit"
+              className="relative block"
+              style={{ width: 'fit-content' }}
             >
-              Download Kit
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 2v8M8 10l-3-3M8 10l3-3M2 13h12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <img
+                src={downloadKit}
+                alt="Download Kit"
+                className="block h-auto object-contain"
+                style={{
+                  width: 'clamp(150px, 13.6vw, 262px)',
+                  clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%)',
+                }}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute pointer-events-none"
+                style={{
+                  right: 0,
+                  bottom: 0,
+                  width: '18px',
+                  height: '18px',
+                  background: '#eef8f8',
+                  clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
+                }}
+              />
             </a>
           </div>
         </div>

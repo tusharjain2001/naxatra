@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import careersPhoto from '../../../assets/images/careers-photo.png';
+import submitEnquiry from '../../../assets/images/submit-enquiry.png';
 
 function TextField({ label, type = 'text', value, onChange, required, fullWidth = false }) {
   return (
@@ -53,7 +54,7 @@ export default function CareersApplySection() {
   };
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white mb-20">
       <div
         className="mx-auto flex flex-wrap items-stretch"
         style={{ maxWidth: '1920px' }}
@@ -128,20 +129,13 @@ export default function CareersApplySection() {
 
             {/* Submit */}
             <div className="flex justify-end">
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-                style={{
-                  fontSize: 'clamp(14px, 1.25vw, 24px)',
-                  paddingInline: 'clamp(16px, 1.25vw, 24px)',
-                  paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-                  letterSpacing: '0.01em',
-                }}
-              >
-                Submit Enquiry
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 3H13M13 3V13M13 3L3 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <button type="submit" aria-label="Submit Enquiry" className="block">
+                <img
+                  src={submitEnquiry}
+                  alt="Submit Enquiry"
+                  className="block h-auto object-contain"
+                  style={{ width: 'clamp(150px, 13.6vw, 262px)' }}
+                />
               </button>
             </div>
           </form>

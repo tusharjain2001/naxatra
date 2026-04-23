@@ -1,22 +1,14 @@
+import careersHeroGrid from '../../../assets/images/careers-hero-grid.png';
+import careersHeroEllipse from '../../../assets/images/careers-hero-elllipse.png';
+import careersHeroImage from '../../../assets/images/careers-hero-image.png';
+import requestBrochure from '../../../assets/images/request-brochure.png';
+
 export default function CareersHeroSection() {
   return (
     <section
       className="relative w-full bg-black overflow-hidden"
       style={{ minHeight: 'clamp(380px, 42.6vw, 818px)' }}
     >
-      {/* Decorative glow rings */}
-      <div
-        className="absolute pointer-events-none rounded-full"
-        style={{
-          width: 'clamp(300px, 43vw, 826px)',
-          height: 'clamp(300px, 43vw, 826px)',
-          top: '50%',
-          right: '-8%',
-          transform: 'translateY(-50%) rotate(-45deg)',
-          border: '1px solid rgba(77,214,196,0.25)',
-          borderRadius: '50%',
-        }}
-      />
       <div
         className="absolute pointer-events-none rounded-full"
         style={{
@@ -30,7 +22,7 @@ export default function CareersHeroSection() {
 
       {/* Content */}
       <div
-        className="relative mx-auto flex flex-wrap items-center"
+        className="relative mx-auto flex flex-wrap items-center justify-between lg:flex-nowrap"
         style={{
           maxWidth: '1920px',
           minHeight: 'inherit',
@@ -52,17 +44,52 @@ export default function CareersHeroSection() {
             <span className="text-white">Together!</span>
           </h1>
 
-          <button
-            className="inline-flex items-center justify-center bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-            style={{
-              fontSize: 'clamp(14px, 1.25vw, 24px)',
-              paddingInline: 'clamp(16px, 1.25vw, 24px)',
-              paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-              letterSpacing: '0.01em',
-            }}
-          >
-            Request Brochure
+          <button type="button" aria-label="Request Brochure" className="block">
+            <img
+              src={requestBrochure}
+              alt="Request Brochure"
+              className="block h-auto object-contain"
+              style={{ width: 'clamp(150px, 13.6vw, 262px)' }}
+            />
           </button>
+        </div>
+
+        {/* Right: layered hero visual */}
+        <div
+          className="relative flex-shrink-0"
+          style={{
+            width: 'clamp(520px, 45vw, 869px)',
+            aspectRatio: '869 / 601',
+            marginLeft: 'auto',
+          }}
+        >
+          <img
+            src={careersHeroGrid}
+            alt=""
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+          />
+          <img
+            src={careersHeroEllipse}
+            alt=""
+            className="absolute z-10 h-auto object-contain pointer-events-none"
+            style={{
+              width: 'clamp(300px, 33vw, 635px)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+          <img
+            src={careersHeroImage}
+            alt="Join Naxatra Labs"
+            className="absolute z-20 h-auto object-contain"
+            style={{
+              width: 'clamp(240px, 34vw, 650px)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import cardBg from '../../../assets/images/careers-job-card-bg.svg';
 
 const JOBS = [
   {
@@ -197,79 +196,89 @@ export default function CareersJobsSection() {
         {/* Job cards */}
         <div className="flex flex-col" style={{ gap: 'clamp(16px, 1.56vw, 30px)' }}>
           {JOBS.map((job) => (
-            <div key={job.id} className="relative" style={{ minHeight: 'clamp(160px, 19.2vw, 368px)' }}>
-              {/* SVG card background */}
-              <img
-                src={cardBg}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                style={{ objectFit: 'fill' }}
-              />
-
-              {/* Card content */}
+            <div
+              key={job.id}
+              className="relative"
+              style={{
+                background: '#f2fbfb',
+                border: '1px solid #d9e5e4',
+                clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 0 100%)',
+              }}
+            >
               <div
-                className="relative flex flex-wrap items-center justify-between"
+                className="relative flex flex-wrap items-start justify-between"
                 style={{
-                  height: '100%',
-                  padding: 'clamp(20px, 2.6vw, 50px) clamp(24px, 3.1vw, 60px)',
-                  gap: '20px',
+                  padding: 'clamp(20px, 2.35vw, 45px) clamp(24px, 2.7vw, 52px)',
+                  gap: 'clamp(18px, 2vw, 36px)',
                 }}
               >
-                {/* Left: title + meta + description */}
+                {/* Left: title + description + CTA */}
                 <div
                   className="flex flex-col"
-                  style={{ flex: '1 1 clamp(260px, 40vw, 760px)', gap: 'clamp(8px, 0.83vw, 16px)' }}
+                  style={{ flex: '1 1 clamp(260px, 43vw, 820px)', gap: 'clamp(12px, 1.04vw, 20px)' }}
                 >
                   <h3
                     className="font-nexa text-black"
-                    style={{ fontSize: 'clamp(18px, 2.08vw, 40px)', fontWeight: 400, lineHeight: '1.2' }}
+                    style={{ fontSize: 'clamp(18px, 1.56vw, 30px)', fontWeight: 400, lineHeight: '1.2', margin: 0 }}
                   >
                     {job.title}
                   </h3>
-
-                  {/* Meta row */}
-                  <div className="flex flex-wrap items-center" style={{ gap: 'clamp(12px, 1.56vw, 30px)' }}>
-                    <span className="flex items-center gap-2 font-metro" style={{ fontSize: 'clamp(12px, 0.94vw, 18px)', color: '#515151' }}>
-                      {/* Location icon */}
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#515151" strokeWidth="1.8" fill="none" />
-                        <circle cx="12" cy="9" r="2.5" stroke="#515151" strokeWidth="1.8" fill="none" />
-                      </svg>
-                      {job.location}
-                    </span>
-                    <span className="flex items-center gap-2 font-metro" style={{ fontSize: 'clamp(12px, 0.94vw, 18px)', color: '#515151' }}>
-                      {/* Clock icon */}
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="9" stroke="#515151" strokeWidth="1.8" />
-                        <path d="M12 7v5l3 3" stroke="#515151" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {job.type}
-                    </span>
-                  </div>
-
                   <p
                     className="font-metro text-black"
-                    style={{ fontSize: 'clamp(12px, 0.94vw, 18px)', lineHeight: '1.65', opacity: 0.75 }}
+                    style={{
+                      fontSize: 'clamp(12px, 0.94vw, 18px)',
+                      lineHeight: '1.6',
+                      opacity: 0.75,
+                      maxWidth: 'clamp(280px, 42vw, 810px)',
+                      margin: 0,
+                    }}
                   >
                     {job.description}
                   </p>
-                </div>
-
-                {/* Right: Download button */}
-                <div className="flex-shrink-0">
                   <button
-                    className="inline-flex items-center justify-center font-nexa capitalize rounded-[4px] border border-[#1863da] text-[#1863da] hover:bg-[#1863da] hover:text-white transition-colors"
+                    className="inline-flex items-center justify-center font-metro rounded-[2px] border border-[#1863da] text-[#1863da] transition-colors"
                     style={{
-                      fontSize: 'clamp(12px, 0.94vw, 18px)',
-                      paddingInline: 'clamp(14px, 1.25vw, 24px)',
-                      paddingBlock: 'clamp(8px, 0.73vw, 14px)',
+                      fontSize: 'clamp(10px, 0.73vw, 14px)',
+                      lineHeight: 1.2,
+                      paddingInline: 'clamp(12px, 1.15vw, 22px)',
+                      paddingBlock: 'clamp(7px, 0.73vw, 14px)',
                       whiteSpace: 'nowrap',
-                      letterSpacing: '0.01em',
+                      width: 'fit-content',
                     }}
                   >
                     Download Job Description
                   </button>
+                </div>
+
+                {/* Right: meta */}
+                <div
+                  className="flex flex-col items-start md:items-end"
+                  style={{
+                    flex: '0 0 auto',
+                    gap: 'clamp(10px, 0.83vw, 16px)',
+                    minWidth: 'clamp(180px, 16vw, 300px)',
+                  }}
+                >
+                  <span
+                    className="flex items-center gap-2 font-metro"
+                    style={{ fontSize: 'clamp(14px, 1.04vw, 20px)', color: '#111111', lineHeight: 1.35 }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#1863da" strokeWidth="1.8" fill="none" />
+                      <circle cx="12" cy="9" r="2.5" stroke="#1863da" strokeWidth="1.8" fill="none" />
+                    </svg>
+                    {job.location}
+                  </span>
+                  <span
+                    className="flex items-center gap-2 font-metro"
+                    style={{ fontSize: 'clamp(14px, 1.04vw, 20px)', color: '#111111', lineHeight: 1.35 }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                      <circle cx="12" cy="12" r="9" stroke="#1863da" strokeWidth="1.8" />
+                      <path d="M12 7v5l3 3" stroke="#1863da" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {job.type}
+                  </span>
                 </div>
               </div>
             </div>

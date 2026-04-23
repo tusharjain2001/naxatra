@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import submitEnquiry from '../../../assets/images/submit-enquiry.png';
 
 const CATEGORIES = [
   {
@@ -312,22 +313,18 @@ export default function ContactFormSection() {
             </div>
 
             {/* Submit */}
-            <div className="flex justify-end">
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 bg-[#1863da] text-white font-nexa capitalize rounded-[4px]"
-                style={{
-                  fontSize: 'clamp(14px, 1.25vw, 24px)',
-                  paddingInline: 'clamp(16px, 1.25vw, 24px)',
-                  paddingBlock: 'clamp(10px, 0.83vw, 16px)',
-                  letterSpacing: '0.01em',
-                  whiteSpace: 'nowrap',
-                }}
+                aria-label="Submit Enquiry"
+                className="block"
               >
-                Submit Enquiry
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 3H13M13 3V13M13 3L3 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <img
+                  src={submitEnquiry}
+                  alt="Submit Enquiry"
+                  className="block"
+                  style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }}
+                />
               </button>
             </div>
           </form>
