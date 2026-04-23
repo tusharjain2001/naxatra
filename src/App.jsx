@@ -6,6 +6,8 @@ import CaseStudyDetailPage from './pages/CaseStudyDetailPage';
 import BlogsPage from './pages/BlogsPage';
 import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
+import AboutPage from './pages/AboutPage';
+import MediaKitPage from './pages/MediaKitPage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/insights-blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/media-kit" element={<MediaKitPage />} />
       </Routes>
     </BrowserRouter>
   );

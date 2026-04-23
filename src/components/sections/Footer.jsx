@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import footerEllipse from "../../assets/images/footer-ellipse.svg";
 import footerSocial from "../../assets/images/footer-social.svg";
@@ -6,12 +7,12 @@ import footerLeftGrid from "../../assets/images/footer-left-grid-green.png";
 import footerRightGrid from "../../assets/images/footer-right-bg-grid.png";
 
 const quickLinks = [
-  "Products",
-  "Technology",
-  "Case Studies",
-  "Insights & Blogs",
-  "Media Kit",
-  "Careers",
+  { label: "Products", to: null },
+  { label: "Technology", to: "/technology" },
+  { label: "Case Studies", to: "/case-studies" },
+  { label: "Insights & Blogs", to: "/insights-blogs" },
+  { label: "Media Kit", to: "/media-kit" },
+  { label: "Careers", to: "/careers" },
 ];
 
 export default function Footer() {
@@ -117,22 +118,37 @@ export default function Footer() {
             Quick Links
           </h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-            {quickLinks.map((link) => (
-              <li key={link}>
-                <a
-                  href="#"
-                  className="font-nexa"
-                  style={{
-                    color: "#fff",
-                    fontSize: "16px",
-                    lineHeight: "34px",
-                    textDecoration: "none",
-                    display: "block",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {link}
-                </a>
+            {quickLinks.map(({ label, to }) => (
+              <li key={label}>
+                {to ? (
+                  <Link
+                    to={to}
+                    className="font-nexa"
+                    style={{
+                      color: "#fff",
+                      fontSize: "16px",
+                      lineHeight: "34px",
+                      textDecoration: "none",
+                      display: "block",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <span
+                    className="font-nexa"
+                    style={{
+                      color: "#fff",
+                      fontSize: "16px",
+                      lineHeight: "34px",
+                      display: "block",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {label}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

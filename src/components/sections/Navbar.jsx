@@ -44,12 +44,12 @@ export default function Navbar() {
         >
           Insights &amp; Blogs
         </Link>
-        <a
-          href="#about"
+        <Link
+          to="/about"
           className="text-[clamp(12px,0.55vw,10px)] uppercase font-medium text-[#515151] transition-colors hover:text-[#1863da]"
         >
           About
-        </a>
+        </Link>
       </div>
 
       <Link to="/contact">
