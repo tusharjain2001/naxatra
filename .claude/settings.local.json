@@ -112,7 +112,16 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/7d23b9be-24cf-4361-85b0-2cd51ee4e75d\" -o about-timeline-8.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/e14e3b61-0166-4e49-9d78-eba6e38c89df\" -o about-timeline-9.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/d2dcc0bd-25b3-4fae-9ac6-6e416e579e68\" -o about-timeline-10.png)",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/4d56e3e9-7100-4e9a-b32d-fcaabb11f101\" -o media-kit-card-bg.tmp)"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/4d56e3e9-7100-4e9a-b32d-fcaabb11f101\" -o media-kit-card-bg.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/fda05519-715f-4b6d-b408-545c0c699926\" -o footer-social-icons.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/831d0a41-a2bf-4fcc-856d-2f3a32e11abf\" -o footer-pin-1.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/edd6a289-6dd6-4634-a6f5-424bf154ffa9\" -o footer-pin-2.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/19a9af7b-9e81-4f97-96af-d95aad550020\" -o footer-vector-deco.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/98440421-e4e9-4c9a-a6da-a6bdfbbff2aa\" -o footer-ellipse-deco.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/66efb837-00a5-46dc-b117-d26270fe22c6\" -o footer-brand-card.tmp)",
+      "Read(//c/c/Users/Intel/Desktop/naxatra/src/assets/images/**)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ecc8d181-d83e-49db-ad19-fdb427233a0e\" -o footer-pin-corp.tmp)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0985633a-b748-4913-a5bd-47185e795a0b\" -o footer-pin-mfg.tmp)"
     ]
   }
 }
