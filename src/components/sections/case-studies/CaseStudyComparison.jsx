@@ -1,27 +1,28 @@
 const rows = [
-  { feature: 'Peak Efficiency',         brushed: '~70%',                         bldc: '90%',                          improvement: '+29%' },
-  { feature: 'Battery Runtime',         brushed: 'Baseline (1.0X cycles/charge)', bldc: '1.2X cycles/charge',           improvement: '+20%' },
-  { feature: 'Est. Motor Lifespan',     brushed: '~2000–4000 hrs.',               bldc: '>10,000 hrs.',                  improvement: '+2.5x' },
-  { feature: 'Heat Generation',         brushed: 'High (>100°C)',                 bldc: 'Lower (<85°C)',                improvement: 'Significantly Less' },
-  { feature: 'Noise Level',             brushed: 'Higher (>85 dBA)',              bldc: 'Lower (<65 dBA)',              improvement: 'Noticeably Quieter' },
-  { feature: 'Maintenance',             brushed: 'Regular Brush Replacement',     bldc: 'Virtually Maintenance-Free',   improvement: 'Eliminated' },
-  { feature: 'Arcing Effect',           brushed: 'High (due to brushed)',         bldc: 'None',                         improvement: 'Improved Safety' },
-  { feature: 'Initial Cost',            brushed: 'Low',                           bldc: 'High',                         improvement: '—' },
-  { feature: 'Total Cost of Ownership', brushed: 'High',                          bldc: 'Low',                          improvement: 'Savings from efficiency & lower maintenance' },
+  { feature: 'Peak Efficiency', brushed: '~70%', bldc: '90%', improvement: '+29%' },
+  { feature: 'Battery Runtime', brushed: 'Baseline(1.0X cycles/charge)', bldc: '1.2X cycles/charge', improvement: '+20%' },
+  { feature: 'Est. Motor Lifespan', brushed: '~2000-4000 hrs.', bldc: '>10,000 hrs.', improvement: '+2.5x' },
+  { feature: 'Heat Generation', brushed: 'High (>100degC)', bldc: 'Lower (<85degC)', improvement: 'Significantly Less' },
+  { feature: 'Noise Level', brushed: 'Higher (>85 dBA)', bldc: 'Lower (e.g., <65 dBA)', improvement: 'Noticeably Quieter' },
+  { feature: 'Maintenance', brushed: 'Regular Brush Replacement Required', bldc: 'Virtually Maintenance-Free', improvement: 'Eliminated' },
+  { feature: 'Arcing Effect', brushed: 'High (due to brushed)', bldc: 'None', improvement: 'Improved Safety' },
+  { feature: 'Initial Cost', brushed: 'Low', bldc: 'High', improvement: '-' },
+  { feature: 'Total Cost Of Ownership', brushed: 'High', bldc: 'Low', improvement: 'Savings Due To Energy Efficiency And Lower Maintenance' },
 ];
 
-const TH = ({ children, align = 'left' }) => (
+const TH = ({ children }) => (
   <th
     className="font-nexa"
     style={{
-      textAlign: align,
-      fontSize: 'clamp(13px, 1.25vw, 24px)',
-      lineHeight: '1.5',
+      textAlign: 'left',
+      fontSize: 'clamp(12px, 0.94vw, 18px)',
+      lineHeight: '1.45',
       fontWeight: 400,
       color: '#000',
-      padding: 'clamp(10px, 0.83vw, 16px) clamp(8px, 0.63vw, 12px)',
-      borderBottom: '2px solid #d1d1d1',
-      whiteSpace: 'nowrap',
+      padding: 'clamp(12px, 1.15vw, 22px) clamp(14px, 1.25vw, 24px)',
+      border: '1px solid #dce4e2',
+      whiteSpace: 'normal',
+      verticalAlign: 'top',
     }}
   >
     {children}
@@ -32,12 +33,13 @@ const TD = ({ children, blue }) => (
   <td
     className="font-metro capitalize"
     style={{
-      fontSize: 'clamp(12px, 1.04vw, 20px)',
-      lineHeight: '1.6',
+      fontSize: 'clamp(11px, 0.83vw, 16px)',
+      lineHeight: '1.35',
       color: blue ? '#1863da' : '#515151',
-      padding: 'clamp(10px, 0.83vw, 16px) clamp(8px, 0.63vw, 12px)',
-      borderBottom: '1px solid #e8e8e8',
+      padding: 'clamp(9px, 0.82vw, 16px) clamp(14px, 1.25vw, 24px)',
+      border: '1px solid #edf0f0',
       fontWeight: blue ? 500 : 400,
+      verticalAlign: 'top',
     }}
   >
     {children}
@@ -49,22 +51,26 @@ export default function CaseStudyComparison() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1920px', padding: 'clamp(40px, 4.8vw, 92px) clamp(24px, 10.5vw, 201px)' }}
+        style={{ maxWidth: '1440px', padding: 'clamp(36px, 4.4vw, 84px) clamp(24px, 6.4vw, 123px)' }}
       >
-        {/* Heading */}
         <h2
           className="font-nexa capitalize"
-          style={{ fontSize: 'clamp(28px, 2.6vw, 50px)', lineHeight: '1.24', fontWeight: 400, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
+          style={{ fontSize: 'clamp(24px, 2.34vw, 45px)', lineHeight: '1.24', fontWeight: 400, marginBottom: 'clamp(28px, 2.8vw, 54px)' }}
         >
           <span style={{ color: '#1863da' }}>Performance </span>
           <span style={{ color: '#000' }}>Comparison</span>
         </h2>
 
-        {/* Table */}
         <div className="w-full overflow-x-auto">
-          <table className="w-full border-collapse" style={{ minWidth: '600px' }}>
+          <table className="w-full border-collapse" style={{ minWidth: '760px', tableLayout: 'fixed' }}>
+            <colgroup>
+              <col style={{ width: '24%' }} />
+              <col style={{ width: '24%' }} />
+              <col style={{ width: '24%' }} />
+              <col style={{ width: '28%' }} />
+            </colgroup>
             <thead>
-              <tr style={{ background: '#f4fdfb' }}>
+              <tr style={{ background: '#f2fbf9' }}>
                 <TH>Feature</TH>
                 <TH>Traditional Brushed DC Motor (Previous)</TH>
                 <TH>Naxatra Labs' BLDC (New)</TH>
@@ -72,12 +78,12 @@ export default function CaseStudyComparison() {
               </tr>
             </thead>
             <tbody>
-              {rows.map((r, i) => (
-                <tr key={r.feature} style={{ background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
-                  <TD blue>{r.feature}</TD>
-                  <TD>{r.brushed}</TD>
-                  <TD>{r.bldc}</TD>
-                  <TD>{r.improvement}</TD>
+              {rows.map((row) => (
+                <tr key={row.feature} style={{ background: '#fff' }}>
+                  <TD blue>{row.feature}</TD>
+                  <TD>{row.brushed}</TD>
+                  <TD>{row.bldc}</TD>
+                  <TD>{row.improvement}</TD>
                 </tr>
               ))}
             </tbody>
