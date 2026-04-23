@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import articleThumb from '../../../assets/images/blogs-article-thumb.png';
-import blogsBadge from '../../../assets/images/blogs-badge.svg';
 
 const CATEGORIES = ['All', 'Latest', 'Events', 'Blogs'];
 
-const ARTICLES = Array.from({ length: 6 }, (_, i) => ({
+const ARTICLES = Array.from({ length: 4 }, (_, i) => ({
   id: i,
   date: 'May 11, 2023',
   title: 'National Technology Week',
@@ -17,42 +16,45 @@ export default function BlogsAllArticlesSection() {
   return (
     <section className="w-full bg-white">
       <div
-        className="mx-auto flex flex-wrap items-start"
-        style={{ maxWidth: '1920px', padding: 'clamp(40px, 4.8vw, 92px) clamp(24px, 10.5vw, 201px)', gap: 'clamp(24px, 2.6vw, 50px)' }}
+        className="mx-auto grid"
+        style={{
+          maxWidth: '1060px',
+          gridTemplateColumns: 'clamp(150px, 13vw, 205px) minmax(0, 1fr)',
+          gap: 'clamp(36px, 4.8vw, 92px)',
+          padding: 'clamp(44px, 5.2vw, 100px) clamp(24px, 5vw, 96px)',
+        }}
       >
-        {/* Left sidebar */}
         <aside
-          className="flex-shrink-0 rounded"
           style={{
-            width: 'clamp(200px, 19.4vw, 372px)',
             backgroundColor: '#f8fdfd',
-            padding: 'clamp(24px, 2.6vw, 50px) clamp(16px, 1.56vw, 30px)',
+            padding: 'clamp(16px, 1.8vw, 34px) clamp(12px, 1.35vw, 26px)',
+            minHeight: 'clamp(420px, 38vw, 730px)',
           }}
         >
           <p
-            className="font-metro uppercase"
+            className="font-metro"
             style={{
-              fontSize: 'clamp(11px, 0.73vw, 14px)',
+              fontSize: 'clamp(10px, 0.68vw, 13px)',
               color: '#515151',
-              letterSpacing: '0.08em',
-              marginBottom: 'clamp(16px, 1.56vw, 30px)',
+              marginBottom: 'clamp(10px, 1vw, 18px)',
               fontWeight: 600,
             }}
           >
             Categories
           </p>
-          <div className="flex flex-col" style={{ gap: 'clamp(10px, 1.04vw, 20px)' }}>
+          <div className="flex flex-wrap" style={{ gap: 'clamp(6px, 0.52vw, 10px)' }}>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className="font-metro text-left rounded-full transition-colors"
+                className="font-metro transition-colors"
                 style={{
-                  fontSize: 'clamp(12px, 0.83vw, 16px)',
-                  padding: 'clamp(8px, 0.73vw, 14px) clamp(14px, 1.25vw, 24px)',
+                  fontSize: 'clamp(10px, 0.68vw, 13px)',
+                  padding: 'clamp(5px, 0.42vw, 8px) clamp(9px, 0.73vw, 14px)',
                   border: '1px solid #1863da',
                   color: activeCategory === cat ? '#fff' : '#1863da',
                   backgroundColor: activeCategory === cat ? '#1863da' : 'transparent',
+                  lineHeight: 1,
                 }}
               >
                 {cat}
@@ -61,88 +63,64 @@ export default function BlogsAllArticlesSection() {
           </div>
         </aside>
 
-        {/* Right: article list */}
-        <div className="flex flex-col" style={{ flex: '1 1 clamp(260px, 55vw, 1060px)', gap: 0 }}>
+        <div>
           <h2
             className="font-nexa capitalize"
             style={{
-              fontSize: 'clamp(28px, 3.54vw, 68px)',
+              fontSize: 'clamp(26px, 2.6vw, 50px)',
               fontWeight: 400,
               lineHeight: '1.15',
               color: '#000',
-              marginBottom: 'clamp(24px, 2.6vw, 50px)',
+              marginBottom: 'clamp(26px, 2.6vw, 50px)',
             }}
           >
             All Articles
           </h2>
 
-          {/* Article rows */}
-          <div className="flex flex-col">
-            {ARTICLES.map((article, idx) => (
-              <div
+          <div className="flex flex-col" style={{ gap: 'clamp(20px, 1.9vw, 36px)' }}>
+            {ARTICLES.map((article) => (
+              <article
                 key={article.id}
-                className="flex flex-wrap items-start gap-5 cursor-pointer group"
+                className="grid items-start"
                 style={{
-                  padding: 'clamp(16px, 1.56vw, 30px) 0',
-                  borderTop: idx === 0 ? '1px solid #d7d7d7' : 'none',
-                  borderBottom: '1px solid #d7d7d7',
+                  gridTemplateColumns: 'clamp(220px, 22vw, 420px) minmax(220px, 1fr)',
+                  gap: 'clamp(22px, 2.3vw, 44px)',
                 }}
               >
-                {/* Thumbnail with badge overlay */}
-                <div className="relative flex-shrink-0" style={{ width: 'clamp(100px, 9.4vw, 180px)' }}>
-                  <img
-                    src={articleThumb}
-                    alt={article.title}
-                    className="w-full h-auto block rounded"
-                    style={{ border: '1px solid #d7d7d7' }}
-                  />
-                  <img
-                    src={blogsBadge}
-                    alt="LinkedIn"
-                    className="absolute"
-                    style={{ width: '28%', top: '6%', right: '6%' }}
-                  />
-                </div>
+                <img
+                  src={articleThumb}
+                  alt={article.title}
+                  className="block w-full h-auto object-cover"
+                />
 
-                {/* Text */}
-                <div className="flex flex-col" style={{ flex: '1 1 clamp(180px, 30vw, 580px)', gap: 'clamp(6px, 0.52vw, 10px)' }}>
+                <div>
                   <p
                     className="font-metro"
-                    style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#929292' }}
+                    style={{ fontSize: 'clamp(9px, 0.6vw, 12px)', color: '#929292', marginBottom: 'clamp(6px, 0.55vw, 10px)' }}
                   >
                     {article.date}
                   </p>
                   <h3
-                    className="font-nexa group-hover:underline"
+                    className="font-nexa"
                     style={{
-                      fontSize: 'clamp(15px, 1.25vw, 24px)',
+                      fontSize: 'clamp(18px, 1.7vw, 32px)',
                       fontWeight: 400,
                       color: '#1863da',
-                      lineHeight: '1.3',
+                      lineHeight: '1.2',
+                      marginBottom: 'clamp(6px, 0.55vw, 10px)',
                     }}
                   >
                     {article.title}
                   </h3>
                   <p
                     className="font-metro text-black"
-                    style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', lineHeight: '1.65' }}
+                    style={{ fontSize: 'clamp(10px, 0.75vw, 14px)', lineHeight: '1.45', maxWidth: '360px' }}
                   >
                     {article.body}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
-          </div>
-
-          {/* Load More */}
-          <div className="flex justify-center" style={{ marginTop: 'clamp(24px, 2.6vw, 50px)' }}>
-            <a
-              href="#"
-              className="font-metro underline"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', color: '#1863da' }}
-            >
-              Load More Blogs
-            </a>
           </div>
         </div>
       </div>
