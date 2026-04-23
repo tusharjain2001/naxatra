@@ -57,23 +57,34 @@ export default function JourneySection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '94px 0 120px' }}>
+    <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '20px 0 120px' }}>
       {/* Background ellipse */}
       <div className="absolute top-0 -left-24 w-[788px] h-[788px] opacity-40 pointer-events-none">
         <img src={journeyEllipse} alt="" className="w-full h-full object-contain" />
       </div>
 
-      <div className="relative z-10" style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 120px' }}>
+      <div
+        className="relative z-10"
+        style={{
+          maxWidth: '1920px',
+          margin: '0 auto',
+          padding: '0 clamp(100px, calc(100px + (100vw - 960px) * 0.1042), 200px)',
+        }}
+      >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '560px 1fr',
-            gap: '170px',
+            gridTemplateColumns: 'clamp(390px, calc(390px + (100vw - 960px) * 0.1771), 560px) 430px',
+            gap: 'clamp(44px, calc(44px + (100vw - 960px) * 0.275), 308px)',
             alignItems: 'start',
           }}
         >
           {/* Left intro */}
-          <div style={{ position: 'sticky', top: '130px', paddingTop: '4px' }}>
+          <div
+            style={{
+              paddingTop: 0,
+            }}
+          >
             <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
               [A journey from 2020 to beyond.]
             </p>
