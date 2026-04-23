@@ -1,63 +1,60 @@
-import j1 from '../../../assets/images/journey-1.jpg';
-import j2 from '../../../assets/images/journey-2.jpg';
-import j3 from '../../../assets/images/journey-3.jpg';
-import j4 from '../../../assets/images/journey-4.jpg';
-import j5 from '../../../assets/images/journey-5.jpg';
-import j6 from '../../../assets/images/journey-6.jpg';
-import j7 from '../../../assets/images/journey-7.jpg';
-import j8 from '../../../assets/images/journey-8.jpg';
-import j9 from '../../../assets/images/journey-9.jpg';
-import j10 from '../../../assets/images/journey-10.jpg';
-import j11 from '../../../assets/images/journey-11.jpg';
-import j12 from '../../../assets/images/journey-12.jpg';
-import j13 from '../../../assets/images/journey-13.jpg';
-import j14 from '../../../assets/images/journey-14.jpg';
+import madeOne from '../../../assets/images/madeone.png';
+import madeTwo from '../../../assets/images/madetwo.png';
+import madeThree from '../../../assets/images/madethree.png';
+import madeFour from '../../../assets/images/madefour.png';
+import madeFive from '../../../assets/images/madefive.png';
+import madeSix from '../../../assets/images/madesix.png';
+import madeSeven from '../../../assets/images/madeseven.png';
+import madeEight from '../../../assets/images/madeeight.png';
+import madeNine from '../../../assets/images/madenine.png';
 
-const PHOTOS = [j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14];
+const PHOTOS = [
+  { src: madeOne, alt: 'Naxatra Labs event', className: 'md:col-span-1 md:row-span-1' },
+  { src: madeTwo, alt: 'Naxatra Labs Pitchfest', className: 'md:col-span-1 md:row-span-1' },
+  { src: madeThree, alt: 'Naxatra Labs demo', className: 'md:col-span-1 md:row-span-2' },
+  { src: madeFour, alt: 'Naxatra Labs conference', className: 'md:col-span-1 md:row-span-1' },
+  { src: madeFive, alt: 'Naxatra Labs expo', className: 'md:col-span-1 md:row-span-1' },
+  { src: madeSix, alt: 'Naxatra Labs team meeting', className: 'md:col-span-2 md:row-span-1' },
+  { src: madeSeven, alt: 'Naxatra Labs group photo', className: 'md:col-span-1 md:row-span-1' },
+  { src: madeEight, alt: 'Naxatra Labs workshop', className: 'md:col-span-1 md:row-span-2' },
+  { src: madeNine, alt: 'Naxatra Labs showcase', className: 'md:col-span-2 md:row-span-2' },
+];
 
 export default function AboutGallerySection() {
   return (
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1920px', padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)' }}
+        style={{
+          maxWidth: 'clamp(700px, 63vw, 1210px)',
+          padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 4vw, 64px)',
+        }}
       >
-        {/* Heading */}
         <h2
-          className="font-nexa text-black"
+          className="font-nexa text-center text-black"
           style={{
-            fontSize: 'clamp(28px, 3.54vw, 68px)',
-            lineHeight: '1.15',
+            fontSize: 'clamp(22px, 2vw, 38px)',
+            lineHeight: 1.15,
             fontWeight: 400,
-            marginBottom: 'clamp(24px, 2.6vw, 50px)',
+            margin: '0 0 clamp(22px, 2.5vw, 40px)',
           }}
         >
-          Made In India,{' '}
-          <span style={{ color: '#1863da' }}>Moving The World</span>
+          Made In India, <span style={{ color: '#1863da' }}>Moving The World</span>
         </h2>
 
-        {/* Masonry-style grid */}
         <div
+          className="grid grid-cols-2 md:grid-cols-3"
           style={{
-            columns: 'clamp(2, 4, 4)',
-            columnCount: 4,
-            gap: 'clamp(8px, 0.83vw, 16px)',
+            gap: 'clamp(10px, 1vw, 18px)',
+            gridAutoRows: 'clamp(76px, 8.9vw, 171px)',
           }}
         >
-          {PHOTOS.map((src, i) => (
-            <div
-              key={i}
-              className="overflow-hidden"
-              style={{
-                breakInside: 'avoid',
-                marginBottom: 'clamp(8px, 0.83vw, 16px)',
-                borderRadius: 'clamp(4px, 0.42vw, 8px)',
-              }}
-            >
+          {PHOTOS.map((photo) => (
+            <div key={photo.src} className={`overflow-hidden ${photo.className}`}>
               <img
-                src={src}
-                alt={`Naxatra Labs — ${i + 1}`}
-                className="w-full h-auto block hover:scale-105 transition-transform duration-500"
+                src={photo.src}
+                alt={photo.alt}
+                className="block h-full w-full"
                 style={{ objectFit: 'cover' }}
               />
             </div>
