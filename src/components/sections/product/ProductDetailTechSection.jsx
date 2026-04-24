@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import reqForCust from '../../../assets/images/req-for-cust.png';
 import wireframe from '../../../assets/images/product-detail-wireframe.png';
 import { SPEC_ROWS, SINGLE_SPEC_ROWS, APPLICATIONS } from '../../../data/products';
 
@@ -387,23 +388,23 @@ export default function ProductDetailTechSection({ product }) {
         <button
           style={{
             background: 'transparent',
-            border: '1px solid #1863da',
-            borderRadius: '4px',
-            padding: '14px 24px',
+            border: 'none',
+            padding: 0,
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            whiteSpace: 'nowrap',
             flexShrink: 0,
           }}
+          type="button"
+          aria-label={`Request customization for ${product.name}`}
         >
-          <span
-            className="font-nexa capitalize"
-            style={{ color: '#1863da', fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}
-          >
-            Request for Customization
-          </span>
+          <img
+            src={reqForCust}
+            alt="Request for Customization"
+            className="block"
+            style={{ width: 'clamp(180px, 16vw, 300px)', height: 'auto' }}
+          />
         </button>
       </div>
 

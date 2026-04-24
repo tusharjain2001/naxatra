@@ -1,3 +1,6 @@
+import reqForCust from '../../../assets/images/req-for-cust.png';
+import reqSpecSheet from '../../../assets/images/req-spec-sheet.png';
+
 export default function ProductDetailHeroSection({ product }) {
   const specs = [
     { value: product.heroVoltage, label: 'Rated Voltage (DC)' },
@@ -133,44 +136,40 @@ export default function ProductDetailHeroSection({ product }) {
         <a
           href="#"
           style={{
-            background: '#1863da',
-            borderRadius: '4px',
-            padding: '14px 24px',
-            color: '#fff',
-            textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            whiteSpace: 'nowrap',
+            textDecoration: 'none',
           }}
+          aria-label={`Request spec sheet for ${product.name}`}
         >
-          <span
-            className="font-nexa capitalize"
-            style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}
-          >
-            Request Spec Sheet
-          </span>
+          <img
+            src={reqSpecSheet}
+            alt="Request Spec Sheet"
+            className="block"
+            style={{ width: 'auto', height: 'clamp(40px, 3.2vw, 60px)' }}
+          />
         </a>
 
         <button
           style={{
             background: 'transparent',
-            border: '1px solid #1863da',
-            borderRadius: '4px',
-            padding: '14px 24px',
+            border: 'none',
+            padding: 0,
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            whiteSpace: 'nowrap',
           }}
+          type="button"
+          aria-label={`Request customization for ${product.name}`}
         >
-          <span
-            className="font-nexa capitalize"
-            style={{ color: '#1863da', fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}
-          >
-            Request for Customization
-          </span>
+          <img
+            src={reqForCust}
+            alt="Request for Customization"
+            className="block"
+            style={{ width: 'auto', height: 'clamp(40px, 3.2vw, 60px)' }}
+          />
         </button>
       </div>
 
