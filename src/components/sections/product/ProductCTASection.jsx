@@ -1,89 +1,102 @@
-import ctaBg from '../../../assets/images/product-cta-bg.png';
-import motorHero from '../../../assets/images/product-motor-hero.png';
+import ctaBg from "../../../assets/images/product-cta-bg.png";
+import learnMore from "../../../assets/images/learn-more.png";
+import motorHero from "../../../assets/images/product-cta.png";
 
 export default function ProductCTASection() {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ minHeight: 'clamp(260px, 32.1vw, 616px)' }}
+      className="w-full"
+      style={{ padding: "clamp(24px, 3.6vw, 68px) clamp(16px, 6.5vw, 124px)" }}
     >
-      {/* Background image */}
-      <img
-        src={ctaBg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      />
-
-      {/* Dark overlay for readability */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.1) 100%)' }}
-      />
-
-      {/* Motor image on the right */}
-      <div
-        className="absolute pointer-events-none"
+        className="relative overflow-hidden"
         style={{
-          right: '-2%',
-          top: '50%',
-          transform: 'translateY(-50%) rotate(180deg)',
-          width: 'clamp(200px, 35.9vw, 690px)',
-          height: 'clamp(150px, 26.6vw, 510px)',
+          maxWidth: "1610px",
+          minHeight: "clamp(165px, 14.2vw, 272px)",
+          margin: "0 auto",
+          background: "#02050a",
+          borderRadius: "0",
+          clipPath:
+            "polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 22px) 100%, 0 100%)",
         }}
       >
         <img
-          src={motorHero}
+          src={ctaBg}
           alt=""
-          className="w-full h-full object-contain"
-          style={{ opacity: 0.75 }}
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          style={{ opacity: 0.16 }}
         />
-      </div>
 
-      {/* Text content */}
-      <div
-        className="relative"
-        style={{
-          maxWidth: '1060px',
-          padding: 'clamp(48px, 8.1vw, 156px) clamp(20px, 5.6vw, 108px) clamp(48px, 8.1vw, 156px) clamp(20px, 11.3vw, 217px)',
-          zIndex: 1,
-        }}
-      >
-        <h2
-          className="font-nexa capitalize"
+        <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            fontSize: 'clamp(20px, 2.1vw, 40px)',
-            lineHeight: '1.45',
-            color: '#fff',
-            marginBottom: 'clamp(28px, 2.97vw, 57px)',
+            background:
+              "linear-gradient(90deg, rgba(2,5,10,0.98) 0%, rgba(2,5,10,0.92) 54%, rgba(2,5,10,0.42) 77%, rgba(2,5,10,0.06) 100%)",
+          }}
+        />
+
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            right: "clamp(-8px, -0.35vw, 0px)",
+            bottom: "clamp(-10px, -0.7vw, 0px)",
+            width: "clamp(180px, 24vw, 460px)",
+            height: "clamp(145px, 19vw, 365px)",
+
+            zIndex: 1,
           }}
         >
-          Explore{' '}
-          <span style={{ color: '#4dd6c4' }}>
-            detailed specifications, performance insights, and applications
-          </span>{' '}
-          for our range of motors and controllers.
-        </h2>
+          <img
+            src={motorHero}
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
 
-        <a
-          href="/contact"
+        <div
+          className="relative"
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#1863da',
-            borderRadius: '4px',
-            padding: '16px 24px',
-            textDecoration: 'none',
-            minWidth: 'clamp(200px, 27.7vw, 532px)',
+            zIndex: 2,
+            maxWidth: "clamp(340px, 39vw, 740px)",
+            padding: "clamp(28px, 3vw, 58px) clamp(20px, 3.1vw, 60px)",
           }}
         >
-          <span
-            className="font-nexa capitalize"
-            style={{ color: '#fff', fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}
+          <h2
+            className="font-nexa"
+            style={{
+              fontSize: "clamp(17px, 1.7vw, 33px)",
+              lineHeight: "1.42",
+              color: "#fff",
+              marginBottom: "clamp(18px, 1.5vw, 28px)",
+              maxWidth: "24ch",
+              fontWeight: 400,
+            }}
           >
-            Learn more about our tailored solutions
-          </span>
-        </a>
+            Explore{" "}
+            <span style={{ color: "#4dd6c4" }}>
+              Detailed Specifications, Performance Insights, And Applications
+            </span>{" "}
+            For Our Range Of Motors And Controllers.
+          </h2>
+
+          <a
+            href="/contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+            }}
+            aria-label="Learn more about our tailored solutions"
+          >
+            <img
+              src={learnMore}
+              alt="Learn More About Our Tailored Solutions"
+              className="block"
+              style={{ width: "clamp(150px, 17vw, 325px)", height: "auto" }}
+            />
+          </a>
+        </div>
       </div>
     </section>
   );
