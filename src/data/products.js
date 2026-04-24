@@ -5,20 +5,21 @@ import motorRF55 from '../assets/images/product-motor-rf55.png';
 import motorRF66 from '../assets/images/product-motor-rf66.png';
 import motorAF58 from '../assets/images/product-motor-af58.png';
 import motorPT500 from '../assets/images/product-motor-pt500.png';
-import appScooter from '../assets/images/product-app-scooter.png';
-import appBike from '../assets/images/product-app-bike.png';
-import appSweeper from '../assets/images/product-app-sweeper.png';
-import appLoader from '../assets/images/product-app-loader.png';
-import appWeeder from '../assets/images/product-app-weeder.png';
-import appForklift from '../assets/images/product-app-forklift.png';
-import appErickshaw from '../assets/images/product-app-erickshaw.png';
-import appTiller from '../assets/images/product-app-tiller.png';
+import appAgriBot from '../assets/vehicle/agri-bot.png';
+import appBike from '../assets/vehicle/bikes.png';
+import appTiller from '../assets/vehicle/electric-triller.png';
+import appErickshaw from '../assets/vehicle/erickshw.png';
+import appForklift from '../assets/vehicle/forklift.png';
+import appLoader from '../assets/vehicle/loader-vehicle.png';
+import appWeeder from '../assets/vehicle/power-weeder.png';
+import appScooter from '../assets/vehicle/scooters.png';
+import appSweeper from '../assets/vehicle/sweepers.png';
 
 export const APPLICATIONS = [
   { id: 'scooters',           label: 'Scooters',              icon: appScooter },
   { id: 'bikes',              label: 'Bikes',                 icon: appBike },
   { id: 'sweepers',           label: 'Sweepers',              icon: appSweeper },
-  { id: 'agribot',            label: 'Agri-Bot',              icon: appScooter },
+  { id: 'agribot',            label: 'Agri-Bot',              icon: appAgriBot },
   { id: 'weeder',             label: 'Power Weeder',          icon: appWeeder },
   { id: 'loader',             label: 'Loader Vehicle',        icon: appLoader },
   { id: 'forklift',           label: 'Forklift',              icon: appForklift },
