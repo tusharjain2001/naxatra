@@ -40,11 +40,9 @@ export default function ProductFeaturesSection() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '0',
+          gap: 'clamp(16px, 1.5vw, 28px)',
           maxWidth: '1622px',
           margin: '0 auto',
-          borderTop: '0.5px solid #e0e0e0',
-          borderBottom: '0.5px solid #e0e0e0',
         }}
         className="max-[980px]:grid-cols-2 max-[560px]:grid-cols-1"
       >
@@ -52,16 +50,40 @@ export default function ProductFeaturesSection() {
           <div
             key={idx}
             style={{
-              padding: 'clamp(20px, 2.08vw, 40px) clamp(16px, 1.67vw, 32px)',
-              borderLeft: idx > 0 ? '0.5px solid #e0e0e0' : 'none',
+              position: 'relative',
+              padding: 'clamp(28px, 2.3vw, 42px) clamp(22px, 2vw, 34px) clamp(34px, 2.7vw, 52px)',
+              borderRadius: '6px',
               display: 'flex',
               flexDirection: 'column',
-              gap: 'clamp(12px, 1.04vw, 20px)',
+              gap: 'clamp(14px, 1.1vw, 22px)',
+              minHeight: 'clamp(240px, 27vw, 392px)',
+              overflow: 'hidden',
             }}
-            className="max-[980px]:border-l-0 max-[980px]:border-t max-[980px]:border-[#e0e0e0] max-[560px]:border-l-0"
           >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 383 427"
+              preserveAspectRatio="none"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 0,
+              }}
+            >
+              <path
+                d="M6.63965 0.553711H376.36C379.722 0.553711 382.446 3.2784 382.446 6.63965V381.967L353.061 426.446H6.63965C3.27841 426.446 0.553711 423.722 0.553711 420.36V6.63965C0.553711 3.27841 3.27841 0.553711 6.63965 0.553711Z"
+                fill="rgba(77,214,196,0.06)"
+                stroke="#9D9D9D"
+                strokeWidth="1.10656"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
             {/* Icon */}
-            <div style={{ width: 'clamp(28px, 2.4vw, 46px)', height: 'clamp(28px, 2.4vw, 46px)' }}>
+            <div style={{ width: 'clamp(24px, 1.9vw, 36px)', height: 'clamp(24px, 1.9vw, 36px)', position: 'relative', zIndex: 1 }}>
               <img
                 src={feature.icon}
                 alt=""
@@ -74,8 +96,11 @@ export default function ProductFeaturesSection() {
               className="font-nexa capitalize"
               style={{
                 color: '#1863da',
-                fontSize: 'clamp(14px, 1.27vw, 24.45px)',
-                lineHeight: '1.18',
+                fontSize: 'clamp(20px, 1.55vw, 30px)',
+                lineHeight: '1.15',
+                maxWidth: '12ch',
+                position: 'relative',
+                zIndex: 1,
               }}
             >
               {feature.title}
@@ -85,9 +110,12 @@ export default function ProductFeaturesSection() {
             <p
               className="font-metro"
               style={{
-                color: '#000',
-                fontSize: 'clamp(11px, 0.82vw, 15.7px)',
-                lineHeight: '1.555',
+                color: '#1f1f1f',
+                fontSize: 'clamp(12px, 0.92vw, 17px)',
+                lineHeight: '1.6',
+                maxWidth: '28ch',
+                position: 'relative',
+                zIndex: 1,
               }}
             >
               {feature.description}
