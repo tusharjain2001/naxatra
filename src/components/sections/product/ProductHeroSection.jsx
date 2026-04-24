@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import downloadBrochure from '../../../assets/images/download-brochure.png';
 import motorHero from '../../../assets/images/product-motor-hero.png';
+import DownloadBrochureModal from './DownloadBrochureModal';
 
 export default function ProductHeroSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -88,14 +92,19 @@ export default function ProductHeroSection() {
       </div>
 
       {/* CTA Button */}
-      <a
-        href="#"
+      <button
+        type="button"
+        onClick={() => setModalOpen(true)}
         className="absolute"
         style={{
           left: '50%',
           transform: 'translateX(-50%)',
           top: 'clamp(400px, 46.3vw, 889px)',
           zIndex: 3,
+          background: 'none',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer',
         }}
         aria-label="Download Brochure"
       >
@@ -105,10 +114,12 @@ export default function ProductHeroSection() {
           className="block"
           style={{ width: 'clamp(160px, 14vw, 270px)', height: 'auto' }}
         />
-      </a>
+      </button>
 
       {/* Spacer to give section its height */}
       <div style={{ height: 'clamp(480px, 56.4vw, 1083px)' }} />
+
+      <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }
