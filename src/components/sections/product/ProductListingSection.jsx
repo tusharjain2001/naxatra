@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import downloadSpecSheet from '../../../assets/images/download-spec-sheet.png';
+import viewDetails from '../../../assets/images/view-details.png';
 import { PRODUCTS, APPLICATIONS } from '../../../data/products';
 
 const CATEGORIES = [
@@ -20,21 +22,31 @@ function ProductCard({ product }) {
   return (
     <div
       style={{
-        background: 'linear-gradient(180deg, rgba(77,214,196,0.06) 0%, rgba(255,255,255,0.06) 100%)',
-        border: '0.5px solid #4dd6c4',
+        background: 'linear-gradient(180deg, #f4fbfd 0%, #ffffff 100%)',
+        border: '1px solid rgba(77,214,196,0.18)',
         borderRadius: '8px',
         display: 'flex',
         flexDirection: 'column',
+        boxShadow: '0 10px 30px rgba(24, 99, 218, 0.05)',
+        minHeight: '100%',
       }}
     >
       {/* Motor image */}
-      <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 'clamp(20px, 2.5vw, 48px)', paddingBottom: '12px' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          paddingTop: 'clamp(28px, 3vw, 56px)',
+          paddingInline: 'clamp(24px, 2.6vw, 44px)',
+          paddingBottom: 'clamp(12px, 1.2vw, 20px)',
+        }}
+      >
         <img
           src={product.image}
           alt={product.name}
           style={{
-            width: 'clamp(90px, 9.6vw, 185px)',
-            height: 'clamp(68px, 7.4vw, 142px)',
+            width: 'clamp(108px, 10.5vw, 180px)',
+            height: 'clamp(82px, 8.4vw, 138px)',
             objectFit: 'contain',
             transform: 'rotate(180deg) scaleY(-1)',
           }}
@@ -42,34 +54,53 @@ function ProductCard({ product }) {
       </div>
 
       {/* Content */}
-      <div style={{ padding: '0 clamp(16px, 2.6vw, 48px) clamp(16px, 2.6vw, 48px)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          padding: '0 clamp(24px, 2.6vw, 44px) clamp(24px, 2.8vw, 40px)',
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <h3
           className="font-nexa capitalize"
-          style={{ color: '#1863da', fontSize: 'clamp(18px, 2.1vw, 40px)', lineHeight: '1.2', marginBottom: '8px' }}
+          style={{
+            color: '#1863da',
+            fontSize: 'clamp(22px, 2.1vw, 40px)',
+            lineHeight: '1.12',
+            marginBottom: '10px',
+          }}
         >
           {product.name}
         </h3>
         <p
           className="font-metro"
-          style={{ color: '#000', fontSize: 'clamp(11px, 1vw, 19.5px)', lineHeight: '1.55', marginBottom: '20px', flex: 1 }}
+          style={{
+            color: '#1f1f1f',
+            fontSize: 'clamp(13px, 1vw, 19px)',
+            lineHeight: '1.6',
+            marginBottom: '24px',
+            maxWidth: '30ch',
+            flex: 1,
+          }}
         >
           {product.description}
         </p>
 
-        <div style={{ borderTop: '0.5px solid #4dd6c4', marginBottom: '12px' }} />
+        <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', marginBottom: '16px' }} />
 
-        <div style={{ display: 'flex', gap: '28px', marginBottom: 'clamp(12px, 1.25vw, 20px)' }}>
+        <div style={{ display: 'flex', gap: '28px', marginBottom: 'clamp(18px, 1.5vw, 24px)' }}>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(12px, 1vw, 19.5px)', fontWeight: 500, marginBottom: '2px' }}>
+            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(18px, 1.25vw, 24px)', fontWeight: 500, marginBottom: '4px' }}>
               {product.heroVoltage}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(10px, 0.83vw, 16px)' }}>Rated Voltage (DC)</p>
+            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(12px, 0.83vw, 16px)' }}>Rated Voltage (DC)</p>
           </div>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(12px, 1vw, 19.5px)', fontWeight: 500, marginBottom: '2px' }}>
+            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(18px, 1.25vw, 24px)', fontWeight: 500, marginBottom: '4px' }}>
               {product.heroTorque}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(10px, 0.83vw, 16px)' }}>Peak Torque</p>
+            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(12px, 0.83vw, 16px)' }}>Peak Torque</p>
           </div>
         </div>
 
@@ -79,28 +110,40 @@ function ProductCard({ product }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#1863da',
-            borderRadius: '4px',
-            padding: '12px 24px',
             marginBottom: '10px',
             textDecoration: 'none',
+            width: '100%',
           }}
+          aria-label={`View details for ${product.name}`}
         >
-          <span className="font-nexa capitalize" style={{ color: '#fff', fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}>
-            View Details
-          </span>
+          <img
+            src={viewDetails}
+            alt="View Details"
+            className="block"
+            style={{ width: '100%', height: 'auto' }}
+          />
         </Link>
 
         <button
           style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'transparent', border: '1px solid #1863da', borderRadius: '4px',
-            padding: '12px 24px', cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'transparent',
+            border: 'none',
+            padding: 0,
+            cursor: 'pointer',
+            width: '100%',
           }}
+          type="button"
+          aria-label={`Download spec sheet for ${product.name}`}
         >
-          <span className="font-nexa capitalize" style={{ color: '#1863da', fontSize: 'clamp(12px, 1.04vw, 20px)', lineHeight: '20px', letterSpacing: '0.01em' }}>
-            Download Spec Sheet
-          </span>
+          <img
+            src={downloadSpecSheet}
+            alt="Download Spec Sheet"
+            className="block"
+            style={{ width: '100%', height: 'auto' }}
+          />
         </button>
       </div>
     </div>

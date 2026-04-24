@@ -1,3 +1,4 @@
+import downloadBrochure from '../../../assets/images/download-brochure.png';
 import motorHero from '../../../assets/images/product-motor-hero.png';
 
 export default function ProductHeroSection() {
@@ -94,24 +95,16 @@ export default function ProductHeroSection() {
           left: '50%',
           transform: 'translateX(-50%)',
           top: 'clamp(400px, 46.3vw, 889px)',
-          background: '#1863da',
-          borderRadius: '4px',
-          padding: '16px 24px',
-          color: '#fff',
-          textDecoration: 'none',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          whiteSpace: 'nowrap',
           zIndex: 3,
         }}
+        aria-label="Download Brochure"
       >
-        <span
-          className="font-nexa capitalize"
-          style={{ fontSize: 'clamp(14px, 1.25vw, 24px)', lineHeight: '20px', letterSpacing: '0.01em' }}
-        >
-          download brochure
-        </span>
+        <img
+          src={downloadBrochure}
+          alt="Download Brochure"
+          className="block"
+          style={{ width: 'clamp(160px, 14vw, 270px)', height: 'auto' }}
+        />
       </a>
 
       {/* Spacer to give section its height */}
