@@ -31,19 +31,19 @@ export default function WhyUsSection() {
       className="w-full"
       style={{
         background: '#1863da',
-        paddingTop: 'clamp(48px, 4.64vw, 89px)',
-        paddingBottom: 'clamp(70px, 8.18vw, 157px)',
+        paddingTop: 'clamp(36px, 3.6vw, 68px)',
+        paddingBottom: 'clamp(34px, 4.6vw, 78px)',
       }}
       id="technology"
     >
-      <div style={{ maxWidth: '1920px', margin: '0 auto', padding: '0 clamp(32px, 8.5vw, 211px)' }}>
+      <div style={{ maxWidth: '1840px', margin: '0 auto', padding: '0 clamp(20px, 4.2vw, 80px)' }}>
         <h2
-          className="font-nexa text-center capitalize"
+          className="font-nexa text-center font-semibold capitalize"
           style={{
             color: '#fff',
-            fontSize: 'clamp(40px, 2.81vw, 54px)',
-            lineHeight: 1.45,
-            marginBottom: 'clamp(54px, 6.51vw, 125px)',
+            fontSize: 'clamp(34px, 2.45vw, 48px)',
+            lineHeight: 1.2,
+            marginBottom: 'clamp(28px, 3.4vw, 56px)',
           }}
         >
           Why Us?
@@ -60,7 +60,7 @@ export default function WhyUsSection() {
             <div
               key={i}
               className="relative"
-              style={{ aspectRatio: '457 / 620', minWidth: 0 }}
+              style={{ aspectRatio: '457 / 540', minWidth: 0 }}
             >
               <img
                 src={card.bg}
@@ -72,7 +72,7 @@ export default function WhyUsSection() {
                 className="relative z-10"
                 style={{
                   height: '100%',
-                  padding: '7.22% 6.78% 7.5%',
+                  padding: '6% 6% 6.2%',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
@@ -82,7 +82,7 @@ export default function WhyUsSection() {
                   alt={card.title}
                   style={{
                     width: '100%',
-                    aspectRatio: '393 / 281',
+                    aspectRatio: '393 / 245',
                     objectFit: 'cover',
                     borderRadius: '5.5px',
                     flexShrink: 0,
@@ -92,10 +92,10 @@ export default function WhyUsSection() {
                   className="font-nexa capitalize"
                   style={{
                     color: '#fff',
-                    fontSize: 'clamp(24px, 2.08vw, 40px)',
+                    fontSize: 'clamp(20px, 1.65vw, 32px)',
                     lineHeight: 1.2,
-                    marginTop: 'clamp(16px, 1.82vw, 35px)',
-                    marginBottom: 'clamp(10px, 1.04vw, 20px)',
+                    marginTop: 'clamp(12px, 1.15vw, 22px)',
+                    marginBottom: 'clamp(8px, 0.8vw, 14px)',
                   }}
                 >
                   {card.title}
@@ -104,8 +104,8 @@ export default function WhyUsSection() {
                   className="font-metro"
                   style={{
                     color: '#fff',
-                    fontSize: 'clamp(12px, 0.83vw, 16px)',
-                    lineHeight: 1.56,
+                    fontSize: 'clamp(11px, 0.72vw, 14px)',
+                    lineHeight: 1.48,
                     maxWidth: '95%',
                   }}
                 >
