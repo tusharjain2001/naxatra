@@ -96,15 +96,15 @@ export default function AboutValuesSection() {
       <div
         className="mx-auto flex flex-col lg:flex-row items-start"
         style={{
-          maxWidth: '1220px',
-          padding: 'clamp(42px, 6vw, 96px) clamp(24px, 5vw, 80px)',
-          gap: 'clamp(36px, 5.2vw, 82px)',
+          maxWidth: '1920px',
+          padding: 'clamp(42px, 6vw, 96px) clamp(24px, 9.9vw, 191px)',
+          gap: 'clamp(32px, 4.4vw, 84px)',
         }}
       >
         <div
           className="flex-shrink-0"
           style={{
-            width: 'clamp(260px, 29vw, 390px)',
+            width: 'clamp(280px, 28vw, 538px)',
             paddingTop: 'clamp(0px, 0.5vw, 8px)',
           }}
         >
@@ -128,7 +128,7 @@ export default function AboutValuesSection() {
           style={{
             flex: '1 1 auto',
             width: '100%',
-            maxWidth: '680px',
+            maxWidth: 'clamp(540px, 43vw, 820px)',
             gap: 'clamp(18px, 2vw, 28px)',
           }}
         >

@@ -43,13 +43,15 @@ export default function AboutInvestorsSection() {
       <div
         className="mx-auto"
         style={{
-          maxWidth: '1220px',
-          padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 5vw, 80px)',
+          maxWidth: '1920px',
+          padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 9.9vw, 191px)',
         }}
       >
         <div
           className="grid grid-cols-1 items-start lg:grid-cols-[clamp(200px,23vw,330px)_minmax(0,1fr)]"
           style={{
+            maxWidth: 'clamp(760px, 72vw, 1382px)',
+            margin: '0 auto',
             columnGap: 'clamp(28px, 4.8vw, 76px)',
             rowGap: 'clamp(28px, 4vw, 48px)',
           }}
