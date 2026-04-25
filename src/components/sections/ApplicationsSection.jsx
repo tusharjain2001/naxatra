@@ -2,125 +2,76 @@ import efficientMotors from '../../assets/images/efficient-motors.png';
 import scooter from '../../assets/images/scooter.jpg';
 
 const categories = [
-  { label: 'EV Scooters', active: true, desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.' },
-  { label: 'Agricultural Equipment', active: false },
-  { label: 'Power Tools', active: false },
-  { label: 'Drone', active: false },
+  {
+    label: 'EV Scooters',
+    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
+  },
+  { label: 'Agricultural Equipment' },
+  { label: 'Power Tools' },
+  { label: 'Drone' },
 ];
 
 export default function ApplicationsSection() {
-  return (
-    <section
-      className="relative w-full"
-      style={{
-        background: '#f5fafa',
-        paddingTop: 'clamp(42px, 4.9vw, 94px)',
-        paddingBottom: 'clamp(42px, 4.9vw, 94px)',
-      }}
-    >
-      <div style={{ maxWidth: '1680px', margin: '0 auto', padding: '0 clamp(80px, 6.25vw, 120px)' }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'clamp(340px, 26.46vw, 508px) minmax(620px, 820px)',
-            gap: 'clamp(52px, 5.2vw, 100px)',
-            alignItems: 'start',
-          }}
-        >
-          {/* Left */}
-          <div>
-            {/* Badge */}
-            <div className="flex items-center gap-3" style={{ marginBottom: '11px' }}>
-              <img
-                src={efficientMotors}
-                alt="Efficient Motors, Cleaner Future"
-                style={{ height: 'clamp(24px, 2.21vw, 42.4px)', width: 'auto', objectFit: 'contain' }}
-              />
-            </div>
-            <h2
-              className="font-nexa font-semibold"
-              style={{ fontSize: 'clamp(34px, 2.81vw, 54px)', lineHeight: 1.45 }}
-            >
-              <span style={{ color: '#000' }}>From Ground to Sky, </span>
-              <span style={{ color: '#1863da' }}>We Power It All</span>
-            </h2>
-          </div>
+  const activeCategory = categories[0];
+  const inactiveCategories = categories.slice(1);
 
-          {/* Right - image + categories */}
-          <div>
-            <div style={{ borderTop: '1px solid rgba(0,0,0,0.14)', marginBottom: 'clamp(16px, 1.2vw, 23px)' }} />
-            {/* Top: image + active category */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'clamp(260px, 20vw, 384px) minmax(280px, 1fr)',
-                gap: 'clamp(32px, 3.13vw, 60px)',
-                marginBottom: 0,
-                alignItems: 'start',
-              }}
-            >
+  return (
+    <section className="w-full bg-[#f5fafa] py-[clamp(42px,5vw,96px)] max-[720px]:py-10">
+      <div className="mx-auto grid max-w-[1840px] grid-cols-[clamp(300px,27vw,455px)_minmax(0,1fr)] gap-[clamp(36px,5vw,104px)] px-[clamp(20px,4.2vw,80px)] max-[1080px]:grid-cols-1 max-[720px]:px-[18px]">
+        <div className="max-w-[455px]">
+          <img
+            src={efficientMotors}
+            alt="Efficient Motors, Cleaner Future"
+            className="h-auto w-[clamp(230px,24vw,330px)] object-contain"
+          />
+
+          <h2
+            className="mt-[clamp(18px,2vw,34px)] font-nexa font-light tracking-[-0.03em] text-black max-[1080px]:max-w-[620px]"
+            style={{ fontSize: '44px', lineHeight: '1.12' }}
+          >
+            <span>From Ground To Sky,</span>
+            <br />
+            <span className="text-[#1863da]">We Power It All</span>
+          </h2>
+        </div>
+
+        <div className="w-full">
+          <div className="border-t border-black/12 pt-[clamp(16px,1.2vw,20px)]">
+            <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-start gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
               <img
                 src={scooter}
-                alt="EV Scooter"
-                style={{
-                  width: '100%',
-                  aspectRatio: '424 / 259',
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
+                alt="EV Scooters"
+                className="block aspect-[424/259] w-full object-cover"
               />
-              <div>
+
+              <div className="pt-[clamp(6px,0.4vw,10px)]">
                 <h3
-                  className="font-nexa capitalize"
-                  style={{
-                    color: '#1863da',
-                    fontSize: 'clamp(24px, 1.67vw, 32px)',
-                    lineHeight: 1,
-                    marginBottom: 'clamp(12px, 0.83vw, 16px)',
-                  }}
+                  className="font-nexa font-light leading-none text-[#1863da]"
+                  style={{ fontSize: '36px' }}
                 >
-                  EV Scooters
+                  {activeCategory.label}
                 </h3>
                 <p
-                  className="font-metro"
-                  style={{
-                    color: '#000',
-                    fontSize: 'clamp(12px, 0.78vw, 15px)',
-                    lineHeight: 1.45,
-                    maxWidth: '420px',
-                  }}
+                  className="mt-[clamp(14px,1vw,18px)] max-w-[620px] font-metro leading-[1.55] text-black"
+                  style={{ fontSize: '19.537px' }}
                 >
-                  Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions,
-                  our motors deliver unmatched durability and performance wherever the journey takes you.
+                  {activeCategory.desc}
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* Category list with dividers */}
-            <div style={{ borderTop: '1px solid rgba(0,0,0,0.14)', marginTop: 'clamp(24px, 1.56vw, 30px)' }}>
-              {categories.slice(1).map((cat, i) => (
-                <div
-                  key={i}
-                  style={{
-                    borderBottom: '1px solid rgba(0,0,0,0.14)',
-                    padding: 'clamp(13px, 0.94vw, 18px) 0',
-                  }}
-                >
-                  <p
-                    className="font-nexa capitalize"
-                    style={{
-                      color: '#515151',
-                      fontSize: 'clamp(16px, 1.15vw, 22px)',
-                      lineHeight: 1.2,
-                      opacity: 0.6,
-                      textAlign: 'left',
-                    }}
-                  >
-                    {cat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-[clamp(20px,1.8vw,34px)] border-t border-black/12">
+            {inactiveCategories.map((category) => (
+              <div
+                key={category.label}
+                className="border-b border-black/12 py-[clamp(12px,1.1vw,20px)]"
+              >
+                <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 max-[920px]:text-left min-[921px]:pl-[clamp(300px,31vw,470px)]">
+                  {category.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
