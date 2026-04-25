@@ -55,7 +55,7 @@ export default function CaseStudyComparison() {
       >
         <h2
           className="font-nexa capitalize"
-          style={{ fontSize: 'clamp(24px, 2.34vw, 45px)', lineHeight: '1.24', fontWeight: 400, marginBottom: 'clamp(28px, 2.8vw, 54px)' }}
+          style={{ fontSize: 'clamp(24px, 2.34vw, 45px)', lineHeight: '1.24', fontWeight: 600, marginBottom: 'clamp(28px, 2.8vw, 54px)' }}
         >
           <span style={{ color: '#1863da' }}>Performance </span>
           <span style={{ color: '#000' }}>Comparison</span>

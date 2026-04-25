@@ -14,7 +14,7 @@ export default function CaseStudyWayAhead() {
           style={{
             fontSize: 'clamp(32px, 3.54vw, 68px)',
             lineHeight: '1.15',
-            fontWeight: 400,
+            fontWeight: 600,
             marginBottom: 'clamp(32px, 3.1vw, 60px)',
           }}
         >

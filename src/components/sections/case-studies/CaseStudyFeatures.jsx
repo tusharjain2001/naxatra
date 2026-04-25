@@ -34,7 +34,7 @@ export default function CaseStudyFeatures() {
         {/* Heading */}
         <h2
           className="font-nexa capitalize"
-          style={{ fontSize: 'clamp(28px, 2.6vw, 50px)', lineHeight: '1.24', fontWeight: 400, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
+          style={{ fontSize: 'clamp(28px, 2.6vw, 50px)', lineHeight: '1.24', fontWeight: 600, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
         >
           <span style={{ color: '#1863da' }}>Key </span>
           <span style={{ color: '#000' }}>Features</span>

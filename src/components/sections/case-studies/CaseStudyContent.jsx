@@ -37,7 +37,7 @@ export default function CaseStudyContent() {
         style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <div style={{ ...rowStyle, marginBottom: 'clamp(40px, 4.7vw, 90px)' }}>
-          <h2 className="font-nexa capitalize" style={SECTION_LABEL}>Overview</h2>
+          <h2 className="font-nexa font-semibold capitalize" style={SECTION_LABEL}>Overview</h2>
 
           <div className="relative" style={{ minHeight: 'clamp(150px, 11.7vw, 224px)' }}>
             <img src={cardSm} alt="" className="absolute inset-0 w-full h-full pointer-events-none" style={{ objectFit: 'fill' }} />
@@ -58,7 +58,7 @@ export default function CaseStudyContent() {
         </div>
 
         <div style={{ ...rowStyle, marginBottom: 'clamp(48px, 5.2vw, 100px)' }}>
-          <h2 className="font-nexa capitalize" style={SECTION_LABEL}>The Challenge</h2>
+          <h2 className="font-nexa capitalize font-semibold" style={SECTION_LABEL}>The Challenge</h2>
 
           <div className="relative" style={{ minHeight: 'clamp(250px, 22.7vw, 436px)' }}>
             <img src={cardLg} alt="" className="absolute inset-0 w-full h-full pointer-events-none" style={{ objectFit: 'fill' }} />
@@ -97,7 +97,7 @@ export default function CaseStudyContent() {
         </div>
 
         <div style={rowStyle}>
-          <h2 className="font-nexa capitalize" style={SECTION_LABEL}>Our Solution</h2>
+          <h2 className="font-nexa font-semibold capitalize" style={SECTION_LABEL}>Our Solution</h2>
 
           <div
             className="relative overflow-hidden"
