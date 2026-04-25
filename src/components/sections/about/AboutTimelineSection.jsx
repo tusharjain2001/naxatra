@@ -101,10 +101,22 @@ export default function AboutTimelineSection() {
               </div>
 
               {/* Card */}
-              <div className="flex flex-col" style={{ flex: 1, gap: 'clamp(8px, 0.83vw, 16px)', paddingBottom: 'clamp(8px, 0.83vw, 16px)' }}>
+              <div
+                className="flex flex-col"
+                style={{
+                  flex: 1,
+                  gap: 'clamp(8px, 0.83vw, 16px)',
+                  padding: 'clamp(14px, 1.25vw, 24px)',
+                  paddingBottom: 'clamp(16px, 1.35vw, 26px)',
+                  borderRadius: '8px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(24, 99, 218, 0.12)',
+                  overflow: 'hidden',
+                }}
+              >
                 <div
                   className="overflow-hidden"
-                  style={{ borderRadius: 'clamp(4px, 0.32vw, 6px)', aspectRatio: '16 / 9' }}
+                  style={{ borderRadius: '8px', aspectRatio: '16 / 9' }}
                 >
                   <img
                     src={ev.img}

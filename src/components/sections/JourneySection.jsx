@@ -167,14 +167,15 @@ export default function JourneySection() {
                       minHeight: '505px',
                       background: '#fff',
                       border: '1px solid rgba(24,99,218,0.14)',
-                      clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%)',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
                       padding: '33px 28px 38px',
                     }}
                   >
                     <img
                       src={m.img}
                       alt={m.title}
-                      style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px' }}
+                      style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px', borderRadius: '8px' }}
                     />
                     <h3 className="font-nexa capitalize" style={{ color: '#1863da', fontSize: '34px', lineHeight: '38px', fontWeight: 400, marginBottom: '10px' }}>
                       {m.title}

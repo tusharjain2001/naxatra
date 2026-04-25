@@ -1,7 +1,8 @@
 import ctaBg from '../../assets/images/cta-bg.svg';
-import learnMore from '../../assets/images/learn-more.png';
-import browseOur from '../../assets/images/browse-our.png';
 import oneSize from '../../assets/images/one-size.png';
+
+const primaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 16px) 100%, 0 100%)';
+const secondaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%)';
 
 export default function CTASection() {
   return (
@@ -69,40 +70,64 @@ export default function CTASection() {
           <a
             href="#contact"
             aria-label="Learn More About Our Tailored Solutions"
+            className="font-nexa"
             style={{
-              width: 'min(100%, 528px)',
+              width: 'min(100%, 560px)',
               height: 'clamp(54px, 3.75vw, 72px)',
-              display: 'block',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
               textDecoration: 'none',
               marginBottom: '16px',
-              marginLeft: 'calc(clamp(32px, 2.08vw, 40px) * -1)',
+              backgroundColor: '#1863da',
+              clipPath: primaryButtonClip,
+              color: '#fff',
+              fontSize: 'clamp(18px, 1.18vw, 22px)',
+              lineHeight: 1,
+              fontWeight: 600,
+              padding: '0 0 0 clamp(18px, 1.3vw, 24px)',
+              textAlign: 'left',
+              whiteSpace: 'nowrap',
             }}
           >
-            <img
-              src={learnMore}
-              alt=""
-              style={{ width: '100%', height: '100%', display: 'block', objectFit: 'contain' }}
-            />
+            Learn More About Our Tailored Solutions
           </a>
 
           {/* Browse button */}
-          <a
-            href="#products"
-            aria-label="Browse Our Motor Catalog"
+          <div
             style={{
               width: 'min(100%, 373px)',
               height: 'clamp(54px, 3.75vw, 72px)',
-              display: 'block',
-              textDecoration: 'none',
-              marginLeft: 'calc(clamp(32px, 2.08vw, 40px) * -1)',
+              clipPath: secondaryButtonClip,
+              backgroundColor: '#ffffff',
+              padding: '2px',
             }}
           >
-            <img
-              src={browseOur}
-              alt=""
-              style={{ width: '100%', height: '100%', display: 'block', objectFit: 'contain' }}
-            />
-          </a>
+            <a
+              href="#products"
+              aria-label="Browse Our Motor Catalog"
+              className="font-nexa"
+              style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                textDecoration: 'none',
+                clipPath: secondaryButtonClip,
+                color: '#fff',
+                fontSize: 'clamp(18px, 1.2vw, 22px)',
+                lineHeight: 1,
+                fontWeight: 600,
+                padding: '0 0 0 clamp(18px, 1.3vw, 24px)',
+                textAlign: 'left',
+                backgroundColor: '#050608',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Browse Our Motor Catalog
+            </a>
+          </div>
         </div>
       </div>
     </section>
