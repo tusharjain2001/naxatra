@@ -25,7 +25,7 @@ export default function AboutHeroSection() {
         >
           <h1
             className="font-nexa"
-            style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 400 }}
+            style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 600 }}
           >
             <span className="text-white">What </span>
             <span style={{ color: '#4dd6c4' }}>Drives Us?</span>

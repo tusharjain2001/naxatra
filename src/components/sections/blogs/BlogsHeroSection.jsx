@@ -35,7 +35,7 @@ export default function BlogsHeroSection() {
           style={{
             fontSize: 'clamp(36px, 5.2vw, 100px)',
             lineHeight: '1.2',
-            fontWeight: 400,
+            fontWeight: 600,
           }}
         >
           Get the latest{' '}

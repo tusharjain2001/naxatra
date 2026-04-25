@@ -113,7 +113,7 @@ export default function AboutValuesSection() {
             style={{
               fontSize: 'clamp(22px, 2.3vw, 34px)',
               lineHeight: 1.2,
-              fontWeight: 400,
+              fontWeight: 600,
               margin: 0,
             }}
           >

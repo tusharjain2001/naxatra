@@ -21,7 +21,7 @@ export default function BlogsFeaturedSection() {
           style={{
             fontSize: 'clamp(24px, 2.6vw, 50px)',
             lineHeight: '1.15',
-            fontWeight: 400,
+            fontWeight: 600,
             marginBottom: 'clamp(18px, 2vw, 38px)',
           }}
         >
@@ -42,7 +42,7 @@ export default function BlogsFeaturedSection() {
         >
           <h3
             className="font-nexa capitalize"
-            style={{ color: '#1863da', fontSize: 'clamp(20px, 1.9vw, 36px)', lineHeight: '1.2', fontWeight: 400, margin: 0 }}
+            style={{ color: '#1863da', fontSize: 'clamp(20px, 1.9vw, 36px)', lineHeight: '1.2', fontWeight: 600, margin: 0 }}
           >
             Fund Raise
           </h3>

@@ -77,7 +77,7 @@ export default function AboutTeamSection() {
                 style={{
                   fontSize: 'clamp(22px, 2.15vw, 41px)',
                   lineHeight: 1.18,
-                  fontWeight: 400,
+                  fontWeight: 600,
                   margin: 0,
                 }}
               >
