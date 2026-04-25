@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import journeyEllipse from '../../assets/images/product-ellipse.svg';
+import greenBg from '../../assets/images/green-bg.png';
 
 import j1 from '../../assets/images/journey-1.jpg';
 import j2 from '../../assets/images/journey-2.jpg';
@@ -58,10 +58,11 @@ export default function JourneySection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '20px 0 120px' }}>
-      {/* Background ellipse */}
-      <div className="absolute top-0 -left-24 w-[788px] h-[788px] opacity-40 pointer-events-none">
-        <img src={journeyEllipse} alt="" className="w-full h-full object-contain" />
+      {/* Background green glow */}
+      <div className="absolute left-[36px] top-[-12px] h-[680px] w-[680px]  pointer-events-none">
+        <img src={greenBg} alt="" className="w-full h-full object-contain" />
       </div>
+      <div className="absolute left-[86px] top-[92px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none" />
 
       <div
         className="relative z-10"
@@ -74,8 +75,8 @@ export default function JourneySection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'clamp(390px, calc(390px + (100vw - 960px) * 0.1771), 560px) 430px',
-            gap: 'clamp(44px, calc(44px + (100vw - 960px) * 0.275), 308px)',
+            gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) 430px',
+            gap: 'clamp(56px, calc(56px + (100vw - 960px) * 0.18), 220px)',
             alignItems: 'start',
           }}
         >
@@ -85,15 +86,18 @@ export default function JourneySection() {
               paddingTop: 0,
             }}
           >
-            <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
+            <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '24px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
               [A journey from 2020 to beyond.]
             </p>
-            <h2 className="font-nexa" style={{ fontSize: '48px', lineHeight: '50px', fontWeight: 400, marginBottom: '24px' }}>
+            <h2 className="font-nexa mt-10" style={{ fontSize: '54px', lineHeight: '1.02', fontWeight: 600, marginBottom: '44px', maxWidth: '520px' }}>
               <span style={{ color: '#000' }}>The Road To </span>
-              <span style={{ color: '#1863da' }}>A Sustainable Future </span>
+              <span style={{ color: '#1863da' }}>A</span>
+              <br />
+              <span style={{ color: '#1863da' }}>Sustainable Future</span>
+              <br />
               <span style={{ color: '#000' }}>Begins Here</span>
             </h2>
-            <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '25px', maxWidth: '530px' }}>
+            <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '1.7', maxWidth: '540px' }}>
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
               4+ years of research, deliver industry-leading performance with uncompromising reliability.
