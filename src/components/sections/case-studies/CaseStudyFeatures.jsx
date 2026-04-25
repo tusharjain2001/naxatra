@@ -29,12 +29,12 @@ export default function CaseStudyFeatures() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
+        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 6px) clamp(20px, 4.2vw, 80px)' }}
       >
         {/* Heading */}
         <h2
           className="font-nexa capitalize"
-          style={{ fontSize: 'clamp(28px, 2.6vw, 50px)', lineHeight: '1.24', fontWeight: 600, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
+          style={{ fontSize: 'clamp(24px, 2.34vw, 45px)', lineHeight: '1.24', fontWeight: 600, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
         >
           <span style={{ color: '#1863da' }}>Key </span>
           <span style={{ color: '#000' }}>Features</span>
@@ -55,7 +55,7 @@ export default function CaseStudyFeatures() {
               />
               <div
                 className="relative flex flex-col"
-                style={{ padding: 'clamp(24px, 2.1vw, 40px) clamp(20px, 2.1vw, 40px)', gap: 'clamp(8px, 0.63vw, 12px)' }}
+                style={{ padding: 'clamp(18px, 1.55vw, 28px) clamp(20px, 2.1vw, 40px)', gap: 'clamp(6px, 0.45vw, 10px)' }}
               >
                 <h3
                   className="font-nexa capitalize"
@@ -65,7 +65,7 @@ export default function CaseStudyFeatures() {
                 </h3>
                 <p
                   className="font-metro text-black"
-                  style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.6' }}
+                  style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.52' }}
                 >
                   {f.body}
                 </p>

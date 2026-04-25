@@ -12,7 +12,7 @@ export default function CaseStudyWayAhead() {
         <h2
           className="font-nexa capitalize"
           style={{
-            fontSize: 'clamp(32px, 3.54vw, 68px)',
+            fontSize: 'clamp(24px, 2.34vw, 45px)',
             lineHeight: '1.15',
             fontWeight: 600,
             marginBottom: 'clamp(32px, 3.1vw, 60px)',
@@ -79,7 +79,7 @@ export default function CaseStudyWayAhead() {
                   color: '#1863da',
                   fontSize: 'clamp(12px, 1.04vw, 20px)',
                   lineHeight: '1.5',
-                  marginRight: 'clamp(48px, 9vw, 170px)',
+                  marginRight: 0,
                 }}
               >
                 Back to Case Studies

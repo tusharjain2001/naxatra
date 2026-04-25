@@ -7,7 +7,7 @@ const SECTION_LABEL = {
   color: '#1863da',
   fontSize: 'clamp(20px, 1.7vw, 32px)',
   lineHeight: '1.24',
-  fontWeight: 400,
+  fontWeight: 600,
   margin: 0,
 };
 
