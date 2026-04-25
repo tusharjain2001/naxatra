@@ -11,67 +11,69 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed left-0 top-0 z-50 flex h-[55px] w-full items-center justify-between px-6 backdrop-blur-sm"
+      className="fixed left-0 top-0 z-50 h-[82px] w-full backdrop-blur-sm"
       style={{ background: isDark ? '#4a4a4a' : 'rgba(255,255,255,0.9)' }}
     >
-      <div className="h-[18px] w-auto">
-        <img
-          src={logo}
-          alt="Naxatra Labs"
-          className="h-full w-auto object-contain"
-          style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
-        />
-      </div>
+      <div className="mx-auto flex h-full w-[calc(100%_-_46px)] max-w-[1793px] items-center justify-between max-[720px]:w-[calc(100%_-_24px)]">
+        <div className="h-[18px] w-auto">
+          <img
+            src={logo}
+            alt="Naxatra Labs"
+            className="h-full w-auto object-contain"
+            style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
+          />
+        </div>
 
-      <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
+        <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
+          <Link
+            to="/"
+            className={linkClass}
+          >
+            Home
+          </Link>
+          <Link
+            to="/products"
+            className={linkClass}
+          >
+            Products
+          </Link>
+          <Link
+            to="/technology"
+            className={linkClass}
+          >
+            Technology
+          </Link>
+          <Link
+            to="/case-studies"
+            className={linkClass}
+          >
+            Case Studies
+          </Link>
+          <Link
+            to="/insights-blogs"
+            className={linkClass}
+          >
+            Insights &amp; Blogs
+          </Link>
+          <Link
+            to="/about"
+            className={linkClass}
+          >
+            About
+          </Link>
+        </div>
+
         <Link
-          to="/"
-          className={linkClass}
+          to="/contact"
+          className="overflow-hidden"
+          style={{
+            height: '42px',
+            clipPath: 'polygon(0 0, 100% 0, 100% 71%, 84% 100%, 0 100%)',
+          }}
         >
-          Home
-        </Link>
-        <Link
-          to="/products"
-          className={linkClass}
-        >
-          Products
-        </Link>
-        <Link
-          to="/technology"
-          className={linkClass}
-        >
-          Technology
-        </Link>
-        <Link
-          to="/case-studies"
-          className={linkClass}
-        >
-          Case Studies
-        </Link>
-        <Link
-          to="/insights-blogs"
-          className={linkClass}
-        >
-          Insights &amp; Blogs
-        </Link>
-        <Link
-          to="/about"
-          className={linkClass}
-        >
-          About
+          <img src={contact} alt="Contact us" className="h-full w-auto" />
         </Link>
       </div>
-
-      <Link
-        to="/contact"
-        className="overflow-hidden"
-        style={{
-          height: '30px',
-          clipPath: 'polygon(0 0, 100% 0, 100% 71%, 84% 100%, 0 100%)',
-        }}
-      >
-        <img src={contact} alt="Contact us" className="h-full w-auto" />
-      </Link>
     </nav>
   );
 }
