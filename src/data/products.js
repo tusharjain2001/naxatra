@@ -72,7 +72,7 @@ export const PRODUCTS = [
     name: 'Antarix RF 15',
     shortName: 'RF15',
     description: 'Lightweight IPMSM radial flux motor for two-wheelers and light mobility applications.',
-    heroVoltage: '48-72 V',
+    heroVoltage: '48-96 V',
     heroTorque: '25-28 Nm',
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',

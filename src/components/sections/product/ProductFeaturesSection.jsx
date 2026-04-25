@@ -34,14 +34,14 @@ export default function ProductFeaturesSection() {
   return (
     <section
       className="w-full"
-      style={{ background: '#fff', padding: 'clamp(48px, 7.7vw, 148px) clamp(16px, 7.8vw, 149px)' }}
+      style={{ background: '#fff', padding: 'clamp(34px, 4.8vw, 82px) clamp(20px, 4.2vw, 80px)' }}
     >
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 'clamp(16px, 1.5vw, 28px)',
-          maxWidth: '1622px',
+          gap: 'clamp(14px, 1.2vw, 22px)',
+          maxWidth: '1840px',
           margin: '0 auto',
         }}
         className="max-[980px]:grid-cols-2 max-[560px]:grid-cols-1"
@@ -51,12 +51,12 @@ export default function ProductFeaturesSection() {
             key={idx}
             style={{
               position: 'relative',
-              padding: 'clamp(28px, 2.3vw, 42px) clamp(22px, 2vw, 34px) clamp(34px, 2.7vw, 52px)',
+              padding: 'clamp(24px, 1.8vw, 34px) clamp(18px, 1.45vw, 28px) clamp(24px, 1.9vw, 34px)',
               borderRadius: '6px',
               display: 'flex',
               flexDirection: 'column',
-              gap: 'clamp(14px, 1.1vw, 22px)',
-              minHeight: 'clamp(240px, 27vw, 392px)',
+              gap: 'clamp(12px, 0.9vw, 18px)',
+              minHeight: 'clamp(210px, 20vw, 316px)',
               overflow: 'hidden',
             }}
           >
@@ -83,7 +83,7 @@ export default function ProductFeaturesSection() {
             </svg>
 
             {/* Icon */}
-            <div style={{ width: 'clamp(24px, 1.9vw, 36px)', height: 'clamp(24px, 1.9vw, 36px)', position: 'relative', zIndex: 1 }}>
+            <div style={{ width: 'clamp(22px, 1.55vw, 30px)', height: 'clamp(22px, 1.55vw, 30px)', position: 'relative', zIndex: 1 }}>
               <img
                 src={feature.icon}
                 alt=""
@@ -96,7 +96,7 @@ export default function ProductFeaturesSection() {
               className="font-nexa capitalize"
               style={{
                 color: '#1863da',
-                fontSize: 'clamp(20px, 1.55vw, 30px)',
+                fontSize: 'clamp(18px, 1.25vw, 24px)',
                 lineHeight: '1.15',
                 maxWidth: '12ch',
                 position: 'relative',
@@ -111,9 +111,9 @@ export default function ProductFeaturesSection() {
               className="font-metro"
               style={{
                 color: '#1f1f1f',
-                fontSize: 'clamp(12px, 0.92vw, 17px)',
-                lineHeight: '1.6',
-                maxWidth: '28ch',
+                fontSize: 'clamp(11px, 0.76vw, 14px)',
+                lineHeight: '1.5',
+                maxWidth: '30ch',
                 position: 'relative',
                 zIndex: 1,
               }}

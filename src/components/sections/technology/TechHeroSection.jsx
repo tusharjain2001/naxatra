@@ -37,7 +37,7 @@ export default function TechHeroSection() {
               fontSize: 'clamp(36px, 5.2vw, 100px)',
               lineHeight: '1.01',
               maxWidth: 'clamp(300px, 49.7vw, 954px)',
-              fontWeight: 400,
+              fontWeight: 600,
             }}
           >
             {'From '}

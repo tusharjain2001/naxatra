@@ -3,80 +3,79 @@ import techSectionTwo from '../../../assets/images/tech-sectiontwo.png';
 
 export default function TechAboutSection() {
   return (
-    <section className="relative w-full bg-white overflow-hidden" style={{ minHeight: 'clamp(420px, 32.1vw, 616px)' }}>
-      {/* Background wave/glow */}
+    <section className="relative w-full overflow-hidden bg-white" style={{ minHeight: 'clamp(360px, 28vw, 540px)' }}>
       <div
         className="absolute pointer-events-none"
         style={{
           top: '50%',
-          left: '-10%',
+          left: '-6%',
           transform: 'translateY(-50%)',
-          width: 'clamp(380px, 45vw, 867px)',
-          height: 'clamp(380px, 45vw, 867px)',
-          background: 'radial-gradient(ellipse at center, rgba(77,214,196,0.06) 0%, transparent 70%)',
+          width: 'clamp(340px, 38vw, 760px)',
+          height: 'clamp(340px, 38vw, 760px)',
+          background: 'radial-gradient(ellipse at center, rgba(77,214,196,0.08) 0%, transparent 70%)',
           borderRadius: '50%',
         }}
       />
 
-      <div className="relative mx-auto flex flex-wrap items-center justify-between" style={{ maxWidth: '1720px', padding: 'clamp(40px, 5.2vw, 100px) clamp(24px, 5vw, 167px)' }}>
-        {/* Left card */}
-        <div className="relative flex-shrink-0" style={{ width: 'clamp(280px, 40.6vw, 778px)', marginBottom: '32px' }}>
-          {/* Card shape background */}
+      <div
+        className="relative mx-auto flex flex-wrap items-center justify-between"
+        style={{
+          maxWidth: '1840px',
+          padding: 'clamp(34px, 3.8vw, 72px) clamp(20px, 4.2vw, 80px)',
+          gap: 'clamp(28px, 3vw, 56px)',
+        }}
+      >
+        <div className="relative flex-shrink-0" style={{ width: 'clamp(320px, 33.5vw, 650px)', marginBottom: '0' }}>
           <img
             src={cardBorder}
             alt=""
-            className="absolute inset-0 w-full h-full pointer-events-none"
+            className="absolute inset-0 h-full w-full pointer-events-none"
             style={{ objectFit: 'fill' }}
           />
+
           <div
             className="relative flex flex-col items-start"
             style={{
-              padding: 'clamp(28px, 3.1vw, 60px) clamp(24px, 3.1vw, 60px)',
-              gap: 'clamp(20px, 2.1vw, 40px)',
+              padding: 'clamp(30px, 2.8vw, 54px) clamp(26px, 2.9vw, 48px)',
+              gap: 'clamp(18px, 1.8vw, 30px)',
             }}
           >
-            {/* Heading */}
             <div style={{ lineHeight: 0 }}>
               <p
                 className="font-nexa capitalize"
-                style={{ color: '#1863da', fontSize: 'clamp(28px, 3.28vw, 63px)', lineHeight: '1.2', marginBottom: '4px', fontWeight: 400 }}
+                style={{ color: '#1863da', fontSize: 'clamp(28px, 2.65vw, 51px)', lineHeight: '1.1', marginBottom: '6px', fontWeight: 400 }}
               >
                 Naxatra Labs™
               </p>
               <p
                 className="font-nexa capitalize"
-                style={{ color: '#000', fontSize: 'clamp(14px, 1.68vw, 32px)', lineHeight: '1.45', fontWeight: 400 }}
+                style={{ color: '#000', fontSize: 'clamp(18px, 1.82vw, 35px)', lineHeight: '1.22', fontWeight: 400, maxWidth: '18ch' }}
               >
                 Innovating the Future of Electric Mobility
               </p>
             </div>
 
-            {/* CTA */}
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center"
-            >
+            <a href="#contact" className="inline-flex items-center justify-center">
               <img
                 src={techSectionTwo}
                 alt="Learn More About Our Tailored Solutions"
                 className="block h-auto object-contain"
-                style={{ width: 'clamp(220px, 30vw, 436px)' }}
+                style={{ width: 'clamp(220px, 24vw, 430px)' }}
               />
             </a>
           </div>
         </div>
 
-        {/* Right text */}
-        <div style={{ maxWidth: 'clamp(280px, 38.9vw, 747px)', marginBottom: '32px' }}>
+        <div style={{ maxWidth: 'clamp(320px, 35vw, 670px)', marginBottom: '0' }}>
           <p
             className="font-metro text-black"
-            style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.7', marginBottom: '1em' }}
+            style={{ fontSize: 'clamp(14px, 1.02vw, 19px)', lineHeight: '1.72', marginBottom: '1.35em' }}
           >
             Naxatra Labs™ is an innovation-driven EV powertrain technology company, dedicated to engineering high-performance, lightweight, and efficient solutions. We specialize in delivering powerful motor technologies for diverse verticals, including electric vehicles, agricultural machinery, and power tools.
           </p>
           <p
             className="font-metro text-black"
-            style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.7' }}
+            style={{ fontSize: 'clamp(14px, 1.02vw, 19px)', lineHeight: '1.72' }}
           >
             Backed by over four years of research and development, our solutions meet industry performance, durability, and efficiency standards. Our cutting-edge portfolio includes both axial and radial flux motor technologies, pushing the boundaries of electric mobility and sustainable innovation.
           </p>

@@ -32,7 +32,7 @@ export default function TechPowerSection() {
         <div style={{ maxWidth: 'clamp(280px, 33.6vw, 645px)' }}>
           <h2
             className="font-nexa capitalize text-black"
-            style={{ fontSize: 'clamp(26px, 2.5vw, 48px)', lineHeight: '1.07', fontWeight: 400, marginBottom: 'clamp(20px, 2.1vw, 40px)' }}
+            style={{ fontSize: 'clamp(26px, 2.5vw, 48px)', lineHeight: '1.07', fontWeight: 600, marginBottom: 'clamp(20px, 2.1vw, 40px)' }}
           >
             {'More Power. More Range. '}
             <span style={{ color: '#1863da' }}>More Possibilities.</span>

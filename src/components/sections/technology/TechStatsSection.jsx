@@ -32,23 +32,25 @@ export default function TechStatsSection() {
       <div
         className="relative mx-auto flex flex-col items-start lg:flex-row lg:items-start lg:justify-between"
         style={{
-          maxWidth: '1240px',
-          padding: 'clamp(36px, 5vw, 80px) clamp(20px, 4.2vw, 64px)',
-          gap: 'clamp(20px, 3.2vw, 44px)',
+          maxWidth: '1840px',
+          padding: 'clamp(40px, 4.6vw, 84px) clamp(20px, 4.2vw, 80px)',
+          gap: 'clamp(34px, 4.2vw, 80px)',
         }}
       >
         {/* Section heading on left */}
         <div
           style={{
-            width: 'clamp(220px, 28vw, 360px)',
-            marginTop: 'clamp(0px, 2.2vw, 26px)',
+            width: 'clamp(420px, 35vw, 560px)',
+            marginTop: 'clamp(12px, 2.2vw, 34px)',
           }}
         >
           <h2
             className="font-nexa capitalize text-white"
-            style={{ fontSize: 'clamp(24px, 3vw, 56px)', lineHeight: '1.1', fontWeight: 400 }}
+            style={{ fontSize: 'clamp(34px, 3.65vw, 70px)', lineHeight: '1.08', fontWeight: 400, maxWidth: '520px' }}
           >
-            {'Drive Smart, Safe, and '}
+            {'Drive Smart, Safe,'}
+            <br />
+            {'And '}
             <span style={{ color: '#1863da' }}>Your Way</span>
           </h2>
         </div>
@@ -58,12 +60,12 @@ export default function TechStatsSection() {
           className="flex flex-col"
           style={{
             width: '100%',
-            maxWidth: 'clamp(320px, 48vw, 760px)',
-            gap: 'clamp(10px, 1.1vw, 14px)',
+            maxWidth: 'clamp(420px, 44vw, 760px)',
+            gap: 'clamp(16px, 1.5vw, 28px)',
           }}
         >
           {stats.map((stat) => (
-            <div key={stat.value} className="relative" style={{ minHeight: 'clamp(132px, 13.2vw, 252px)' }}>
+            <div key={stat.value} className="relative" style={{ minHeight: 'clamp(170px, 14.8vw, 288px)' }}>
               <img
                 src={cardShape}
                 alt=""
@@ -72,27 +74,27 @@ export default function TechStatsSection() {
               />
               <div
                 className="relative flex flex-col"
-                style={{ padding: 'clamp(14px, 1.9vw, 34px) clamp(16px, 2.1vw, 40px)' }}
+                style={{ padding: 'clamp(22px, 2vw, 38px) clamp(22px, 2.2vw, 42px)' }}
               >
                 <p
                   className="font-nexa capitalize"
-                  style={{ color: '#4dd6c4', fontSize: 'clamp(26px, 2.55vw, 49px)', lineHeight: '1.05', fontWeight: 400 }}
+                  style={{ color: '#4dd6c4', fontSize: 'clamp(34px, 3vw, 58px)', lineHeight: '1.05', fontWeight: 400 }}
                 >
                   {stat.value}
                 </p>
                 <p
                   className="font-nexa capitalize text-white"
-                  style={{ fontSize: 'clamp(14px, 1.5vw, 29px)', lineHeight: '1.12', fontWeight: 400, marginTop: '2px' }}
+                  style={{ fontSize: 'clamp(20px, 1.8vw, 34px)', lineHeight: '1.14', fontWeight: 400, marginTop: '4px' }}
                 >
                   {stat.label}
                 </p>
                 <p
                   className="font-metro text-white"
                   style={{
-                    fontSize: 'clamp(10px, 0.82vw, 16px)',
-                    lineHeight: '1.45',
-                    marginTop: 'clamp(7px, 0.85vw, 13px)',
-                    maxWidth: 'clamp(240px, 30vw, 600px)',
+                    fontSize: 'clamp(12px, 0.98vw, 18px)',
+                    lineHeight: '1.5',
+                    marginTop: 'clamp(10px, 1vw, 18px)',
+                    maxWidth: 'clamp(280px, 31vw, 620px)',
                   }}
                 >
                   {stat.description}
