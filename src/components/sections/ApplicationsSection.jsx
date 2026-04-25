@@ -38,7 +38,7 @@ export default function ApplicationsSection() {
               />
             </div>
             <h2
-              className="font-nexa font-medium"
+              className="font-nexa font-semibold"
               style={{ fontSize: 'clamp(34px, 2.81vw, 54px)', lineHeight: 1.45 }}
             >
               <span style={{ color: '#000' }}>From Ground to Sky, </span>
