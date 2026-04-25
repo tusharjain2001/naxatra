@@ -34,7 +34,7 @@ export default function CaseStudyContent() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1440px', padding: 'clamp(40px, 5.8vw, 112px) clamp(24px, 6.4vw, 123px)' }}
+        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <div style={{ ...rowStyle, marginBottom: 'clamp(40px, 4.7vw, 90px)' }}>
           <h2 className="font-nexa capitalize" style={SECTION_LABEL}>Overview</h2>

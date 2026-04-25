@@ -29,7 +29,7 @@ export default function CaseStudyFeatures() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1920px', padding: 'clamp(40px, 4.8vw, 92px) clamp(24px, 10.5vw, 201px)' }}
+        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         {/* Heading */}
         <h2
