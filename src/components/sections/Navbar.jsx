@@ -2,11 +2,23 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
 import contact from "../../assets/images/navbar-contact.png";
 
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/products', label: 'Products' },
+  { to: '/technology', label: 'Technology' },
+  { to: '/case-studies', label: 'Case Studies' },
+  { to: '/insights-blogs', label: 'Insights & Blogs' },
+  { to: '/about', label: 'About' },
+];
+
 export default function Navbar() {
   const { pathname } = useLocation();
   const isDark = pathname !== '/' && pathname !== '/products' && !pathname.startsWith('/products/');
-  const linkClass = `text-[clamp(10px,0.55vw,12px)] uppercase font-medium transition-colors ${
+  const linkClass = `group inline-flex items-center text-[clamp(10px,0.55vw,12px)] uppercase font-medium transition-colors duration-300 ${
     isDark ? 'text-white hover:text-[#8bb5ff]' : 'text-[#515151] hover:text-[#1863da]'
+  }`;
+  const bracketClass = `inline-block transition-all duration-300 ${
+    isDark ? 'text-[#8bb5ff]' : 'text-[#1863da]'
   }`;
 
   return (
@@ -25,42 +37,21 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
-          <Link
-            to="/"
-            className={linkClass}
-          >
-            Home
-          </Link>
-          <Link
-            to="/products"
-            className={linkClass}
-          >
-            Products
-          </Link>
-          <Link
-            to="/technology"
-            className={linkClass}
-          >
-            Technology
-          </Link>
-          <Link
-            to="/case-studies"
-            className={linkClass}
-          >
-            Case Studies
-          </Link>
-          <Link
-            to="/insights-blogs"
-            className={linkClass}
-          >
-            Insights &amp; Blogs
-          </Link>
-          <Link
-            to="/about"
-            className={linkClass}
-          >
-            About
-          </Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={linkClass}
+            >
+              <span className={`${bracketClass} mr-[1px] -translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>
+                [
+              </span>
+              <span>{item.label}</span>
+              <span className={`${bracketClass} ml-[1px] translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>
+                ]
+              </span>
+            </Link>
+          ))}
         </div>
 
         <Link
