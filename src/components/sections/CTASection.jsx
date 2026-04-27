@@ -6,7 +6,7 @@ const secondaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(1
 
 export default function CTASection() {
   return (
-    <section className="relative w-full" style={{ height: 'clamp(460px, 32.08vw, 616px)' }}>
+    <section className="relative w-full bg-[#f5fafa]" style={{ height: 'clamp(460px, 32.08vw, 616px)' }}>
       {/* Dark cut-corner background */}
       <img
         src={ctaBg}

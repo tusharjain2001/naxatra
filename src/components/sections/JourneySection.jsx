@@ -75,7 +75,7 @@ export default function JourneySection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) 430px',
+            gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) minmax(430px, 1fr)',
             gap: 'clamp(56px, calc(56px + (100vw - 960px) * 0.18), 220px)',
             alignItems: 'start',
           }}
@@ -105,7 +105,7 @@ export default function JourneySection() {
           </div>
 
           {/* Right timeline */}
-          <div style={{ width: '430px' }}>
+          <div style={{ width: '430px', justifySelf: 'end' }}>
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
                 <p className="font-nexa" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
