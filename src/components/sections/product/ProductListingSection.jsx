@@ -36,17 +36,17 @@ function ProductCard({ product }) {
         style={{
           display: 'flex',
           justifyContent: 'flex-start',
-          paddingTop: 'clamp(22px, 2.4vw, 42px)',
-          paddingInline: 'clamp(22px, 2.3vw, 38px)',
-          paddingBottom: 'clamp(8px, 1vw, 16px)',
+          paddingTop: 'clamp(16px, 1.8vw, 28px)',
+          paddingInline: 'clamp(16px, 1.8vw, 28px)',
+          paddingBottom: 'clamp(6px, 0.8vw, 12px)',
         }}
       >
         <img
           src={product.image}
           alt={product.name}
           style={{
-            width: 'clamp(96px, 9vw, 156px)',
-            height: 'clamp(74px, 7.2vw, 124px)',
+            width: 'clamp(82px, 7vw, 128px)',
+            height: 'clamp(64px, 5.8vw, 102px)',
             objectFit: 'contain',
             transform: 'rotate(180deg) scaleY(-1)',
           }}
@@ -56,7 +56,7 @@ function ProductCard({ product }) {
       {/* Content */}
       <div
         style={{
-          padding: '0 clamp(22px, 2.3vw, 38px) clamp(20px, 2.2vw, 32px)',
+          padding: '0 clamp(16px, 1.8vw, 28px) clamp(16px, 1.7vw, 24px)',
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
@@ -66,9 +66,9 @@ function ProductCard({ product }) {
           className="font-nexa capitalize"
           style={{
             color: '#1863da',
-            fontSize: 'clamp(20px, 1.9vw, 34px)',
+            fontSize: 'clamp(18px, 1.6vw, 28px)',
             lineHeight: '1.12',
-            marginBottom: '8px',
+            marginBottom: '6px',
           }}
         >
           {product.name}
@@ -77,9 +77,9 @@ function ProductCard({ product }) {
           className="font-metro"
           style={{
             color: '#1f1f1f',
-            fontSize: 'clamp(13px, 1vw, 19px)',
-            lineHeight: '1.5',
-            marginBottom: '18px',
+            fontSize: 'clamp(12px, 0.9vw, 16px)',
+            lineHeight: '1.45',
+            marginBottom: '14px',
             maxWidth: '30ch',
             flex: 1,
           }}
@@ -87,20 +87,20 @@ function ProductCard({ product }) {
           {product.description}
         </p>
 
-        <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', marginBottom: '14px' }} />
+        <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', marginBottom: '10px' }} />
 
-        <div style={{ display: 'flex', gap: '24px', marginBottom: 'clamp(14px, 1.2vw, 20px)' }}>
+        <div style={{ display: 'flex', gap: '18px', marginBottom: 'clamp(10px, 1vw, 16px)' }}>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(18px, 1.25vw, 24px)', fontWeight: 500, marginBottom: '4px' }}>
+            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
               {product.heroVoltage}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(12px, 0.83vw, 16px)' }}>Rated Voltage (DC)</p>
+            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Rated Voltage (DC)</p>
           </div>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(18px, 1.25vw, 24px)', fontWeight: 500, marginBottom: '4px' }}>
+            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
               {product.heroTorque}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(12px, 0.83vw, 16px)' }}>Peak Torque</p>
+            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Peak Torque</p>
           </div>
         </div>
 
@@ -110,7 +110,7 @@ function ProductCard({ product }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: '8px',
+            marginBottom: '6px',
             textDecoration: 'none',
             width: '100%',
           }}
@@ -157,7 +157,12 @@ function AllProductsView() {
       {rows.map((row, ri) => (
         <div
           key={ri}
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'clamp(14px, 1.67vw, 32px)' }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, minmax(280px, 400px))',
+            justifyContent: 'center',
+            gap: 'clamp(14px, 1.67vw, 32px)',
+          }}
           className="max-[980px]:grid-cols-2 max-[560px]:grid-cols-1"
         >
           {row.map((product) => <ProductCard key={product.id} product={product} />)}
@@ -236,7 +241,12 @@ function ApplicationsView() {
           </p>
         ) : (
           <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'clamp(12px, 1.25vw, 24px)' }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, minmax(280px, 400px))',
+              justifyContent: 'center',
+              gap: 'clamp(12px, 1.25vw, 24px)',
+            }}
             className="max-[560px]:grid-cols-1"
           >
             {catProducts.map((product) => <ProductCard key={product.id} product={product} />)}
