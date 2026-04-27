@@ -60,7 +60,7 @@ export default function WhyUsSection() {
             <div
               key={i}
               className="relative"
-              style={{ aspectRatio: '457 / 540', minWidth: 0 }}
+              style={{ aspectRatio: '457 / 470', minWidth: 0 }}
             >
               <img
                 src={card.bg}
@@ -72,7 +72,7 @@ export default function WhyUsSection() {
                 className="relative z-10"
                 style={{
                   height: '100%',
-                  padding: '6% 6% 6.2%',
+                  padding: '5.2% 5.4% 5.4%',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
@@ -94,8 +94,8 @@ export default function WhyUsSection() {
                     color: '#fff',
                     fontSize: 'clamp(20px, 1.65vw, 32px)',
                     lineHeight: 1.2,
-                    marginTop: 'clamp(12px, 1.15vw, 22px)',
-                    marginBottom: 'clamp(8px, 0.8vw, 14px)',
+                    marginTop: 'clamp(10px, 1vw, 18px)',
+                    marginBottom: 'clamp(6px, 0.7vw, 12px)',
                   }}
                 >
                   {card.title}

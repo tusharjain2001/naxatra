@@ -36,7 +36,7 @@ export default function ProductSection() {
             />
           </div>
 
-          <div className="absolute left-1/2 top-[48%] z-10 w-[clamp(300px,31vw,590px)] -translate-x-1/2 -translate-y-1/2 max-[720px]:w-[88vw]">
+          <div className="absolute left-[55%] top-[48%] z-10 w-[clamp(300px,31vw,590px)] -translate-x-1/2 -translate-y-1/2 max-[720px]:w-[88vw]">
             <img
               src={productMotor}
               alt="Antarix RF55 Motor"
