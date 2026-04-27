@@ -39,7 +39,8 @@ export default function ProductFeaturesSection() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(4, minmax(220px, 280px))',
+          justifyContent: 'center',
           gap: 'clamp(14px, 1.2vw, 22px)',
           maxWidth: '1840px',
           margin: '0 auto',

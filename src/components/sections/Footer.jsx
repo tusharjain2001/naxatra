@@ -270,7 +270,17 @@ export default function Footer() {
         <span style={{ position: 'absolute', left: px(129), color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap' }}>
           Copyright © 2026
         </span>
-        <div style={{ position: 'absolute', right: px(240), display: 'flex', gap: 'clamp(12px, 8.7vw, 167px)' }}>
+        <div
+          style={{
+            position: 'absolute',
+            right: px(146),
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            gap: 'clamp(20px, 3.2vw, 62px)',
+            width: 'clamp(240px, 22vw, 420px)',
+          }}
+        >
           {['Privacy Policy', 'Terms of Use'].map((t) => (
             <span key={t} style={{ color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap', cursor: 'pointer' }}>{t}</span>
           ))}
