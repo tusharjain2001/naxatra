@@ -9,16 +9,15 @@ export default function ProductDetailHeroSection({ product }) {
     { value: product.coolingType, label: 'Cooling Type' },
   ];
 
+  const sharedBottom = 'clamp(100px, 16vw, 310px)';
+
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden flex"
       style={{ background: '#f5fafa', minHeight: 'clamp(420px, 49.6vw, 953px)' }}
     >
-      {/* ── LEFT: Glow + watermark + motor ── */}
-      <div
-        className="absolute inset-y-0 left-0"
-        style={{ width: '50%' }}
-      >
+      {/* ── LEFT: Glow + watermark + motor + CTAs ── */}
+      <div className="relative" style={{ width: '50%' }}>
         {/* Radial glow */}
         <div
           className="absolute pointer-events-none"
@@ -37,6 +36,7 @@ export default function ProductDetailHeroSection({ product }) {
           className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
           style={{
             top: 'clamp(60px, 6.9vw, 133px)',
+            left: 0,
             fontSize: 'clamp(48px, 7.3vw, 140px)',
             lineHeight: '1.04',
             background: 'linear-gradient(90deg, #f5fafa 12%, #b6b6b6 56%, #f5fafa 113%)',
@@ -68,31 +68,80 @@ export default function ProductDetailHeroSection({ product }) {
             className="w-full h-full object-contain"
           />
         </div>
+
+        {/* CTAs — bottom-anchored to match specs bottom */}
+        <div
+          className="absolute"
+          style={{
+            bottom: sharedBottom,
+            left: 'clamp(16px, 10.6vw, 203px)',
+            zIndex: 3,
+            display: 'flex',
+            gap: 'clamp(12px, 1.25vw, 24px)',
+            flexWrap: 'nowrap',
+            alignItems: 'center',
+          }}
+        >
+          <a
+            href="#"
+            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+            aria-label={`Request spec sheet for ${product.name}`}
+          >
+            <img
+              src={reqSpecSheet}
+              alt="Request Spec Sheet"
+              className="block"
+              style={{ width: 'auto', height: 'clamp(32px, 2.6vw, 50px)' }}
+            />
+          </a>
+
+          <button
+            style={{
+              background: 'transparent',
+              border: 'none',
+              padding: 0,
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            type="button"
+            aria-label={`Request customization for ${product.name}`}
+          >
+            <img
+              src={reqForCust}
+              alt="Request for Customization"
+              className="block"
+              style={{ width: 'auto', height: 'clamp(32px, 2.6vw, 50px)' }}
+            />
+          </button>
+        </div>
       </div>
 
-      {/* ── RIGHT: Name + specs + CTAs ── */}
+      {/* ── RIGHT: Name + specs ── */}
       <div
-        className="absolute"
+        className="relative flex flex-col justify-end"
         style={{
-          left: '50.6%',
-          top: 'clamp(60px, 9.3vw, 179px)',
-          width: 'clamp(240px, 40vw, 760px)',
+          flex: 1,
+          paddingBottom: sharedBottom,
+          paddingRight: 'clamp(20px, 4vw, 80px)',
         }}
       >
-        {/* Product name */}
+        {/* Product name — floated to top */}
         <h1
-          className="font-nexa capitalize"
+          className="absolute font-nexa capitalize"
           style={{
+            top: 'clamp(60px, 9.3vw, 179px)',
+            left: 0,
             color: '#1863da',
             fontSize: 'clamp(28px, 3.54vw, 68px)',
             lineHeight: '1.15',
-            marginBottom: 'clamp(24px, 3.6vw, 68px)',
           }}
         >
           {product.name}
         </h1>
 
-        {/* Specs 2-column grid */}
+        {/* Specs — bottom-anchored to match CTAs bottom via paddingBottom */}
         <div
           style={{
             display: 'grid',
@@ -121,60 +170,6 @@ export default function ProductDetailHeroSection({ product }) {
           ))}
         </div>
       </div>
-
-      {/* ── Bottom CTAs ── */}
-      <div
-        className="absolute"
-        style={{
-          left: 'clamp(16px, 10.6vw, 203px)',
-          top: 'clamp(340px, 37.9vw, 729px)',
-          display: 'flex',
-          gap: 'clamp(12px, 1.25vw, 24px)',
-          flexWrap: 'wrap',
-        }}
-      >
-        <a
-          href="#"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textDecoration: 'none',
-          }}
-          aria-label={`Request spec sheet for ${product.name}`}
-        >
-          <img
-            src={reqSpecSheet}
-            alt="Request Spec Sheet"
-            className="block"
-            style={{ width: 'auto', height: 'clamp(40px, 3.2vw, 60px)' }}
-          />
-        </a>
-
-        <button
-          style={{
-            background: 'transparent',
-            border: 'none',
-            padding: 0,
-            cursor: 'pointer',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          type="button"
-          aria-label={`Request customization for ${product.name}`}
-        >
-          <img
-            src={reqForCust}
-            alt="Request for Customization"
-            className="block"
-            style={{ width: 'auto', height: 'clamp(40px, 3.2vw, 60px)' }}
-          />
-        </button>
-      </div>
-
-      {/* Spacer */}
-      <div style={{ height: 'clamp(420px, 49.6vw, 953px)' }} />
     </section>
   );
 }
