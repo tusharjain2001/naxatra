@@ -9,12 +9,12 @@ export default function ProductDetailHeroSection({ product }) {
     { value: product.coolingType, label: 'Cooling Type' },
   ];
 
-  const sharedBottom = 'clamp(100px, 16vw, 310px)';
+  const sharedBottom = 'clamp(30px, 4.5vw, 86px)';
 
   return (
     <section
       className="relative w-full overflow-hidden flex"
-      style={{ background: '#f5fafa', minHeight: 'clamp(420px, 49.6vw, 953px)' }}
+      style={{ background: '#f5fafa', minHeight: 'clamp(380px, 40vw, 770px)' }}
     >
       {/* ── LEFT: Glow + watermark + motor + CTAs ── */}
       <div className="relative" style={{ width: '50%' }}>
