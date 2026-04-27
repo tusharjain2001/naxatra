@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import caseStudyCard from '../../../assets/images/case-study-card.png';
 import cardBg from '../../../assets/images/case-study-bg.svg';
 import featureGrid from '../../../assets/images/feature-grid.png';
-import readCaseCta from '../../../assets/images/read-case-cta.png';
+import readCaseCta from '../../../assets/images/read-case-cta.svg';
 
 export default function CaseStudyFeatureSection() {
   return (

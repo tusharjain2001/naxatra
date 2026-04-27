@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import downloadSpecSheet from '../../../assets/images/download-spec-sheet.png';
-import viewDetails from '../../../assets/images/view-details.png';
+import downloadSpecSheet from '../../../assets/images/download-spec-sheet.svg';
+import viewDetails from '../../../assets/images/view-details.svg';
 import { PRODUCTS, APPLICATIONS } from '../../../data/products';
 
 const CATEGORIES = [

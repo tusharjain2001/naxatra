@@ -1,7 +1,7 @@
 import heroBg from '../../assets/images/hero-bg.svg';
 import heroOverlay from '../../assets/images/hero-overlay.svg';
 import heroMotor from '../../assets/images/hero-motor.png';
-import exploreOptions from '../../assets/images/explore-options.png';
+import exploreOptions from '../../assets/images/explore-options.svg';
 
 export default function HeroSection() {
   return (

@@ -2,7 +2,7 @@ import productMotor from '../../assets/images/product-motor-rf55.png';
 import productText from '../../assets/images/Antarix RF55.png';
 import productEllipse from '../../assets/images/product-ellipse.svg';
 import productBg from '../../assets/images/product-bg.svg';
-import viewAllProducts from '../../assets/images/view-all-products.png';
+import viewAllProducts from '../../assets/images/view-all-products.svg';
 
 export default function ProductSection() {
   return (

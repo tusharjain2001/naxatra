@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import downloadBrochure from '../../../assets/images/download-brochure.png';
+import downloadBrochure from '../../../assets/images/download-brochure.svg';
 import greenBg from '../../../assets/images/green-bg.png';
 import motorHero from '../../../assets/images/product-motor-hero.png';
 import productText from '../../../assets/images/Antarix RF55.png';
@@ -10,7 +10,7 @@ export default function ProductHeroSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden mt-10"
       style={{ background: '#f5fafa', minHeight: 'clamp(430px, 44vw, 800px)' }}
     >
       {/* Green glow */}

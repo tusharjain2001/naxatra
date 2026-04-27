@@ -1,7 +1,7 @@
 import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/tech-hero-ellipse.png';
 import techRightHero from '../../../assets/images/tech-right-hero.png';
-import connectNow from '../../../assets/images/connect-now.png';
+import connectNow from '../../../assets/images/connect-now.svg';
 
 export default function TechHeroSection() {
   return (
