@@ -7,13 +7,15 @@ import Footer from '../components/sections/Footer';
 
 export default function TechnologyPage() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
       <Navbar />
-      <div className="pt-[55px]">
-        <TechHeroSection />
-        <TechAboutSection />
-        <TechStatsSection />
-        <TechPowerSection />
+      <div className="flex flex-1 flex-col pt-[55px]">
+        <div className="flex-1">
+          <TechHeroSection />
+          <TechAboutSection />
+          <TechStatsSection />
+          <TechPowerSection />
+        </div>
         <Footer />
       </div>
     </div>

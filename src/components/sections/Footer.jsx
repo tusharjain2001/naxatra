@@ -16,9 +16,10 @@ const py = (v) => `${((v / H) * 100).toFixed(4)}%`;
 
 const PLUS_GRID_LEFT = 703;
 const PLUS_GRID_WIDTH = 1217;
-const PLUS_GRID_HEIGHT = 687;
+const PLUS_GRID_HEIGHT = 630;
+const COPYRIGHT_BAR_HEIGHT = 76;
 const GRID_CONTENT_TOP = 81;
-const GRID_CONTENT_HEIGHT = 469;
+const GRID_CONTENT_HEIGHT = 430;
 
 const QUICK_LINKS = [
   { label: 'Products',         to: null },
@@ -81,7 +82,7 @@ export default function Footer() {
       className="relative w-full overflow-hidden font-nexa"
       style={{
         background: '#000',
-        height: `clamp(380px, ${((H / W) * 100).toFixed(4)}vw, ${H}px)`,
+        height: `clamp(360px, 37vw, ${PLUS_GRID_HEIGHT + COPYRIGHT_BAR_HEIGHT}px)`,
       }}
     >
       {/* ── Decorative background ─────────────────── */}
@@ -140,7 +141,7 @@ export default function Footer() {
         className="absolute"
         style={{
           left: px(201),
-          top: py(458),
+          top: py(432),
           display: 'flex',
           alignItems: 'center',
           gap: 'clamp(5px, 0.52vw, 10px)',
@@ -260,8 +261,10 @@ export default function Footer() {
       <div
         className="absolute"
         style={{
-          bottom: 0, left: 0, right: 0,
-          height: 'clamp(44px, 3.96vw, 76px)',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: `clamp(44px, 3.96vw, ${COPYRIGHT_BAR_HEIGHT}px)`,
           background: 'radial-gradient(ellipse 100% 100% at 50% 50%, #1863da 0%, #154da6 25%, #123773 50%, #102c59 62.5%, #0f213f 75%, #0d1625 87.5%, #0b0b0b 100%)',
           display: 'flex',
           alignItems: 'center',
