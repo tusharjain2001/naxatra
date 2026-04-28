@@ -10,7 +10,7 @@ export default function CaseStudyDetailHero() {
         src={detailCaseStudy}
         alt="Boosting Power Tool Performance with Naxatra Labs' Advanced BLDC Motor Solution"
         className="block w-full h-auto"
-        style={{ minHeight: '100%', objectFit: 'cover', objectPosition: 'center -36px' }}
+        style={{ minHeight: '100%', objectFit: 'cover', objectPosition: 'center -116px' }}
       />
     </section>
   );
