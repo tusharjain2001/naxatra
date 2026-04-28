@@ -15,7 +15,7 @@ export default function TechHeroSection() {
           transform: 'translateY(-50%)',
           width: 'clamp(400px, 50vw, 867px)',
           height: 'clamp(400px, 50vw, 867px)',
-          background: 'radial-gradient(ellipse at center, rgba(24,99,218,0.18) 0%, rgba(0,0,0,0) 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(77,214,196,0.2) 0%, rgba(77,214,196,0.08) 38%, rgba(0,0,0,0) 72%)',
           borderRadius: '50%',
         }}
       />
