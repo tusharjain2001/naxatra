@@ -41,6 +41,7 @@ function ValueCard({ icon, title, body }) {
         clipPath: clippedCorner,
         background: '#cbd8d5',
         padding: '1px',
+        width: '100%',
       }}
     >
       <div
@@ -50,6 +51,7 @@ function ValueCard({ icon, title, body }) {
           background: '#f5fbfa',
           minHeight: 'clamp(98px, 10.6vw, 150px)',
           padding: 'clamp(16px, 1.7vw, 24px) clamp(20px, 2.2vw, 32px)',
+          width: '100%',
         }}
       >
         <img
@@ -80,7 +82,6 @@ function ValueCard({ icon, title, body }) {
             fontSize: 'clamp(9px, 0.72vw, 11px)',
             lineHeight: 1.55,
             margin: 'clamp(5px, 0.45vw, 7px) 0 0',
-            maxWidth: 'clamp(280px, 37vw, 560px)',
           }}
         >
           {body}

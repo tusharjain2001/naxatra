@@ -25,7 +25,7 @@ export default function BlogsHeroSection() {
         className="absolute flex flex-col items-start"
         style={{
           left: 'clamp(40px, 10vw, 191px)',
-          top: 'clamp(56px, 20vw, 190px)',
+          top: 'clamp(56px, 9.9vw, 190px)',
           maxWidth: 'clamp(300px, 49.7vw, 954px)',
           gap: 'clamp(16px, 1.56vw, 30px)',
         }}
@@ -58,9 +58,9 @@ export default function BlogsHeroSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          top: 'clamp(16px, 5vw, 86px)',
+          top: 'clamp(16px, 4.5vw, 86px)',
           right: 'clamp(-24px, 1vw, 18px)',
-          width: 'clamp(520px, 45vw, 867px)',
+          width: 'clamp(598px, 51.9vw, 997px)',
           aspectRatio: '869 / 601',
         }}
       >
@@ -74,7 +74,7 @@ export default function BlogsHeroSection() {
           alt=""
           className="absolute z-10 h-auto object-contain"
           style={{
-            width: 'clamp(300px, 33vw, 635px)',
+            width: 'clamp(345px, 38vw, 730px)',
             top: '51%',
             left: '47%',
             transform: 'translate(-50%, -50%)',
@@ -85,7 +85,7 @@ export default function BlogsHeroSection() {
           alt="Naxatra Labs LinkedIn"
           className="absolute z-20 h-auto object-contain"
           style={{
-            width: 'clamp(190px, 22vw, 420px)',
+            width: 'clamp(218px, 25.3vw, 483px)',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',

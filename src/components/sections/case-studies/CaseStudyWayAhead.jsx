@@ -37,7 +37,7 @@ export default function CaseStudyWayAhead() {
           >
             <p
               className="font-metro text-black"
-              style={{ fontSize: '20px', lineHeight: '1.7' }}
+              style={{ fontSize: '14px', lineHeight: '1.7' }}
             >
               As the industry shifts toward brushless systems, offering BLDC-powered tools is no longer a premium
               add-on - it's becoming a baseline expectation. The results of this study unequivocally demonstrate that
@@ -48,7 +48,7 @@ export default function CaseStudyWayAhead() {
             </p>
             <p
               className="font-metro text-black"
-              style={{ fontSize: '20px', lineHeight: '1.7' }}
+              style={{ fontSize: '14px', lineHeight: '1.7' }}
             >
               If you're a power tool manufacturer looking to future-proof your products and stay ahead of the curve,
               Naxatra Labs can help. Our team specializes in custom BLDC motor solutions designed for high-performance

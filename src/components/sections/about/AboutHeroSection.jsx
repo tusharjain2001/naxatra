@@ -14,14 +14,14 @@ export default function AboutHeroSection() {
         style={{
           maxWidth: '1920px',
           minHeight: 'inherit',
-          padding: 'clamp(60px, 6.5vw, 124px) clamp(24px, 9.9vw, 191px)',
+          padding: 'clamp(110px, 9.1vw, 174px) clamp(24px, 9.9vw, 191px) clamp(10px, 3.9vw, 74px)',
           gap: '40px',
         }}
       >
         {/* Left: text */}
         <div
           className="flex flex-col items-start"
-          style={{ maxWidth: 'clamp(280px, 28vw, 538px)', gap: 'clamp(16px, 1.67vw, 32px)' }}
+          style={{ maxWidth: 'clamp(280px, 28vw, 538px)', gap: 'clamp(8px, 0.8vw, 16px)' }}
         >
           <h1
             className="font-nexa"
@@ -32,13 +32,13 @@ export default function AboutHeroSection() {
           </h1>
           <p
             className="font-metro"
-            style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', color: '#d9d9d9', lineHeight: '1.6', fontWeight: 600 }}
+            style={{ fontSize: '20px', color: '#d9d9d9', lineHeight: '1.6', fontWeight: 600 }}
           >
             Powering the Future with Efficient, Compact and High torque motors.
           </p>
           <p
             className="font-metro"
-            style={{ fontSize: 'clamp(12px, 1.04vw, 20px)', color: '#d9d9d9', lineHeight: '1.6' }}
+            style={{ fontSize: '16px', color: '#d9d9d9', lineHeight: '1.6' }}
           >
             At Naxatra Labs, we understand that every application has unique requirements. They're engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency.
           </p>

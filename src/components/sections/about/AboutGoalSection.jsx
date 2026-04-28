@@ -37,7 +37,8 @@ export default function AboutGoalSection() {
         <div
           className="w-full overflow-hidden"
           style={{
-            maxWidth: 'clamp(320px, 73.7vw, 1414px)',
+            maxWidth: 'clamp(240px, 55vw, 1060px)',
+            aspectRatio: '1414 / 750',
             marginTop: 'clamp(16px, 1.04vw, 20px)',
             borderRadius: 'clamp(6px, 0.68vw, 13px)',
           }}
@@ -45,7 +46,7 @@ export default function AboutGoalSection() {
           <img
             src={goalPhoto}
             alt="Our Goal — EV Charging"
-            className="w-full h-auto block"
+            className="w-full h-full block"
             style={{ objectFit: 'cover' }}
           />
         </div>
