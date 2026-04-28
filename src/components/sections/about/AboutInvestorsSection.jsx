@@ -50,10 +50,9 @@ export default function AboutInvestorsSection() {
         <div
           className="grid grid-cols-1 items-start lg:grid-cols-[clamp(200px,23vw,330px)_minmax(0,1fr)]"
           style={{
-            maxWidth: 'clamp(760px, 72vw, 1382px)',
-            margin: '0 auto',
             columnGap: 'clamp(28px, 4.8vw, 76px)',
             rowGap: 'clamp(28px, 4vw, 48px)',
+            paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
         >
           <div>

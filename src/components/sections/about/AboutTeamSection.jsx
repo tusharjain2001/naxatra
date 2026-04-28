@@ -108,8 +108,7 @@ export default function AboutTeamSection() {
           style={{
             columnGap: 'clamp(28px, 5.3vw, 102px)',
             rowGap: 'clamp(20px, 3vw, 36px)',
-            maxWidth: 'clamp(760px, 72vw, 1382px)',
-            margin: '0 auto',
+            paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
         >
           <h3
@@ -128,6 +127,7 @@ export default function AboutTeamSection() {
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
             style={{
               gap: 'clamp(12px, 1vw, 20px)',
+              marginTop: 'clamp(24px, 2.5vw, 48px)',
             }}
           >
             {TEAM.map((p) => <PersonCard key={p.name} person={p} />)}
