@@ -29,7 +29,7 @@ export default function CaseStudyFeatures() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 6px) clamp(20px, 4.2vw, 80px)' }}
+        style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         {/* Heading */}
         <h2
@@ -43,7 +43,7 @@ export default function CaseStudyFeatures() {
         {/* 2×2 grid */}
         <div
           className="grid"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(260px, 38vw, 732px), 1fr))', gap: 'clamp(16px, 1.25vw, 24px)' }}
+          style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: 'clamp(24px, 2.5vw, 48px)' }}
         >
           {features.map((f) => (
             <div key={f.title} className="relative">

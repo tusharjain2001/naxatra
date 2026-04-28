@@ -51,7 +51,7 @@ export default function CaseStudyComparison() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(36px, 4.6vw, 88px) clamp(20px, 4.2vw, 80px)' }}
+        style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(36px, 4.6vw, 88px) clamp(20px, 4.2vw, 80px)' }}
       >
         <h2
           className="font-nexa capitalize"

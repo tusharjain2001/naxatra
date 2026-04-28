@@ -1,7 +1,6 @@
 import solutionMotor from '../../../assets/images/cs-solution-motor.png';
 import cardLg from '../../../assets/images/cs-card-lg.svg';
 import cardSm from '../../../assets/images/cs-card-sm.svg';
-import cardTeal from '../../../assets/images/cs-card-teal.svg';
 
 const SECTION_LABEL = {
   color: '#1863da',
@@ -19,8 +18,8 @@ const BODY_TEXT = {
 
 const rowStyle = {
   display: 'grid',
-  gridTemplateColumns: 'clamp(140px, 17.2vw, 330px) minmax(280px, 1fr)',
-  gap: 'clamp(24px, 2.8vw, 54px)',
+  gridTemplateColumns: 'clamp(120px, 14vw, 260px) minmax(280px, 1fr)',
+  gap: 'clamp(16px, 2vw, 38px)',
   alignItems: 'start',
 };
 
@@ -34,7 +33,7 @@ export default function CaseStudyContent() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
+        style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <div style={{ ...rowStyle, marginBottom: 'clamp(40px, 4.7vw, 90px)' }}>
           <h2 className="font-nexa font-semibold capitalize" style={SECTION_LABEL}>Overview</h2>
@@ -101,24 +100,20 @@ export default function CaseStudyContent() {
 
           <div
             className="relative overflow-hidden"
-            style={{
-              minHeight: 'clamp(260px, 22.3vw, 428px)',
-              borderRadius: '4px',
-            }}
+            style={{ borderRadius: '4px' }}
           >
-            <img src={cardTeal} alt="" className="absolute inset-0 w-full h-full pointer-events-none" style={{ objectFit: 'fill' }} />
             <div
-              className="relative flex flex-wrap gap-6"
-              style={{ padding: 'clamp(20px, 2.1vw, 40px)', background: 'rgba(0,0,0,0.75)', borderRadius: '4px', minHeight: 'inherit' }}
+              className="relative flex gap-6"
+              style={{ padding: 'clamp(20px, 2.1vw, 40px)', background: '#000', borderRadius: '4px', flexWrap: 'nowrap', alignItems: 'flex-start' }}
             >
-              <div className="flex-shrink-0" style={{ width: 'clamp(200px, 28.4vw, 545px)' }}>
+              <div className="flex-shrink-0" style={{ width: '55%' }}>
                 <img
                   src={solutionMotor}
                   alt="Naxatra Labs BLDC Motor Solution"
                   className="w-full h-auto object-cover rounded"
                 />
               </div>
-              <div style={{ flex: '1 1 clamp(200px, 25.5vw, 490px)' }}>
+              <div style={{ flex: '1 1 0', minWidth: 0 }}>
                 <p className="font-metro text-white" style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.7' }}>
                   <strong>Naxatra Labs introduced a custom-engineered Brushless DC (BLDC) motor</strong>{' '}
                   specifically designed for power tool applications. The goal: eliminate the mechanical
