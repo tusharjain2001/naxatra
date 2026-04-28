@@ -5,7 +5,7 @@ import connectNow from '../../../assets/images/connect-now.svg';
 
 export default function TechHeroSection() {
   return (
-    <section className="relative w-full bg-black overflow-hidden" style={{ minHeight: 'clamp(520px, 51vw, 979px)' }}>
+    <section className="relative w-full bg-black overflow-hidden" style={{ height: '90vh' }}>
       {/* Background radial glow */}
       <div
         className="absolute pointer-events-none"
@@ -25,7 +25,7 @@ export default function TechHeroSection() {
         className="absolute flex flex-col"
         style={{
           left: 'clamp(40px, 10vw, 191px)',
-          top: 'clamp(56px, 20vw, 190px)',
+          top: 'clamp(96px, 24vw, 240px)',
           gap: 'clamp(32px, 4.2vw, 20px)',
         }}
       >
@@ -70,7 +70,7 @@ export default function TechHeroSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          top: 'clamp(16px, 5vw, 86px)',
+          top: 'clamp(56px, 9vw, 130px)',
           right: 'clamp(-24px, 1vw, 18px)',
           width: 'clamp(520px, 45vw, 867px)',
           aspectRatio: '867 / 598',
