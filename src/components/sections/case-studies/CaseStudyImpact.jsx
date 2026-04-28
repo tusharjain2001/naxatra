@@ -16,10 +16,9 @@ export default function CaseStudyImpact() {
         </h2>
 
         <div
-          className="flex items-start"
-          style={{ gap: 'clamp(24px, 3vw, 56px)', flexWrap: 'nowrap' }}
+          style={{ display: 'grid', gridTemplateColumns: 'clamp(220px, 28vw, 540px) 1fr', gap: 'clamp(24px, 3vw, 56px)', alignItems: 'start' }}
         >
-          <div style={{ width: 'clamp(220px, 28vw, 540px)', flexShrink: 0 }}>
+          <div>
             <img
               src={energyLeft}
               alt="Energy and cost impact summary"
@@ -27,7 +26,7 @@ export default function CaseStudyImpact() {
             />
           </div>
 
-          <div style={{ flex: '1 1 0', minWidth: 0 }}>
+          <div style={{ paddingTop: 'clamp(16px, 2.5vw, 48px)' }}>
             <p
               className="font-metro text-black"
               style={{ fontSize: '20px', lineHeight: '1.72' }}
