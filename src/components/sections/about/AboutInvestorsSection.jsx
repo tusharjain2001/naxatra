@@ -48,61 +48,69 @@ export default function AboutInvestorsSection() {
         }}
       >
         <div
-          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(200px,23vw,330px)_minmax(0,1fr)]"
+          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(220px,18vw,320px)_minmax(280px,1fr)]"
           style={{
-            columnGap: 'clamp(28px, 4.8vw, 76px)',
-            rowGap: 'clamp(28px, 4vw, 48px)',
+            columnGap: 'clamp(28px, 5.3vw, 102px)',
+            rowGap: 'clamp(20px, 3vw, 36px)',
             paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
         >
-          <div>
+          <div
+            className="justify-self-start text-left"
+            style={{
+              width: 'clamp(180px, 18vw, 260px)',
+            }}
+          >
             <h2
               className="font-nexa text-black"
               style={{
-                fontSize: 'clamp(28px, 3vw, 44px)',
+                fontSize: 'clamp(24px, 2.6vw, 44px)',
                 lineHeight: 1.1,
                 fontWeight: 400,
-                margin: '0 0 clamp(10px, 1.15vw, 18px)',
+                margin: '0 0 clamp(12px, 1.15vw, 18px)',
               }}
             >
               Investors
             </h2>
 
             <div
-              className="flex flex-wrap items-start"
+              className="flex items-center justify-start"
               style={{
-                gap: 'clamp(20px, 2.2vw, 34px)',
+                gap: 'clamp(14px, 1.6vw, 24px)',
+                flexWrap: 'nowrap',
               }}
             >
               <img
                 src={logoNavi}
                 alt="Rainmatter"
                 style={{
-                  width: 'clamp(92px, 9.4vw, 142px)',
+                  width: 'clamp(86px, 7.4vw, 118px)',
                   height: 'auto',
                   objectFit: 'contain',
+                  flexShrink: 0,
                 }}
               />
               <img
                 src={logoBvfl}
                 alt="GVFL"
                 style={{
-                  width: 'clamp(82px, 8.4vw, 128px)',
+                  width: 'clamp(74px, 6.8vw, 108px)',
                   height: 'auto',
                   objectFit: 'contain',
+                  flexShrink: 0,
                 }}
               />
             </div>
           </div>
 
-          <div>
+          <div className="flex w-full flex-col items-start">
             <div
-              className="grid grid-cols-1 sm:grid-cols-3"
+              className="grid grid-cols-1 sm:grid-cols-3 justify-items-center lg:justify-items-end lg:ml-auto"
               style={{
                 gap: 'clamp(14px, 1.8vw, 26px)',
-                maxWidth: 'clamp(470px, 49vw, 760px)',
-                marginLeft: 0,
-                marginTop: 'clamp(48px, 5vw, 80px)',
+                width: 'fit-content',
+                maxWidth: '100%',
+                marginTop: 'clamp(24px, 2.5vw, 48px)',
                 marginBottom: 'clamp(16px, 1.8vw, 26px)',
               }}
             >
@@ -112,11 +120,11 @@ export default function AboutInvestorsSection() {
             </div>
 
             <div
-              className="grid grid-cols-2 sm:grid-cols-4"
+              className="grid grid-cols-2 sm:grid-cols-4 justify-items-center lg:justify-items-end lg:ml-auto"
               style={{
                 gap: 'clamp(14px, 1.8vw, 26px)',
-                maxWidth: 'clamp(620px, 61vw, 940px)',
-                marginLeft: 'clamp(-96px, -5vw, 0px)',
+                width: 'fit-content',
+                maxWidth: '100%',
               }}
             >
               {BOTTOM_INVESTORS.map((person) => (

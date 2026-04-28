@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
-import greenBg from '../../assets/images/green-bg.png';
+import greenBg from '../../../assets/images/green-bg.png';
 
-import j1 from '../../assets/images/journey-1.jpg';
-import j2 from '../../assets/images/journey-2.jpg';
-import j3 from '../../assets/images/journey-3.jpg';
-import j4 from '../../assets/images/journey-4.jpg';
-import j5 from '../../assets/images/journey-5.jpg';
-import j6 from '../../assets/images/journey-6.jpg';
-import j7 from '../../assets/images/journey-7.jpg';
-import j8 from '../../assets/images/journey-8.jpg';
-import j9 from '../../assets/images/journey-9.jpg';
-import j10 from '../../assets/images/journey-10.jpg';
-import j11 from '../../assets/images/journey-11.jpg';
-import j12 from '../../assets/images/journey-12.jpg';
-import j13 from '../../assets/images/journey-13.jpg';
-import j14 from '../../assets/images/journey-14.jpg';
-import j15 from '../../assets/images/journey-15.jpg';
-import j16 from '../../assets/images/journey-16.jpg';
+import j1 from '../../../assets/images/journey-1.jpg';
+import j2 from '../../../assets/images/journey-2.jpg';
+import j3 from '../../../assets/images/journey-3.jpg';
+import j4 from '../../../assets/images/journey-4.jpg';
+import j5 from '../../../assets/images/journey-5.jpg';
+import j6 from '../../../assets/images/journey-6.jpg';
+import j7 from '../../../assets/images/journey-7.jpg';
+import j8 from '../../../assets/images/journey-8.jpg';
+import j9 from '../../../assets/images/journey-9.jpg';
+import j10 from '../../../assets/images/journey-10.jpg';
+import j11 from '../../../assets/images/journey-11.jpg';
+import j12 from '../../../assets/images/journey-12.jpg';
+import j13 from '../../../assets/images/journey-13.jpg';
+import j14 from '../../../assets/images/journey-14.jpg';
+import j15 from '../../../assets/images/journey-15.jpg';
+import j16 from '../../../assets/images/journey-16.jpg';
 
 const milestones = [
   { year: '2020', title: 'Born to Disrupt', desc: 'Naxatra Labs takes flight with a mission to revolutionize hybrid drones.', img: j1 },
@@ -37,7 +37,7 @@ const milestones = [
   { year: '2025', title: 'Showcasing Innovation', desc: 'Exhibited at EV India Expo 2025, presented our advancements in motor technologies and forging key international collaborations.', img: j16 },
 ];
 
-export default function JourneySection() {
+export default function AboutJourneySection() {
   const cardsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -58,7 +58,6 @@ export default function JourneySection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '20px 0 120px' }}>
-      {/* Background green glow */}
       <div className="absolute left-[36px] top-[-12px] h-[680px] w-[680px]  pointer-events-none">
         <img src={greenBg} alt="" className="w-full h-full object-contain" />
       </div>
@@ -69,7 +68,7 @@ export default function JourneySection() {
         style={{
           maxWidth: '1920px',
           margin: '0 auto',
-          padding: '0 clamp(100px, calc(100px + (100vw - 960px) * 0.1042), 200px)',
+          padding: '0 clamp(24px, 9.9vw, 191px)',
         }}
       >
         <div
@@ -78,14 +77,10 @@ export default function JourneySection() {
             gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) minmax(430px, 1fr)',
             gap: 'clamp(56px, calc(56px + (100vw - 960px) * 0.18), 220px)',
             alignItems: 'start',
+            paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
         >
-          {/* Left intro */}
-          <div
-            style={{
-              paddingTop: 0,
-            }}
-          >
+          <div style={{ paddingTop: 0 }}>
             <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
               [A journey from 2020 to beyond.]
             </p>
@@ -104,7 +99,6 @@ export default function JourneySection() {
             </p>
           </div>
 
-          {/* Right timeline */}
           <div style={{ width: '430px', justifySelf: 'end' }}>
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
