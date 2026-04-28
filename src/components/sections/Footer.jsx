@@ -13,6 +13,8 @@ const W = 1920;
 const H = 763;
 const px = (v) => `${((v / W) * 100).toFixed(4)}%`;
 const py = (v) => `${((v / H) * 100).toFixed(4)}%`;
+// position relative to plus-grid image (uses PLUS_GRID_HEIGHT as reference, over content area above copyright bar)
+const pgx = (v) => `calc(${((v / PLUS_GRID_HEIGHT) * 100).toFixed(4)}% - ${(v / PLUS_GRID_HEIGHT).toFixed(6)} * clamp(44px, 3.96vw, ${COPYRIGHT_BAR_HEIGHT}px))`;
 
 const PLUS_GRID_LEFT = 703;
 const PLUS_GRID_WIDTH = 1217;
@@ -82,7 +84,7 @@ export default function Footer() {
       className="relative w-full overflow-hidden font-nexa"
       style={{
         background: '#000',
-        height: `clamp(360px, 37vw, ${PLUS_GRID_HEIGHT + COPYRIGHT_BAR_HEIGHT}px)`,
+        height: `clamp(330px, 34vw, 645px)`,
       }}
     >
       {/* ── Decorative background ─────────────────── */}
@@ -106,7 +108,7 @@ export default function Footer() {
       {/* Figma plus grid — right area */}
       <div
         className="absolute pointer-events-none"
-        style={{ left: px(PLUS_GRID_LEFT), top: 0, width: px(PLUS_GRID_WIDTH), height: py(PLUS_GRID_HEIGHT) }}
+        style={{ left: px(PLUS_GRID_LEFT), top: 0, width: px(PLUS_GRID_WIDTH), height: `calc(100% - clamp(44px, 3.96vw, ${COPYRIGHT_BAR_HEIGHT}px))` }}
       >
         <img src={footerPlusGrid} alt="" className="w-full h-full" style={{ objectFit: 'fill' }} />
       </div>
@@ -114,7 +116,7 @@ export default function Footer() {
       {/* ── Brand card background ─────────────────── */}
       <div
         className="absolute pointer-events-none"
-        style={{ left: px(146), top: py(GRID_CONTENT_TOP), width: px(601), height: py(GRID_CONTENT_HEIGHT) }}
+        style={{ left: px(146), top: pgx(GRID_CONTENT_TOP), width: px(601), height: pgx(GRID_CONTENT_HEIGHT) }}
       >
         <img src={footerBrandCard} alt="" className="w-full h-full" style={{ objectFit: 'fill' }} />
       </div>
@@ -195,7 +197,7 @@ export default function Footer() {
 
         <div
           style={{
-            marginTop: 'clamp(16px, 1.55vw, 30px)',
+            marginTop: 'clamp(16px, 1.55vw, 20px)',
             display: 'flex',
             flexDirection: 'column',
             gap: 'clamp(24px, 2.35vw, 45px)',
