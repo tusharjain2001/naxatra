@@ -7,7 +7,7 @@ export default function CaseStudyWayAhead() {
     <section className="w-full bg-white">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
+        style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <h2
           className="font-nexa capitalize"
@@ -22,8 +22,8 @@ export default function CaseStudyWayAhead() {
           <span style={{ color: '#1863da' }}>Ahead</span>
         </h2>
 
-        <div className="flex flex-wrap gap-10 items-start">
-          <div className="flex-shrink-0 overflow-hidden rounded" style={{ width: 'clamp(220px, 29.4vw, 565px)' }}>
+        <div className="flex items-start" style={{ gap: 'clamp(24px, 3vw, 56px)', flexWrap: 'nowrap' }}>
+          <div className="flex-shrink-0 overflow-hidden rounded" style={{ width: 'clamp(200px, 26vw, 500px)' }}>
             <img
               src={aheadMotor}
               alt="Future of Power Tools with BLDC"
@@ -33,11 +33,11 @@ export default function CaseStudyWayAhead() {
 
           <div
             className="flex flex-col items-start"
-            style={{ flex: '1 1 clamp(260px, 46.8vw, 898px)', gap: 'clamp(20px, 1.88vw, 36px)' }}
+            style={{ flex: '1 1 0', minWidth: 0, gap: 'clamp(20px, 1.88vw, 36px)' }}
           >
             <p
               className="font-metro text-black"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.7' }}
+              style={{ fontSize: '20px', lineHeight: '1.7' }}
             >
               As the industry shifts toward brushless systems, offering BLDC-powered tools is no longer a premium
               add-on - it's becoming a baseline expectation. The results of this study unequivocally demonstrate that
@@ -48,7 +48,7 @@ export default function CaseStudyWayAhead() {
             </p>
             <p
               className="font-metro text-black"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.7' }}
+              style={{ fontSize: '20px', lineHeight: '1.7' }}
             >
               If you're a power tool manufacturer looking to future-proof your products and stay ahead of the curve,
               Naxatra Labs can help. Our team specializes in custom BLDC motor solutions designed for high-performance
@@ -60,7 +60,7 @@ export default function CaseStudyWayAhead() {
               style={{
                 width: '100%',
                 gap: 'clamp(24px, 2.6vw, 50px)',
-                marginTop: 'clamp(8px, 1vw, 18px)',
+                marginTop: 'clamp(24px, 3vw, 56px)',
               }}
             >
               <a href="#contact" className="inline-flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function CaseStudyWayAhead() {
 
               <Link
                 to="/case-studies"
-                className="font-metro underline flex items-center gap-2 self-end"
+                className="font-metro underline flex mt-10 items-center gap-2 self-end"
                 style={{
                   color: '#1863da',
                   fontSize: 'clamp(12px, 1.04vw, 20px)',

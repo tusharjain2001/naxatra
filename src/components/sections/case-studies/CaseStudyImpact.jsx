@@ -5,7 +5,7 @@ export default function CaseStudyImpact() {
     <section className="w-full bg-white overflow-hidden">
       <div
         className="mx-auto"
-        style={{ maxWidth: '1840px', padding: 'clamp(24px, 3vw, 14px) clamp(20px, 4.2vw, 80px) clamp(40px, 5vw, 16px)' }}
+        style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(24px, 3vw, 14px) clamp(20px, 4.2vw, 80px) clamp(40px, 5vw, 16px)' }}
       >
         <h2
           className="font-nexa capitalize"
@@ -16,10 +16,10 @@ export default function CaseStudyImpact() {
         </h2>
 
         <div
-          className="flex flex-wrap items-start"
-          style={{ gap: 'clamp(24px, 3vw, 56px)' }}
+          className="flex items-start"
+          style={{ gap: 'clamp(24px, 3vw, 56px)', flexWrap: 'nowrap' }}
         >
-          <div style={{ width: 'clamp(280px, 34vw, 650px)', flexShrink: 0 }}>
+          <div style={{ width: 'clamp(220px, 28vw, 540px)', flexShrink: 0 }}>
             <img
               src={energyLeft}
               alt="Energy and cost impact summary"
@@ -27,26 +27,12 @@ export default function CaseStudyImpact() {
             />
           </div>
 
-          <div style={{ flex: '1 1 clamp(320px, 42vw, 820px)', maxWidth: 'none' }}>
+          <div style={{ flex: '1 1 0', minWidth: 0 }}>
             <p
               className="font-metro text-black"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.72', marginBottom: '1.2em' }}
+              style={{ fontSize: '20px', lineHeight: '1.72' }}
             >
-              By switching from traditional brushed DC motors to Naxatra Labs&apos; BLDC motor solution, manufacturers can unlock meaningful operating savings at scale. Higher efficiency means less wasted energy, lower heat generation, and improved electrical utilization across every usage cycle.
-            </p>
-
-            <p
-              className="font-metro text-black"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.72', marginBottom: '1.2em' }}
-            >
-              For a reference 150W tool operating roughly 3,000 hours per year, the improved efficiency can translate into substantial annual electricity savings per motor, while also reducing downtime, maintenance intervention, and replacement frequency over the product lifecycle.
-            </p>
-
-            <p
-              className="font-metro text-black"
-              style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.72' }}
-            >
-              Beyond cost, the impact is strategic: lower energy consumption, reduced component wear, and greener operation make BLDC-powered tools more attractive to industrial buyers seeking performance, reliability, and sustainability in one platform.
+              For reference a 150W tool, BLDC being about 30% more efficient, if the tool operates about 3,000 hrs. in a year, the energy saved is about 135 kWh. That&apos;s about 1,350 INR (at 10 rupee/ unit) saved every year not to mention the savings due to reduced down-time and maintenance costs. Thereby also reducing the overall Total Cost of Ownership. Reduced energy consumption aligns with potential future regulations and appeals to environmentally conscious customers and corporations with sustainability mandates.
             </p>
           </div>
         </div>
