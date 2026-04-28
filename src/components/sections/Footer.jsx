@@ -200,14 +200,14 @@ export default function Footer() {
             marginTop: 'clamp(16px, 1.55vw, 20px)',
             display: 'flex',
             flexDirection: 'column',
-            gap: 'clamp(24px, 2.35vw, 45px)',
+            gap: 'clamp(24px, 2.35vw, 25px)',
           }}
         >
           <div>
             <div
               style={{
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 gap: 'clamp(10px, 0.9vw, 17px)',
                 marginBottom: 'clamp(8px, 0.78vw, 15px)',
               }}
@@ -234,7 +234,7 @@ export default function Footer() {
             <div
               style={{
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 gap: 'clamp(10px, 0.9vw, 17px)',
                 marginBottom: 'clamp(8px, 0.78vw, 15px)',
               }}
