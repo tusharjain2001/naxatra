@@ -33,8 +33,8 @@ export default function TechStatsSection() {
         className="relative mx-auto flex flex-col items-start lg:flex-row lg:items-start lg:justify-between"
         style={{
           maxWidth: '1840px',
-          padding: 'clamp(40px, 4.6vw, 84px) clamp(20px, 4.2vw, 80px)',
-          gap: 'clamp(34px, 4.2vw, 80px)',
+          padding: 'clamp(40px, 4.6vw, 84px) clamp(20px, 10.1vw, 194px)',
+          gap: 'clamp(20px, 2.5vw, 48px)',
         }}
       >
         {/* Section heading on left */}
@@ -45,10 +45,10 @@ export default function TechStatsSection() {
           }}
         >
           <h2
-            className="font-nexa capitalize text-white"
-            style={{ fontSize: 'clamp(34px, 3.65vw, 70px)', lineHeight: '1.08', fontWeight: 400, maxWidth: '520px' }}
+            className="font-nexa font-semibold capitalize text-white"
+            style={{ fontSize: 'clamp(34px, 3.54vw, 68px)', lineHeight: '1.08', fontWeight: 500 }}
           >
-            {'Drive Smart, Safe,'}
+            <span style={{ whiteSpace: 'nowrap' }}>Drive Smart, Safe,</span>
             <br />
             {'And '}
             <span style={{ color: '#1863da' }}>Your Way</span>
@@ -60,7 +60,7 @@ export default function TechStatsSection() {
           className="flex flex-col"
           style={{
             width: '100%',
-            maxWidth: 'clamp(420px, 44vw, 760px)',
+            maxWidth: 'clamp(360px, 36vw, 640px)',
             gap: 'clamp(16px, 1.5vw, 28px)',
           }}
         >
@@ -78,20 +78,20 @@ export default function TechStatsSection() {
               >
                 <p
                   className="font-nexa capitalize"
-                  style={{ color: '#4dd6c4', fontSize: 'clamp(34px, 3vw, 58px)', lineHeight: '1.05', fontWeight: 400 }}
+                  style={{ color: '#4dd6c4', fontSize: 'clamp(36px, 4.17vw, 80px)', lineHeight: '1.05', fontWeight: 600 }}
                 >
                   {stat.value}
                 </p>
                 <p
                   className="font-nexa capitalize text-white"
-                  style={{ fontSize: 'clamp(20px, 1.8vw, 34px)', lineHeight: '1.14', fontWeight: 400, marginTop: '4px' }}
+                  style={{ fontSize: 'clamp(16px, 1.56vw, 30px)', lineHeight: '1.14', fontWeight: 400, marginTop: '4px' }}
                 >
                   {stat.label}
                 </p>
                 <p
                   className="font-metro text-white"
                   style={{
-                    fontSize: 'clamp(12px, 0.98vw, 18px)',
+                    fontSize: 'clamp(12px, 1.04vw, 20px)',
                     lineHeight: '1.5',
                     marginTop: 'clamp(10px, 1vw, 18px)',
                     maxWidth: 'clamp(280px, 31vw, 620px)',
