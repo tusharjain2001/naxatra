@@ -28,7 +28,7 @@ export default function CaseStudiesHeroSection() {
         className="absolute flex flex-col"
         style={{
           left: 'clamp(40px, 10vw, 191px)',
-          top: 'clamp(56px, 20vw, 190px)',
+          top: 'clamp(150px, 16.2vw, 310px)',
           gap: 'clamp(16px, 1.67vw, 32px)',
         }}
       >
@@ -60,9 +60,9 @@ export default function CaseStudiesHeroSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          top: 'clamp(16px, 5vw, 86px)',
+          top: 'clamp(106px, 9.2vw, 176px)',
           right: 'clamp(-24px, 1vw, 18px)',
-          width: 'clamp(520px, 45vw, 867px)',
+          width: 'clamp(598px, 51.9vw, 997px)',
           aspectRatio: '867 / 598',
         }}
       >
@@ -76,7 +76,7 @@ export default function CaseStudiesHeroSection() {
           alt="Motor Diagram"
           className="absolute z-10 block h-auto object-contain"
           style={{
-            width: 'clamp(300px, 33vw, 635px)',
+            width: 'clamp(345px, 38vw, 730px)',
             top: '51%',
             left: '47%',
             transform: 'translate(-50%, -50%)',
@@ -87,7 +87,7 @@ export default function CaseStudiesHeroSection() {
           alt="Motor Render"
           className="absolute z-20 block h-auto object-contain"
           style={{
-            width: 'clamp(150px, 17vw, 325px)',
+            width: 'clamp(173px, 19.5vw, 374px)',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',

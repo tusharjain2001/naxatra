@@ -54,10 +54,11 @@ export default function CaseStudyFeatureSection() {
               margin: 0,
             }}
           >
-            <span style={{ color: '#1863da' }}>Boosting Power Tool Performance </span>
-            <span style={{ color: '#000' }}>
-              with Naxatra Labs' Advanced BLDC Motor Solution
-            </span>
+            <span style={{ color: '#1863da', whiteSpace: 'nowrap' }}>Boosting Power Tool Performance</span>
+            <br />
+            <span style={{ color: '#000', whiteSpace: 'nowrap' }}>With Naxatra Labs' Advanced</span>
+            <br />
+            <span style={{ color: '#000', whiteSpace: 'nowrap' }}>BLDC Motor Solution</span>
           </h2>
 
           <Link
