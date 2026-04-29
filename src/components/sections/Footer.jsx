@@ -366,7 +366,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-between bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,#1863da_0%,#154da6_25%,#123773_50%,#102c59_62.5%,#0f213f_75%,#0d1625_87.5%,#0b0b0b_100%)] px-[18px] py-4 text-[10px] leading-none text-white">
+        <div className=" flex items-center justify-between bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,#1863da_0%,#154da6_25%,#123773_50%,#102c59_62.5%,#0f213f_75%,#0d1625_87.5%,#0b0b0b_100%)] px-[18px] py-4 text-[10px] leading-none text-white">
           <span>Copyright © 2026</span>
           <div className="flex items-center gap-4">
             <span>Privacy Policy</span>
