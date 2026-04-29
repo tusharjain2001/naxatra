@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: 'Integrated Control & Intelligence',
-    body: 'Enables precision features such as variable speed control, torque limiting, soft start/stop profiles, and safety interlocks—features impossible with mechanical commutation.',
+    body: 'Enables precision features such as variable speed control, torque limiting, soft start/stop profiles, and safety interlocks - features impossible with mechanical commutation.',
     card: 'light',
   },
 ];
@@ -27,11 +27,52 @@ const features = [
 export default function CaseStudyFeatures() {
   return (
     <section className="w-full bg-white">
+      <div className="md:hidden" style={{ padding: '22px 10px 34px' }}>
+        <div className="mx-auto" style={{ maxWidth: '460px' }}>
+          <h2
+            className="font-nexa capitalize text-center"
+            style={{ fontSize: '20px', lineHeight: '1.2', fontWeight: 400, marginBottom: '16px' }}
+          >
+            <span style={{ color: '#1863da' }}>Key </span>
+            <span style={{ color: '#000' }}>Features</span>
+          </h2>
+
+          <div className="flex flex-col" style={{ gap: '10px' }}>
+            {features.map((f) => (
+              <div key={f.title} className="relative">
+                <img
+                  src={f.card === 'dark' ? featureDark : featureLight}
+                  alt=""
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  style={{ objectFit: 'fill' }}
+                />
+                <div
+                  className="relative flex flex-col"
+                  style={{ padding: '16px 18px 18px', gap: '6px' }}
+                >
+                  <h3
+                    className="font-nexa capitalize"
+                    style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.18', fontWeight: 400 }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p
+                    className="font-metro text-black"
+                    style={{ fontSize: '10px', lineHeight: '1.5', margin: 0 }}
+                  >
+                    {f.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div
-        className="mx-auto"
+        className="mx-auto hidden md:block"
         style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
-        {/* Heading */}
         <h2
           className="font-nexa capitalize"
           style={{ fontSize: 'clamp(24px, 2.34vw, 45px)', lineHeight: '1.24', fontWeight: 600, marginBottom: 'clamp(32px, 3.1vw, 60px)' }}
@@ -40,7 +81,6 @@ export default function CaseStudyFeatures() {
           <span style={{ color: '#000' }}>Features</span>
         </h2>
 
-        {/* 2×2 grid */}
         <div
           className="grid"
           style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: 'clamp(24px, 2.5vw, 48px)' }}
