@@ -13,7 +13,57 @@ export default function BlogsFeaturedSection() {
       />
 
       <div
-        className="relative mx-auto flex flex-col items-center"
+        className="relative mx-auto flex flex-col items-center md:hidden"
+        style={{ maxWidth: '420px', padding: '34px 24px 40px' }}
+      >
+        <h2
+          className="font-nexa text-center capitalize"
+          style={{
+            fontSize: '20px',
+            lineHeight: '1.15',
+            fontWeight: 400,
+            marginBottom: '20px',
+          }}
+        >
+          <span style={{ color: '#1863da' }}>Featured </span>
+          <span style={{ color: '#000' }}>Articles</span>
+        </h2>
+
+        <img
+          src={featuredArticle}
+          alt="Naxatra Labs Fund Raise"
+          className="block w-full h-auto object-contain"
+          style={{ maxWidth: '332px' }}
+        />
+
+        <div
+          className="w-full text-center"
+          style={{ maxWidth: '332px', marginTop: '18px' }}
+        >
+          <h3
+            className="font-nexa capitalize"
+            style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.2', fontWeight: 400, margin: 0 }}
+          >
+            Fund Raise
+          </h3>
+          <p
+            className="font-metro"
+            style={{ fontSize: '10px', color: '#929292', marginTop: '4px' }}
+          >
+            May 11, 2023
+          </p>
+          <p
+            className="font-metro text-black"
+            style={{ fontSize: '10px', lineHeight: '1.5', marginTop: '10px', marginBottom: 0 }}
+          >
+            Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions,
+            our motors deliver unmatched durability and performance wherever the journey takes you.
+          </p>
+        </div>
+      </div>
+
+      <div
+        className="relative mx-auto hidden md:flex md:flex-col md:items-center"
         style={{ maxWidth: '920px', padding: 'clamp(36px, 4.4vw, 84px) clamp(24px, 4vw, 76px)' }}
       >
         <h2
