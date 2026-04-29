@@ -28,38 +28,25 @@ const cards = [
 export default function WhyUsSection() {
   return (
     <section
-      className="w-full"
-      style={{
-        background: '#1863da',
-        paddingTop: 'clamp(36px, 3.6vw, 68px)',
-        paddingBottom: 'clamp(34px, 4.6vw, 78px)',
-      }}
+      className="w-full bg-[#1863da] pt-[clamp(36px,3.6vw,68px)] pb-[clamp(34px,4.6vw,78px)]"
       id="technology"
     >
-      <div style={{ maxWidth: '1840px', margin: '0 auto', padding: '0 clamp(20px, 4.2vw, 80px)' }}>
+      <div
+        className="mx-auto max-w-[1840px] px-[clamp(20px,4.2vw,80px)] max-[720px]:px-[18px]"
+      >
         <h2
-          className="font-nexa text-center font-semibold capitalize"
-          style={{
-            color: '#fff',
-            fontSize: 'clamp(34px, 2.45vw, 48px)',
-            lineHeight: 1.2,
-            marginBottom: 'clamp(28px, 3.4vw, 56px)',
-          }}
+          className="font-nexa text-center font-semibold capitalize text-white text-[clamp(34px,2.45vw,48px)] leading-[1.2] mb-[clamp(28px,3.4vw,56px)] max-[720px]:text-[26px]"
         >
           Why Us?
         </h2>
 
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 'clamp(28px, 3.33vw, 64px)',
-          }}
+          className="grid grid-cols-3 gap-[clamp(28px,3.33vw,64px)] max-[720px]:mx-auto max-[720px]:max-w-[268px] max-[720px]:grid-cols-1 max-[720px]:gap-7"
         >
           {cards.map((card, i) => (
             <div
               key={i}
-              className="relative"
+              className="relative max-[720px]:mx-auto max-[720px]:h-[317px] max-[720px]:w-[258px]"
               style={{ aspectRatio: '457 / 470', minWidth: 0 }}
             >
               <img
@@ -69,17 +56,15 @@ export default function WhyUsSection() {
                 style={{ display: 'block' }}
               />
               <div
-                className="relative z-10"
+                className="relative z-10 flex h-full flex-col px-[5.4%] pt-[5.2%] pb-[5.4%] max-[720px]:px-[11.5%] max-[720px]:pt-[6.2%] max-[720px]:pb-[7.5%]"
                 style={{
                   height: '100%',
-                  padding: '5.2% 5.4% 5.4%',
-                  display: 'flex',
-                  flexDirection: 'column',
                 }}
               >
                 <img
                   src={card.img}
                   alt={card.title}
+                  className="max-[720px]:mx-auto max-[720px]:h-[143.834px] max-[720px]:w-[201.368px] max-[720px]:rounded-[4px]"
                   style={{
                     width: '100%',
                     aspectRatio: '393 / 245',
@@ -89,25 +74,12 @@ export default function WhyUsSection() {
                   }}
                 />
                 <h3
-                  className="font-nexa capitalize"
-                  style={{
-                    color: '#fff',
-                    fontSize: 'clamp(20px, 1.65vw, 32px)',
-                    lineHeight: 1.2,
-                    marginTop: 'clamp(10px, 1vw, 18px)',
-                    marginBottom: 'clamp(6px, 0.7vw, 12px)',
-                  }}
+                  className="font-nexa capitalize text-white text-[clamp(20px,1.65vw,32px)] leading-[1.2] mt-[clamp(10px,1vw,18px)] mb-[clamp(6px,0.7vw,12px)] max-[720px]:text-center max-[720px]:text-[20px] max-[720px]:leading-[1.12]"
                 >
                   {card.title}
                 </h3>
                 <p
-                  className="font-metro"
-                  style={{
-                    color: '#fff',
-                    fontSize: 'clamp(11px, 0.72vw, 14px)',
-                    lineHeight: 1.48,
-                    maxWidth: '95%',
-                  }}
+                  className="font-metro text-white text-[clamp(11px,0.72vw,14px)] leading-[1.48] max-w-[95%] max-[720px]:max-w-none max-[720px]:text-center max-[720px]:text-[10px] max-[720px]:leading-[1.5]"
                 >
                   {card.desc}
                 </p>
