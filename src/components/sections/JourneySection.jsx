@@ -57,47 +57,44 @@ export default function JourneySection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '20px 0 120px' }}>
+    <section className="relative w-full overflow-hidden bg-[#f5fafa] pt-[20px] pb-[120px] max-[560px]:pt-7 max-[560px]:pb-10">
       {/* Background green glow */}
-      <div className="absolute left-[36px] top-[-12px] h-[680px] w-[680px]  pointer-events-none">
+      <div className="absolute left-[36px] top-[-12px] h-[680px] w-[680px] pointer-events-none max-[560px]:left-[-120px] max-[560px]:top-[-40px] max-[560px]:h-[360px] max-[560px]:w-[360px]">
         <img src={greenBg} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute left-[86px] top-[92px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none" />
+      <div className="absolute left-[86px] top-[92px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none max-[560px]:left-[-18px] max-[560px]:top-[78px] max-[560px]:h-[220px] max-[560px]:w-[220px]" />
 
       <div
-        className="relative z-10"
+        className="relative z-10 mx-auto max-w-[1920px] px-[clamp(100px,calc(100px+(100vw-960px)*0.1042),200px)] max-[560px]:px-4"
         style={{
           maxWidth: '1920px',
-          margin: '0 auto',
-          padding: '0 clamp(100px, calc(100px + (100vw - 960px) * 0.1042), 200px)',
         }}
       >
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) minmax(430px, 1fr)',
-            gap: 'clamp(56px, calc(56px + (100vw - 960px) * 0.18), 220px)',
-            alignItems: 'start',
-          }}
+          className="grid items-start gap-[clamp(56px,calc(56px+(100vw-960px)*0.18),220px)] [grid-template-columns:clamp(420px,calc(420px+(100vw-960px)*0.14),560px)_minmax(430px,1fr)] max-[560px]:grid-cols-1 max-[560px]:gap-9"
         >
           {/* Left intro */}
           <div
+            className="max-[560px]:text-center"
             style={{
               paddingTop: 0,
             }}
           >
-            <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
+            <p className="font-metro uppercase text-[#747474] text-[14px] leading-[18px] tracking-[1.2px] mb-[14px] max-[560px]:text-[10px] max-[560px]:leading-[14px] max-[560px]:tracking-[0.08em] max-[560px]:text-[#7c8694]">
               [A journey from 2020 to beyond.]
             </p>
-            <h2 className="font-nexa mt-10" style={{ fontSize: '54px', lineHeight: '1.02', fontWeight: 600, marginBottom: '44px', maxWidth: '520px' }}>
-              <span style={{ color: '#000' }}>The Road To </span>
-              <span style={{ color: '#1863da' }}>A</span>
-              <br />
-              <span style={{ color: '#1863da' }}>Sustainable Future</span>
-              <br />
-              <span style={{ color: '#000' }}>Begins Here</span>
+            <h2 className="font-nexa mt-10 text-[54px] leading-[1.02] font-semibold mb-[44px] max-w-[520px] max-[560px]:mt-5 max-[560px]:mb-7 max-[560px]:mx-auto max-[560px]:max-w-[360px] max-[560px]:text-[26px] max-[560px]:leading-[1.05]" >
+              <span className="max-[560px]:hidden" style={{ color: '#000' }}>The Road To </span>
+              <span className="max-[560px]:hidden" style={{ color: '#1863da' }}>A</span>
+              <br className="max-[560px]:hidden" />
+              <span className="max-[560px]:hidden" style={{ color: '#1863da' }}>Sustainable Future</span>
+              <br className="max-[560px]:hidden" />
+              <span className="max-[560px]:hidden" style={{ color: '#000' }}>Begins Here</span>
+
+              <span className="hidden max-[560px]:block text-black whitespace-nowrap">The Road To <span className="text-[#1863da]">A Sustainable</span></span>
+              <span className="hidden max-[560px]:block whitespace-nowrap"><span className="text-[#1863da]">Future</span> <span className="text-black">Begins Here</span></span>
             </h2>
-            <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '1.7', maxWidth: '540px' }}>
+            <p className="font-metro text-black text-[16px] leading-[1.7] max-w-[540px] max-[560px]:mx-auto max-[560px]:max-w-[312px] max-[560px]:text-center max-[560px]:text-[10px] max-[560px]:leading-[1.6]">
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
               4+ years of research, deliver industry-leading performance with uncompromising reliability.
@@ -105,17 +102,18 @@ export default function JourneySection() {
           </div>
 
           {/* Right timeline */}
-          <div style={{ width: '430px', justifySelf: 'end' }}>
+          <div className="w-[430px] justify-self-end max-[560px]:mx-auto max-[560px]:w-full max-[560px]:max-w-[284px]">
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
-                <p className="font-nexa" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
+                <p className="font-nexa max-[560px]:text-[26px] max-[560px]:leading-[1]" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
                   {milestones[activeIndex].year}
                 </p>
-                <p className="font-metro" style={{ color: '#000', fontSize: '12px', lineHeight: '16px', marginTop: '4px' }}>
+                <p className="font-metro max-[560px]:text-[8px] max-[560px]:leading-[12px]" style={{ color: '#000', fontSize: '12px', lineHeight: '16px', marginTop: '4px' }}>
                   {milestones[activeIndex].title}
                 </p>
-                <div style={{ position: 'relative', width: '28px', height: '43px', margin: '13px auto 0' }}>
+                <div className="max-[560px]:h-[36px] max-[560px]:w-[24px]" style={{ position: 'relative', width: '28px', height: '43px', margin: '13px auto 0' }}>
                   <div
+                    className="max-[560px]:top-[11px] max-[560px]:h-[25px] max-[560px]:w-[16px]"
                     style={{
                       position: 'absolute',
                       top: '14px',
@@ -127,6 +125,7 @@ export default function JourneySection() {
                     }}
                   />
                   <div
+                    className="max-[560px]:h-[15px] max-[560px]:w-[15px]"
                     style={{
                       position: 'relative',
                       width: '22px',
@@ -142,47 +141,26 @@ export default function JourneySection() {
 
             <div
               ref={cardsRef}
-              style={{
-                width: '430px',
-                height: '505px',
-                overflowY: 'auto',
-                overflowX: 'hidden',
-                scrollSnapType: 'y mandatory',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-              }}
+              className="h-[505px] w-[430px] overflow-y-auto overflow-x-hidden [scroll-snap-type:y_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] max-[560px]:h-[374px] max-[560px]:w-full"
             >
               {milestones.map((m, i) => (
                 <div
                   key={i}
-                  style={{
-                    height: '505px',
-                    scrollSnapAlign: 'start',
-                    scrollSnapStop: 'always',
-                    display: 'flex',
-                    justifyContent: 'center',
-                  }}
+                  className="flex h-[505px] justify-center [scroll-snap-align:start] [scroll-snap-stop:always] max-[560px]:h-[374px]"
                 >
                   <div
-                    style={{
-                      width: '370px',
-                      minHeight: '505px',
-                      background: '#fff',
-                      border: '1px solid rgba(24,99,218,0.14)',
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                      padding: '33px 28px 38px',
-                    }}
+                    className="w-[370px] min-h-[505px] overflow-hidden rounded-[8px] border border-[rgba(24,99,218,0.14)] bg-white px-[28px] pt-[33px] pb-[38px] max-[560px]:w-[258px] max-[560px]:min-h-[306px] max-[560px]:rounded-[8px] max-[560px]:px-[19px] max-[560px]:pt-[24px] max-[560px]:pb-[26px]"
                   >
                     <img
                       src={m.img}
                       alt={m.title}
+                      className="max-[560px]:mx-auto max-[560px]:mb-[18px] max-[560px]:h-[131px] max-[560px]:w-[185px] max-[560px]:rounded-[4px]"
                       style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px', borderRadius: '8px' }}
                     />
-                    <h3 className="font-nexa capitalize" style={{ color: '#1863da', fontSize: '34px', lineHeight: '38px', fontWeight: 400, marginBottom: '10px' }}>
+                    <h3 className="font-nexa capitalize text-[#1863da] text-[34px] leading-[38px] font-normal mb-[10px] max-[560px]:text-center max-[560px]:text-[22px] max-[560px]:leading-[1.1] max-[560px]:mb-[8px]">
                       {m.title}
                     </h3>
-                    <p className="font-metro" style={{ color: '#000', fontSize: '14px', lineHeight: '22px' }}>
+                    <p className="font-metro text-black text-[14px] leading-[22px] max-[560px]:text-center max-[560px]:text-[10px] max-[560px]:leading-[1.5]">
                       {m.desc}
                     </p>
                   </div>
