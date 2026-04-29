@@ -1,3 +1,5 @@
+import mobileComparison from '../../../assets/images/performance-comp-mobile.svg';
+
 const rows = [
   { feature: 'Peak Efficiency', brushed: '~70%', bldc: '90%', improvement: '+29%' },
   { feature: 'Battery Runtime', brushed: 'Baseline(1.0X cycles/charge)', bldc: '1.2X cycles/charge', improvement: '+20%' },
@@ -49,8 +51,16 @@ const TD = ({ children, blue }) => (
 export default function CaseStudyComparison() {
   return (
     <section className="w-full bg-white">
+      <section className="md:hidden">
+        <img
+          src={mobileComparison}
+          alt="Performance Comparison"
+          className="block w-full h-auto"
+        />
+      </section>
+
       <div
-        className="mx-auto"
+        className="mx-auto hidden md:block"
         style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(36px, 4.6vw, 88px) clamp(20px, 4.2vw, 80px)' }}
       >
         <h2
