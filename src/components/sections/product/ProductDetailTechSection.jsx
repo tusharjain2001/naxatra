@@ -67,7 +67,7 @@ function ApplicationsContent({ productApplications }) {
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: "clamp(12px, 1.25vw, 24px)",
       }}
-      className="max-[720px]:grid-cols-2"
+      className="max-[720px]:grid-cols-2!"
     >
       {apps.map((app) => (
         <div
@@ -120,6 +120,7 @@ function MotorDetailedContent({ product }) {
     >
       {/* Large motor viewer card */}
       <div
+        className="max-[768px]:min-h-55! max-[768px]:rounded-xl!"
         style={{
           background: "rgba(243,243,243,0.9)",
           borderRadius: "24px",
@@ -134,6 +135,7 @@ function MotorDetailedContent({ product }) {
         <img
           src={product.image}
           alt={product.name}
+          className="max-[768px]:w-[55vw]! max-[768px]:h-auto!"
           style={{
             width: "clamp(160px, 26.8vw, 515px)",
             height: "clamp(120px, 22.6vw, 434px)",
