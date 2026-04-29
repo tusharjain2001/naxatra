@@ -298,8 +298,8 @@ export default function Footer() {
                 <span className="block text-[#4dd6c4]">Future Of Mobility</span>
               </p>
               <div className="relative mt-5 flex items-center justify-center gap-3">
-                <img src={instaIcon} alt="Instagram" className="h-[22px] w-[22px] object-contain" />
-                <img src={linkedinIcon} alt="LinkedIn" className="h-[22px] w-[22px] object-contain" />
+                <img src={instaIcon} alt="Instagram" className="h-[30px] w-[30px] object-contain" />
+                <img src={linkedinIcon} alt="LinkedIn" className="h-[30px] w-[30px] object-contain" />
               </div>
             </div>
 

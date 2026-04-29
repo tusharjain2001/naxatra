@@ -21,6 +21,7 @@ const APP_ICON_MAP = Object.fromEntries(APPLICATIONS.map((a) => [a.id, a.icon]))
 function ProductCard({ product }) {
   return (
     <div
+      className="max-[560px]:rounded-[4px]"
       style={{
         background: 'linear-gradient(180deg, #f4fbfd 0%, #ffffff 100%)',
         border: '1px solid rgba(77,214,196,0.18)',
@@ -33,6 +34,7 @@ function ProductCard({ product }) {
     >
       {/* Motor image */}
       <div
+        className="max-[560px]:!justify-start max-[560px]:!pt-3 max-[560px]:!px-3 max-[560px]:!pb-1"
         style={{
           display: 'flex',
           justifyContent: 'flex-start',
@@ -44,6 +46,7 @@ function ProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
+          className="max-[560px]:!w-[74px] max-[560px]:!h-[56px]"
           style={{
             width: 'clamp(82px, 7vw, 128px)',
             height: 'clamp(64px, 5.8vw, 102px)',
@@ -55,6 +58,7 @@ function ProductCard({ product }) {
 
       {/* Content */}
       <div
+        className="max-[560px]:!px-3 max-[560px]:!pb-3"
         style={{
           padding: '0 clamp(16px, 1.8vw, 28px) clamp(16px, 1.7vw, 24px)',
           flex: 1,
@@ -63,7 +67,7 @@ function ProductCard({ product }) {
         }}
       >
         <h3
-          className="font-nexa capitalize"
+          className="font-nexa capitalize max-[560px]:!text-[11px] max-[560px]:!leading-[1.15] max-[560px]:!mb-1"
           style={{
             color: '#1863da',
             fontSize: 'clamp(18px, 1.6vw, 28px)',
@@ -74,7 +78,7 @@ function ProductCard({ product }) {
           {product.name}
         </h3>
         <p
-          className="font-metro"
+          className="font-metro max-[560px]:!text-[6px] max-[560px]:!leading-[1.35] max-[560px]:!mb-2"
           style={{
             color: '#1f1f1f',
             fontSize: 'clamp(12px, 0.9vw, 16px)',
@@ -87,20 +91,20 @@ function ProductCard({ product }) {
           {product.description}
         </p>
 
-        <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', marginBottom: '10px' }} />
+        <div className="max-[560px]:!mb-2" style={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', marginBottom: '10px' }} />
 
-        <div style={{ display: 'flex', gap: '18px', marginBottom: 'clamp(10px, 1vw, 16px)' }}>
+        <div className="max-[560px]:!gap-3 max-[560px]:!mb-2" style={{ display: 'flex', gap: '18px', marginBottom: 'clamp(10px, 1vw, 16px)' }}>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
+            <p className="font-metro max-[560px]:!text-[7px]" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
               {product.heroVoltage}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Rated Voltage (DC)</p>
+            <p className="font-metro max-[560px]:!text-[5px] max-[560px]:!leading-[1.15]" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Rated Voltage (DC)</p>
           </div>
           <div>
-            <p className="font-metro" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
+            <p className="font-metro max-[560px]:!text-[7px]" style={{ color: '#1863da', fontSize: 'clamp(16px, 1.1vw, 21px)', fontWeight: 500, marginBottom: '2px' }}>
               {product.heroTorque}
             </p>
-            <p className="font-metro" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Peak Torque</p>
+            <p className="font-metro max-[560px]:!text-[5px] max-[560px]:!leading-[1.15]" style={{ color: '#000', fontSize: 'clamp(11px, 0.72vw, 14px)' }}>Peak Torque</p>
           </div>
         </div>
 
@@ -119,7 +123,7 @@ function ProductCard({ product }) {
           <img
             src={viewDetails}
             alt="View Details"
-            className="block"
+            className="block max-[560px]:!w-full"
             style={{ width: '100%', height: 'auto' }}
           />
         </Link>
@@ -141,7 +145,7 @@ function ProductCard({ product }) {
           <img
             src={downloadSpecSheet}
             alt="Download Spec Sheet"
-            className="block"
+            className="block max-[560px]:!w-full"
             style={{ width: '100%', height: 'auto' }}
           />
         </button>
@@ -151,21 +155,24 @@ function ProductCard({ product }) {
 }
 
 function AllProductsView() {
-  const rows = [PRODUCTS.slice(0, 3), PRODUCTS.slice(3, 6), PRODUCTS.slice(6)];
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 1.67vw, 32px)' }}>
-      {rows.map((row, ri) => (
+    <div
+      className="grid grid-cols-3 max-[980px]:!grid-cols-2 max-[560px]:!grid-cols-2"
+      style={{
+        justifyContent: 'center',
+        gap: 'clamp(14px, 1.67vw, 32px)',
+      }}
+    >
+      {PRODUCTS.map((product, index) => (
         <div
-          key={ri}
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(280px, 400px))',
-            justifyContent: 'center',
-            gap: 'clamp(14px, 1.67vw, 32px)',
-          }}
-          className="max-[980px]:grid-cols-2 max-[560px]:grid-cols-1"
+          key={product.id}
+          className={
+            index === PRODUCTS.length - 1 && PRODUCTS.length % 2 === 1
+              ? 'max-[560px]:col-span-2 max-[560px]:mx-auto max-[560px]:w-[44%]'
+              : ''
+          }
         >
-          {row.map((product) => <ProductCard key={product.id} product={product} />)}
+          <ProductCard product={product} />
         </div>
       ))}
     </div>
@@ -264,6 +271,7 @@ export default function ProductListingSection() {
     <section className="w-full" style={{ background: '#fff', paddingBottom: 'clamp(40px, 4vw, 72px)' }}>
       {/* Tab bar */}
       <div
+        className="max-[560px]:!px-4 max-[560px]:!pt-2 max-[560px]:!pb-4"
         style={{
           display: 'flex',
           gap: 'clamp(12px, 1.25vw, 24px)',
@@ -278,13 +286,14 @@ export default function ProductListingSection() {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
+            className="max-[560px]:!gap-1.5"
             style={{
               flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px',
               background: 'none', border: 'none', cursor: 'pointer',
             }}
           >
             <span
-              className="font-nexa capitalize"
+              className="font-nexa capitalize max-[560px]:!text-[11px]"
               style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', lineHeight: '1.5', color: activeTab === tab.key ? '#1863da' : '#b3b3b3' }}
             >
               {tab.label}
@@ -295,7 +304,7 @@ export default function ProductListingSection() {
       </div>
 
       {/* Tab content */}
-      <div style={{ maxWidth: '1530px', margin: '0 auto', padding: '0 clamp(14px, 2.5vw, 48px)' }}>
+      <div className="max-[560px]:!px-4" style={{ maxWidth: '1530px', margin: '0 auto', padding: '0 clamp(14px, 2.5vw, 48px)' }}>
         {activeTab === 'all' ? <AllProductsView /> : <ApplicationsView />}
       </div>
     </section>

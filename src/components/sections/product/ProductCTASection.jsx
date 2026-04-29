@@ -9,7 +9,7 @@ export default function ProductCTASection() {
       style={{ padding: "clamp(24px, 3.6vw, 68px) clamp(16px, 6.5vw, 124px)" }}
     >
       <div
-        className="relative overflow-hidden"
+        className="relative overflow-hidden max-[560px]:!min-h-[386px] max-[560px]:!rounded-[10px]"
         style={{
           maxWidth: "1610px",
           minHeight: "clamp(165px, 14.2vw, 272px)",
@@ -36,7 +36,7 @@ export default function ProductCTASection() {
         />
 
         <div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none max-[560px]:!right-[-30px] max-[560px]:!bottom-[-6px] max-[560px]:!w-[235px] max-[560px]:!h-[190px]"
           style={{
             right: "clamp(-8px, -0.35vw, 0px)",
             bottom: "clamp(-10px, -0.7vw, 0px)",
@@ -54,7 +54,7 @@ export default function ProductCTASection() {
         </div>
 
         <div
-          className="relative"
+          className="relative max-[560px]:!mx-auto max-[560px]:!max-w-[340px] max-[560px]:!px-3 max-[560px]:!pt-10 max-[560px]:!pb-[220px] max-[560px]:text-center"
           style={{
             zIndex: 2,
             maxWidth: "clamp(340px, 39vw, 740px)",
@@ -62,7 +62,7 @@ export default function ProductCTASection() {
           }}
         >
           <h2
-            className="font-nexa"
+            className="font-nexa max-[560px]:!text-[14px] max-[560px]:!leading-[1.4] max-[560px]:!mb-6 max-[560px]:!max-w-none"
             style={{
               fontSize: "clamp(17px, 1.7vw, 33px)",
               lineHeight: "1.42",
@@ -72,15 +72,18 @@ export default function ProductCTASection() {
               fontWeight: 400,
             }}
           >
-            Explore{" "}
-            <span style={{ color: "#4dd6c4" }}>
-              Detailed Specifications, Performance Insights, And Applications
+            <span className="max-[560px]:block">
+              Explore <span style={{ color: "#4dd6c4" }}>Detailed Specifications,</span>
             </span>{" "}
-            For Our Range Of Motors And Controllers.
+            <span className="max-[560px]:block">
+              <span style={{ color: "#4dd6c4" }}>Performance Insights, And Applications</span> For
+            </span>{" "}
+            <span className="max-[560px]:block">Our Range Of Motors And Controllers.</span>
           </h2>
 
           <a
             href="/contact"
+            className="max-[560px]:!inline-flex"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -92,7 +95,7 @@ export default function ProductCTASection() {
             <img
               src={learnMore}
               alt="Learn More About Our Tailored Solutions"
-              className="block"
+              className="block max-[560px]:!w-[280px]"
               style={{ width: "clamp(150px, 17vw, 325px)", height: "auto" }}
             />
           </a>

@@ -10,7 +10,7 @@ const features = [
     icon: iconGear,
     bg: featureBg2,
     title: 'Performance That Matches Indian Conditions',
-    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
+    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, deliver unmatched durability and performance wherever the journey takes you.',
   },
   {
     icon: iconCompact,
@@ -51,7 +51,7 @@ export default function FeaturesSection() {
                 <img
                   src={feature.icon}
                   alt=""
-                  className="h-[clamp(17px,1.45vw,28px)] w-[clamp(17px,1.45vw,28px)] object-contain max-[560px]:h-[30px] max-[560px]:w-[30px]"
+                  className="h-[clamp(17px,1.45vw,28px)] w-[clamp(17px,1.45vw,28px)] object-contain max-[560px]:h-[23px] max-[560px]:w-[23px]"
                 />
                 <h3 className="mt-[clamp(14px,1.2vw,24px)] font-nexa text-[clamp(12px,1.05vw,20px)] capitalize leading-[1.18] tracking-normal text-[#1863da] font-bold max-[560px]:text-[16px] max-[560px]:mt-3">
                   {feature.title}

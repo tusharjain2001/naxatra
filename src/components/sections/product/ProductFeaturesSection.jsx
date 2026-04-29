@@ -37,6 +37,7 @@ export default function ProductFeaturesSection() {
       style={{ background: '#fff', padding: 'clamp(34px, 4.8vw, 82px) clamp(20px, 4.2vw, 80px)' }}
     >
       <div
+        className="max-[980px]:grid-cols-2 max-[560px]:!grid-cols-1 max-[560px]:!gap-3"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, minmax(220px, 280px))',
@@ -45,11 +46,11 @@ export default function ProductFeaturesSection() {
           maxWidth: '1840px',
           margin: '0 auto',
         }}
-        className="max-[980px]:grid-cols-2 max-[560px]:grid-cols-1"
       >
         {FEATURES.map((feature, idx) => (
           <div
             key={idx}
+            className="max-[560px]:!min-h-[130px] max-[560px]:!px-4 max-[560px]:!pt-3 max-[560px]:!pb-4"
             style={{
               position: 'relative',
               padding: 'clamp(24px, 1.8vw, 34px) clamp(18px, 1.45vw, 28px) clamp(24px, 1.9vw, 34px)',
@@ -67,9 +68,9 @@ export default function ProductFeaturesSection() {
               preserveAspectRatio="none"
               style={{
                 position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
+                inset: '0.5px',
+                width: 'calc(100% - 1px)',
+                height: 'calc(100% - 1px)',
                 pointerEvents: 'none',
                 zIndex: 0,
               }}
@@ -84,7 +85,7 @@ export default function ProductFeaturesSection() {
             </svg>
 
             {/* Icon */}
-            <div style={{ width: 'clamp(22px, 1.55vw, 30px)', height: 'clamp(22px, 1.55vw, 30px)', position: 'relative', zIndex: 1 }}>
+            <div className="max-[560px]:!w-[22px] max-[560px]:!h-[22px]" style={{ width: 'clamp(22px, 1.55vw, 30px)', height: 'clamp(22px, 1.55vw, 30px)', position: 'relative', zIndex: 1 }}>
               <img
                 src={feature.icon}
                 alt=""
@@ -94,7 +95,7 @@ export default function ProductFeaturesSection() {
 
             {/* Title */}
             <h3
-              className="font-nexa capitalize"
+              className="font-nexa capitalize max-[560px]:!text-[16px] max-[560px]:!leading-[1.18] max-[560px]:!max-w-none"
               style={{
                 color: '#1863da',
                 fontSize: 'clamp(18px, 1.25vw, 24px)',
@@ -109,7 +110,7 @@ export default function ProductFeaturesSection() {
 
             {/* Description */}
             <p
-              className="font-metro"
+              className="font-metro max-[560px]:!text-[10px] max-[560px]:!leading-[1.5] max-[560px]:!max-w-none"
               style={{
                 color: '#1f1f1f',
                 fontSize: 'clamp(11px, 0.76vw, 14px)',
