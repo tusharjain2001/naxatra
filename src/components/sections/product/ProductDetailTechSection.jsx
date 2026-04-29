@@ -256,7 +256,7 @@ export default function ProductDetailTechSection({ product }) {
     >
       {/* ── Heading ── */}
       <h2
-        className="font-nexa"
+        className="font-nexa max-[768px]:text-[12px]! max-[768px]:mb-4.5!"
         style={{
           fontSize: "clamp(24px, 2.6vw, 50px)",
           lineHeight: "1.24",
