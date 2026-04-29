@@ -287,8 +287,11 @@ export default function Footer() {
               className="relative overflow-hidden bg-[#071514] px-5 pt-[28px] pb-[34px]"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 0 100%)' }}
             >
-              <div className="pointer-events-none absolute inset-0 opacity-35">
+              <div className="pointer-events-none absolute inset-0 opacity-55">
                 <img src={footerVectorDeco} alt="" className="h-full w-full object-cover" />
+              </div>
+              <div className="pointer-events-none absolute left-1/2 top-[-18px] h-[280px] w-[280px] -translate-x-1/2 opacity-60">
+                <img src={footerEllipseDeco} alt="" className="h-full w-full object-contain" />
               </div>
               <p className="relative text-center text-[25px] leading-[1.12]">
                 <span className="block text-white">Engineering The</span>
