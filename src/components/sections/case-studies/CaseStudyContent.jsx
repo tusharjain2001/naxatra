@@ -31,8 +31,113 @@ const cardInnerStyle = {
 export default function CaseStudyContent() {
   return (
     <section className="w-full bg-white">
+      <div className="md:hidden" style={{ padding: '24px 10px 36px' }}>
+        <div className="mx-auto" style={{ maxWidth: '460px' }}>
+          <div style={{ marginBottom: '26px' }}>
+            <h2
+              className="font-nexa font-semibold capitalize text-center"
+              style={{ color: '#1863da', fontSize: '20px', lineHeight: '1.2', fontWeight: 400, margin: '0 0 10px' }}
+            >
+              Overview
+            </h2>
+            <div className="relative mx-auto" style={{ minHeight: '126px' }}>
+              <img src={cardSm} alt="" className="absolute inset-0 w-full h-full pointer-events-none" style={{ objectFit: 'fill' }} />
+              <div style={{ position: 'relative', padding: '18px 16px' }}>
+                <p className="font-metro text-center" style={{ fontSize: '10px', lineHeight: '1.55', color: '#000', marginBottom: '0.9em' }}>
+                  In the competitive world of power tools, performance,
+                  durability, and efficiency are critical differentiators. While
+                  lithium-ion batteries have revolutionized cordless tools,
+                  traditional brushed DC motors remain a bottleneck - hindering
+                  the full potential of modern equipment.
+                </p>
+                <p className="font-metro text-center" style={{ fontSize: '10px', lineHeight: '1.55', color: '#000', margin: 0 }}>
+                  This case study explores how Naxatra Labs' high-efficiency
+                  Brushless DC (BLDC) motor solution enabled a significant
+                  performance leap in industrial-grade power tools. By
+                  replacing conventional brushed motors with a smarter, more
+                  durable alternative, manufacturers are seeing measurable
+                  gains in runtime, reliability, and long-term cost savings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '30px' }}>
+            <h2
+              className="font-nexa font-semibold capitalize text-center"
+              style={{ color: '#1863da', fontSize: '20px', lineHeight: '1.2', fontWeight: 400, margin: '0 0 10px' }}
+            >
+              The Challenge
+            </h2>
+            <div className="relative mx-auto" style={{ minHeight: '212px' }}>
+              <img src={cardLg} alt="" className="absolute inset-0 w-full h-full pointer-events-none" style={{ objectFit: 'fill' }} />
+              <div style={{ position: 'relative', padding: '16px 12px 18px' }}>
+                <p className="font-metro text-center" style={{ fontSize: '10px', lineHeight: '1.55', color: '#000', marginBottom: '0.8em' }}>
+                  Most industrial power tools today still rely on brushed DC motors. Though
+                  cost-effective, they come with serious drawbacks:
+                </p>
+                <ul className="font-metro" style={{ fontSize: '10px', lineHeight: '1.45', color: '#000', paddingLeft: '1.1em', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.45em' }}>
+                  <li>
+                    <strong>Inefficiency &amp; Energy Loss:</strong> Brushed motors operate through physical
+                    contact between brushes and a commutator, causing friction. This leads
+                    to energy loss as heat, with peak efficiencies typically limited to ~75-80%.
+                  </li>
+                  <li>
+                    <strong>Shorter Runtime:</strong> Energy waste reduces battery life, limiting cordless
+                    tool performance in high-demand environments.
+                  </li>
+                  <li>
+                    <strong>Wear &amp; Maintenance:</strong> Constant friction causes brush and commutator
+                    wear, increasing maintenance frequency and downtime.
+                  </li>
+                  <li>
+                    <strong>Noise &amp; Vibration:</strong> Mechanical contact creates excessive operational
+                    noise and vibrations-problematic in tools used for 8+ hours a day.
+                  </li>
+                  <li>
+                    <strong>Safety Concerns:</strong> Electrical arcing at the contact points makes brushed
+                    motors unsuitable for hazardous environments unless heavily certified.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2
+              className="font-nexa font-semibold capitalize text-center"
+              style={{ color: '#1863da', fontSize: '20px', lineHeight: '1.2', fontWeight: 400, margin: '0 0 10px' }}
+            >
+              Our Solution
+            </h2>
+            <div className="relative overflow-hidden" style={{ borderRadius: '4px' }}>
+              <div
+                className="relative flex flex-col"
+                style={{ padding: '14px', background: '#000', borderRadius: '4px', gap: '12px' }}
+              >
+                <div style={{ width: '100%' }}>
+                  <img
+                    src={solutionMotor}
+                    alt="Naxatra Labs BLDC Motor Solution"
+                    className="w-full h-auto object-cover rounded"
+                  />
+                </div>
+                <div>
+                  <p className="font-metro text-white text-center" style={{ fontSize: '10px', lineHeight: '1.6', margin: 0 }}>
+                    <strong>Naxatra Labs introduced a custom-engineered Brushless DC (BLDC) motor</strong>{' '}
+                    specifically designed for power tool applications. The goal: eliminate the
+                    mechanical limitations of brushed motors while unlocking higher efficiency
+                    and smarter control.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
-        className="mx-auto"
+        className="mx-auto hidden md:block"
         style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <div style={{ ...rowStyle, marginBottom: 'clamp(40px, 4.7vw, 90px)' }}>
