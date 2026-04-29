@@ -5,8 +5,79 @@ import wayAheadCta from '../../../assets/images/awy-ahead-cta.png';
 export default function CaseStudyWayAhead() {
   return (
     <section className="w-full bg-white">
+      <div className="md:hidden" style={{ padding: '22px 18px 34px' }}>
+        <div className="mx-auto" style={{ maxWidth: '460px' }}>
+          <h2
+            className="font-nexa capitalize text-center"
+            style={{
+              fontSize: '20px',
+              lineHeight: '1.15',
+              fontWeight: 400,
+              marginBottom: '18px',
+            }}
+          >
+            <span style={{ color: '#000' }}>The way </span>
+            <span style={{ color: '#1863da' }}>Ahead</span>
+          </h2>
+
+          <div className="mx-auto" style={{ width: '236px', marginBottom: '18px' }}>
+            <img
+              src={aheadMotor}
+              alt="Future of Power Tools with BLDC"
+              className="block w-full h-auto object-cover"
+            />
+          </div>
+
+          <p
+            className="font-metro text-black text-center"
+            style={{ fontSize: '10px', lineHeight: '1.55', marginBottom: '1em' }}
+          >
+            As the industry shifts toward brushless systems, offering BLDC-powered tools is
+            no longer a premium add-on - it&apos;s becoming a baseline expectation. The result of
+            this study unequivocally demonstrates that Naxatra Labs&apos; motor technology
+            provides a transformative upgrade over traditional brushed DC motors for power
+            tools applications. The documented improvements in efficiency, power, battery
+            runtime, durability, thermal management, and noise reduction collectively address
+            the core limitations of brushed technology and directly translate into significant
+            business advantages for power tool manufacturers.
+          </p>
+          <p
+            className="font-metro text-black text-center"
+            style={{ fontSize: '10px', lineHeight: '1.55', marginBottom: '24px' }}
+          >
+            If you&apos;re a power tool manufacturer looking to future-proof your products and
+            stay ahead of the curve, Naxatra Labs can help. Our team specializes in custom
+            BLDC motor solutions designed for high-performance industrial applications.
+          </p>
+
+          <div className="flex flex-col items-center" style={{ gap: '12px' }}>
+            <a href="#contact" className="inline-flex items-center justify-center">
+              <img
+                src={wayAheadCta}
+                alt="Contact us to explore collaboration opportunities"
+                className="block h-auto object-contain"
+                style={{ width: '299px' }}
+              />
+            </a>
+
+            <Link
+              to="/case-studies"
+              className="font-metro underline flex items-center gap-2"
+              style={{
+                color: '#1863da',
+                fontSize: '10px',
+                lineHeight: '1.5',
+              }}
+            >
+              Back to Case Studies
+              <span style={{ fontSize: '1.1em' }}>-&gt;</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div
-        className="mx-auto"
+        className="mx-auto hidden md:block"
         style={{ maxWidth: 'min(1600px, 83vw)', padding: 'clamp(40px, 5vw, 96px) clamp(20px, 4.2vw, 80px)' }}
       >
         <h2
