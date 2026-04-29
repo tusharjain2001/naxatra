@@ -278,7 +278,7 @@ export default function Footer() {
 
       <div className="hidden bg-black text-white max-[720px]:block">
         <div className="relative overflow-hidden px-[14px] pt-[34px]">
-          <div className="pointer-events-none absolute -left-[52px] -right-[52px] top-[214px] bottom-[104px] opacity-70 overflow-hidden">
+          <div className="pointer-events-none absolute -left-[30px] -right-[30px] top-[226px] bottom-[116px] opacity-70 overflow-hidden">
             <img src={footerPlusGrid} alt="" className="h-full w-[132%] max-w-none -translate-x-[21%] object-fill" />
           </div>
 
@@ -300,12 +300,12 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="relative mt-12 grid grid-cols-2 bg-black/25 px-[38px] pt-[36px] pb-8">
-              <div className="px-0 pt-0 pb-5">
-                <h4 className="mb-4 text-[14px] font-extrabold uppercase leading-none tracking-[0.06em] text-[#1863da]">
+            <div className="relative mt-12 grid grid-cols-2 bg-black/25 px-[42px] pt-[46px] pb-10">
+              <div className="-ml-4 px-0 pt-0 pb-5">
+                <h4 className="mb-6 text-[16px] font-extrabold uppercase leading-none tracking-[0.02em] text-[#1863da]">
                   Quick Links
                 </h4>
-                <div className="space-y-[7px] text-[10px] leading-[1.35] text-white">
+                <div className="space-y-[14px] text-[10px] leading-none text-white">
                   {QUICK_LINKS.map(({ label, to }) => (
                     to ? (
                       <Link key={label} to={to} className="block text-white no-underline">
@@ -320,19 +320,19 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="px-0 pt-0 pb-5 pl-6">
-                <h4 className="mb-4 text-[14px] font-extrabold uppercase leading-none tracking-[0.06em] text-[#1863da]">
+              <div className="px-0 pt-0 pb-5 pl-[26px]">
+                <h4 className="mb-6 text-[16px] font-extrabold uppercase leading-none tracking-[0.02em] text-[#1863da]">
                   Contact Us
                 </h4>
-                <div className="space-y-[10px] text-[10px] leading-[1.35] text-white">
+                <div className="space-y-[18px] text-[10px] leading-none text-white">
                   <p>+91 9266030266</p>
                   <p>enquiry@naxatralabs.com</p>
                   <p>careers@naxatralabs.com</p>
                 </div>
               </div>
 
-              <div className="col-span-2 px-0 pt-[38px] pb-0">
-                <h4 className="mb-4 text-[14px] font-extrabold uppercase leading-none tracking-[0.06em] text-[#1863da]">
+              <div className="col-span-2 px-0 pt-[42px] pb-0">
+                <h4 className="mb-4 text-[16px] font-extrabold uppercase leading-none tracking-[0.02em] text-[#1863da]">
                   Locate Us
                 </h4>
                 <div className="grid grid-cols-2 gap-5">
