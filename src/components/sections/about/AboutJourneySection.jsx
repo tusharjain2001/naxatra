@@ -39,7 +39,9 @@ const milestones = [
 
 export default function AboutJourneySection() {
   const cardsRef = useRef(null);
+  const mobileCardsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
 
   useEffect(() => {
     const cards = cardsRef.current;
@@ -56,15 +58,143 @@ export default function AboutJourneySection() {
     };
   }, []);
 
+  useEffect(() => {
+    const cards = mobileCardsRef.current;
+    if (!cards) return;
+
+    const onCardScroll = () => {
+      const nextIndex = Math.round(cards.scrollTop / cards.clientHeight);
+      setMobileActiveIndex(Math.min(nextIndex, milestones.length - 1));
+    };
+
+    cards.addEventListener('scroll', onCardScroll, { passive: true });
+    return () => {
+      cards.removeEventListener('scroll', onCardScroll);
+    };
+  }, []);
+
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5fafa]" style={{ padding: '20px 0 120px' }}>
-      <div className="absolute left-[36px] top-[-12px] h-[680px] w-[680px]  pointer-events-none">
+    <section className="relative w-full overflow-hidden bg-[#f5fafa] max-[768px]:pb-0" style={{ padding: '20px 0 120px' }}>
+      <div className="relative z-10 md:hidden" style={{ padding: '18px 14px 4px' }}>
+        <div className="mx-auto" style={{ maxWidth: '460px' }}>
+          <p
+            className="font-metro uppercase text-center"
+            style={{ color: '#747474', fontSize: '10px', lineHeight: '14px', letterSpacing: '1px', marginBottom: '16px' }}
+          >
+            [ A JOURNEY FROM 2020 TO BEYOND ]
+          </p>
+
+          <h2
+            className="font-nexa text-center"
+            style={{ fontSize: '20px', lineHeight: '1.12', fontWeight: 400, marginBottom: '18px' }}
+          >
+            <span style={{ color: '#000' }}>The Road To </span>
+            <span style={{ color: '#1863da' }}>A Sustainable Future</span>
+            <span style={{ color: '#000' }}> Begins Here</span>
+          </h2>
+
+          <p
+            className="font-metro text-center"
+            style={{ color: '#000', fontSize: '10px', lineHeight: '1.55', marginBottom: '34px' }}
+          >
+            The future of electric mobility starts here. At Naxatra Labs, we create next-generation
+            motors designed for power, efficiency, and longevity. Our Axial and Radial flux motors,
+            developed through 4+ years of research, deliver industry-leading performance with
+            uncompromising reliability.
+          </p>
+
+          <div className="flex flex-col items-center">
+            <div style={{ width: '296px', marginBottom: '18px', textAlign: 'center' }}>
+              <p className="font-nexa" style={{ color: '#1863da', fontSize: '20px', lineHeight: '1', fontWeight: 400 }}>
+                {milestones[mobileActiveIndex].year}
+              </p>
+              <p className="font-metro" style={{ color: '#000', fontSize: '10px', lineHeight: '1.4', marginTop: '4px' }}>
+                {mobileActiveIndex === 0 ? 'The Spark of Innovation' : milestones[mobileActiveIndex].title}
+              </p>
+              <div style={{ position: 'relative', width: '20px', height: '38px', margin: '10px auto 0' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '14px',
+                    height: '28px',
+                    background: 'rgba(24,99,218,0.12)',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '18px',
+                    height: '18px',
+                    borderRadius: '999px',
+                    background: '#1863da',
+                    margin: '0 auto',
+                  }}
+                />
+              </div>
+            </div>
+
+            <div
+              ref={mobileCardsRef}
+              style={{
+                width: '296px',
+                height: '304px',
+                overflowY: 'auto',
+                overflowX: 'hidden',
+                scrollSnapType: 'y mandatory',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+              }}
+            >
+              {milestones.map((m, i) => (
+                <div
+                  key={i}
+                  style={{
+                    height: '304px',
+                    scrollSnapAlign: 'start',
+                    scrollSnapStop: 'always',
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '296px',
+                      background: '#fff',
+                      border: '1px solid rgba(24,99,218,0.14)',
+                      borderRadius: '4px',
+                      overflow: 'hidden',
+                      padding: '18px 16px 24px',
+                    }}
+                  >
+                    <img
+                      src={m.img}
+                      alt={m.title}
+                      style={{ width: '100%', height: '183px', objectFit: 'cover', display: 'block', marginBottom: '24px', borderRadius: '4px' }}
+                    />
+                    <h3 className="font-nexa capitalize text-center" style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.2', fontWeight: 400, marginBottom: '10px' }}>
+                      {m.title}
+                    </h3>
+                    <p className="font-metro text-center" style={{ color: '#000', fontSize: '10px', lineHeight: '1.5', margin: 0 }}>
+                      {m.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute left-[36px] top-[-12px] hidden h-[680px] w-[680px] pointer-events-none md:block">
         <img src={greenBg} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute left-[86px] top-[92px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none" />
+      <div className="absolute left-[86px] top-[92px] hidden h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none md:block" />
 
       <div
-        className="relative z-10"
+        className="relative z-10 hidden md:block"
         style={{
           maxWidth: '1920px',
           margin: '0 auto',

@@ -94,8 +94,84 @@ function ValueCard({ icon, title, body }) {
 export default function AboutValuesSection() {
   return (
     <section className="w-full bg-white">
+      <div className="md:hidden" style={{ padding: '24px 10px 30px' }}>
+        <div className="mx-auto" style={{ maxWidth: '460px' }}>
+          <h2
+            className="font-nexa capitalize text-center text-black"
+            style={{
+              fontSize: '20px',
+              lineHeight: 1.18,
+              fontWeight: 400,
+              margin: '0 0 18px',
+            }}
+          >
+            {'Our Commitment To '}
+            <span style={{ color: '#1863da' }}>Innovation, Precision, And Sustainability</span>
+            {' Drives Every Decision We Make'}
+          </h2>
+
+          <div className="flex flex-col" style={{ gap: '12px' }}>
+            {VALUES.map((value) => (
+              <div
+                key={value.title}
+                style={{
+                  clipPath: clippedCorner,
+                  background: '#cbd8d5',
+                  padding: '1px',
+                  width: '100%',
+                }}
+              >
+                <div
+                  className="flex flex-col items-start"
+                  style={{
+                    clipPath: clippedCorner,
+                    background: '#f5fbfa',
+                    minHeight: '76px',
+                    padding: '14px 18px 16px',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    src={value.icon}
+                    alt=""
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      objectFit: 'contain',
+                      marginBottom: '10px',
+                    }}
+                  />
+                  <h3
+                    className="font-nexa capitalize"
+                    style={{
+                      color: '#1863da',
+                      fontSize: '14px',
+                      lineHeight: 1.18,
+                      fontWeight: 400,
+                      margin: 0,
+                    }}
+                  >
+                    {value.title}
+                  </h3>
+                  <p
+                    className="font-metro text-black"
+                    style={{
+                      fontSize: '8px',
+                      lineHeight: 1.5,
+                      margin: '6px 0 0',
+                    }}
+                  >
+                    {value.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div
-        className="mx-auto flex flex-col lg:flex-row items-start"
+        className="mx-auto hidden md:flex md:flex-col lg:flex-row items-start"
         style={{
           maxWidth: '1920px',
           padding: 'clamp(42px, 6vw, 96px) clamp(24px, 9.9vw, 191px)',

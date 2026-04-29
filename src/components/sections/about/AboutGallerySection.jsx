@@ -20,6 +20,18 @@ const PHOTOS = [
   { src: madeNine, alt: 'Naxatra Labs showcase', className: 'md:col-span-2 md:row-span-2' },
 ];
 
+const MOBILE_PHOTOS = [
+  { src: madeOne, alt: 'Naxatra Labs event', className: 'col-span-1 row-span-1' },
+  { src: madeTwo, alt: 'Naxatra Labs Pitchfest', className: 'col-span-1 row-span-1' },
+  { src: madeThree, alt: 'Naxatra Labs demo', className: 'col-span-1 row-span-2' },
+  { src: madeFour, alt: 'Naxatra Labs conference', className: 'col-span-1 row-span-1' },
+  { src: madeFive, alt: 'Naxatra Labs expo', className: 'col-span-1 row-span-1' },
+  { src: madeSix, alt: 'Naxatra Labs team meeting', className: 'col-span-2 row-span-1' },
+  { src: madeSeven, alt: 'Naxatra Labs group photo', className: 'col-span-1 row-span-1' },
+  { src: madeEight, alt: 'Naxatra Labs workshop', className: 'col-span-1 row-span-2' },
+  { src: madeNine, alt: 'Naxatra Labs showcase', className: 'col-span-2 row-span-2' },
+];
+
 export default function AboutGallerySection() {
   return (
     <section className="w-full bg-white">
@@ -43,7 +55,26 @@ export default function AboutGallerySection() {
         </h2>
 
         <div
-          className="grid grid-cols-2 md:grid-cols-3"
+          className="grid grid-cols-3 md:hidden"
+          style={{
+            gap: '6px',
+            gridAutoRows: '70px',
+          }}
+        >
+          {MOBILE_PHOTOS.map((photo) => (
+            <div key={photo.src} className={`overflow-hidden rounded-[2px] ${photo.className}`}>
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="block h-full w-full"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="hidden md:grid md:grid-cols-3"
           style={{
             gap: 'clamp(10px, 1vw, 18px)',
             gridAutoRows: 'clamp(76px, 8.9vw, 171px)',

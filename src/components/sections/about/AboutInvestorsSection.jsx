@@ -41,7 +41,79 @@ export default function AboutInvestorsSection() {
   return (
     <section className="w-full" style={{ backgroundColor: '#f4fdfb' }}>
       <div
-        className="mx-auto"
+        className="mx-auto md:hidden"
+        style={{
+          maxWidth: '520px',
+          padding: '24px 14px 30px',
+        }}
+      >
+        <h2
+          className="font-nexa text-black text-center"
+          style={{
+            fontSize: '20px',
+            lineHeight: 1.1,
+            fontWeight: 400,
+            margin: '0 0 16px',
+          }}
+        >
+          Investors
+        </h2>
+
+        <div
+          className="flex items-center justify-center"
+          style={{
+            gap: '26px',
+            marginBottom: '24px',
+          }}
+        >
+          <img
+            src={logoNavi}
+            alt="Rainmatter"
+            style={{
+              width: '132px',
+              height: 'auto',
+              objectFit: 'contain',
+              flexShrink: 0,
+            }}
+          />
+          <img
+            src={logoBvfl}
+            alt="GVFL"
+            style={{
+              width: '128px',
+              height: 'auto',
+              objectFit: 'contain',
+              flexShrink: 0,
+            }}
+          />
+        </div>
+
+        <div
+          className="grid grid-cols-2 justify-items-center"
+          style={{
+            gap: '12px',
+          }}
+        >
+          {[...TOP_INVESTORS, ...BOTTOM_INVESTORS].map((person) => (
+            <img
+              key={person.name}
+              src={person.card}
+              alt={person.name}
+              className="block w-full"
+              style={{
+                maxWidth: '216px',
+                aspectRatio: person.aspectRatio || '291 / 332',
+                objectFit: 'cover',
+                borderRadius: '4px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="mx-auto hidden md:block"
         style={{
           maxWidth: '1920px',
           padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 9.9vw, 191px)',

@@ -35,7 +35,92 @@ export default function AboutTeamSection() {
   return (
     <section className="w-full bg-white">
       <div
-        className="mx-auto"
+        className="mx-auto md:hidden"
+        style={{
+          maxWidth: '460px',
+          padding: '22px 14px 28px',
+        }}
+      >
+        <div
+          style={{
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%)',
+            background: '#cbd8d5',
+            padding: '1px',
+            marginBottom: '28px',
+          }}
+        >
+          <div
+            className="flex flex-col items-center text-center"
+            style={{
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%)',
+              background: '#f5fbfa',
+              minHeight: '230px',
+              padding: '34px 18px 28px',
+            }}
+          >
+            <p
+              className="font-metro text-black"
+              style={{
+                fontSize: '10px',
+                lineHeight: 1.2,
+                margin: '0 0 10px',
+              }}
+            >
+              [ An introduction with the team ]
+            </p>
+            <h2
+              className="font-nexa text-black"
+              style={{
+                fontSize: '20px',
+                lineHeight: 1.15,
+                fontWeight: 400,
+                margin: '0 0 18px',
+              }}
+            >
+              <span style={{ color: '#1863da' }}>A Vision</span> For Tomorrow
+            </h2>
+
+            <p
+              className="font-metro text-black"
+              style={{
+                fontSize: '10px',
+                lineHeight: 1.55,
+                margin: 0,
+                maxWidth: '290px',
+              }}
+            >
+              Founded in 2021 by <strong>Abhilash Maurya, Arnav Biswas, and Piyush Verma,</strong>{' '}
+              Naxatra Labs brings groundbreaking axial and radial flux motors technology to the
+              world of electric mobility. From our Ahmedabad base, we craft lightweight,
+              power-dense solutions that redefine how vehicles and industries move.
+            </p>
+          </div>
+        </div>
+
+        <h3
+          className="font-nexa text-black text-center"
+          style={{
+            fontSize: '20px',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            margin: '0 0 18px',
+          }}
+        >
+          Our <span style={{ color: '#1863da' }}>Team</span>
+        </h3>
+
+        <div
+          className="grid grid-cols-2"
+          style={{
+            gap: '12px',
+          }}
+        >
+          {TEAM.map((p) => <PersonCard key={p.name} person={p} />)}
+        </div>
+      </div>
+
+      <div
+        className="mx-auto hidden md:block"
         style={{
           maxWidth: '1920px',
           padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)',
