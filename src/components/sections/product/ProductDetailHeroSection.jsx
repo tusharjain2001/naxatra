@@ -18,8 +18,8 @@ export default function ProductDetailHeroSection({ product }) {
         className="relative w-full flex flex-col md:hidden"
         style={{ background: '#f5fafa', overflow: 'hidden' }}
       >
-        {/* Motor area: 267px tall (CTAs start at 322px from page top; section starts at 55px) */}
-        <div className="relative w-full" style={{ height: '267px' }}>
+        {/* Motor area */}
+        <div className="relative w-full" style={{ height: '220px' }}>
           {/* Glow: Figma top=41px from page → 41-55=-14px from section */}
           <div
             className="absolute pointer-events-none"

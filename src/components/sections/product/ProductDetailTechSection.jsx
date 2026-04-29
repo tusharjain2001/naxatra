@@ -347,7 +347,6 @@ export default function ProductDetailTechSection({ product }) {
             style={{
               width: "100%",
               borderCollapse: "collapse",
-              minWidth: "480px",
             }}
           >
             <tbody>
@@ -357,7 +356,7 @@ export default function ProductDetailTechSection({ product }) {
                 return (
                   <tr key={row.key} style={{ background: bg }}>
                     <td
-                      className="font-nexa capitalize"
+                      className="font-nexa capitalize max-[768px]:text-[8px]! max-[768px]:px-2!"
                       style={{
                         padding:
                           "clamp(6px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)",
@@ -371,7 +370,7 @@ export default function ProductDetailTechSection({ product }) {
                     {variants.map((v) => (
                       <td
                         key={v.voltage}
-                        className="font-nexa capitalize"
+                        className="font-nexa capitalize max-[768px]:text-[8px]! max-[768px]:px-1.5!"
                         style={cellStyle}
                       >
                         {v[row.key]}
@@ -387,18 +386,18 @@ export default function ProductDetailTechSection({ product }) {
 
       {/* ── Customization CTA ── */}
       <div
+        className="max-[768px]:flex-col max-[768px]:items-center max-[768px]:text-center max-[768px]:gap-2"
         style={{
           display: "flex",
           alignItems: "center",
-
           flexWrap: "wrap",
-          gap: "24px",
+          gap: "8px",
           padding: "clamp(16px, 1.67vw, 32px) 0",
           borderTop: "1px solid #d9d9d9",
         }}
       >
         <p
-          className="font-nexa capitalize"
+          className="font-nexa capitalize max-[768px]:text-[10px]! max-[768px]:max-w-46.5! max-[768px]:leading-normal!"
           style={{
             color: "#515151",
             fontSize: "clamp(13px, 1.46vw, 18px)",
@@ -425,7 +424,7 @@ export default function ProductDetailTechSection({ product }) {
           <img
             src={reqForCust}
             alt="Request for Customization"
-            className="block"
+            className="block max-[768px]:w-42.5!"
             style={{ width: "clamp(180px, 16vw, 300px)", height: "auto" }}
           />
         </button>
