@@ -18,63 +18,128 @@ export default function TechAboutSection() {
       />
 
       <div
-        className="relative mx-auto flex flex-wrap items-center justify-center"
+        className="relative mx-auto flex flex-wrap items-center justify-center max-[768px]:!px-3"
         style={{
           maxWidth: '1840px',
           padding: 'clamp(20px, 2.2vw, 42px) clamp(20px, 4.2vw, 80px)',
           gap: 'clamp(16px, 3vw, 56px)',
         }}
       >
-        <div className="relative flex-shrink-0" style={{ width: 'clamp(320px, 40.5vw, 778px)', minHeight: 'clamp(180px, 18.8vw, 361px)', marginBottom: '0' }}>
-          <img
-            src={cardBorder}
-            alt=""
-            className="absolute inset-0 h-full w-full pointer-events-none"
-            style={{ objectFit: 'fill' }}
-          />
-
+        <>
           <div
-            className="relative flex flex-col items-start justify-center h-full"
+            className="relative w-full flex-shrink-0 overflow-hidden md:hidden"
             style={{
-              padding: 'clamp(28px, 2.8vw, 54px) clamp(32px, 3.2vw, 62px)',
-              gap: 'clamp(20px, 2.5vw, 48px)',
+              maxWidth: '778px',
+              minHeight: 'clamp(180px, 18.8vw, 361px)',
+              marginBottom: '0',
+              background: 'linear-gradient(180deg, rgba(244,250,250,0.96) 0%, rgba(239,247,246,0.98) 100%)',
+              clipPath: 'polygon(0 0, 100% 0, 100% 90%, 96% 100%, 0 100%)',
+              border: '1px solid rgba(0, 0, 0, 0.16)',
             }}
           >
-            <div style={{ lineHeight: 0 }}>
-              <p
-                className="font-nexa capitalize"
-                style={{ color: '#1863da', fontSize: 'clamp(28px, 3.23vw, 62px)', lineHeight: '1.1', marginBottom: '5px', fontWeight: 400 }}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(to right, rgba(24,99,218,0.035) 0, rgba(24,99,218,0.035) 1px, transparent 1px, transparent 24px), repeating-linear-gradient(to bottom, rgba(24,99,218,0.035) 0, rgba(24,99,218,0.035) 1px, transparent 1px, transparent 24px)',
+              }}
+            />
+
+            <div
+              className="relative flex h-full flex-col items-center justify-center text-center"
+              style={{
+                padding: 'clamp(28px, 2.8vw, 54px) clamp(20px, 5.4vw, 32px)',
+                gap: 'clamp(18px, 2.1vw, 40px)',
+              }}
+            >
+              <div style={{ lineHeight: 0 }}>
+                <p
+                  className="font-nexa capitalize"
+                  style={{ color: '#1863da', fontSize: 'clamp(28px, 3.23vw, 62px)', lineHeight: '1.1', marginBottom: '8px', fontWeight: 400 }}
+                >
+                  Naxatra Labs{'\u2122'}
+                </p>
+                <p
+                  className="font-nexa capitalize"
+                  style={{ color: '#000', fontSize: 'clamp(16px, 1.67vw, 32px)', lineHeight: '1.22', fontWeight: 400 }}
+                >
+                  Innovating the Future of Electric Mobility
+                </p>
+              </div>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center font-nexa text-white"
+                aria-label="Learn More About Our Tailored Solutions"
+                style={{
+                  minWidth: 'clamp(220px, 31vw, 520px)',
+                  minHeight: 'clamp(40px, 4.2vw, 76px)',
+                  padding: 'clamp(12px, 1.1vw, 18px) clamp(18px, 2vw, 34px)',
+                  background: 'linear-gradient(180deg, #2d73ea 0%, #1863da 100%)',
+                  clipPath: 'polygon(0 0, 100% 0, 100% 72%, 96% 100%, 0 100%)',
+                  textDecoration: 'none',
+                  fontSize: 'clamp(12px, 1.15vw, 22px)',
+                  lineHeight: '1.2',
+                  fontWeight: 400,
+                  boxShadow: '0 10px 24px rgba(24, 99, 218, 0.18)',
+                }}
               >
-                Naxatra Labs™
-              </p>
-              <p
-                className="font-nexa capitalize"
-                style={{ color: '#000', fontSize: 'clamp(16px, 1.67vw, 32px)', lineHeight: '1.22', fontWeight: 400 }}
-              >
-                Innovating the Future of Electric Mobility
-              </p>
+                Learn More About Our Tailored Solutions
+              </a>
             </div>
-
-            <a href="#contact" className="inline-flex items-center justify-center">
-              <img
-                src={techSectionTwo}
-                alt="Learn More About Our Tailored Solutions"
-                className="block h-auto object-contain"
-                style={{ width: 'clamp(200px, 22vw, 420px)' }}
-              />
-            </a>
           </div>
-        </div>
 
-        <div style={{ maxWidth: 'clamp(300px, 35vw, 670px)', marginBottom: '0' }}>
+          <div className="relative hidden flex-shrink-0 md:block" style={{ width: 'clamp(320px, 40.5vw, 778px)', minHeight: 'clamp(180px, 18.8vw, 361px)', marginBottom: '0' }}>
+            <img
+              src={cardBorder}
+              alt=""
+              className="absolute inset-0 h-full w-full pointer-events-none"
+              style={{ objectFit: 'fill' }}
+            />
+
+            <div
+              className="relative flex flex-col items-start justify-center h-full"
+              style={{
+                padding: 'clamp(28px, 2.8vw, 54px) clamp(32px, 3.2vw, 62px)',
+                gap: 'clamp(20px, 2.5vw, 48px)',
+              }}
+            >
+              <div style={{ lineHeight: 0 }}>
+                <p
+                  className="font-nexa capitalize"
+                  style={{ color: '#1863da', fontSize: 'clamp(28px, 3.23vw, 62px)', lineHeight: '1.1', marginBottom: '5px', fontWeight: 400 }}
+                >
+                  Naxatra Labs{'\u2122'}
+                </p>
+                <p
+                  className="font-nexa capitalize"
+                  style={{ color: '#000', fontSize: 'clamp(16px, 1.67vw, 32px)', lineHeight: '1.22', fontWeight: 400 }}
+                >
+                  Innovating the Future of Electric Mobility
+                </p>
+              </div>
+
+              <a href="#contact" className="inline-flex items-center justify-center">
+                <img
+                  src={techSectionTwo}
+                  alt="Learn More About Our Tailored Solutions"
+                  className="block h-auto object-contain"
+                  style={{ width: 'clamp(200px, 22vw, 420px)' }}
+                />
+              </a>
+            </div>
+          </div>
+        </>
+
+        <div className="max-[768px]:mt-6" style={{ maxWidth: 'clamp(300px, 35vw, 670px)', marginBottom: '0' }}>
           <p
-            className="font-metro text-black"
+            className="font-metro text-black max-[768px]:!text-[10px] max-[768px]:!leading-[1.6]"
             style={{ fontSize: 'clamp(14px, 1.04vw, 20px)', lineHeight: '1.65', marginBottom: '1.35em' }}
           >
-            Naxatra Labs™ is an innovation-driven EV powertrain technology company, dedicated to engineering high-performance, lightweight, and efficient solutions. We specialize in delivering powerful motor technologies for diverse verticals, including electric vehicles, agricultural machinery, and power tools.
+            Naxatra Labs{'\u2122'} is an innovation-driven EV powertrain technology company, dedicated to engineering high-performance, lightweight, and efficient solutions. We specialize in delivering powerful motor technologies for diverse verticals, including electric vehicles, agricultural machinery, and power tools.
           </p>
           <p
-            className="font-metro text-black"
+            className="font-metro text-black max-[768px]:!text-[10px] max-[768px]:!leading-[1.6]"
             style={{ fontSize: 'clamp(14px, 1.04vw, 20px)', lineHeight: '1.65' }}
           >
             Backed by over four years of research and development, our solutions meet industry performance, durability, and efficiency standards. Our cutting-edge portfolio includes both axial and radial flux motor technologies, pushing the boundaries of electric mobility and sustainable innovation.
