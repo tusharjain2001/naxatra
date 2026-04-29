@@ -334,15 +334,15 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="col-span-2 px-0 pt-[42px] pb-0">
+              <div className="col-span-2 -ml-4 px-0 pt-[42px] pb-0 text-left">
                 <h4 className="mb-4 text-[16px] font-extrabold uppercase leading-none tracking-[0.02em] text-[#1863da]">
                   Locate Us
                 </h4>
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-[18px]">
                   <div>
-                    <div className="flex items-start gap-2">
-                      <img src={footerPinCorp} alt="" className="mt-[2px] h-[10px] w-[10px] object-contain" />
-                      <p className="text-[10px] font-extrabold uppercase leading-[1.3] text-white">Corporate Office</p>
+                    <div className="flex items-center gap-2">
+                      <img src={footerPinCorp} alt="" className="h-[10px] w-[10px] object-contain" />
+                      <p className="whitespace-nowrap mt-[5px] text-[10px] font-extrabold uppercase leading-[1.3] text-white">Corporate Office</p>
                     </div>
                     <div className="ml-[18px] mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
                       <p>Sector 44, Gurugram,</p>
@@ -351,9 +351,9 @@ export default function Footer() {
                   </div>
 
                   <div>
-                    <div className="flex items-start gap-2">
-                      <img src={footerPinMfg} alt="" className="mt-[2px] h-[10px] w-[10px] object-contain" />
-                      <p className="text-[10px] font-extrabold uppercase leading-[1.3] text-white">Manufacturing Facility</p>
+                    <div className="flex items-center gap-2">
+                      <img src={footerPinMfg} alt="" className=" h-[10px] w-[10px] object-contain" />
+                      <p className="whitespace-nowrap mt-[5px] text-[10px] font-extrabold uppercase leading-[1.3] text-white">Manufacturing Facility</p>
                     </div>
                     <div className="ml-[18px] mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
                       <p>Paldi-Kankaj, Dakroi</p>
