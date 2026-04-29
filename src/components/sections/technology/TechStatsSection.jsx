@@ -30,7 +30,7 @@ export default function TechStatsSection() {
   return (
     <section className="relative w-full bg-black overflow-hidden">
       <div
-        className="relative mx-auto flex flex-col items-start lg:flex-row lg:items-start lg:justify-between"
+        className="relative mx-auto flex flex-col items-start max-[768px]:!px-3 lg:flex-row lg:items-start lg:justify-between"
         style={{
           maxWidth: '1840px',
           padding: 'clamp(40px, 4.6vw, 84px) clamp(20px, 10.1vw, 194px)',
@@ -39,16 +39,17 @@ export default function TechStatsSection() {
       >
         {/* Section heading on left */}
         <div
+          className="max-[768px]:mt-0 max-[768px]:!w-full"
           style={{
             width: 'clamp(420px, 35vw, 560px)',
             marginTop: 'clamp(12px, 2.2vw, 34px)',
           }}
         >
           <h2
-            className="font-nexa font-semibold capitalize text-white"
+            className="font-nexa font-semibold capitalize text-white max-[768px]:text-center max-[768px]:!text-[26px] max-[768px]:!leading-[1.08]"
             style={{ fontSize: 'clamp(34px, 3.54vw, 68px)', lineHeight: '1.08', fontWeight: 500 }}
           >
-            <span style={{ whiteSpace: 'nowrap' }}>Drive Smart, Safe,</span>
+            <span className="max-[768px]:whitespace-normal" style={{ whiteSpace: 'nowrap' }}>Drive Smart, Safe,</span>
             <br />
             {'And '}
             <span style={{ color: '#1863da' }}>Your Way</span>
@@ -73,7 +74,7 @@ export default function TechStatsSection() {
                 style={{ objectFit: 'fill' }}
               />
               <div
-                className="relative flex flex-col"
+                className="relative flex flex-col max-[768px]:absolute max-[768px]:inset-0 max-[768px]:h-full max-[768px]:items-center max-[768px]:justify-center max-[768px]:text-center max-[768px]:!px-[6px]"
                 style={{ padding: 'clamp(22px, 2vw, 38px) clamp(22px, 2.2vw, 42px)' }}
               >
                 <p
@@ -89,15 +90,17 @@ export default function TechStatsSection() {
                   {stat.label}
                 </p>
                 <p
-                  className="font-metro text-white"
+                  className="font-metro text-white max-[768px]:!text-[10px] max-[768px]:!max-w-none"
                   style={{
                     fontSize: 'clamp(12px, 1.04vw, 20px)',
                     lineHeight: '1.5',
                     marginTop: 'clamp(10px, 1vw, 18px)',
                     maxWidth: 'clamp(280px, 31vw, 620px)',
                   }}
-                >
-                  {stat.description}
+                  >
+                  <span className="block max-[768px]:w-full">
+                    {stat.description}
+                  </span>
                 </p>
               </div>
             </div>
