@@ -9,9 +9,10 @@ export default function AboutSection() {
       </div>
 
       <div className="relative mx-auto flex w-full max-w-[1235px] mt-10 flex-col items-center">
-        <h2 className="font-nexa font-semibold text-center text-[clamp(24px,3.35vw,46px)] font-light leading-[1.04] tracking-[-0.02em] text-black ">
-          <span className="text-[#1863da]">Efficient Motors,</span>{' '}
-          <span>Better Performance, Greener Future</span>
+        <h2 className="font-nexa font-semibold text-center text-[clamp(24px,3.35vw,46px)] font-light leading-[1.04] tracking-[-0.02em] text-black max-[720px]:text-[26px] max-[720px]:leading-[1.3]">
+          <span className="text-[#1863da] max-[720px]:block">Efficient Motors,</span>{' '}
+          <span className="max-[720px]:block">Better Performance,</span>{' '}
+          <span className="max-[720px]:block">Greener Future</span>
         </h2>
 
         <div className="mt-[clamp(18px,2.4vw,34px)] w-full rounded-[clamp(20px,2.1vw,34px)] shadow-[0_18px_45px_rgba(24,99,218,0.10)]">

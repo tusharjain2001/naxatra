@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from "../../assets/images/logo.svg";
 import contact from "../../assets/images/navbar-contact.svg";
@@ -13,7 +14,10 @@ const navItems = [
 
 export default function Navbar() {
   const { pathname } = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const isDark = pathname !== '/' && pathname !== '/products' && !pathname.startsWith('/products/');
+
   const linkClass = `group inline-flex items-center text-[clamp(10px,0.55vw,12px)] uppercase font-medium transition-colors duration-300 ${
     isDark ? 'text-white hover:text-[#8bb5ff]' : 'text-[#515151] hover:text-[#1863da]'
   }`;
@@ -22,49 +26,82 @@ export default function Navbar() {
   }`;
 
   return (
-    <nav
-      className="fixed left-0 top-0 z-50 h-[82px] w-full backdrop-blur-sm"
-      style={{ background: isDark ? '#4a4a4a' : 'rgba(255,255,255,0.9)' }}
-    >
-      <div className="mx-auto flex h-full w-[calc(100%_-_46px)] max-w-[1793px] items-center justify-between max-[720px]:w-[calc(100%_-_24px)]">
-        <div className="h-[18px] w-auto">
-          <img
-            src={logo}
-            alt="Naxatra Labs"
-            className="h-full w-auto object-contain"
-            style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
-          />
-        </div>
+    <>
+      <nav
+        className="fixed left-0 top-0 z-50 h-[82px] w-full backdrop-blur-sm"
+        style={{ background: isDark ? '#4a4a4a' : 'rgba(255,255,255,0.9)' }}
+      >
+        <div className="mx-auto flex h-full w-[calc(100%_-_46px)] max-w-[1793px] items-center justify-between max-[720px]:w-[calc(100%_-_24px)]">
 
-        <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
-          {navItems.map((item) => (
+          {/* Logo */}
+          <div className="h-[18px] max-[720px]:h-[14px] w-auto">
+            <img
+              src={logo}
+              alt="Naxatra Labs"
+              className="h-full w-auto object-contain"
+              style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
+            />
+          </div>
+
+          {/* Desktop nav links */}
+          <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
+            {navItems.map((item) => (
+              <Link key={item.to} to={item.to} className={linkClass}>
+                <span className={`${bracketClass} mr-[1px] -translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>[</span>
+                <span>{item.label}</span>
+                <span className={`${bracketClass} ml-[1px] translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>]</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Right side: Contact Us + Hamburger */}
+          <div className="flex items-center gap-3">
             <Link
-              key={item.to}
-              to={item.to}
-              className={linkClass}
+              to="/contact"
+              className="overflow-hidden h-[42px] max-[720px]:h-[32px]"
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 71%, 84% 100%, 0 100%)' }}
             >
-              <span className={`${bracketClass} mr-[1px] -translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>
-                [
-              </span>
-              <span>{item.label}</span>
-              <span className={`${bracketClass} ml-[1px] translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>
-                ]
-              </span>
+              <img src={contact} alt="Contact us" className="h-full w-auto" />
             </Link>
-          ))}
-        </div>
 
-        <Link
-          to="/contact"
-          className="overflow-hidden"
-          style={{
-            height: '42px',
-            clipPath: 'polygon(0 0, 100% 0, 100% 71%, 84% 100%, 0 100%)',
-          }}
+            <button
+              className="md:hidden flex flex-col justify-center gap-[4px]"
+              aria-label="Toggle menu"
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              <span className={`block h-[2px] w-[18px] rounded-full transition-all duration-300 ${isDark ? 'bg-white' : 'bg-[#1a1a1a]'}`} />
+              <span className={`block h-[2px] w-[18px] rounded-full transition-all duration-300 ${isDark ? 'bg-white' : 'bg-[#1a1a1a]'}`} />
+              <span className={`block h-[2px] w-[18px] rounded-full transition-all duration-300 ${isDark ? 'bg-white' : 'bg-[#1a1a1a]'}`} />
+            </button>
+          </div>
+
+        </div>
+      </nav>
+
+      {/* Mobile menu drawer */}
+      {menuOpen && (
+        <div
+          className="fixed left-0 top-[82px] z-40 w-full md:hidden shadow-lg"
+          style={{ background: isDark ? '#3a3a3a' : 'rgba(255,255,255,0.97)', backdropFilter: 'blur(8px)' }}
         >
-          <img src={contact} alt="Contact us" className="h-full w-auto" />
-        </Link>
-      </div>
-    </nav>
+          <nav className="flex flex-col divide-y divide-gray-100">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMenuOpen(false)}
+                className={`px-6 py-4 text-[13px] font-medium uppercase tracking-widest transition-colors duration-200 ${
+                  pathname === item.to
+                    ? 'text-[#1863da]'
+                    : isDark ? 'text-white hover:text-[#8bb5ff]' : 'text-[#515151] hover:text-[#1863da]'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </>
   );
 }
