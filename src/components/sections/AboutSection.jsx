@@ -2,7 +2,7 @@ import aboutSectionPhoto from '../../assets/images/about-section-photo.png';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative mt-[44px] overflow-hidden bg-[#f5fafa] px-4 pb-[26px] pt-[18px] max-[720px]:mt-4 max-[720px]:px-3 max-[720px]:pb-6 max-[720px]:pt-4">
+    <section id="about" className="relative mt-[44px] overflow-hidden bg-[#f5fafa] px-4 pb-[26px] pt-[18px] max-[720px]:mt-10 max-[720px]:px-3 max-[720px]:pb-6 max-[720px]:pt-4">
       <div className="pointer-events-none absolute inset-0 opacity-80">
         <div className="absolute inset-x-0 top-0 h-full bg-[image:linear-gradient(rgba(77,214,196,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(77,214,196,0.12)_1px,transparent_1px)] bg-[length:200px_214px] max-[720px]:bg-[length:120px_140px]" />
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-[linear-gradient(180deg,rgba(24,99,218,0)_0%,rgba(24,99,218,0.22)_100%)]" />
