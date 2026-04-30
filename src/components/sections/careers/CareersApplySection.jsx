@@ -9,7 +9,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
       style={{ gap: '4px', flex: fullWidth ? '1 1 100%' : '1 1 clamp(180px, 23vw, 445px)' }}
     >
       <label
-        className="font-metro max-[768px]:!text-[7px]"
+        className="font-metro max-[768px]:!text-[9px]"
         style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151', fontWeight: 500 }}
       >
         {label} {required && <span style={{ color: 'red' }}>*</span>}
@@ -83,7 +83,7 @@ export default function CareersApplySection() {
           <TextField label="Applying for which role?" value={form.role} onChange={set('role')} required fullWidth />
 
           <div className="flex flex-col" style={{ gap: '4px' }}>
-            <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+            <label className="font-metro" style={{ fontSize: '9px', color: '#515151', fontWeight: 500 }}>
               Attach Resume <span style={{ color: 'red' }}>*</span>
             </label>
             <div className="flex items-center gap-2">
@@ -118,11 +118,28 @@ export default function CareersApplySection() {
                 src={submitEnquiry}
                 alt="Submit Enquiry"
                 className="block h-auto object-contain"
-                style={{ width: '150px' }}
+                style={{ width: '170px' }}
               />
             </button>
           </div>
         </form>
+
+        <div className="mx-auto" style={{ width: '231px', marginTop: '42px' }}>
+          <div
+            style={{
+              width: '100%',
+              overflow: 'hidden',
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%)',
+              borderRadius: '4px',
+            }}
+          >
+            <img
+              src={careersPhoto}
+              alt="Join Naxatra Labs"
+              className="block w-full h-auto object-cover object-center"
+            />
+          </div>
+        </div>
       </div>
 
       <div
@@ -205,7 +222,7 @@ export default function CareersApplySection() {
                   src={submitEnquiry}
                   alt="Submit Enquiry"
                   className="block h-auto object-contain"
-                  style={{ width: '150px' }}
+                  style={{ width: '170px' }}
                 />
               </button>
             </div>
