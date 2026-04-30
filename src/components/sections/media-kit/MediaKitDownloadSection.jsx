@@ -1,11 +1,64 @@
 import cardBg from '../../../assets/images/media-kit-card-bg.svg';
-import downloadKit from '../../../assets/images/download-kit.png';
+import downloadKit from '../../../assets/images/download-kit.svg';
 
 export default function MediaKitDownloadSection() {
   return (
     <section id="download" className="w-full bg-white" style={{ padding: 'clamp(48px, 6.25vw, 120px) 0' }}>
       <div
-        className="mx-auto flex flex-wrap items-center"
+        className="mx-auto md:hidden"
+        style={{ maxWidth: '460px', padding: '0 16px' }}
+      >
+        <div className="flex flex-col items-center text-center" style={{ gap: '18px' }}>
+          <h2
+            className="font-nexa"
+            style={{
+              fontSize: '26px',
+              lineHeight: '1.12',
+              fontWeight: 400,
+              color: '#1863da',
+            }}
+          >
+            Download Media Kit
+          </h2>
+
+          <p
+            className="font-metro text-black"
+            style={{
+              fontSize: '10px',
+              lineHeight: '1.55',
+              maxWidth: '332px',
+            }}
+          >
+            <span>Note: Always follow these Branding Guidelines while publishing</span>
+            <br />
+            <span>information relevant to Naxatra Labs. Download the Branding Kit below.</span>
+          </p>
+
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            aria-label="Download Kit"
+            className="relative block"
+            style={{
+              width: '188px',
+              height: '40px',
+              marginTop: '12px',
+              overflow: 'hidden',
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)',
+            }}
+          >
+            <img
+              src={downloadKit}
+              alt="Download Kit"
+              className="block object-contain"
+              style={{ width: '188px', height: '40px' }}
+            />
+          </a>
+        </div>
+      </div>
+
+      <div
+        className="mx-auto hidden md:flex md:flex-wrap items-center"
         style={{
           maxWidth: '1574px',
           padding: '0 clamp(24px, 4.2vw, 80px)',
@@ -33,7 +86,6 @@ export default function MediaKitDownloadSection() {
           className="relative flex-1"
           style={{ minHeight: 'clamp(120px, 11.7vw, 224px)' }}
         >
-          {/* SVG cut-corner card background */}
           <img
             src={cardBg}
             alt=""
@@ -42,7 +94,6 @@ export default function MediaKitDownloadSection() {
             style={{ objectFit: 'fill' }}
           />
 
-          {/* Card content */}
           <div
             className="relative flex flex-col items-start justify-center h-full"
             style={{
@@ -74,19 +125,6 @@ export default function MediaKitDownloadSection() {
                 className="block h-auto object-contain"
                 style={{
                   width: 'clamp(150px, 13.6vw, 262px)',
-                  clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%)',
-                }}
-              />
-              <span
-                aria-hidden="true"
-                className="absolute pointer-events-none"
-                style={{
-                  right: 0,
-                  bottom: 0,
-                  width: '18px',
-                  height: '18px',
-                  background: '#eef8f8',
-                  clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
                 }}
               />
             </a>

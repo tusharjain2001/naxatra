@@ -57,7 +57,7 @@ export default function CareersApplySection() {
     <section className="w-full bg-white mb-20">
       <div
         className="mx-auto md:hidden"
-        style={{ maxWidth: '460px', padding: '26px 16px 34px' }}
+        style={{ maxWidth: '460px', padding: '26px 16px 18px' }}
       >
         <div style={{ marginBottom: '24px' }}>
           <h2
