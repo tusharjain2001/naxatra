@@ -137,7 +137,8 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/accc37ae-e1c2-498c-9cc1-f92c6775bdfd\" -o \"product-app-loader.png\")",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/9c2f5fdd-e4f7-45f1-9e40-a146a15f2928\" -o \"product-app-weeder.png\")",
       "Bash(curl -s http://localhost:3001/products)",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ecc15f96-a0d0-4af4-82c9-aecd1d951208\" -o \"product-detail-wireframe.png\")"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ecc15f96-a0d0-4af4-82c9-aecd1d951208\" -o \"product-detail-wireframe.png\")",
+      "Bash(curl -L \"https://www.figma.com/api/mcp/asset/f1f1b434-8736-4877-8eb3-8743ecae8579\" -o \"c:/Users/Intel/Desktop/naxatra/src/assets/images/case-study-card-mobile.png\" --silent --write-out \"%{http_code} %{content_type}\")"
     ]
   }
 }
