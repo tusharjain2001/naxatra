@@ -16,7 +16,7 @@ export default function CaseStudyFeatureSection() {
         {/* Inner container: 347px wide, 378px tall, centered — all positions are relative to this */}
         <div
           className="relative mx-auto overflow-hidden"
-          style={{ width: 'min(347px, 94vw)', height: '378px' }}
+          style={{ width: 'min(347px, 94vw)', height: '420px' }}
         >
           {/* cardBg: inlined SVG at exact Figma dimensions 347.079×369px */}
           <svg
