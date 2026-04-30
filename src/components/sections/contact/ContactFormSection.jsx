@@ -31,7 +31,7 @@ function SelectField({ label, options, value, onChange, required }) {
   return (
     <div className="flex flex-col" style={{ gap: '4px', flex: '1 1 clamp(200px, 25.6vw, 491px)' }}>
       <label
-        className="font-metro"
+        className="font-metro max-[768px]:!text-[7px]"
         style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}
       >
         {label} {required && <span style={{ color: 'red' }}>*</span>}
@@ -40,7 +40,7 @@ function SelectField({ label, options, value, onChange, required }) {
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full appearance-none font-metro"
+          className="w-full appearance-none font-metro max-[768px]:!h-[34px] max-[768px]:!px-[10px] max-[768px]:!py-[8px] max-[768px]:!text-[10px]"
           style={{
             height: 'clamp(44px, 3.7vw, 71px)',
             backgroundColor: '#eeeeee',
@@ -61,8 +61,8 @@ function SelectField({ label, options, value, onChange, required }) {
           className="absolute pointer-events-none"
           style={{ right: 'clamp(12px, 1.04vw, 20px)', top: '50%', transform: 'translateY(-50%)' }}
         >
-          <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
-            <path d="M1 1L7.5 7L14 1" stroke="#515151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <svg width="10" height="6" viewBox="0 0 15 8" fill="none" className="md:w-[15px] md:h-[8px]">
+            <path d="M1 1L7.5 7L14 1" stroke="#B3B3B3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="md:stroke-[#515151]" />
           </svg>
         </span>
       </div>
@@ -77,7 +77,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
       style={{ gap: '4px', flex: fullWidth ? '1 1 100%' : '1 1 clamp(200px, 25.6vw, 491px)' }}
     >
       <label
-        className="font-metro"
+        className="font-metro max-[768px]:!text-[7px]"
         style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}
       >
         {label} {required && <span style={{ color: 'red' }}>*</span>}
@@ -86,7 +86,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="font-metro"
+        className="font-metro max-[768px]:!h-[34px] max-[768px]:!px-[10px] max-[768px]:!py-[8px] max-[768px]:!text-[10px]"
         style={{
           height: 'clamp(44px, 3.7vw, 71px)',
           backgroundColor: '#eeeeee',
@@ -122,7 +122,196 @@ export default function ContactFormSection() {
   return (
     <section className="w-full bg-white">
       <div
-        className="mx-auto"
+        className="mx-auto md:hidden"
+        style={{ maxWidth: '460px', padding: '26px 12px 34px' }}
+      >
+        <h2
+          className="font-nexa text-center"
+          style={{
+            fontSize: '20px',
+            lineHeight: '1.15',
+            fontWeight: 400,
+            marginBottom: '4px',
+          }}
+        >
+          <span style={{ color: '#000' }}>If You&apos;re Here, </span>
+          <br />
+          <span style={{ color: '#1863da' }}>We Need To Talk.</span>
+        </h2>
+        <p
+          className="font-metro text-center"
+          style={{
+            fontSize: '10px',
+            color: '#515151',
+            marginBottom: '22px',
+          }}
+        >
+          What are you looking for?
+        </p>
+
+        <div className="grid grid-cols-2" style={{ gap: '2px', marginBottom: '42px' }}>
+          {CATEGORIES.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className="text-center"
+                style={{
+                  padding: '14px 10px',
+                  backgroundColor: isActive ? 'rgba(77,214,196,0.12)' : 'rgba(77,214,196,0.04)',
+                  border: 'none',
+                }}
+              >
+                <span
+                  className="font-nexa block"
+                  style={{
+                    fontSize: '10px',
+                    color: '#1863da',
+                    fontWeight: 400,
+                    lineHeight: 1.2,
+                    marginBottom: '3px',
+                  }}
+                >
+                  {cat.title}
+                </span>
+                <span
+                  className="font-metro block"
+                  style={{ fontSize: '8px', color: '#515151', lineHeight: 1.35 }}
+                >
+                  {cat.description}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
+          <div className="text-center">
+            <h3
+              className="font-nexa"
+              style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}
+            >
+              <span style={{ color: '#000' }}>Make An Enquiry </span>
+              <span style={{ color: '#1863da' }}>For Our Motors.</span>
+            </h3>
+            <p className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
+              <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+            </p>
+          </div>
+
+          <div className="flex flex-col" style={{ gap: '12px' }}>
+            <div className="flex items-center" style={{ gap: '8px' }}>
+              <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
+                Define motor type
+              </span>
+              <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+            </div>
+
+            <div className="grid grid-cols-2" style={{ gap: '8px' }}>
+              <SelectField
+                label="Motor Application"
+                options={MOTOR_APPLICATIONS}
+                value={form.motorApplication}
+                onChange={set('motorApplication')}
+                required
+              />
+              <SelectField
+                label="Power Range (Nominal)"
+                options={POWER_RANGES}
+                value={form.powerRange}
+                onChange={set('powerRange')}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col" style={{ gap: '12px' }}>
+            <div className="flex items-center" style={{ gap: '8px' }}>
+              <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
+                Contact Information
+              </span>
+              <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+            </div>
+
+            <div className="grid grid-cols-2" style={{ gap: '8px' }}>
+              <TextField
+                label="Full Name (Required)"
+                value={form.fullName}
+                onChange={set('fullName')}
+                required
+              />
+              <TextField
+                label="Business Email ID"
+                type="email"
+                value={form.email}
+                onChange={set('email')}
+                required
+              />
+              <TextField
+                label="Contact Number"
+                type="tel"
+                value={form.phone}
+                onChange={set('phone')}
+                required
+              />
+              <TextField
+                label={
+                  <>
+                    {'Company Name '}
+                    <span className="md:hidden" style={{ fontSize: '5px' }}>(N/A if you do not belong to any company)</span>
+                    <span className="hidden md:inline">(N/A if you do not belong to any company)</span>
+                  </>
+                }
+                value={form.company}
+                onChange={set('company')}
+                required
+              />
+            </div>
+
+            <div className="flex flex-col" style={{ gap: '4px' }}>
+              <label
+                className="font-metro"
+                style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}
+              >
+                Your Question or Inquiry. <span style={{ color: 'red' }}>*</span>
+              </label>
+              <textarea
+                value={form.message}
+                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                className="w-full font-metro resize-none"
+                style={{
+                  height: '150px',
+                  backgroundColor: '#eeeeee',
+                  border: '1px solid #d9d9d9',
+                  borderRadius: '4px',
+                  padding: '12px 14px',
+                  fontSize: '12px',
+                  outline: 'none',
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              aria-label="Submit Enquiry"
+              className="block"
+            >
+              <img
+                src={submitEnquiry}
+                alt="Submit Enquiry"
+                className="block"
+                style={{ width: '150px', height: 'auto' }}
+              />
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        className="mx-auto hidden md:block"
         style={{ maxWidth: '1920px', padding: 'clamp(40px, 4.2vw, 80px) clamp(24px, 10.4vw, 200px)' }}
       >
         {/* Top heading */}
@@ -280,7 +469,13 @@ export default function ContactFormSection() {
                   required
                 />
                 <TextField
-                  label="Company Name (N/A if you do not belong to any company)"
+                  label={
+                    <>
+                      {'Company Name '}
+                      <span className="md:hidden" style={{ fontSize: '5px' }}>(N/A if you do not belong to any company)</span>
+                      <span className="hidden md:inline">(N/A if you do not belong to any company)</span>
+                    </>
+                  }
                   value={form.company}
                   onChange={set('company')}
                   required
