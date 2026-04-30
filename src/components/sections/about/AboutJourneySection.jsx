@@ -104,7 +104,7 @@ export default function AboutJourneySection() {
           </p>
 
           <div className="flex flex-col items-center">
-            <div style={{ width: '296px', marginBottom: '18px', textAlign: 'center' }}>
+            <div style={{ width: '296px', textAlign: 'center' }}>
               <p className="font-nexa" style={{ color: '#1863da', fontSize: '20px', lineHeight: '1', fontWeight: 400 }}>
                 {milestones[mobileActiveIndex].year}
               </p>
