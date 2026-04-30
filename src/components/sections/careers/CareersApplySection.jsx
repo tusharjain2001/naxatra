@@ -9,7 +9,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
       style={{ gap: '4px', flex: fullWidth ? '1 1 100%' : '1 1 clamp(180px, 23vw, 445px)' }}
     >
       <label
-        className="font-metro"
+        className="font-metro max-[768px]:!text-[7px]"
         style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151', fontWeight: 500 }}
       >
         {label} {required && <span style={{ color: 'red' }}>*</span>}
@@ -18,7 +18,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="font-metro outline-none"
+        className="font-metro outline-none max-[768px]:!h-[30px] max-[768px]:!px-[10px] max-[768px]:!py-[8px] max-[768px]:!text-[10px]"
         style={{
           height: 'clamp(42px, 3.7vw, 71px)',
           backgroundColor: '#eeeeee',
@@ -56,35 +56,106 @@ export default function CareersApplySection() {
   return (
     <section className="w-full bg-white mb-20">
       <div
-        className="mx-auto flex flex-wrap items-stretch"
-        style={{ maxWidth: '1920px' }}
+        className="mx-auto md:hidden"
+        style={{ maxWidth: '460px', padding: '26px 16px 34px' }}
+      >
+        <div style={{ marginBottom: '24px' }}>
+          <h2
+            className="font-nexa text-center"
+            style={{ fontSize: '26px', fontWeight: 400, lineHeight: '1.2', marginBottom: '6px' }}
+          >
+            <span style={{ color: '#000' }}>Share Your Details With Us. </span>
+            <br />
+            <span style={{ color: '#1863da' }}>We Will Get Back To You.</span>
+          </h2>
+          <p className="font-metro text-center" style={{ fontSize: '15px', color: '#b3b3b3' }}>
+            <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '14px' }}>
+          <div className="grid grid-cols-2" style={{ gap: '10px' }}>
+            <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />
+            <TextField label="Email ID (Required)" type="email" value={form.email} onChange={set('email')} required />
+          </div>
+
+          <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+          <TextField label="Applying for which role?" value={form.role} onChange={set('role')} required fullWidth />
+
+          <div className="flex flex-col" style={{ gap: '4px' }}>
+            <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+              Attach Resume <span style={{ color: 'red' }}>*</span>
+            </label>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => fileRef.current?.click()}
+                className="font-metro flex-shrink-0"
+                style={{
+                  height: '24px',
+                  backgroundColor: '#d9d9d9',
+                  border: '1px solid #9d9d9d',
+                  borderRadius: '2px',
+                  padding: '0 10px',
+                  fontSize: '8px',
+                  color: '#515151',
+                }}
+              >
+                Choose File
+              </button>
+              <span className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
+                {fileName}
+              </span>
+              <input ref={fileRef} type="file" accept=".pdf,.doc,.docx" className="hidden" onChange={handleFile} />
+            </div>
+          </div>
+
+          <TextField label="LinkedIn Link" type="url" value={form.linkedin} onChange={set('linkedin')} required fullWidth />
+
+          <div className="flex justify-center" style={{ marginTop: '10px' }}>
+            <button type="submit" aria-label="Submit Enquiry" className="block">
+              <img
+                src={submitEnquiry}
+                alt="Submit Enquiry"
+                className="block h-auto object-contain"
+                style={{ width: '150px' }}
+              />
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        className="mx-auto hidden md:flex md:flex-wrap items-stretch"
+        style={{ maxWidth: '1920px', padding: '0 clamp(24px, 9.3vw, 179px)' }}
       >
         {/* Left: form */}
         <div
           className="flex flex-col"
           style={{
-            flex: '1 1 clamp(280px, 57vw, 1100px)',
-            padding: 'clamp(40px, 4.8vw, 92px) clamp(24px, 9.3vw, 179px)',
-            gap: 'clamp(20px, 2.08vw, 40px)',
+            flex: '1 1 58%',
+            padding: '28px 32px 34px 0',
+            gap: '24px',
+            justifyContent: 'space-between',
           }}
         >
           {/* Heading */}
           <div>
             <h2
               className="font-nexa"
-              style={{ fontSize: 'clamp(20px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}
+              style={{ fontSize: '32px', fontWeight: 400, lineHeight: '1.2', marginBottom: '6px' }}
             >
-              <span style={{ color: '#000' }}>Share your details with us. </span>
-              <span style={{ color: '#1863da' }}>We will get back to you.</span>
+              <span style={{ color: '#000' }}>Share Your Details With Us. </span>
+              <span style={{ color: '#1863da' }}>We Will Get Back To You.</span>
             </h2>
-            <p className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#b3b3b3' }}>
+            <p className="font-metro" style={{ fontSize: '16px', color: '#b3b3b3' }}>
               <span style={{ color: 'red' }}>*</span> marked fields are mandatory
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
+          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '18px', flex: 1 }}>
             {/* Row 1: Full Name + Email */}
-            <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+            <div className="flex flex-wrap" style={{ gap: '10px 16px' }}>
               <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />
               <TextField label="Email ID (Required)" type="email" value={form.email} onChange={set('email')} required />
             </div>
@@ -97,7 +168,7 @@ export default function CareersApplySection() {
 
             {/* Row 4: Attach Resume */}
             <div className="flex flex-col" style={{ gap: '4px' }}>
-              <label className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151', fontWeight: 500 }}>
+              <label className="font-metro" style={{ fontSize: '11px', color: '#515151', fontWeight: 500 }}>
                 Attach Resume <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="flex items-center gap-3">
@@ -106,18 +177,18 @@ export default function CareersApplySection() {
                   onClick={() => fileRef.current?.click()}
                   className="font-metro flex-shrink-0"
                   style={{
-                    height: 'clamp(40px, 2.71vw, 52px)',
+                    height: '30px',
                     backgroundColor: '#d9d9d9',
                     border: '1px solid #9d9d9d',
-                    borderRadius: '4px',
-                    padding: '0 clamp(12px, 1.04vw, 20px)',
-                    fontSize: 'clamp(12px, 0.83vw, 16px)',
+                    borderRadius: '2px',
+                    padding: '0 10px',
+                    fontSize: '11px',
                     color: '#515151',
                   }}
                 >
                   Choose File
                 </button>
-                <span className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#9d9d9d' }}>
+                <span className="font-metro" style={{ fontSize: '11px', color: '#9d9d9d' }}>
                   {fileName}
                 </span>
                 <input ref={fileRef} type="file" accept=".pdf,.doc,.docx" className="hidden" onChange={handleFile} />
@@ -128,13 +199,13 @@ export default function CareersApplySection() {
             <TextField label="LinkedIn Link" type="url" value={form.linkedin} onChange={set('linkedin')} required fullWidth />
 
             {/* Submit */}
-            <div className="flex justify-end">
+            <div className="flex justify-end" style={{ marginTop: 'auto' }}>
               <button type="submit" aria-label="Submit Enquiry" className="block">
                 <img
                   src={submitEnquiry}
                   alt="Submit Enquiry"
                   className="block h-auto object-contain"
-                  style={{ width: 'clamp(150px, 13.6vw, 262px)' }}
+                  style={{ width: '150px' }}
                 />
               </button>
             </div>
@@ -144,13 +215,23 @@ export default function CareersApplySection() {
         {/* Right: photo */}
         <div
           className="flex-shrink-0 hidden lg:block"
-          style={{ width: 'clamp(240px, 34.3vw, 658px)' }}
+          style={{ width: 'clamp(320px, 31vw, 520px)', padding: '20px 0 20px 18px' }}
         >
-          <img
-            src={careersPhoto}
-            alt="Join Naxatra Labs"
-            className="w-full h-full object-cover object-top"
-          />
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden',
+              clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 0 100%)',
+              borderRadius: '4px',
+            }}
+          >
+            <img
+              src={careersPhoto}
+              alt="Join Naxatra Labs"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
         </div>
       </div>
     </section>
