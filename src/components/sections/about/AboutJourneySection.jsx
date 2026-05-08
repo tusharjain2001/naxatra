@@ -74,7 +74,7 @@ export default function AboutJourneySection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f5fafa] pb-5 md:pb-[120px]" style={{ paddingTop: '20px' }}>
+    <section className="relative w-full overflow-hidden bg-[#f5fafa] pb-5 md:pb-30" style={{ paddingTop: '20px' }}>
       <div className="relative z-10 md:hidden" style={{ padding: '18px 14px 4px' }}>
         <div className="mx-auto" style={{ maxWidth: '460px' }}>
           <p
