@@ -2,6 +2,7 @@ import heroGrid from '../../../assets/images/contact-hero-grid.png';
 import heroEllipse from '../../../assets/images/contact-hero-ellipse.png';
 import heroImage from '../../../assets/images/contact-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function ContactHeroSection() {
   return (
@@ -107,8 +108,8 @@ export default function ContactHeroSection() {
                 fontWeight: 400,
               }}
             >
-              <span className="text-white">Let's Power The </span>
-              <span style={{ color: '#4dd6c4' }}>Future Together!</span>
+              <span className="text-white"><AnimatedTextReveal text="Let's Power The " /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Future Together!" delay={0.08} /></span>
             </h1>
 
             <button type="button" aria-label="Request Brochure" className="block">

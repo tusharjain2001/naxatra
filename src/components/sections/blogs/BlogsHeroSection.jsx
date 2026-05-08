@@ -2,6 +2,7 @@ import blogHeroGrid from '../../../assets/images/blog-hero-grid.png';
 import blogHeroEllipse from '../../../assets/images/blog-hero-ellipse.png';
 import blogHeroImage from '../../../assets/images/blog-hero-image.png';
 import mobileBlogsHero from '../../../assets/images/mobile-blogs-hero.svg';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function BlogsHeroSection() {
   return (
@@ -48,9 +49,9 @@ export default function BlogsHeroSection() {
               fontWeight: 600,
             }}
           >
-            Get the latest{' '}
-            <span style={{ color: '#4dd6c4' }}>updates and innovations</span>
-            {' '}from Naxatra Labs.
+            <AnimatedTextReveal text="Get the latest " />
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="updates and innovations" delay={0.08} /></span>
+            <AnimatedTextReveal text=" from Naxatra Labs." delay={0.18} />
           </h1>
           <p
             className="font-metro text-white"
@@ -60,7 +61,7 @@ export default function BlogsHeroSection() {
               opacity: 0.85,
             }}
           >
-            Follow us on LinkedIn to stay ahead!
+            <AnimatedTextReveal text="Follow us on LinkedIn to stay ahead!" delay={0.3} />
           </p>
         </div>
 

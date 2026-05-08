@@ -2,6 +2,7 @@ import downloadKit from '../../../assets/images/download-kit.svg';
 import mediaKitHeroGrid from '../../../assets/images/meiakitgrid.png';
 import mediaKitHeroEllipse from '../../../assets/images/mediakitellipse.png';
 import mediaKitHeroImage from '../../../assets/images/mdiakitimage.png';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function MediaKitHeroSection() {
   return (
@@ -135,10 +136,10 @@ export default function MediaKitHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(34px, 4.8vw, 92px)', lineHeight: '0.98', fontWeight: 400, margin: 0 }}
             >
-              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}>Naxatra </span>
-              <span className="text-white" style={{ whiteSpace: 'nowrap' }}>Media</span>
+              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}><AnimatedTextReveal text="Naxatra " /></span>
+              <span className="text-white" style={{ whiteSpace: 'nowrap' }}><AnimatedTextReveal text="Media" delay={0.08} /></span>
               <br />
-              <span className="text-white">Kit 2026</span>
+              <span className="text-white"><AnimatedTextReveal text="Kit 2026" delay={0.16} /></span>
             </h1>
 
             <a

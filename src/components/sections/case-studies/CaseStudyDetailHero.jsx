@@ -2,6 +2,7 @@ import mobileDetailHero from '../../../assets/images/case-detail-hero.svg';
 import detailCaseStudyGrid from '../../../assets/detailcasestudy/detailcasestudygrid.png';
 import detailCaseStudyEllipse from '../../../assets/detailcasestudy/detailcasestudyellipse.png';
 import detailCaseStudyRightImage from '../../../assets/detailcasestudy/detailcasestudyrightimage.png';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function CaseStudyDetailHero() {
   return (
@@ -84,7 +85,7 @@ export default function CaseStudyDetailHero() {
                     fontWeight: 400,
                   }}
                 >
-                  Case Study
+                  <AnimatedTextReveal text="Case Study" />
                 </p>
 
                 <h1
@@ -96,9 +97,9 @@ export default function CaseStudyDetailHero() {
                     letterSpacing: '-0.015em',
                   }}
                 >
-                  <span className="block">Boosting Power Tool Performance With</span>
-                  <span className="block">Naxatra Labs&apos; Advanced BLDC Motor</span>
-                  <span className="block">Solution</span>
+                  <span className="block"><AnimatedTextReveal text="Boosting Power Tool Performance With" /></span>
+                  <span className="block"><AnimatedTextReveal text="Naxatra Labs' Advanced BLDC Motor" delay={0.12} /></span>
+                  <span className="block"><AnimatedTextReveal text="Solution" delay={0.24} /></span>
                 </h1>
               </div>
             </div>

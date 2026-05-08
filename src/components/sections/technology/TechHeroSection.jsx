@@ -2,6 +2,7 @@ import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/tech-hero-ellipse.png';
 import techRightHero from '../../../assets/images/tech-right-hero.png';
 import connectNow from '../../../assets/images/connect-now.svg';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function TechHeroSection() {
   return (
@@ -132,15 +133,15 @@ export default function TechHeroSection() {
                 fontWeight: 600,
               }}
             >
-              {'From '}
-              <span style={{ color: '#4dd6c4' }}>Concept to Creation,</span>
-              {' Driving EV Innovation'}
+              <AnimatedTextReveal text="From " />
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Concept to Creation," delay={0.06} /></span>
+              <AnimatedTextReveal text=" Driving EV Innovation" delay={0.16} />
             </h1>
             <p
               className="font-metro text-white"
               style={{ fontSize: 'clamp(14px, 1.25vw, 24px)', lineHeight: '1.5', whiteSpace: 'nowrap' }}
             >
-              Lighter, Stronger, Smarter Motors for the Future.
+              <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.28} />
             </p>
           </div>
 

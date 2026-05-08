@@ -2,6 +2,7 @@ import aboutHeroGrid from '../../../assets/images/about-hero-grid.png';
 import aboutHeroEllipse from '../../../assets/images/about-hero-ellipse.png';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 import mobileAboutHero from '../../../assets/images/about-mobile-hero.svg';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function AboutHeroSection() {
   return (
@@ -37,20 +38,20 @@ export default function AboutHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 600 }}
             >
-              <span className="text-white">What </span>
-              <span style={{ color: '#4dd6c4' }}>Drives Us?</span>
+              <span className="text-white"><AnimatedTextReveal text="What " /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Drives Us?" delay={0.08} /></span>
             </h1>
             <p
               className="font-metro"
               style={{ fontSize: '20px', color: '#d9d9d9', lineHeight: '1.6', fontWeight: 600 }}
             >
-              Powering the Future with Efficient, Compact and High torque motors.
+              <AnimatedTextReveal text="Powering the Future with Efficient, Compact and High torque motors." delay={0.2} />
             </p>
             <p
               className="font-metro"
               style={{ fontSize: '16px', color: '#d9d9d9', lineHeight: '1.6' }}
             >
-              At Naxatra Labs, we understand that every application has unique requirements. They're engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency.
+              <AnimatedTextReveal text="At Naxatra Labs, we understand that every application has unique requirements. They're engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency." delay={0.34} />
             </p>
           </div>
 

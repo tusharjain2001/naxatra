@@ -2,6 +2,7 @@ import heroBg from '../../assets/images/hero-bg.svg';
 import heroOverlay from '../../assets/images/hero-overlay.svg';
 import heroMotor from '../../assets/images/hero-motor.png';
 import exploreOptions from '../../assets/images/explore-options.svg';
+import AnimatedTextReveal from '../common/AnimatedTextReveal';
 
 export default function HeroSection() {
   return (
@@ -12,12 +13,18 @@ export default function HeroSection() {
 
         <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
           <h1 className="font-nexa text-[clamp(43px,5.2vw,100px)] font-semibold leading-[0.91] tracking-normal text-black max-[720px]:text-[26px]">
-            <span className="block max-[720px]:inline text-[#1863da]">Advanced</span>
-            <span className="block max-[720px]:inline"> Motors &amp;</span>
-            <span className="block">Controllers</span>
+            <span className="block max-[720px]:inline text-[#1863da]">
+              <AnimatedTextReveal text="Advanced" />
+            </span>
+            <span className="block max-[720px]:inline">
+              <AnimatedTextReveal text="Motors &" delay={0.09} />
+            </span>
+            <span className="block">
+              <AnimatedTextReveal text="Controllers" delay={0.18} />
+            </span>
           </h1>
           <p className="mt-[clamp(10px,0.95vw,18px)] font-metro text-[clamp(10px,1.15vw,22px)] leading-[1.25] text-[#515151] max-[720px]:text-[12px]">
-            Powering The Future Of Electric Mobility
+            <AnimatedTextReveal text="Powering The Future Of Electric Mobility" delay={0.28} />
           </p>
         </div>
 

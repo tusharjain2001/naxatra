@@ -1,5 +1,6 @@
 import reqForCust from '../../../assets/images/req-for-cust.png';
 import reqSpecSheet from '../../../assets/images/req-spec-sheet.png';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function ProductDetailHeroSection({ product }) {
   const specs = [
@@ -294,7 +295,7 @@ export default function ProductDetailHeroSection({ product }) {
               lineHeight: '1.15',
             }}
           >
-            {product.name}
+            <AnimatedTextReveal text={product.name} />
           </h1>
 
           {/* Specs — bottom-anchored to match CTAs bottom via paddingBottom */}

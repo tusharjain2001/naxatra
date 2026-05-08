@@ -2,6 +2,7 @@ import careersHeroGrid from '../../../assets/images/careers-hero-grid.png';
 import careersHeroEllipse from '../../../assets/images/careers-hero-elllipse.png';
 import careersHeroImage from '../../../assets/images/careers-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function CareersHeroSection() {
   return (
@@ -116,9 +117,9 @@ export default function CareersHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 400 }}
             >
-              <span className="text-white block">Join us in</span>
-              <span style={{ color: '#4dd6c4' }}>The Future </span>
-              <span className="text-white">Together!</span>
+              <span className="text-white block"><AnimatedTextReveal text="Join us in" /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="The Future " delay={0.08} /></span>
+              <span className="text-white"><AnimatedTextReveal text="Together!" delay={0.16} /></span>
             </h1>
 
             <button type="button" aria-label="Request Brochure" className="block">

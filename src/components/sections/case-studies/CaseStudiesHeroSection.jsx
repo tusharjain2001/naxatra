@@ -2,6 +2,7 @@ import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/case-hero-ellipse.png';
 import techRightHero from '../../../assets/images/case-right-hero.png';
 import mobileHero from '../../../assets/images/case-study-mobile-hero-section.svg';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function CaseStudiesHeroSection() {
   return (
@@ -51,9 +52,9 @@ export default function CaseStudiesHeroSection() {
               fontWeight: 400,
             }}
           >
-            {'Engineering '}
-            <span style={{ color: '#4dd6c4' }}>Real-World</span>
-            {' Electric Mobility'}
+            <AnimatedTextReveal text="Engineering " />
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Real-World" delay={0.08} /></span>
+            <AnimatedTextReveal text=" Electric Mobility" delay={0.16} />
           </h1>
           <p
             className="font-metro text-white"
@@ -62,7 +63,7 @@ export default function CaseStudiesHeroSection() {
               lineHeight: '1.5',
             }}
           >
-            Lighter, Stronger, Smarter Motors for the Future.
+            <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.28} />
           </p>
         </div>
 

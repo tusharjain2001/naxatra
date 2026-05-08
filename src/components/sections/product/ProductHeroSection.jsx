@@ -4,6 +4,7 @@ import greenBg from '../../../assets/images/green-bg.png';
 import motorHero from '../../../assets/images/product-motor-hero.png';
 import productText from '../../../assets/images/Antarix RF55.png';
 import DownloadBrochureModal from './DownloadBrochureModal';
+import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function ProductHeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -39,8 +40,8 @@ export default function ProductHeroSection() {
           letterSpacing: 'normal',
         }}
       >
-        <span style={{ color: '#1863da' }}>Power </span>
-        That Moves You.
+        <span style={{ color: '#1863da' }}><AnimatedTextReveal text="Power " /></span>
+        <AnimatedTextReveal text="That Moves You." delay={0.08} />
       </h1>
 
       {/* Subtitle */}
@@ -53,7 +54,7 @@ export default function ProductHeroSection() {
           color: '#515151',
         }}
       >
-        Lighter, Stronger, Smarter Motors for the Future.
+        <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.22} />
       </p>
 
       <div
