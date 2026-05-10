@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
@@ -50,13 +51,15 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
         companyName: '',
         email: '',
       });
-      setSubmitState({ type: 'success', message: 'Brochure request submitted successfully.' });
+      toast.success('Brochure requested successfully.');
       onClose();
     } catch (error) {
+      const message = error instanceof Error ? error.message : 'Failed to submit brochure request.';
       setSubmitState({
         type: 'error',
-        message: error instanceof Error ? error.message : 'Failed to submit brochure request.',
+        message,
       });
+      toast.error(message);
     } finally {
       setIsSubmitting(false);
     }
