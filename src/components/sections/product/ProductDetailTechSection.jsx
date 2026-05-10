@@ -406,7 +406,7 @@ function TechnicalDetailsContent({
       </div>
 
       <div
-        className="max-[768px]:flex-col max-[768px]:items-center max-[768px]:text-center max-[768px]:gap-2"
+        className="max-[768px]:items-start max-[768px]:justify-between max-[768px]:gap-3"
         style={{
           display: "flex",
           alignItems: "center",
@@ -417,7 +417,7 @@ function TechnicalDetailsContent({
         }}
       >
         <p
-          className="font-nexa capitalize max-[768px]:text-[10px]! max-[768px]:max-w-46.5! max-[768px]:leading-normal!"
+          className="font-nexa capitalize max-[768px]:text-[10px]! max-[768px]:max-w-[150px]! max-[768px]:leading-[1.25]!"
           style={{
             color: "#515151",
             fontSize: "clamp(13px, 1.46vw, 18px)",
@@ -444,7 +444,7 @@ function TechnicalDetailsContent({
           <img
             src={reqForCust}
             alt="Request for Customization"
-            className="block max-[768px]:w-42.5!"
+            className="block max-[768px]:w-[166px]!"
             style={{ width: "clamp(180px, 16vw, 300px)", height: "auto" }}
           />
         </button>
