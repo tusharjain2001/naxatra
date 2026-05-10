@@ -3,10 +3,12 @@ import footerVectorDeco from '../../assets/images/footer-vector-deco.svg';
 import footerEllipseDeco from '../../assets/images/footer-ellipse-deco.svg';
 import footerPlusGrid from '../../assets/images/footer-plus-grid.png';
 import footerBrandCard from '../../assets/images/footer-brand-card.svg';
-import instaIcon from '../../assets/images/insta.png';
-import linkedinIcon from '../../assets/images/linkedin.png';
 import footerPinCorp from '../../assets/images/footer-pin-corp.svg';
 import footerPinMfg from '../../assets/images/footer-pin-mfg.svg';
+import facebookIcon from '../../assets/socialhandles/fbblue.png';
+import instagramIcon from '../../assets/socialhandles/intsablue.png';
+import linkedinIcon from '../../assets/socialhandles/linkedinblue.png';
+import twitterIcon from '../../assets/socialhandles/twitterblue.png';
 
 const W = 1920;
 const H = 763;
@@ -27,6 +29,13 @@ const QUICK_LINKS = [
   { label: 'Insights & Blogs', to: '/insights-blogs' },
   { label: 'Media Kit', to: '/media-kit' },
   { label: 'Careers', to: '/careers' },
+];
+
+const SOCIAL_ICONS = [
+  { src: twitterIcon, alt: 'Twitter', href: 'https://x.com/naxatralabs?s=21' },
+  { src: instagramIcon, alt: 'Instagram', href: 'https://www.instagram.com/naxatralabs/#' },
+  { src: linkedinIcon, alt: 'LinkedIn', href: 'https://www.linkedin.com/company/naxatra-labs/' },
+  { src: facebookIcon, alt: 'Facebook', href: 'https://www.facebook.com/share/1K1QdBdCVZ/?mibextid=wwXIfr' },
 ];
 
 function ColHeader({ children }) {
@@ -128,25 +137,34 @@ export default function Footer() {
         <div
           className="absolute"
           style={{
-            left: px(201),
+            left: px(185),
             top: py(432),
             display: 'flex',
             alignItems: 'center',
-            gap: 'clamp(5px, 0.52vw, 10px)',
           }}
         >
-          {[instaIcon, linkedinIcon].map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={index === 0 ? 'Instagram' : 'LinkedIn'}
+          {SOCIAL_ICONS.map((icon, index) => (
+            <a
+              key={icon.alt}
+              href={icon.href}
+              target="_blank"
+              rel="noreferrer"
               style={{
-                width: 'clamp(24px, 2.34vw, 45px)',
-                height: 'clamp(24px, 2.29vw, 44px)',
-                objectFit: 'contain',
+                marginLeft: index === 0 ? '0' : '-34px',
                 display: 'block',
               }}
-            />
+            >
+              <img
+                src={icon.src}
+                alt={icon.alt}
+                style={{
+                  width: '68px',
+                  height: '68px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
+              />
+            </a>
           ))}
         </div>
 
@@ -297,9 +315,25 @@ export default function Footer() {
                 <span className="block text-white">Engineering The</span>
                 <span className="block text-[#4dd6c4]">Future Of Mobility</span>
               </p>
-              <div className="relative mt-5 flex items-center justify-center gap-3">
-                <img src={instaIcon} alt="Instagram" className="h-[30px] w-[30px] object-contain" />
-                <img src={linkedinIcon} alt="LinkedIn" className="h-[30px] w-[30px] object-contain" />
+              <div
+                className="relative mt-5 flex items-center"
+                style={{ width: 'fit-content', margin: '20px auto 0', transform: 'translateX(10px)' }}
+              >
+                {SOCIAL_ICONS.map((icon, index) => (
+                  <a
+                    key={icon.alt}
+                    href={icon.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ marginLeft: index === 0 ? '0' : '-34px', display: 'block' }}
+                  >
+                    <img
+                      src={icon.src}
+                      alt={icon.alt}
+                      className="h-[68px] w-[68px] object-contain"
+                    />
+                  </a>
+                ))}
               </div>
             </div>
 
