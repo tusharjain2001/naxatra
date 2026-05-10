@@ -1,37 +1,29 @@
 import { useState } from 'react';
+import designAndDevelopmentEngineerPdf from '../../../assets/pdfs/Design and Development Engineer NX JD.pdf';
+import marketingAndContentAssociatePdf from '../../../assets/pdfs/JD_marketing and content associate.pdf';
+import mechanicalSimulationEngineerPdf from '../../../assets/pdfs/Mechanical Simulation Engineer NX JD.pdf';
+import testingAndValidationEngineerPdf from '../../../assets/pdfs/Testing and Validation Engineer NX JD.pdf';
+
+const HIRING_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778422346/hiring_video_dn8rih.mp4';
 
 const JOBS = [
   {
-    id: 1,
-    title: 'Supply Chain Manager',
-    location: 'Ahmedabad (Onsite)',
-    type: 'Full-Time',
-    description:
-      'Lead end-to-end supply chain operations from sourcing to delivery. Ensure smooth material flow and operational efficiency.',
-  },
-  {
-    id: 2,
-    title: 'Marketing and Content Associate',
-    location: 'Gurugram (Onsite)',
-    type: 'Full-Time',
-    description:
-      'Support marketing strategy and execution with leadership and partners. Drive campaigns and on-ground initiatives.',
-  },
-  {
     id: 3,
-    title: 'Design Engineer',
-    location: 'Ahmedabad (Onsite)',
-    type: 'Full-Time',
-    description:
-      'Design products from concept to realization. Support manufacturing and solve problems.',
-  },
-  {
-    id: 4,
-    title: 'Design and Development Engineer',
+    title: 'Design And Development Engineer',
     location: 'Ahmedabad (Onsite)',
     type: 'Full-Time',
     description:
       'Translate requirements into manufacturable product solutions. Own end-to-end development from concept to validation.',
+    pdf: designAndDevelopmentEngineerPdf,
+  },
+  {
+    id: 4,
+    title: 'Marketing And Content Associate',
+    location: 'Gurugram (Onsite)',
+    type: 'Full-Time',
+    description:
+      'Support marketing strategy and execution with leadership and partners. Drive campaigns and on-ground initiatives.',
+    pdf: marketingAndContentAssociatePdf,
   },
   {
     id: 5,
@@ -40,6 +32,7 @@ const JOBS = [
     type: 'Full-Time',
     description:
       'Run simulations to optimize design, performance, and reliability. Apply insights to create practical, manufacturable solutions.',
+    pdf: mechanicalSimulationEngineerPdf,
   },
   {
     id: 6,
@@ -48,6 +41,7 @@ const JOBS = [
     type: 'Full-Time',
     description:
       'Plan and execute testing for motors and systems. Analyze failures and drive data-led improvements.',
+    pdf: testingAndValidationEngineerPdf,
   },
 ];
 
@@ -122,6 +116,27 @@ export default function CareersJobsSection() {
           <span style={{ color: '#000' }}>We&apos;re </span>
           <span style={{ color: '#1863da' }}>Hiring</span>
         </h2>
+        <div
+          style={{
+            marginBottom: '16px',
+            borderRadius: '6px',
+            overflow: 'hidden',
+            backgroundColor: '#d9d9d9',
+            width: '100%',
+            aspectRatio: '1656 / 700',
+          }}
+        >
+          <video
+            src={HIRING_VIDEO_URL}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="block w-full h-full object-cover"
+            aria-label="Hiring video"
+          />
+        </div>
         <p
           className="font-metro"
           style={{ fontSize: '10px', color: '#515151', marginBottom: '16px' }}
@@ -182,7 +197,7 @@ export default function CareersJobsSection() {
             fontWeight: 400,
           }}
         >
-          10 Open Positions
+          4 Open Positions
         </p>
 
         <div className="flex flex-col" style={{ gap: '10px' }}>
@@ -250,19 +265,49 @@ export default function CareersJobsSection() {
                   {job.description}
                 </p>
 
-                <button
-                  className="inline-flex items-center justify-center font-metro rounded-[2px] border border-[#1863da] text-[#1863da]"
-                  style={{
-                    fontSize: '8px',
-                    lineHeight: 1.2,
-                    paddingInline: '10px',
-                    paddingBlock: '5px',
-                    whiteSpace: 'nowrap',
-                    width: 'fit-content',
-                  }}
-                >
-                  Download Job Description
-                </button>
+                <div className="flex items-center flex-wrap" style={{ gap: '6px' }}>
+                  <button
+                    className="inline-flex items-center justify-center font-metro rounded-[2px] bg-[#1863da] text-white"
+                    style={{
+                      fontSize: '8px',
+                      lineHeight: 1.2,
+                      paddingInline: '10px',
+                      paddingBlock: '5px',
+                      whiteSpace: 'nowrap',
+                      width: 'fit-content',
+                      clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%)',
+                    }}
+                  >
+                    Apply Now
+                  </button>
+                  <a
+                    href={job.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="inline-flex p-[1px]"
+                    style={{
+                      backgroundColor: '#1863da',
+                      clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%)',
+                    }}
+                  >
+                    <span
+                      className="inline-flex items-center justify-center font-metro text-[#1863da]"
+                      style={{
+                        fontSize: '8px',
+                        lineHeight: 1.2,
+                        paddingInline: '10px',
+                        paddingBlock: '5px',
+                        whiteSpace: 'nowrap',
+                        width: 'fit-content',
+                        backgroundColor: '#fff',
+                        clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%)',
+                      }}
+                    >
+                      Download Job Description
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -281,6 +326,28 @@ export default function CareersJobsSection() {
           <span style={{ color: '#000' }}>We're </span>
           <span style={{ color: '#1863da' }}>Hiring</span>
         </h2>
+        <div
+          style={{
+            marginBottom: 'clamp(24px, 2.6vw, 50px)',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            backgroundColor: '#d9d9d9',
+            width: 'min(100%, 1656px)',
+            height: 'min(700px, calc((100vw - clamp(48px, 18.6vw, 358px)) * 700 / 1656))',
+            maxHeight: '700px',
+          }}
+        >
+          <video
+            src={HIRING_VIDEO_URL}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="block w-full h-full object-cover"
+            aria-label="Hiring video"
+          />
+        </div>
         <p
           className="font-metro"
           style={{ fontSize: 'clamp(14px, 1.25vw, 24px)', color: '#515151', marginBottom: 'clamp(24px, 2.6vw, 50px)' }}
@@ -349,7 +416,7 @@ export default function CareersJobsSection() {
             marginBottom: 'clamp(20px, 2.08vw, 40px)',
           }}
         >
-          10 Open Positions
+          4 Open Positions
         </p>
 
         {/* Job cards */}
@@ -394,19 +461,49 @@ export default function CareersJobsSection() {
                   >
                     {job.description}
                   </p>
-                  <button
-                    className="inline-flex items-center justify-center font-metro rounded-[2px] border border-[#1863da] text-[#1863da] transition-colors"
-                    style={{
-                      fontSize: 'clamp(10px, 0.73vw, 14px)',
-                      lineHeight: 1.2,
-                      paddingInline: 'clamp(12px, 1.15vw, 22px)',
-                      paddingBlock: 'clamp(7px, 0.73vw, 14px)',
-                      whiteSpace: 'nowrap',
-                      width: 'fit-content',
-                    }}
-                  >
-                    Download Job Description
-                  </button>
+                  <div className="flex items-center flex-wrap" style={{ gap: 'clamp(8px, 0.63vw, 12px)' }}>
+                    <button
+                      className="inline-flex items-center justify-center font-metro rounded-[2px] bg-[#1863da] text-white transition-colors"
+                      style={{
+                        fontSize: 'clamp(10px, 0.73vw, 14px)',
+                        lineHeight: 1.2,
+                        paddingInline: 'clamp(12px, 1.15vw, 22px)',
+                        paddingBlock: 'clamp(7px, 0.73vw, 14px)',
+                        whiteSpace: 'nowrap',
+                        width: 'fit-content',
+                        clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)',
+                      }}
+                    >
+                      Apply Now
+                    </button>
+                    <a
+                      href={job.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                      className="inline-flex p-[1px]"
+                      style={{
+                        backgroundColor: '#1863da',
+                        clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)',
+                      }}
+                    >
+                      <span
+                        className="inline-flex items-center justify-center font-metro text-[#1863da] transition-colors"
+                        style={{
+                          fontSize: 'clamp(10px, 0.73vw, 14px)',
+                          lineHeight: 1.2,
+                          paddingInline: 'clamp(12px, 1.15vw, 22px)',
+                          paddingBlock: 'clamp(7px, 0.73vw, 14px)',
+                          whiteSpace: 'nowrap',
+                          width: 'fit-content',
+                          backgroundColor: '#fff',
+                          clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)',
+                        }}
+                      >
+                        Download Job Description
+                      </span>
+                    </a>
+                  </div>
                 </div>
 
                 {/* Right: meta */}
