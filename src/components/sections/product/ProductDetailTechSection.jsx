@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reqForCust from "../../../assets/images/req-for-cust.png";
 import wireframe from "../../../assets/images/product-detail-wireframe.png";
+import expandButton from "../../../assets/socialhandles/expand.png";
 import {
   SPEC_ROWS,
   SINGLE_SPEC_ROWS,
@@ -23,6 +24,7 @@ function AccordionRow({ title, isOpen, onToggle, children }) {
           border: "none",
           cursor: "pointer",
         }}
+        type="button"
       >
         <span
           className="font-nexa capitalize"
@@ -30,6 +32,7 @@ function AccordionRow({ title, isOpen, onToggle, children }) {
             fontSize: "clamp(16px, 1.46vw, 28px)",
             lineHeight: "1.43",
             color: isOpen ? "#1863da" : "#515151",
+            fontWeight: isOpen ? 700 : 400,
           }}
         >
           {isOpen && title === "Motor Detailed View" ? "Detailed View" : title}
@@ -118,7 +121,6 @@ function MotorDetailedContent({ product }) {
         gap: "clamp(24px, 2.08vw, 40px)",
       }}
     >
-      {/* Large motor viewer card */}
       <div
         className="max-[768px]:min-h-55! max-[768px]:rounded-xl!"
         style={{
@@ -145,7 +147,6 @@ function MotorDetailedContent({ product }) {
           }}
         />
 
-        {/* Zoom controls */}
         <div
           style={{
             position: "absolute",
@@ -172,6 +173,7 @@ function MotorDetailedContent({ product }) {
               fontSize: "18px",
               color: "#515151",
             }}
+            type="button"
           >
             +
           </button>
@@ -190,13 +192,13 @@ function MotorDetailedContent({ product }) {
               fontSize: "18px",
               color: "#515151",
             }}
+            type="button"
           >
             −
           </button>
         </div>
       </div>
 
-      {/* Wireframe view */}
       <p
         className="font-nexa capitalize"
         style={{
@@ -233,160 +235,176 @@ function MotorDetailedContent({ product }) {
   );
 }
 
-export default function ProductDetailTechSection({ product }) {
-  const [appOpen, setAppOpen] = useState(false);
-  const [motorOpen, setMotorOpen] = useState(false);
-
-  const isSingle = !!product.singleSpec;
-  const variants = product.variants || [];
-
-  const cellStyle = {
-    padding: "clamp(6px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)",
-    fontSize: "clamp(11px, 1.25vw, 24px)",
-    color: "#000",
-    borderLeft: "1px solid rgba(209,209,209,0.5)",
-    letterSpacing: "0.01em",
+function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expanded = false }) {
+  const labelCellStyle = {
+    padding: expanded
+      ? "10px 18px"
+      : "clamp(6px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)",
+    fontSize: expanded ? "12px" : "clamp(11px, 1.46vw, 28px)",
+    color: "#515151",
+    whiteSpace: "nowrap",
   };
 
-  return (
-    <section
-      className="w-full"
-      style={{
-        background: "#fff",
-        padding: "clamp(40px, 5.2vw, 100px) clamp(16px, 10.4vw, 200px)",
-      }}
-    >
-      {/* ── Heading ── */}
-      <h2
-        className="font-nexa max-[768px]:text-[12px]! max-[768px]:mb-4.5!"
-        style={{
-          fontSize: "clamp(24px, 2.6vw, 50px)",
-          lineHeight: "1.24",
-          marginBottom: "clamp(24px, 2.6vw, 50px)",
-        }}
-      >
-        <span style={{ color: "#1863da" }}>Technical </span>
-        <span style={{ color: "#000" }}>Details</span>
-      </h2>
+  const valueCellStyle = expanded
+    ? {
+        ...cellStyle,
+        padding: "10px 18px",
+        fontSize: "12px",
+      }
+    : cellStyle;
 
-      {/* ── Specs table ── */}
+  const headerPadding = expanded ? "10px 18px" : "clamp(8px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)";
+  const valueHeaderPadding = expanded ? "10px 18px" : "clamp(8px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)";
+
+  return (
+    <div style={{ overflowX: "auto" }}>
+      {isSingle ? (
+        <table
+          style={{
+            width: expanded ? "max-content" : "100%",
+            minWidth: expanded ? "620px" : "400px",
+            borderCollapse: "collapse",
+          }}
+        >
+          <thead>
+            <tr>
+              <th
+                className="font-nexa capitalize"
+                style={{
+                  textAlign: "left",
+                  padding: headerPadding,
+                  fontSize: expanded ? "13px" : "clamp(12px, 1.04vw, 20px)",
+                  color: "#fff",
+                  background: "#1863da",
+                  borderBottom: "1px solid #d9d9d9",
+                  fontWeight: 400,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Specification
+              </th>
+              <th
+                className="font-nexa capitalize"
+                style={{
+                  textAlign: "left",
+                  padding: valueHeaderPadding,
+                  fontSize: expanded ? "13px" : "clamp(12px, 1.04vw, 20px)",
+                  color: "#fff",
+                  background: "#1863da",
+                  borderLeft: "1px solid rgba(255,255,255,0.3)",
+                  borderBottom: "1px solid #d9d9d9",
+                  fontWeight: 400,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {SINGLE_SPEC_ROWS.map((row, idx) => {
+              const bg = idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "transparent";
+              return (
+                <tr key={row.key} style={{ background: bg }}>
+                  <td className="font-nexa capitalize" style={labelCellStyle}>
+                    {row.label}
+                  </td>
+                  <td className="font-nexa capitalize" style={valueCellStyle}>
+                    {product.singleSpec[row.key]}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <table
+          style={{
+            width: expanded ? "max-content" : "100%",
+            minWidth: expanded ? "720px" : "100%",
+            borderCollapse: "collapse",
+          }}
+        >
+          <tbody>
+            {SPEC_ROWS.map((row, idx) => {
+              const bg = idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "transparent";
+              return (
+                <tr key={row.key} style={{ background: bg }}>
+                  <td
+                    className={`font-nexa capitalize ${expanded ? "" : "max-[768px]:text-[8px]! max-[768px]:px-2!"}`}
+                    style={labelCellStyle}
+                  >
+                    {row.label}
+                  </td>
+                  {variants.map((v) => (
+                    <td
+                      key={`${row.key}-${v.voltage}`}
+                      className={`font-nexa capitalize ${expanded ? "" : "max-[768px]:text-[8px]! max-[768px]:px-1.5!"}`}
+                      style={valueCellStyle}
+                    >
+                      {v[row.key]}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+}
+
+function TechnicalDetailsContent({
+  isSingle,
+  product,
+  variants,
+  cellStyle,
+  onExpand,
+}) {
+  return (
+    <>
       <div
-        style={{ overflowX: "auto", marginBottom: "clamp(32px, 3.6vw, 70px)" }}
+        className="relative"
+        style={{ marginBottom: "clamp(32px, 3.6vw, 70px)" }}
       >
-        {isSingle ? (
-          /* Single-value table for AF58 / PT-500 */
-          <table
+        <div className="hidden max-[768px]:block absolute right-0 top-0 z-10">
+          <button
+            type="button"
+            onClick={onExpand}
+            aria-label="Expand technical details"
             style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              minWidth: "400px",
+              width: "20px",
+              height: "20px",
+              border: "none",
+              background: "transparent",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 0,
+              cursor: "pointer",
             }}
           >
-            <thead>
-              <tr>
-                <th
-                  className="font-nexa capitalize"
-                  style={{
-                    textAlign: "left",
-                    padding:
-                      "clamp(8px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)",
-                    fontSize: "clamp(12px, 1.04vw, 20px)",
-                    color: "#fff",
-                    background: "#1863da",
-                    borderBottom: "1px solid #d9d9d9",
-                    fontWeight: 400,
-                  }}
-                >
-                  Specification
-                </th>
-                <th
-                  className="font-nexa capitalize"
-                  style={{
-                    textAlign: "left",
-                    padding:
-                      "clamp(8px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)",
-                    fontSize: "clamp(12px, 1.04vw, 20px)",
-                    color: "#fff",
-                    background: "#1863da",
-                    borderLeft: "1px solid rgba(255,255,255,0.3)",
-                    borderBottom: "1px solid #d9d9d9",
-                    fontWeight: 400,
-                  }}
-                >
-                  Value
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {SINGLE_SPEC_ROWS.map((row, idx) => {
-                const bg =
-                  idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "transparent";
-                return (
-                  <tr key={row.key} style={{ background: bg }}>
-                    <td
-                      className="font-nexa capitalize"
-                      style={{
-                        padding:
-                          "clamp(6px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)",
-                        fontSize: "clamp(11px, 1.46vw, 28px)",
-                        color: "#515151",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {row.label}
-                    </td>
-                    <td className="font-nexa capitalize" style={cellStyle}>
-                      {product.singleSpec[row.key]}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        ) : (
-          /* Multi-variant table for RF series */
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-            }}
-          >
-            <tbody>
-              {SPEC_ROWS.map((row, idx) => {
-                const bg =
-                  idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "transparent";
-                return (
-                  <tr key={row.key} style={{ background: bg }}>
-                    <td
-                      className="font-nexa capitalize max-[768px]:text-[8px]! max-[768px]:px-2!"
-                      style={{
-                        padding:
-                          "clamp(6px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)",
-                        fontSize: "clamp(11px, 1.46vw, 28px)",
-                        color: "#515151",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {row.label}
-                    </td>
-                    {variants.map((v) => (
-                      <td
-                        key={v.voltage}
-                        className="font-nexa capitalize max-[768px]:text-[8px]! max-[768px]:px-1.5!"
-                        style={cellStyle}
-                      >
-                        {v[row.key]}
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
+            <img
+              src={expandButton}
+              alt=""
+              style={{
+                width: "20px",
+                height: "20px",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
+          </button>
+        </div>
+        <TechnicalDetailsTable
+          isSingle={isSingle}
+          product={product}
+          variants={variants}
+          cellStyle={cellStyle}
+        />
       </div>
 
-      {/* ── Customization CTA ── */}
       <div
         className="max-[768px]:flex-col max-[768px]:items-center max-[768px]:text-center max-[768px]:gap-2"
         style={{
@@ -431,8 +449,159 @@ export default function ProductDetailTechSection({ product }) {
           />
         </button>
       </div>
+    </>
+  );
+}
 
-      {/* ── Accordions ── */}
+export default function ProductDetailTechSection({ product }) {
+  const [techOpen, setTechOpen] = useState(true);
+  const [techExpanded, setTechExpanded] = useState(false);
+  const [appOpen, setAppOpen] = useState(false);
+  const [motorOpen, setMotorOpen] = useState(false);
+
+  const isSingle = !!product.singleSpec;
+  const variants = product.variants || [];
+
+  const cellStyle = {
+    padding: "clamp(6px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)",
+    fontSize: "clamp(11px, 1.25vw, 24px)",
+    color: "#000",
+    borderLeft: "1px solid rgba(209,209,209,0.5)",
+    letterSpacing: "0.01em",
+  };
+
+  return (
+    <section
+      className="w-full"
+      style={{
+        background: "#fff",
+        padding: "clamp(40px, 5.2vw, 100px) clamp(16px, 10.4vw, 200px)",
+      }}
+    >
+      <div>
+        <div style={{ height: "1px", background: "#d9d9d9" }} />
+        <button
+          onClick={() => setTechOpen((open) => !open)}
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "clamp(14px, 1.25vw, 24px) 0",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+          type="button"
+          aria-expanded={techOpen}
+          aria-label="Toggle technical details"
+        >
+          <h2
+            className="font-nexa"
+            style={{
+              fontSize: "clamp(16px, 1.46vw, 28px)",
+              lineHeight: "1.43",
+              margin: 0,
+              textAlign: "left",
+              fontWeight: techOpen ? 700 : 400,
+            }}
+          >
+            <span style={{ color: techOpen ? "#1863da" : "#515151" }}>Technical </span>
+            <span style={{ color: techOpen ? "#000" : "#515151" }}>Details</span>
+          </h2>
+          <span
+            style={{
+              fontSize: "clamp(20px, 1.15vw, 22px)",
+              color: techOpen ? "#515151" : "#1863da",
+              fontWeight: 300,
+              lineHeight: 1,
+              display: "inline-block",
+            }}
+          >
+            {techOpen ? "×" : "+"}
+          </span>
+        </button>
+
+        {techOpen && (
+          <TechnicalDetailsContent
+            isSingle={isSingle}
+            product={product}
+            variants={variants}
+            cellStyle={cellStyle}
+            onExpand={() => setTechExpanded(true)}
+          />
+        )}
+      </div>
+
+      {techExpanded && (
+        <div
+          className="hidden max-[768px]:block fixed inset-0 z-[120] bg-[rgba(0,0,0,0.35)]"
+          onClick={() => setTechExpanded(false)}
+        >
+          <div
+            style={{
+              position: "absolute",
+              left: "12px",
+              right: "12px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "#fff",
+              borderRadius: "10px",
+              padding: "16px 12px 14px",
+              maxHeight: "78vh",
+              overflow: "hidden",
+            }}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: "12px",
+              }}
+            >
+              <p
+                className="font-nexa"
+                style={{
+                  margin: 0,
+                  fontSize: "20px",
+                  lineHeight: "1.2",
+                }}
+              >
+                <span style={{ color: "#1863da" }}>Technical </span>
+                <span style={{ color: "#000" }}>Details</span>
+              </p>
+              <button
+                type="button"
+                onClick={() => setTechExpanded(false)}
+                aria-label="Close expanded technical details"
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  color: "#515151",
+                  fontSize: "20px",
+                  lineHeight: 1,
+                  cursor: "pointer",
+                }}
+              >
+                ×
+              </button>
+            </div>
+            <div style={{ maxHeight: "calc(78vh - 48px)", overflow: "auto" }}>
+              <TechnicalDetailsTable
+                isSingle={isSingle}
+                product={product}
+                variants={variants}
+                cellStyle={cellStyle}
+                expanded
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <AccordionRow
         title="Applications"
         isOpen={appOpen}
