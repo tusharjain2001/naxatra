@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Toaster
-        position="top-right"
+        position="top-center"
         toastOptions={{
           style: {
             background: '#ffffff',
