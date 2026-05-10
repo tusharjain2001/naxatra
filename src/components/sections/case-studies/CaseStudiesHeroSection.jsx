@@ -38,29 +38,31 @@ export default function CaseStudiesHeroSection() {
         <div
           className="absolute flex flex-col"
           style={{
-            left: 'clamp(40px, 10vw, 191px)',
-            top: 'clamp(150px, 16.2vw, 310px)',
-            gap: 'clamp(16px, 1.67vw, 32px)',
+            left: 'clamp(40px, 8.8vw, 168px)',
+            top: 'clamp(150px, 16vw, 307px)',
+            gap: 'clamp(10px, 1.1vw, 20px)',
           }}
         >
           <h1
-            className="font-nexa capitalize text-white"
+            className="font-nexa text-white"
             style={{
               fontSize: 'clamp(36px, 5.2vw, 100px)',
-              lineHeight: '1.01',
-              maxWidth: 'clamp(300px, 43.8vw, 841px)',
+              lineHeight: '0.96',
+              maxWidth: 'clamp(300px, 40vw, 760px)',
               fontWeight: 400,
+              letterSpacing: '-0.01em',
             }}
           >
-            <AnimatedTextReveal text="Engineering " />
-            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Real-World" delay={0.08} /></span>
-            <AnimatedTextReveal text=" Electric Mobility" delay={0.16} />
+            <span className="block"><AnimatedTextReveal text="Engineering" /></span>
+            <span className="block" style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Real-World" delay={0.08} /></span>
+            <span className="block whitespace-nowrap"><AnimatedTextReveal text="Electric Mobility" delay={0.16} /></span>
           </h1>
           <p
             className="font-metro text-white"
             style={{
-              fontSize: 'clamp(14px, 1.25vw, 24px)',
+              fontSize: 'clamp(10px, 0.83vw, 16px)',
               lineHeight: '1.5',
+              opacity: 0.95,
             }}
           >
             <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.28} />
