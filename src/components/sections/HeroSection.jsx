@@ -19,7 +19,7 @@ export default function HeroSection() {
 
         <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
           <h1 className="font-nexa text-[clamp(43px,5.2vw,100px)] font-semibold leading-[0.91] tracking-normal text-black max-[720px]:text-[26px]">
-            <span className="block max-[720px]:inline text-[#1863da]">
+            <span className="block max-[720px]:mr-[0.2em] max-[720px]:inline text-[#1863da]">
               <AnimatedTextReveal text={advancedText} />
             </span>
             <span className="block max-[720px]:inline">
