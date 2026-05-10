@@ -3,6 +3,7 @@ import designAndDevelopmentEngineerPdf from '../../../assets/pdfs/Design and Dev
 import marketingAndContentAssociatePdf from '../../../assets/pdfs/JD_marketing and content associate.pdf';
 import mechanicalSimulationEngineerPdf from '../../../assets/pdfs/Mechanical Simulation Engineer NX JD.pdf';
 import testingAndValidationEngineerPdf from '../../../assets/pdfs/Testing and Validation Engineer NX JD.pdf';
+import CareersApplicationFormPanel from './CareersApplicationFormPanel';
 
 const HIRING_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778422346/hiring_video_dn8rih.mp4';
 
@@ -102,6 +103,7 @@ export default function CareersJobsSection() {
   const [location, setLocation] = useState('');
   const [roleType, setRoleType] = useState('');
   const [timeType, setTimeType] = useState('');
+  const [selectedJob, setSelectedJob] = useState(null);
 
   return (
     <section className="w-full bg-white">
@@ -267,6 +269,8 @@ export default function CareersJobsSection() {
 
                 <div className="flex items-center flex-wrap" style={{ gap: '6px' }}>
                   <button
+                    type="button"
+                    onClick={() => setSelectedJob(job)}
                     className="inline-flex items-center justify-center font-metro rounded-[2px] bg-[#1863da] text-white"
                     style={{
                       fontSize: '8px',
@@ -463,6 +467,8 @@ export default function CareersJobsSection() {
                   </p>
                   <div className="flex items-center flex-wrap" style={{ gap: 'clamp(8px, 0.63vw, 12px)' }}>
                     <button
+                      type="button"
+                      onClick={() => setSelectedJob(job)}
                       className="inline-flex items-center justify-center font-metro rounded-[2px] bg-[#1863da] text-white transition-colors"
                       style={{
                         fontSize: 'clamp(10px, 0.73vw, 14px)',
@@ -541,6 +547,52 @@ export default function CareersJobsSection() {
           ))}
         </div>
       </div>
+
+      {selectedJob && (
+        <div
+          className="fixed inset-0 z-[120] flex items-center justify-center px-4 py-6"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.45)' }}
+          onClick={() => setSelectedJob(null)}
+        >
+          <div
+            className="relative w-full bg-white"
+            style={{
+              maxWidth: 'min(1180px, 100%)',
+              maxHeight: 'calc(100vh - 48px)',
+              overflowY: 'auto',
+              borderRadius: '18px',
+              padding: 'clamp(22px, 2.7vw, 52px)',
+              boxShadow: '0 24px 80px rgba(0, 0, 0, 0.18)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close application form"
+              onClick={() => setSelectedJob(null)}
+              className="absolute inline-flex items-center justify-center"
+              style={{
+                top: '16px',
+                right: '16px',
+                width: '36px',
+                height: '36px',
+                fontSize: '22px',
+                lineHeight: 1,
+                color: '#515151',
+              }}
+            >
+              ×
+            </button>
+
+            <CareersApplicationFormPanel
+              initialRole={selectedJob.title}
+              mobileCenteredHeading={false}
+              desktopSubmitAlign="end"
+              mobileSubmitAlign="right"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
