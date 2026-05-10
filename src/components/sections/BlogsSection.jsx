@@ -9,22 +9,25 @@ const blogs = [
     img: blog1,
     bg: bg1,
     title: 'National Technology Week',
-    date: 'May 11.2023',
-    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
+    date: 'May 11, 2023',
+    desc: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
   },
   {
     img: blog2,
     bg: bg2,
-    title: 'National Technology Week',
-    date: 'May 11.2023',
-    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
+    title: 'EV India Expo',
+    date: 'Nov 21, 2024',
+    desc: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-cleanenergy-sustainablemobility-ugcPost-7264498234008436736--t9S/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
   },
   {
     img: blog3,
     bg: bg1,
-    title: 'National Technology Week',
-    date: 'May 11.2023',
-    desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
+    title: 'Bharat Mobility Global Expo',
+    date: 'Jan 21, 2025',
+    desc: 'A defining moment where we unveiled a groundbreaking mobility solutions, setting new benchmarks in sustainable and high-performance transportation...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-bharatmobilityexpo-autoexpo2025-share-7286605063093972993-E4-B/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
   },
 ];
 
@@ -78,7 +81,9 @@ export default function BlogsSection() {
                     {blog.desc}
                   </p>
                   <a
-                    href="#"
+                    href={blog.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className="mt-[clamp(12px,0.9vw,16px)] block text-right font-metro text-[16.2px] leading-[1.55] text-[#1863da] no-underline max-[720px]:text-[10px]"
                   >
                     Read More <span aria-hidden="true">-&gt;</span>

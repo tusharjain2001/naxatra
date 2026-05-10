@@ -71,10 +71,13 @@ export default function ApplicationsSection() {
                 key={category.label}
                 className="border-b border-black/12 py-[clamp(12px,1.1vw,20px)]"
               >
-                <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 max-[920px]:text-left min-[921px]:pl-[clamp(300px,31vw,470px)] max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
-                  <span>{category.label}</span>
-                  <span className="hidden max-[720px]:inline text-[#515151] text-[18px] font-light leading-none shrink-0">+</span>
-                </p>
+                <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
+                  <div className="max-[920px]:hidden" />
+                  <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 max-[920px]:text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
+                    <span>{category.label}</span>
+                    <span className="hidden max-[720px]:inline text-[#515151] text-[18px] font-light leading-none shrink-0">+</span>
+                  </p>
+                </div>
               </div>
             ))}
           </div>
