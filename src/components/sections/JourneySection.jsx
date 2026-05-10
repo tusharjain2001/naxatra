@@ -105,10 +105,10 @@ export default function JourneySection() {
           <div className="w-[430px] justify-self-end max-[560px]:mx-auto max-[560px]:w-full max-[560px]:max-w-[284px]">
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
-                <p className="font-nexa max-[560px]:text-[26px] max-[560px]:leading-[1]" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
+                <p className="font-nexa max-[560px]:text-[22px] max-[560px]:leading-[1]" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
                   {milestones[activeIndex].year}
                 </p>
-                <p className="font-metro max-[560px]:text-[8px] max-[560px]:leading-[12px]" style={{ color: '#000', fontSize: '12px', lineHeight: '16px', marginTop: '4px' }}>
+                <p className="font-metro max-[560px]:text-[10px] max-[560px]:leading-[1.25]" style={{ color: '#000', fontSize: '12px', lineHeight: '16px', marginTop: '4px' }}>
                   {milestones[activeIndex].title}
                 </p>
                 <div className="max-[560px]:h-[36px] max-[560px]:w-[24px]" style={{ position: 'relative', width: '28px', height: '43px', margin: '13px auto 0' }}>
@@ -141,26 +141,26 @@ export default function JourneySection() {
 
             <div
               ref={cardsRef}
-              className="h-[440px] w-[430px] overflow-y-auto overflow-x-hidden [scroll-snap-type:y_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] max-[560px]:h-[320px] max-[560px]:w-full"
+              className="h-[440px] w-[430px] overflow-y-auto overflow-x-hidden [scroll-snap-type:y_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] max-[560px]:h-[348px] max-[560px]:w-full"
             >
               {milestones.map((m, i) => (
                 <div
                   key={i}
-                  className="flex h-[440px] justify-center [scroll-snap-align:start] [scroll-snap-stop:always] max-[560px]:h-[320px]"
+                  className="flex h-[440px] justify-center [scroll-snap-align:start] [scroll-snap-stop:always] max-[560px]:h-[348px]"
                 >
                   <div
-                    className="w-[370px] min-h-[440px] overflow-hidden rounded-[8px] border border-[rgba(24,99,218,0.14)] bg-white px-[28px] pt-[33px] pb-[30px] max-[560px]:w-[258px] max-[560px]:min-h-[320px] max-[560px]:rounded-[8px] max-[560px]:px-[19px] max-[560px]:pt-[24px] max-[560px]:pb-[20px]"
+                    className="w-[370px] min-h-[440px] overflow-hidden rounded-[8px] border border-[rgba(24,99,218,0.14)] bg-white px-[28px] pt-[33px] pb-[30px] max-[560px]:w-[258px] max-[560px]:min-h-[348px] max-[560px]:rounded-[8px] max-[560px]:px-[18px] max-[560px]:pt-[10px] max-[560px]:pb-[12px]"
                   >
                     <img
                       src={m.img}
                       alt={m.title}
-                      className="max-[560px]:mx-auto max-[560px]:mb-[18px] max-[560px]:h-[131px] max-[560px]:w-[185px] max-[560px]:rounded-[4px]"
+                      className="max-[560px]:mx-auto max-[560px]:mb-[14px] max-[560px]:h-[161px] max-[560px]:w-[182px] max-[560px]:rounded-[4px]"
                       style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px', borderRadius: '8px' }}
                     />
-                    <h3 className="font-nexa capitalize text-[#1863da] text-[34px] leading-[38px] font-normal mb-[10px] max-[560px]:text-center max-[560px]:text-[22px] max-[560px]:leading-[1.1] max-[560px]:mb-[8px]">
+                    <h3 className="font-nexa capitalize text-[#1863da] text-[34px] leading-[38px] font-normal mb-[10px] max-[560px]:text-center max-[560px]:text-[22px] max-[560px]:leading-[1] max-[560px]:mb-[8px]">
                       {m.title}
                     </h3>
-                    <p className="font-metro text-black text-[14px] leading-[22px] max-[560px]:text-center max-[560px]:text-[10px] max-[560px]:leading-[1.5]">
+                    <p className="font-metro text-black text-[14px] leading-[22px] max-[560px]:text-center max-[560px]:text-[10px] max-[560px]:leading-[1.3]">
                       {m.desc}
                     </p>
                   </div>

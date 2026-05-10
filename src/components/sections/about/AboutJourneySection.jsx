@@ -105,10 +105,10 @@ export default function AboutJourneySection() {
 
           <div className="flex flex-col items-center">
             <div style={{ width: '296px', textAlign: 'center' }}>
-              <p className="font-nexa" style={{ color: '#1863da', fontSize: '20px', lineHeight: '1', fontWeight: 400 }}>
+              <p className="font-nexa" style={{ color: '#1863da', fontSize: '22px', lineHeight: '1', fontWeight: 400 }}>
                 {milestones[mobileActiveIndex].year}
               </p>
-              <p className="font-metro" style={{ color: '#000', fontSize: '10px', lineHeight: '1.4', marginTop: '4px' }}>
+              <p className="font-metro" style={{ color: '#000', fontSize: '10px', lineHeight: '1.25', marginTop: '4px' }}>
                 {mobileActiveIndex === 0 ? 'The Spark of Innovation' : milestones[mobileActiveIndex].title}
               </p>
               <div style={{ position: 'relative', width: '20px', height: '38px', margin: '10px auto 0' }}>
@@ -140,7 +140,7 @@ export default function AboutJourneySection() {
               ref={mobileCardsRef}
               style={{
                 width: '296px',
-                height: '320px',
+                height: '348px',
                 overflowY: 'auto',
                 overflowX: 'hidden',
                 scrollSnapType: 'y mandatory',
@@ -152,7 +152,7 @@ export default function AboutJourneySection() {
                 <div
                   key={i}
                   style={{
-                    height: '320px',
+                    height: '348px',
                     scrollSnapAlign: 'start',
                     scrollSnapStop: 'always',
                     display: 'flex',
@@ -166,18 +166,18 @@ export default function AboutJourneySection() {
                       border: '1px solid rgba(24,99,218,0.14)',
                       borderRadius: '4px',
                       overflow: 'hidden',
-                      padding: '18px 16px 20px',
+                      padding: '10px 18px 12px',
                     }}
                   >
                     <img
                       src={m.img}
                       alt={m.title}
-                      style={{ width: '100%', height: '183px', objectFit: 'cover', display: 'block', marginBottom: '24px', borderRadius: '4px' }}
+                      style={{ width: '181.75px', height: '160.535px', objectFit: 'cover', display: 'block', margin: '0 auto 14px', borderRadius: '4px' }}
                     />
-                    <h3 className="font-nexa capitalize text-center" style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.2', fontWeight: 400, marginBottom: '10px' }}>
+                    <h3 className="font-nexa capitalize text-center" style={{ color: '#1863da', fontSize: '22px', lineHeight: '1', fontWeight: 400, marginBottom: '8px' }}>
                       {m.title}
                     </h3>
-                    <p className="font-metro text-center" style={{ color: '#000', fontSize: '10px', lineHeight: '1.5', margin: 0 }}>
+                    <p className="font-metro text-center" style={{ color: '#000', fontSize: '10px', lineHeight: '1.3', margin: 0 }}>
                       {m.desc}
                     </p>
                   </div>
