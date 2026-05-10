@@ -140,7 +140,7 @@ export default function AboutJourneySection() {
               ref={mobileCardsRef}
               style={{
                 width: '296px',
-                height: '304px',
+                height: '320px',
                 overflowY: 'auto',
                 overflowX: 'hidden',
                 scrollSnapType: 'y mandatory',
@@ -152,7 +152,7 @@ export default function AboutJourneySection() {
                 <div
                   key={i}
                   style={{
-                    height: '304px',
+                    height: '320px',
                     scrollSnapAlign: 'start',
                     scrollSnapStop: 'always',
                     display: 'flex',
@@ -166,7 +166,7 @@ export default function AboutJourneySection() {
                       border: '1px solid rgba(24,99,218,0.14)',
                       borderRadius: '4px',
                       overflow: 'hidden',
-                      padding: '18px 16px 24px',
+                      padding: '18px 16px 20px',
                     }}
                   >
                     <img
@@ -268,7 +268,7 @@ export default function AboutJourneySection() {
               ref={cardsRef}
               style={{
                 width: '430px',
-                height: '505px',
+                height: '440px',
                 overflowY: 'auto',
                 overflowX: 'hidden',
                 scrollSnapType: 'y mandatory',
@@ -280,7 +280,7 @@ export default function AboutJourneySection() {
                 <div
                   key={i}
                   style={{
-                    height: '505px',
+                    height: '440px',
                     scrollSnapAlign: 'start',
                     scrollSnapStop: 'always',
                     display: 'flex',
@@ -290,12 +290,12 @@ export default function AboutJourneySection() {
                   <div
                     style={{
                       width: '370px',
-                      minHeight: '505px',
+                      minHeight: '440px',
                       background: '#fff',
                       border: '1px solid rgba(24,99,218,0.14)',
                       borderRadius: '8px',
                       overflow: 'hidden',
-                      padding: '33px 28px 38px',
+                      padding: '33px 28px 30px',
                     }}
                   >
                     <img

@@ -141,15 +141,15 @@ export default function JourneySection() {
 
             <div
               ref={cardsRef}
-              className="h-[505px] w-[430px] overflow-y-auto overflow-x-hidden [scroll-snap-type:y_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] max-[560px]:h-[374px] max-[560px]:w-full"
+              className="h-[440px] w-[430px] overflow-y-auto overflow-x-hidden [scroll-snap-type:y_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] max-[560px]:h-[320px] max-[560px]:w-full"
             >
               {milestones.map((m, i) => (
                 <div
                   key={i}
-                  className="flex h-[505px] justify-center [scroll-snap-align:start] [scroll-snap-stop:always] max-[560px]:h-[374px]"
+                  className="flex h-[440px] justify-center [scroll-snap-align:start] [scroll-snap-stop:always] max-[560px]:h-[320px]"
                 >
                   <div
-                    className="w-[370px] min-h-[505px] overflow-hidden rounded-[8px] border border-[rgba(24,99,218,0.14)] bg-white px-[28px] pt-[33px] pb-[38px] max-[560px]:w-[258px] max-[560px]:min-h-[306px] max-[560px]:rounded-[8px] max-[560px]:px-[19px] max-[560px]:pt-[24px] max-[560px]:pb-[26px]"
+                    className="w-[370px] min-h-[440px] overflow-hidden rounded-[8px] border border-[rgba(24,99,218,0.14)] bg-white px-[28px] pt-[33px] pb-[30px] max-[560px]:w-[258px] max-[560px]:min-h-[320px] max-[560px]:rounded-[8px] max-[560px]:px-[19px] max-[560px]:pt-[24px] max-[560px]:pb-[20px]"
                   >
                     <img
                       src={m.img}
