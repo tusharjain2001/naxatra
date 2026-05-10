@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
+
 export default function DownloadBrochureModal({ isOpen, onClose }) {
   const [form, setForm] = useState({
     firstName: '',
@@ -7,6 +9,8 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
     companyName: '',
     email: '',
   });
+  const [submitState, setSubmitState] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
@@ -14,10 +18,48 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // TODO: wire up actual submission / PDF download
-    onClose();
+
+    if (!form.firstName || !form.lastName || !form.companyName || !form.email) {
+      setSubmitState({ type: 'error', message: 'Please fill all fields.' });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setSubmitState({ type: '', message: '' });
+
+      const response = await fetch(`${API_BASE_URL}/api/brochure/request`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit brochure request.');
+      }
+
+      setForm({
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        email: '',
+      });
+      setSubmitState({ type: 'success', message: 'Brochure request submitted successfully.' });
+      onClose();
+    } catch (error) {
+      setSubmitState({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to submit brochure request.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function handleBackdropClick(e) {
@@ -73,9 +115,9 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
 
           {/* First / Last Name row */}
           <div
+            className="grid-cols-1 md:grid-cols-2"
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
               gap: '14px',
               marginBottom: '14px',
             }}
@@ -99,16 +141,18 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
             <button
               type="submit"
               className="font-nexa capitalize"
+              disabled={isSubmitting}
               style={{
                 background: '#1863da',
                 color: '#fff',
                 border: 'none',
-                padding: '14px 32px',
-                fontSize: '20px',
-                lineHeight: '20px',
+                padding: 'clamp(12px, 2.5vw, 14px) clamp(28px, 6vw, 32px)',
+                fontSize: 'clamp(16px, 4.2vw, 20px)',
+                lineHeight: '1',
                 letterSpacing: '0.01em',
                 cursor: 'pointer',
                 fontWeight: 400,
+                opacity: isSubmitting ? 0.75 : 1,
                 clipPath:
                   'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 10px) 100%, 0 100%)',
               }}
@@ -116,6 +160,19 @@ export default function DownloadBrochureModal({ isOpen, onClose }) {
               Submit
             </button>
           </div>
+
+          {submitState.message && (
+            <p
+              style={{
+                marginTop: '12px',
+                fontSize: '14px',
+                color: submitState.type === 'success' ? '#1c7c54' : '#d92d20',
+                fontFamily: 'Montserrat, sans-serif',
+              }}
+            >
+              {submitState.message}
+            </p>
+          )}
         </form>
       </div>
     </div>
@@ -127,7 +184,7 @@ function Field({ label, name, type = 'text', value, placeholder, onChange }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
       <label
         htmlFor={name}
-        style={{ fontSize: '14px', lineHeight: '26px', color: '#666', fontFamily: 'Montserrat, sans-serif' }}
+        style={{ fontSize: 'clamp(14px, 3.7vw, 14px)', lineHeight: '26px', color: '#666', fontFamily: 'Montserrat, sans-serif' }}
       >
         {label}
       </label>
@@ -142,9 +199,9 @@ function Field({ label, name, type = 'text', value, placeholder, onChange }) {
           background: '#ececec',
           border: 'none',
           borderRadius: '5px',
-          height: '56px',
+          height: 'clamp(56px, 14.5vw, 56px)',
           padding: '0 18px',
-          fontSize: '16px',
+          fontSize: 'clamp(16px, 4.2vw, 16px)',
           lineHeight: '26px',
           color: '#333',
           fontFamily: 'Montserrat, sans-serif',

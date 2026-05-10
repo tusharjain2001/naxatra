@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import heroGrid from '../../../assets/images/contact-hero-grid.png';
 import heroEllipse from '../../../assets/images/contact-hero-ellipse.png';
 import heroImage from '../../../assets/images/contact-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
+import DownloadBrochureModal from '../product/DownloadBrochureModal';
 import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function ContactHeroSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <section
@@ -55,8 +59,9 @@ export default function ContactHeroSection() {
           <span style={{ color: '#4dd6c4' }}>Future Together!</span>
         </h1>
 
-        <a
-          href="#contact"
+        <button
+          type="button"
+          onClick={() => setModalOpen(true)}
           className="absolute"
           style={{
             left: '50%',
@@ -66,6 +71,10 @@ export default function ContactHeroSection() {
             alignItems: 'center',
             justifyContent: 'center',
             textDecoration: 'none',
+            border: 'none',
+            background: 'transparent',
+            padding: 0,
+            cursor: 'pointer',
           }}
         >
           <img
@@ -74,7 +83,7 @@ export default function ContactHeroSection() {
             className="block object-contain"
             style={{ height: '27px', width: 'auto' }}
           />
-        </a>
+        </button>
       </section>
 
       <section
@@ -112,7 +121,7 @@ export default function ContactHeroSection() {
               <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Future Together!" delay={0.08} /></span>
             </h1>
 
-            <button type="button" aria-label="Request Brochure" className="block">
+            <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>
               <img
                 src={requestBrochure}
                 alt="Request Brochure"
@@ -171,6 +180,8 @@ export default function ContactHeroSection() {
           </div>
         </div>
       </section>
+
+      <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

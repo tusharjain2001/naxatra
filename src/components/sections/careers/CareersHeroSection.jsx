@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import careersHeroGrid from '../../../assets/images/careers-hero-grid.png';
 import careersHeroEllipse from '../../../assets/images/careers-hero-elllipse.png';
 import careersHeroImage from '../../../assets/images/careers-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
+import DownloadBrochureModal from '../product/DownloadBrochureModal';
 import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function CareersHeroSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <section
@@ -61,8 +65,9 @@ export default function CareersHeroSection() {
           <span style={{ color: '#4dd6c4' }}>The Future Together!</span>
         </h1>
 
-        <a
-          href="#contact"
+        <button
+          type="button"
+          onClick={() => setModalOpen(true)}
           className="absolute"
           style={{
             left: '50%',
@@ -72,6 +77,10 @@ export default function CareersHeroSection() {
             alignItems: 'center',
             justifyContent: 'center',
             textDecoration: 'none',
+            border: 'none',
+            background: 'transparent',
+            padding: 0,
+            cursor: 'pointer',
           }}
         >
           <img
@@ -80,7 +89,7 @@ export default function CareersHeroSection() {
             className="block object-contain"
             style={{ height: '27px', width: 'auto' }}
           />
-        </a>
+        </button>
       </section>
 
       <section
@@ -122,7 +131,7 @@ export default function CareersHeroSection() {
               <span className="text-white"><AnimatedTextReveal text="Together!" delay={0.16} /></span>
             </h1>
 
-            <button type="button" aria-label="Request Brochure" className="block">
+            <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>
               <img
                 src={requestBrochure}
                 alt="Request Brochure"
@@ -171,6 +180,8 @@ export default function CareersHeroSection() {
           </div>
         </div>
       </section>
+
+      <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }
