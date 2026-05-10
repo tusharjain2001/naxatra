@@ -2,9 +2,19 @@ import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/tech-hero-ellipse.png';
 import techRightHero from '../../../assets/images/tech-right-hero.png';
 import connectNow from '../../../assets/images/connect-now.svg';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function TechHeroSection() {
+  const lineOneFirstText = 'From';
+  const lineOneSecondText = 'Concept To';
+  const lineTwoFirstText = 'Creation,';
+  const lineTwoSecondText = 'Driving';
+  const lineThreeText = 'EV Innovation';
+  const lineOneSecondDelay = countAnimatedCharacters(lineOneFirstText) * 0.018;
+  const lineTwoFirstDelay = lineOneSecondDelay + countAnimatedCharacters(lineOneSecondText) * 0.018;
+  const lineTwoSecondDelay = lineTwoFirstDelay + countAnimatedCharacters(lineTwoFirstText) * 0.018;
+  const lineThreeDelay = lineTwoSecondDelay + countAnimatedCharacters(lineTwoSecondText) * 0.018;
+
   return (
     <>
       {/* ── MOBILE LAYOUT (pixel-matched to Figma node 3309:3308, frame 402×268px) ── */}
@@ -44,7 +54,7 @@ export default function TechHeroSection() {
 
         {/* Heading: top 77px, 26px, centered, width 350px */}
         <h1
-          className="absolute font-nexa capitalize text-white text-center"
+          className="absolute font-nexa text-white text-center"
           style={{
             left: '50%',
             transform: 'translateX(calc(-50% - 5.5px))',
@@ -56,7 +66,7 @@ export default function TechHeroSection() {
           }}
         >
           {'From '}
-          <span style={{ color: '#4dd6c4' }}>Concept to Creation,</span>
+          <span style={{ color: '#4dd6c4' }}>Concept To Creation,</span>
           {' Driving EV Innovation'}
         </h1>
 
@@ -125,7 +135,7 @@ export default function TechHeroSection() {
           {/* Heading + subtitle */}
           <div className="flex flex-col" style={{ gap: 'clamp(12px, 1.67vw, 10px)' }}>
             <h1
-              className="font-nexa capitalize text-white"
+              className="font-nexa text-white"
               style={{
                 fontSize: 'clamp(36px, 5.2vw, 100px)',
                 lineHeight: '1.01',
@@ -133,15 +143,23 @@ export default function TechHeroSection() {
                 fontWeight: 600,
               }}
             >
-              <AnimatedTextReveal text="From " />
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Concept to Creation," delay={0.06} /></span>
-              <AnimatedTextReveal text=" Driving EV Innovation" delay={0.16} />
+              <span className="block">
+                <AnimatedTextReveal text={lineOneFirstText} />
+                {' '}
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineOneSecondText} delay={lineOneSecondDelay} /></span>
+              </span>
+              <span className="block">
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineTwoFirstText} delay={lineTwoFirstDelay} /></span>
+                {' '}
+                <AnimatedTextReveal text={lineTwoSecondText} delay={lineTwoSecondDelay} />
+              </span>
+              <span className="block"><AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} /></span>
             </h1>
             <p
               className="font-metro text-white"
               style={{ fontSize: 'clamp(14px, 1.25vw, 24px)', lineHeight: '1.5', whiteSpace: 'nowrap' }}
             >
-              <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.28} />
+              Lighter, Stronger, Smarter Motors for the Future.
             </p>
           </div>
 

@@ -1,3 +1,7 @@
+export function countAnimatedCharacters(text = '') {
+  return Array.from(text.replace(/\s+/g, '')).length;
+}
+
 function renderCharacter(char, key, style) {
   return (
     <span key={key} aria-hidden="true" className="animated-letter inline-block" style={style}>
@@ -14,7 +18,7 @@ export default function AnimatedTextReveal({
   stagger = 0.018,
   duration = 0.42,
 }) {
-  const words = text.split(' ');
+  const words = text.trim().split(/\s+/).filter(Boolean);
   let characterIndex = 0;
 
   return (

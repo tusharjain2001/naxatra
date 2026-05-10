@@ -2,9 +2,15 @@ import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/case-hero-ellipse.png';
 import techRightHero from '../../../assets/images/case-right-hero.png';
 import mobileHero from '../../../assets/images/case-study-mobile-hero-section.svg';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function CaseStudiesHeroSection() {
+  const firstText = 'Engineering';
+  const secondText = 'Real-World';
+  const thirdText = 'Electric Mobility';
+  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
+  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * 0.018;
+
   return (
     <>
       <section className="relative w-full bg-black overflow-hidden md:hidden">
@@ -53,9 +59,9 @@ export default function CaseStudiesHeroSection() {
               letterSpacing: '-0.01em',
             }}
           >
-            <span className="block"><AnimatedTextReveal text="Engineering" /></span>
-            <span className="block" style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Real-World" delay={0.08} /></span>
-            <span className="block whitespace-nowrap"><AnimatedTextReveal text="Electric Mobility" delay={0.16} /></span>
+            <span className="block"><AnimatedTextReveal text={firstText} /></span>
+            <span className="block" style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
+            <span className="block whitespace-nowrap"><AnimatedTextReveal text={thirdText} delay={thirdDelay} /></span>
           </h1>
           <p
             className="font-metro text-white"
@@ -65,7 +71,7 @@ export default function CaseStudiesHeroSection() {
               opacity: 0.95,
             }}
           >
-            <AnimatedTextReveal text="Lighter, Stronger, Smarter Motors for the Future." delay={0.28} />
+            Lighter, Stronger, Smarter Motors for the Future.
           </p>
         </div>
 

@@ -4,10 +4,13 @@ import heroEllipse from '../../../assets/images/contact-hero-ellipse.png';
 import heroImage from '../../../assets/images/contact-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
 import DownloadBrochureModal from '../product/DownloadBrochureModal';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function ContactHeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
+  const firstText = "Let's Power The ";
+  const secondText = 'Future Together!';
+  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
 
   return (
     <>
@@ -117,8 +120,8 @@ export default function ContactHeroSection() {
                 fontWeight: 400,
               }}
             >
-              <span className="text-white"><AnimatedTextReveal text="Let's Power The " /></span>
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Future Together!" delay={0.08} /></span>
+              <span className="text-white"><AnimatedTextReveal text={firstText} /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
             </h1>
 
             <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>

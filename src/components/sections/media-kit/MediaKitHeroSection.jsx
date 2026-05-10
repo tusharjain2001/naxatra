@@ -2,9 +2,15 @@ import downloadKit from '../../../assets/images/download-kit.svg';
 import mediaKitHeroGrid from '../../../assets/images/meiakitgrid.png';
 import mediaKitHeroEllipse from '../../../assets/images/mediakitellipse.png';
 import mediaKitHeroImage from '../../../assets/images/mdiakitimage.png';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function MediaKitHeroSection() {
+  const firstText = 'Naxatra ';
+  const secondText = 'Media';
+  const thirdText = 'Kit 2026';
+  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
+  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * 0.018;
+
   return (
     <>
       <section
@@ -136,10 +142,10 @@ export default function MediaKitHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(34px, 4.8vw, 92px)', lineHeight: '0.98', fontWeight: 400, margin: 0 }}
             >
-              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}><AnimatedTextReveal text="Naxatra " /></span>
-              <span className="text-white" style={{ whiteSpace: 'nowrap' }}><AnimatedTextReveal text="Media" delay={0.08} /></span>
+              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}><AnimatedTextReveal text={firstText} /></span>
+              <span className="text-white" style={{ whiteSpace: 'nowrap' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
               <br />
-              <span className="text-white"><AnimatedTextReveal text="Kit 2026" delay={0.16} /></span>
+              <span className="text-white"><AnimatedTextReveal text={thirdText} delay={thirdDelay} /></span>
             </h1>
 
             <a

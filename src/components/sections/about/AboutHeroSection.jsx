@@ -2,9 +2,13 @@ import aboutHeroGrid from '../../../assets/images/about-hero-grid.png';
 import aboutHeroEllipse from '../../../assets/images/about-hero-ellipse.png';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
 import mobileAboutHero from '../../../assets/images/about-mobile-hero.svg';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function AboutHeroSection() {
+  const whatText = 'What ';
+  const drivesText = 'Drives Us?';
+  const drivesDelay = countAnimatedCharacters(whatText) * 0.018;
+
   return (
     <>
       <section className="relative w-full bg-black overflow-hidden md:hidden">
@@ -38,20 +42,20 @@ export default function AboutHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 600 }}
             >
-              <span className="text-white"><AnimatedTextReveal text="What " /></span>
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="Drives Us?" delay={0.08} /></span>
+              <span className="text-white"><AnimatedTextReveal text={whatText} /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={drivesText} delay={drivesDelay} /></span>
             </h1>
             <p
               className="font-metro"
               style={{ fontSize: '20px', color: '#d9d9d9', lineHeight: '1.6', fontWeight: 600 }}
             >
-              <AnimatedTextReveal text="Powering the Future with Efficient, Compact and High torque motors." delay={0.2} />
+              Powering the Future with Efficient, Compact and High torque motors.
             </p>
             <p
               className="font-metro"
               style={{ fontSize: '16px', color: '#d9d9d9', lineHeight: '1.6' }}
             >
-              <AnimatedTextReveal text="At Naxatra Labs, we understand that every application has unique requirements. They're engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency." delay={0.34} />
+              At Naxatra Labs, we understand that every application has unique requirements. They&apos;re engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency.
             </p>
           </div>
 

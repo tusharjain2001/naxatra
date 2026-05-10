@@ -4,10 +4,15 @@ import careersHeroEllipse from '../../../assets/images/careers-hero-elllipse.png
 import careersHeroImage from '../../../assets/images/careers-hero-image.png';
 import requestBrochure from '../../../assets/images/request-brochure.png';
 import DownloadBrochureModal from '../product/DownloadBrochureModal';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function CareersHeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
+  const firstText = 'Join us in';
+  const secondText = 'The Future ';
+  const thirdText = 'Together!';
+  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
+  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * 0.018;
 
   return (
     <>
@@ -126,9 +131,9 @@ export default function CareersHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 400 }}
             >
-              <span className="text-white block"><AnimatedTextReveal text="Join us in" /></span>
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text="The Future " delay={0.08} /></span>
-              <span className="text-white"><AnimatedTextReveal text="Together!" delay={0.16} /></span>
+              <span className="text-white block"><AnimatedTextReveal text={firstText} /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
+              <span className="text-white"><AnimatedTextReveal text={thirdText} delay={thirdDelay} /></span>
             </h1>
 
             <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>

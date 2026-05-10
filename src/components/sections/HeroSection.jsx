@@ -2,9 +2,15 @@ import heroBg from '../../assets/images/hero-bg.svg';
 import heroOverlay from '../../assets/images/hero-overlay.svg';
 import heroMotor from '../../assets/images/hero-motor.png';
 import exploreOptions from '../../assets/images/explore-options.svg';
-import AnimatedTextReveal from '../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
 
 export default function HeroSection() {
+  const advancedText = 'Advanced';
+  const motorsText = 'Motors &';
+  const controllersText = 'Controllers';
+  const motorsDelay = countAnimatedCharacters(advancedText) * 0.018;
+  const controllersDelay = motorsDelay + countAnimatedCharacters(motorsText) * 0.018;
+
   return (
     <section className="relative w-full overflow-hidden bg-white pt-[96px]">
       <div className="relative mx-auto h-[clamp(300px,34vw,590px)] w-[calc(100%_-_46px)] max-w-[1793px] max-[720px]:h-[400px] max-[720px]:w-[calc(100%_-_40px)]">
@@ -14,17 +20,17 @@ export default function HeroSection() {
         <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
           <h1 className="font-nexa text-[clamp(43px,5.2vw,100px)] font-semibold leading-[0.91] tracking-normal text-black max-[720px]:text-[26px]">
             <span className="block max-[720px]:inline text-[#1863da]">
-              <AnimatedTextReveal text="Advanced" />
+              <AnimatedTextReveal text={advancedText} />
             </span>
             <span className="block max-[720px]:inline">
-              <AnimatedTextReveal text="Motors &" delay={0.09} />
+              <AnimatedTextReveal text={motorsText} delay={motorsDelay} />
             </span>
             <span className="block">
-              <AnimatedTextReveal text="Controllers" delay={0.18} />
+              <AnimatedTextReveal text={controllersText} delay={controllersDelay} />
             </span>
           </h1>
           <p className="mt-[clamp(10px,0.95vw,18px)] font-metro text-[clamp(10px,1.15vw,22px)] leading-[1.25] text-[#515151] max-[720px]:text-[12px]">
-            <AnimatedTextReveal text="Powering The Future Of Electric Mobility" delay={0.28} />
+            Powering The Future Of Electric Mobility
           </p>
         </div>
 

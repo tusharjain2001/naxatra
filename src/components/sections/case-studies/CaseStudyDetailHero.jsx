@@ -2,9 +2,15 @@ import mobileDetailHero from '../../../assets/images/case-detail-hero.svg';
 import detailCaseStudyGrid from '../../../assets/detailcasestudy/detailcasestudygrid.png';
 import detailCaseStudyEllipse from '../../../assets/detailcasestudy/detailcasestudyellipse.png';
 import detailCaseStudyRightImage from '../../../assets/detailcasestudy/detailcasestudyrightimage.png';
-import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function CaseStudyDetailHero() {
+  const lineOneText = 'Boosting Power Tool Performance With';
+  const lineTwoText = "Naxatra Labs' Advanced BLDC Motor";
+  const lineThreeText = 'Solution';
+  const lineTwoDelay = countAnimatedCharacters(lineOneText) * 0.018;
+  const lineThreeDelay = lineTwoDelay + countAnimatedCharacters(lineTwoText) * 0.018;
+
   return (
     <>
       <section className="relative w-full overflow-hidden bg-black md:hidden">
@@ -97,9 +103,9 @@ export default function CaseStudyDetailHero() {
                     letterSpacing: '-0.015em',
                   }}
                 >
-                  <span className="block"><AnimatedTextReveal text="Boosting Power Tool Performance With" /></span>
-                  <span className="block"><AnimatedTextReveal text="Naxatra Labs' Advanced BLDC Motor" delay={0.12} /></span>
-                  <span className="block"><AnimatedTextReveal text="Solution" delay={0.24} /></span>
+                  <span className="block"><AnimatedTextReveal text={lineOneText} /></span>
+                  <span className="block"><AnimatedTextReveal text={lineTwoText} delay={lineTwoDelay} /></span>
+                  <span className="block"><AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} /></span>
                 </h1>
               </div>
             </div>
