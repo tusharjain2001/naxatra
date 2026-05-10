@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import submitEnquiry from '../../../assets/images/submit-enquiry.png';
 import careersPhoto from '../../../assets/images/careers-photo.png';
+
+const CAREERS_API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
 function TextField({ label, type = 'text', value, onChange, required, fullWidth = false }) {
   return (
@@ -47,20 +49,71 @@ export default function CareersApplicationFormPanel({
     linkedin: '',
   });
   const [fileName, setFileName] = useState('No file chosen');
+  const [resumeFile, setResumeFile] = useState(null);
+  const [submitState, setSubmitState] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const fileRef = useRef(null);
-
-  useEffect(() => {
-    setForm((current) => ({ ...current, role: initialRole }));
-  }, [initialRole]);
 
   const set = (key) => (val) => setForm((current) => ({ ...current, [key]: val }));
 
   const handleFile = (e) => {
-    setFileName(e.target.files[0]?.name || 'No file chosen');
+    const file = e.target.files[0] || null;
+    setResumeFile(file);
+    setFileName(file?.name || 'No file chosen');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!form.fullName || !form.email || !form.phone || !form.role || !form.linkedin || !resumeFile) {
+      setSubmitState({ type: 'error', message: 'Please fill all required fields and attach your resume.' });
+      return;
+    }
+
+    const payload = new FormData();
+    payload.append('fullName', form.fullName);
+    payload.append('email', form.email);
+    payload.append('phone', form.phone);
+    payload.append('role', form.role);
+    payload.append('linkedin', form.linkedin);
+    payload.append('resume', resumeFile);
+
+    try {
+      setIsSubmitting(true);
+      setSubmitState({ type: '', message: '' });
+
+      const response = await fetch(`${CAREERS_API_BASE_URL}/api/careers/apply`, {
+        method: 'POST',
+        body: payload,
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit your application.');
+      }
+
+      setForm({
+        fullName: '',
+        email: '',
+        phone: '',
+        role: initialRole,
+        linkedin: '',
+      });
+      setResumeFile(null);
+      setFileName('No file chosen');
+      if (fileRef.current) {
+        fileRef.current.value = '';
+      }
+      setSubmitState({ type: 'success', message: 'Your application has been submitted successfully.' });
+    } catch (error) {
+      setSubmitState({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to submit your application.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,7 +203,7 @@ export default function CareersApplicationFormPanel({
           } ${desktopSubmitAlign === 'center' ? 'md:justify-center' : 'md:justify-end'}`}
           style={{ marginTop: '10px' }}
         >
-          <button type="submit" aria-label="Submit Enquiry" className="block">
+          <button type="submit" aria-label="Submit Enquiry" className="block" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.75 : 1 }}>
             <img
               src={submitEnquiry}
               alt="Submit Enquiry"
@@ -159,6 +212,19 @@ export default function CareersApplicationFormPanel({
             />
           </button>
         </div>
+
+        {submitState.message && (
+          <p
+            className="font-metro"
+            style={{
+              fontSize: 'clamp(11px, 0.73vw, 14px)',
+              color: submitState.type === 'success' ? '#1c7c54' : '#d92d20',
+              marginTop: '4px',
+            }}
+          >
+            {submitState.message}
+          </p>
+        )}
       </form>
     </>
   );
