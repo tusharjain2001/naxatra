@@ -15,7 +15,7 @@ const ITEMS = [
   },
   {
     label: '+91 9266030266',
-    href: null,
+    href: 'tel:+919266030266',
     target: '_self',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,8 +27,8 @@ const ITEMS = [
     ),
   },
   {
-    label: 'Email',
-    href: 'https://mail.google.com/mail/?view=cm&to=enquiry@naxatralabs.com',
+    label: 'Gmail',
+    href: 'mailto:enquiry@naxatralabs.com',
     target: '_blank',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ const ITEMS = [
 
 export default function StickyContactSidebar() {
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 items-end">
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end">
       {ITEMS.map((item) => {
         const Tag = item.href ? 'a' : 'div';
         const linkProps = item.href
