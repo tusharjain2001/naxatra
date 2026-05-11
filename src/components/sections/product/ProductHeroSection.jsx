@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import downloadBrochure from '../../../assets/images/download-brochure.svg';
 import greenBg from '../../../assets/images/green-bg.png';
-import motorHero from '../../../assets/images/product-motor-hero.png';
-import productText from '../../../assets/images/Antarix RF55.png';
+
 import DownloadBrochureModal from './DownloadBrochureModal';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
@@ -14,10 +13,10 @@ export default function ProductHeroSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden mt-10"
-      style={{ background: '#f5fafa', minHeight: 'clamp(320px, 44vw, 800px)' }}
+      className="relative w-full overflow-hidden mt-10 text-center"
+      style={{ background: '#f5fafa' }}
     >
-      {/* Green glow */}
+      {/* Green glow - decorative background only */}
       <div
         className="pointer-events-none absolute max-[560px]:h-[420px] max-[560px]:w-[420px]"
         style={{
@@ -32,78 +31,53 @@ export default function ProductHeroSection() {
         <img src={greenBg} alt="" className="h-full w-full object-contain" />
       </div>
 
-      {/* Main heading */}
-      <h1
-        className="font-nexa font-semibold text-center capitalize absolute w-full whitespace-nowrap max-[560px]:px-4"
-        style={{
-          top: 'clamp(30px, 3.6vw, 64px)',
-          fontSize: 'clamp(24px, 5.2vw, 100px)',
-          lineHeight: '0.933',
-          color: '#000',
-          letterSpacing: 'normal',
-        }}
-      >
-        <span style={{ color: '#1863da' }}><AnimatedTextReveal text={powerText} /></span>
-        {' '}
-        <AnimatedTextReveal text={movesText} delay={movesDelay} />
-      </h1>
-
-      {/* Subtitle */}
-      <p
-        className="font-metro text-center capitalize absolute w-full max-[560px]:px-4 max-[560px]:text-[12px]"
-        style={{
-          top: 'clamp(66px, 7.6vw, 142px)',
-          fontSize: 'clamp(11px, 1.25vw, 24px)',
-          lineHeight: '1.6',
-          color: '#515151',
-        }}
-      >
-        Lighter, Stronger, Smarter Motors for the Future.
-      </p>
-
-      <div
-        className="absolute inset-x-0"
-        style={{ top: 'clamp(62px, 14vw, 250px)', zIndex: 1 }}
-      >
-        <div
-          className="relative mx-auto"
-          style={{ width: 'min(86vw, 1320px)', height: 'clamp(255px, 26vw, 480px)' }}
+      <div className="relative z-10 pt-[clamp(30px,3.6vw,64px)] pb-10">
+        {/* Main heading */}
+        <h1
+          className="font-nexa font-semibold capitalize whitespace-nowrap max-[560px]:px-4"
+          style={{
+            fontSize: 'clamp(24px, 5.2vw, 100px)',
+            lineHeight: '0.933',
+            color: '#000',
+            letterSpacing: 'normal',
+          }}
         >
-          {/* Watermark text image */}
-          <img
-            src={productText}
-            alt=""
-            className="pointer-events-none absolute left-1/2 top-[38%] block h-auto -translate-x-1/2 -translate-y-1/2 select-none max-[720px]:!w-[88%]"
-            style={{ width: 'min(100%, 1320px)', zIndex: 1 }}
+          <span style={{ color: '#1863da' }}><AnimatedTextReveal text={powerText} /></span>
+          {' '}
+          <AnimatedTextReveal text={movesText} delay={movesDelay} />
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          className="font-metro capitalize max-[560px]:px-4 max-[560px]:text-[12px] mt-[clamp(8px,1.5vw,20px)]"
+          style={{
+            fontSize: 'clamp(11px, 1.25vw, 24px)',
+            lineHeight: '1.6',
+            color: '#515151',
+          }}
+        >
+          Lighter, Stronger, Smarter Motors for the Future.
+        </p>
+
+        {/* Video */}
+        <div className="flex items-center justify-center my-[clamp(24px,4vw,64px)] max-[720px]:my-6">
+          <video
+            src="https://res.cloudinary.com/dgr33gxhd/video/upload/v1778512413/Alternatye_aniamtion_2_tuner4.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[clamp(760px,72vw,1380px)] h-[clamp(270px,26vw,500px)] object-cover max-[720px]:w-[92vw] max-[720px]:h-60"
           />
+        </div>
 
-          {/* Motor image */}
-          <div
-            className="absolute left-1/2 top-[36%] max-[720px]:!w-[170px] max-[720px]:!h-[130px]"
-            style={{
-              transform: 'translateX(-50%) translateY(-50%) rotate(180deg)',
-              width: 'clamp(320px, 33vw, 590px)',
-              height: 'clamp(240px, 27vw, 500px)',
-              zIndex: 2,
-            }}
-          >
-            <img
-              src={motorHero}
-              alt="Antarix RF55 Motor"
-              className="h-full w-full object-contain"
-            />
-          </div>
-
-          {/* CTA Button */}
+        {/* CTA Button */}
+        <div className="flex justify-center">
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="absolute left-1/2 top-[84%] -translate-x-1/2 bg-transparent p-0 max-[560px]:top-[66%]"
-            style={{
-              zIndex: 3,
-              border: 'none',
-              cursor: 'pointer',
-            }}
+            className="bg-transparent p-0"
+            style={{ border: 'none', cursor: 'pointer' }}
             aria-label="Download Brochure"
           >
             <img
@@ -115,9 +89,6 @@ export default function ProductHeroSection() {
           </button>
         </div>
       </div>
-
-      {/* Spacer to give section its height */}
-      <div style={{ height: 'clamp(320px, 44vw, 800px)' }} />
 
       <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
