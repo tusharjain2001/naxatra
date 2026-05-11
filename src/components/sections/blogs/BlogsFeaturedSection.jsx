@@ -1,11 +1,11 @@
-import blog1 from '../../../assets/images/blog-1.jpg';
+import featuredArticleImage from '../../../assets/images/featured-article.png';
 
 const featuredArticle = {
-  title: 'National Technology Week',
+  title: 'Fund Raise',
   date: 'May 11, 2023',
-  desc: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
+  desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
   href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
-  img: blog1,
+  img: featuredArticleImage,
 };
 
 export default function BlogsFeaturedSection() {

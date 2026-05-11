@@ -34,7 +34,16 @@ const ARTICLES = [
 
 export default function BlogsAllArticlesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const featuredArticle = ARTICLES[0];
+  const [mobileArticleIndex, setMobileArticleIndex] = useState(0);
+  const featuredArticle = ARTICLES[mobileArticleIndex];
+
+  const showPreviousArticle = () => {
+    setMobileArticleIndex((currentIndex) => (currentIndex === 0 ? ARTICLES.length - 1 : currentIndex - 1));
+  };
+
+  const showNextArticle = () => {
+    setMobileArticleIndex((currentIndex) => (currentIndex === ARTICLES.length - 1 ? 0 : currentIndex + 1));
+  };
 
   return (
     <section className="w-full bg-white">
@@ -89,6 +98,7 @@ export default function BlogsAllArticlesSection() {
             <button
               type="button"
               aria-label="Previous article"
+              onClick={showPreviousArticle}
               style={{ color: '#515151', fontSize: '22px', lineHeight: 1, background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
             >
               &#8249;
@@ -105,6 +115,7 @@ export default function BlogsAllArticlesSection() {
               <button
                 type="button"
                 aria-label="Next article"
+                onClick={showNextArticle}
                 style={{ color: '#515151', fontSize: '22px', lineHeight: 1, background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
               >
                 &#8250;
