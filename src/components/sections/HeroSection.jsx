@@ -14,7 +14,24 @@ export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-white pt-[96px]">
       <div className="relative mx-auto h-[clamp(300px,34vw,590px)] w-[calc(100%_-_46px)] max-w-[1793px] max-[720px]:h-[400px] max-[720px]:w-[calc(100%_-_40px)]">
-        <img src={heroBg} alt="" className="absolute inset-0 h-full w-full" />
+        <img src={heroBg} alt="" className="absolute inset-0 h-full w-full max-[720px]:hidden" />
+        <div
+          className="absolute inset-0 hidden max-[720px]:block"
+          style={{
+            background: 'rgba(77, 214, 196, 0.04)',
+            clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%)',
+          }}
+        />
+        <div className="pointer-events-none absolute inset-0 hidden max-[720px]:block">
+          <div className="absolute left-0 right-0 top-0 border-t border-[#9D9D9D]" />
+          <div className="absolute bottom-0 left-0 right-[24px] border-t border-[#9D9D9D]" />
+          <div className="absolute bottom-[24px] right-0 top-0 border-r border-[#9D9D9D]" />
+          <div className="absolute bottom-0 left-0 top-0 border-l border-[#9D9D9D]" />
+          <div
+            className="absolute bottom-[12px] right-[-4.5px] h-px w-[34px] bg-[#9D9D9D]"
+            style={{ transform: 'rotate(-45deg)' }}
+          />
+        </div>
         <div className="pointer-events-none absolute inset-0 bg-[image:linear-gradient(rgba(77,214,196,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(77,214,196,0.18)_1px,transparent_1px)] bg-[length:108px_100px]" />
 
         <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
