@@ -1,24 +1,84 @@
 import techHeroGrid from '../../../assets/images/tech-hero-grid.png';
 import techHeroEllipse from '../../../assets/images/case-hero-ellipse.png';
 import techRightHero from '../../../assets/images/case-right-hero.png';
-import mobileHero from '../../../assets/images/case-study-mobile-hero-section.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function CaseStudiesHeroSection() {
+  const textStagger = 0.03;
   const firstText = 'Engineering';
   const secondText = 'Real-World';
   const thirdText = 'Electric Mobility';
-  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
-  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * 0.018;
+  const secondDelay = countAnimatedCharacters(firstText) * textStagger;
+  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * textStagger;
 
   return (
     <>
-      <section className="relative w-full bg-black overflow-hidden md:hidden">
+      <section className="relative w-full bg-black overflow-hidden md:hidden" style={{ height: '268px' }}>
         <img
-          src={mobileHero}
-          alt="Engineering Real-World Electric Mobility"
-          className="block w-full h-auto"
+          src={techHeroGrid}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-35 pointer-events-none"
         />
+        <img
+          src={techRightHero}
+          alt=""
+          className="absolute pointer-events-none object-contain"
+          style={{
+            width: '168px',
+            height: 'auto',
+            left: '50%',
+            top: '54px',
+            transform: 'translateX(-50%)',
+          }}
+        />
+        <img
+          src={techHeroEllipse}
+          alt=""
+          className="absolute pointer-events-none object-contain"
+          style={{
+            width: '320px',
+            height: 'auto',
+            left: '50%',
+            top: '-8px',
+            transform: 'translateX(-50%)',
+            opacity: 0.58,
+          }}
+        />
+        <h1
+          className="absolute font-nexa text-center text-white"
+          style={{
+            left: '50%',
+            transform: 'translateX(-50%)',
+            top: '80px',
+            width: 'min(350px, 88vw)',
+            fontSize: '26px',
+            lineHeight: '26px',
+            fontWeight: 400,
+          }}
+        >
+          <span className="block whitespace-nowrap">
+            <AnimatedTextReveal text={firstText} stagger={textStagger} />
+          </span>
+          <span className="block whitespace-nowrap" style={{ color: '#4dd6c4' }}>
+            <AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} />
+          </span>
+          <span className="block whitespace-nowrap text-white">
+            <AnimatedTextReveal text={thirdText} delay={thirdDelay} stagger={textStagger} />
+          </span>
+        </h1>
+        <p
+          className="absolute font-metro text-center text-white whitespace-nowrap"
+          style={{
+            left: '50%',
+            transform: 'translateX(-50%)',
+            top: '164px',
+            fontSize: '10px',
+            lineHeight: '14px',
+            opacity: 0.95,
+          }}
+        >
+          Lighter, Stronger, Smarter Motors for the Future.
+        </p>
       </section>
 
       <section
@@ -58,10 +118,10 @@ export default function CaseStudiesHeroSection() {
               fontWeight: 400,
               letterSpacing: '-0.01em',
             }}
-          >
-            <span className="block"><AnimatedTextReveal text={firstText} /></span>
-            <span className="block" style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
-            <span className="block whitespace-nowrap"><AnimatedTextReveal text={thirdText} delay={thirdDelay} /></span>
+            >
+            <span className="block"><AnimatedTextReveal text={firstText} stagger={textStagger} /></span>
+            <span className="block" style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} /></span>
+            <span className="block whitespace-nowrap"><AnimatedTextReveal text={thirdText} delay={thirdDelay} stagger={textStagger} /></span>
           </h1>
           <p
             className="font-metro text-white"
