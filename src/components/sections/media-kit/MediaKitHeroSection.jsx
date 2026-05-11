@@ -5,11 +5,12 @@ import mediaKitHeroImage from '../../../assets/images/mdiakitimage.png';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function MediaKitHeroSection() {
+  const textStagger = 0.03;
   const firstText = 'Naxatra ';
   const secondText = 'Media';
   const thirdText = 'Kit 2026';
-  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
-  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * 0.018;
+  const secondDelay = countAnimatedCharacters(firstText) * textStagger;
+  const thirdDelay = secondDelay + countAnimatedCharacters(secondText) * textStagger;
 
   return (
     <>
@@ -63,10 +64,13 @@ export default function MediaKitHeroSection() {
             color: '#fff',
           }}
         >
-          <span style={{ color: '#4dd6c4' }}>Naxatra </span>
-          <span>Media</span>
-          <br />
-          <span>Kit 2026</span>
+          <span className="block whitespace-nowrap">
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={firstText} stagger={textStagger} /></span>
+            <span><AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} /></span>
+          </span>
+          <span className="block whitespace-nowrap">
+            <AnimatedTextReveal text={thirdText} delay={thirdDelay} stagger={textStagger} />
+          </span>
         </h1>
 
         <a
@@ -142,10 +146,10 @@ export default function MediaKitHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(34px, 4.8vw, 92px)', lineHeight: '0.98', fontWeight: 400, margin: 0 }}
             >
-              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}><AnimatedTextReveal text={firstText} /></span>
-              <span className="text-white" style={{ whiteSpace: 'nowrap' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
+              <span style={{ color: '#4dd6c4', whiteSpace: 'nowrap' }}><AnimatedTextReveal text={firstText} stagger={textStagger} /></span>
+              <span className="text-white" style={{ whiteSpace: 'nowrap' }}><AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} /></span>
               <br />
-              <span className="text-white"><AnimatedTextReveal text={thirdText} delay={thirdDelay} /></span>
+              <span className="text-white"><AnimatedTextReveal text={thirdText} delay={thirdDelay} stagger={textStagger} /></span>
             </h1>
 
             <a

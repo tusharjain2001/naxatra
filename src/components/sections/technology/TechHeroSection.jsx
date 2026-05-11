@@ -5,15 +5,16 @@ import connectNow from '../../../assets/images/connect-now.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function TechHeroSection() {
+  const textStagger = 0.03;
   const lineOneFirstText = 'From';
   const lineOneSecondText = 'Concept To';
   const lineTwoFirstText = 'Creation,';
   const lineTwoSecondText = 'Driving';
   const lineThreeText = 'EV Innovation';
-  const lineOneSecondDelay = countAnimatedCharacters(lineOneFirstText) * 0.018;
-  const lineTwoFirstDelay = lineOneSecondDelay + countAnimatedCharacters(lineOneSecondText) * 0.018;
-  const lineTwoSecondDelay = lineTwoFirstDelay + countAnimatedCharacters(lineTwoFirstText) * 0.018;
-  const lineThreeDelay = lineTwoSecondDelay + countAnimatedCharacters(lineTwoSecondText) * 0.018;
+  const lineOneSecondDelay = countAnimatedCharacters(lineOneFirstText) * textStagger;
+  const lineTwoFirstDelay = lineOneSecondDelay + countAnimatedCharacters(lineOneSecondText) * textStagger;
+  const lineTwoSecondDelay = lineTwoFirstDelay + countAnimatedCharacters(lineTwoFirstText) * textStagger;
+  const lineThreeDelay = lineTwoSecondDelay + countAnimatedCharacters(lineTwoSecondText) * textStagger;
 
   return (
     <>
@@ -65,9 +66,19 @@ export default function TechHeroSection() {
             fontWeight: 400,
           }}
         >
-          {'From '}
-          <span style={{ color: '#4dd6c4' }}>Concept To Creation,</span>
-          {' Driving EV Innovation'}
+          <span className="block whitespace-nowrap">
+            <span className="text-white"><AnimatedTextReveal text={lineOneFirstText} stagger={textStagger} /></span>
+            {' '}
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineOneSecondText} delay={lineOneSecondDelay} stagger={textStagger} /></span>
+          </span>
+          <span className="block whitespace-nowrap">
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineTwoFirstText} delay={lineTwoFirstDelay} stagger={textStagger} /></span>
+            {' '}
+            <span className="text-white"><AnimatedTextReveal text={lineTwoSecondText} delay={lineTwoSecondDelay} stagger={textStagger} /></span>
+          </span>
+          <span className="block whitespace-nowrap text-white">
+            <AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} stagger={textStagger} />
+          </span>
         </h1>
 
         {/* Subtitle: top 143px, 10px Metropolis, centered */}
@@ -76,7 +87,7 @@ export default function TechHeroSection() {
           style={{
             left: '50%',
             transform: 'translateX(calc(-50% - 5px))',
-            top: '143px',
+            top: '152px',
             fontSize: '10px',
             lineHeight: '14px',
           }}
@@ -144,16 +155,16 @@ export default function TechHeroSection() {
               }}
             >
               <span className="block">
-                <AnimatedTextReveal text={lineOneFirstText} />
+                <AnimatedTextReveal text={lineOneFirstText} stagger={textStagger} />
                 {' '}
-                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineOneSecondText} delay={lineOneSecondDelay} /></span>
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineOneSecondText} delay={lineOneSecondDelay} stagger={textStagger} /></span>
               </span>
               <span className="block">
-                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineTwoFirstText} delay={lineTwoFirstDelay} /></span>
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineTwoFirstText} delay={lineTwoFirstDelay} stagger={textStagger} /></span>
                 {' '}
-                <AnimatedTextReveal text={lineTwoSecondText} delay={lineTwoSecondDelay} />
+                <AnimatedTextReveal text={lineTwoSecondText} delay={lineTwoSecondDelay} stagger={textStagger} />
               </span>
-              <span className="block"><AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} /></span>
+              <span className="block"><AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} stagger={textStagger} /></span>
             </h1>
             <p
               className="font-metro text-white"

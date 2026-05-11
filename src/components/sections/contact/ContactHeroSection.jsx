@@ -8,9 +8,10 @@ import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/Animat
 
 export default function ContactHeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
+  const textStagger = 0.03;
   const firstText = "Let's Power The ";
   const secondText = 'Future Together!';
-  const secondDelay = countAnimatedCharacters(firstText) * 0.018;
+  const secondDelay = countAnimatedCharacters(firstText) * textStagger;
 
   return (
     <>
@@ -57,9 +58,12 @@ export default function ContactHeroSection() {
             fontWeight: 400,
           }}
         >
-          <span>Let's Power The</span>
-          <br />
-          <span style={{ color: '#4dd6c4' }}>Future Together!</span>
+          <span className="block whitespace-nowrap text-white">
+            <AnimatedTextReveal text="Let's Power The" stagger={textStagger} />
+          </span>
+          <span className="block whitespace-nowrap" style={{ color: '#4dd6c4' }}>
+            <AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} />
+          </span>
         </h1>
 
         <button
@@ -120,8 +124,8 @@ export default function ContactHeroSection() {
                 fontWeight: 400,
               }}
             >
-              <span className="text-white"><AnimatedTextReveal text={firstText} /></span>
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} /></span>
+              <span className="text-white"><AnimatedTextReveal text={firstText} stagger={textStagger} /></span>
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={secondText} delay={secondDelay} stagger={textStagger} /></span>
             </h1>
 
             <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>
