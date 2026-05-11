@@ -35,46 +35,69 @@ export default function ProductDetailHeroSection({ product }) {
             }}
           />
 
-          {/* Watermark: Figma top=102px from page → 47px from section, fontSize 50px */}
-          <p
-            className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
-            style={{
-              top: '47px',
-              fontSize: '50px',
-              lineHeight: '1.04',
-              background: 'linear-gradient(90deg, #f5fafa 12%, #b6b6b6 56%, #f5fafa 113%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              opacity: 0.3,
-              letterSpacing: '0.04em',
-            }}
-          >
-            {product.shortName}
-          </p>
+          {/* Watermark: hidden when video is present */}
+          {!product.heroVideo && (
+            <p
+              className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
+              style={{
+                top: '47px',
+                fontSize: '50px',
+                lineHeight: '1.04',
+                background: 'linear-gradient(90deg, #f5fafa 12%, #b6b6b6 56%, #f5fafa 113%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                opacity: 0.3,
+                letterSpacing: '0.04em',
+              }}
+            >
+              {product.shortName}
+            </p>
+          )}
 
-          {/* Motor image: Figma top=122px from page → 67px from section, width 222px, rotated 180deg */}
-          <img
-            src={product.image}
-            alt={product.name}
-            style={{
-              position: 'absolute',
-              top: '67px',
-              left: '50%',
-              transform: 'translateX(-50%) rotate(180deg)',
-              width: '222px',
-              maxWidth: '55vw',
-              height: 'auto',
-              objectFit: 'contain',
-              zIndex: 2,
-            }}
-          />
+          {/* Motor image / video */}
+          {product.heroVideo ? (
+            <video
+              src={product.heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                position: 'absolute',
+                top: '47px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '222px',
+                maxWidth: '55vw',
+                height: '173px',
+                objectFit: 'cover',
+                zIndex: 2,
+              }}
+            />
+          ) : (
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{
+                position: 'absolute',
+                top: '67px',
+                left: '50%',
+                transform: 'translateX(-50%) rotate(180deg)',
+                width: '222px',
+                maxWidth: '55vw',
+                height: 'auto',
+                objectFit: 'contain',
+                zIndex: 2,
+              }}
+            />
+          )}
         </div>
 
         {/* CTAs: 167px wide container, centered
             Spec Sheet at left:20px inside container
             Customization full-width */}
-        <div style={{ width: '167px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{ width: '167px', margin: `${product.heroVideo ? '16px' : '0'} auto 0`, display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div style={{ paddingLeft: '20px' }}>
             <a href="#" aria-label={`Request spec sheet for ${product.name}`}>
               <img
@@ -188,43 +211,65 @@ export default function ProductDetailHeroSection({ product }) {
             }}
           />
 
-          {/* Watermark */}
-          <p
-            className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
-            style={{
-              top: 'clamp(60px, 6.9vw, 133px)',
-              left: 0,
-              fontSize: 'clamp(48px, 7.3vw, 140px)',
-              lineHeight: '1.04',
-              background: 'linear-gradient(90deg, #f5fafa 12%, #b6b6b6 56%, #f5fafa 113%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              opacity: 0.3,
-              letterSpacing: '0.04em',
-            }}
-          >
-            {product.shortName}
-          </p>
+          {/* Watermark: hidden when video is present */}
+          {!product.heroVideo && (
+            <p
+              className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
+              style={{
+                top: 'clamp(60px, 6.9vw, 133px)',
+                left: 0,
+                fontSize: 'clamp(48px, 7.3vw, 140px)',
+                lineHeight: '1.04',
+                background: 'linear-gradient(90deg, #f5fafa 12%, #b6b6b6 56%, #f5fafa 113%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                opacity: 0.3,
+                letterSpacing: '0.04em',
+              }}
+            >
+              {product.shortName}
+            </p>
+          )}
 
-          {/* Motor image */}
-          <div
-            className="absolute"
-            style={{
-              left: '50%',
-              transform: 'translateX(calc(-50% + 3.4%)) rotate(180deg)',
-              top: 'clamp(60px, 8vw, 155px)',
-              width: 'clamp(200px, 32.3vw, 620px)',
-              height: 'clamp(155px, 27.1vw, 521px)',
-              zIndex: 2,
-            }}
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-contain"
+          {/* Motor image / video */}
+          {product.heroVideo ? (
+            <video
+              src={product.heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute"
+              style={{
+                left: '50%',
+                transform: 'translateX(-50%)',
+                top: 'clamp(60px, 6.9vw, 133px)',
+                width: 'clamp(200px, 32.3vw, 620px)',
+                height: 'clamp(155px, 28.2vw, 543px)',
+                objectFit: 'cover',
+                zIndex: 2,
+              }}
             />
-          </div>
+          ) : (
+            <div
+              className="absolute"
+              style={{
+                left: '50%',
+                transform: 'translateX(calc(-50% + 3.4%)) rotate(180deg)',
+                top: 'clamp(60px, 8vw, 155px)',
+                width: 'clamp(200px, 32.3vw, 620px)',
+                height: 'clamp(155px, 27.1vw, 521px)',
+                zIndex: 2,
+              }}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
 
           {/* CTAs — bottom-anchored to match specs bottom */}
           <div

@@ -134,18 +134,35 @@ function MotorDetailedContent({ product }) {
           overflow: "hidden",
         }}
       >
-        <img
-          src={product.image}
-          alt={product.name}
-          className="max-[768px]:w-[55vw]! max-[768px]:h-auto!"
-          style={{
-            width: "clamp(160px, 26.8vw, 515px)",
-            height: "clamp(120px, 22.6vw, 434px)",
-            objectFit: "contain",
-            transform: `rotate(180deg) scale(${zoom})`,
-            transition: "transform 0.2s ease",
-          }}
-        />
+        {product.heroVideo ? (
+          <video
+            src={product.heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "clamp(160px, 26.8vw, 515px)",
+              height: "clamp(120px, 22.6vw, 434px)",
+              objectFit: "cover",
+              transform: `scale(${zoom})`,
+              transition: "transform 0.2s ease",
+            }}
+          />
+        ) : (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="max-[768px]:w-[55vw]! max-[768px]:h-auto!"
+            style={{
+              width: "clamp(160px, 26.8vw, 515px)",
+              height: "clamp(120px, 22.6vw, 434px)",
+              objectFit: "contain",
+              transform: `rotate(180deg) scale(${zoom})`,
+              transition: "transform 0.2s ease",
+            }}
+          />
+        )}
 
         <div
           style={{

@@ -77,6 +77,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF15,
+    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778521840/RF_15_zqlcg8.mp4',
     applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'forklift', 'erickshaw'],
     variants: [
       {
@@ -101,6 +102,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF22,
+    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522566/RF_22_Precompose_acxd0j.mp4',
     applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
     variants: [
       {
@@ -130,6 +132,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF33,
+    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522605/RF_33_ytaenx.mp4',
     applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'forklift', 'loader'],
     variants: [
       {
@@ -159,6 +162,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF55,
+    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522666/RF_55_buqlqx.mp4',
     applications: ['scooters', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
     variants: [
       {
@@ -188,6 +192,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF66,
+    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522722/RF_66_dtfdjs.mp4',
     applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
     variants: [
       {
