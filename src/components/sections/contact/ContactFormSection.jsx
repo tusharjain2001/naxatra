@@ -25,7 +25,6 @@ const CATEGORIES = [
 ];
 
 const MOTOR_APPLICATIONS = ['Industrial', 'E-Mobility', 'Power Tools', 'Robotics', 'Other'];
-const POWER_RANGES = ['< 500W', '500W – 2kW', '2kW – 5kW', '5kW – 15kW', '> 15kW'];
 
 function SelectField({ label, options, value, onChange, required }) {
   return (
@@ -105,7 +104,6 @@ export default function ContactFormSection() {
   const [activeCategory, setActiveCategory] = useState('motors');
   const [form, setForm] = useState({
     motorApplication: '',
-    powerRange: '',
     fullName: '',
     email: '',
     phone: '',
@@ -214,13 +212,6 @@ export default function ContactFormSection() {
                 options={MOTOR_APPLICATIONS}
                 value={form.motorApplication}
                 onChange={set('motorApplication')}
-                required
-              />
-              <SelectField
-                label="Power Range (Nominal)"
-                options={POWER_RANGES}
-                value={form.powerRange}
-                onChange={set('powerRange')}
                 required
               />
             </div>
@@ -423,13 +414,6 @@ export default function ContactFormSection() {
                   options={MOTOR_APPLICATIONS}
                   value={form.motorApplication}
                   onChange={set('motorApplication')}
-                  required
-                />
-                <SelectField
-                  label="Power Range (Nominal)"
-                  options={POWER_RANGES}
-                  value={form.powerRange}
-                  onChange={set('powerRange')}
                   required
                 />
               </div>

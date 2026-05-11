@@ -1,6 +1,3 @@
-import productMotor from '../../assets/images/product-motor-rf55.png';
-import productText from '../../assets/images/Antarix RF55.png';
-import productEllipse from '../../assets/images/product-ellipse.svg';
 import productBg from '../../assets/images/product-bg.svg';
 import viewAllProducts from '../../assets/images/view-all-products.svg';
 
@@ -28,28 +25,15 @@ export default function ProductSection() {
           <span className="text-[#1863da] max-[720px]:hidden"><br />Smart, Compact &amp; Efficient</span>
         </h2>
 
-        <div className="relative  h-[clamp(270px,26vw,500px)] max-[720px]:h-[240px]">
-          <div
-            className="pointer-events-none absolute left-1/2 top-[52%] z-0 aspect-square w-[clamp(330px,40vw,760px)] -translate-x-1/2 -translate-y-1/2 opacity-90"
-          >
-            <img src={productEllipse} alt="" className="h-full w-full object-contain" />
-          </div>
-
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2">
-            <img
-              src={productText}
-              alt=""
-              className="mx-auto block w-[clamp(760px,72vw,1380px)] object-contain max-[720px]:w-[92vw]"
-            />
-          </div>
-
-          <div className="absolute left-[55%] top-[48%] z-10 w-[clamp(300px,31vw,590px)] -translate-x-1/2 -translate-y-1/2 max-[720px]:w-52.5 max-[720px]:h-44.25 max-[720px]:top-[58%]">
-            <img
-              src={productMotor}
-              alt="Antarix RF55 Motor"
-              className="block w-full object-contain"
-            />
-          </div>
+        <div className="flex items-center justify-center my-[clamp(24px,4vw,64px)] max-[720px]:my-6">
+          <video
+            src="https://res.cloudinary.com/dgr33gxhd/video/upload/v1778512413/Alternatye_aniamtion_2_tuner4.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[clamp(760px,72vw,1380px)] h-[clamp(270px,26vw,500px)] object-cover max-[720px]:w-[92vw] max-[720px]:h-60"
+          />
         </div>
 
         <div className="relative mx-auto w-full max-w-[clamp(320px,66vw,1254px)] max-[720px]:max-w-none">
