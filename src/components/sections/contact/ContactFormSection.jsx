@@ -109,6 +109,10 @@ export default function ContactFormSection() {
     phone: '',
     company: '',
     message: '',
+    investmentCompanyName: '',
+    companyWebsite: '',
+    websiteLink: '',
+    partnershipType: '',
   });
 
   const set = (key) => (val) => setForm((f) => ({ ...f, [key]: val }));
@@ -184,121 +188,203 @@ export default function ContactFormSection() {
           })}
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
-          <div className="text-center">
-            <h3
-              className="font-nexa"
-              style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}
-            >
-              <span style={{ color: '#000' }}>Make An Enquiry </span>
-              <span style={{ color: '#1863da' }}>For Our Motors.</span>
-            </h3>
-            <p className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
-              <span style={{ color: 'red' }}>*</span> marked fields are mandatory
-            </p>
-          </div>
-
-          <div className="flex flex-col" style={{ gap: '12px' }}>
-            <div className="flex items-center" style={{ gap: '8px' }}>
-              <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
-                Define motor type
-              </span>
-              <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
-            </div>
-
-            <div className="grid grid-cols-2" style={{ gap: '8px' }}>
-              <SelectField
-                label="Motor Application"
-                options={MOTOR_APPLICATIONS}
-                value={form.motorApplication}
-                onChange={set('motorApplication')}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col" style={{ gap: '12px' }}>
-            <div className="flex items-center" style={{ gap: '8px' }}>
-              <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
-                Contact Information
-              </span>
-              <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
-            </div>
-
-            <div className="grid grid-cols-2" style={{ gap: '8px' }}>
-              <TextField
-                label="Full Name (Required)"
-                value={form.fullName}
-                onChange={set('fullName')}
-                required
-              />
-              <TextField
-                label="Business Email ID"
-                type="email"
-                value={form.email}
-                onChange={set('email')}
-                required
-              />
-              <TextField
-                label="Contact Number"
-                type="tel"
-                value={form.phone}
-                onChange={set('phone')}
-                required
-              />
-              <TextField
-                label={
-                  <>
-                    {'Company Name '}
-                    <span className="md:hidden" style={{ fontSize: '5px' }}>(N/A if you do not belong to any company)</span>
-                    <span className="hidden md:inline">(N/A if you do not belong to any company)</span>
-                  </>
-                }
-                value={form.company}
-                onChange={set('company')}
-                required
-              />
-            </div>
-
-            <div className="flex flex-col" style={{ gap: '4px' }}>
-              <label
-                className="font-metro"
-                style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}
+        {activeCategory === 'motors' && (
+          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
+            <div className="text-center">
+              <h3
+                className="font-nexa"
+                style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}
               >
-                Your Question or Inquiry. <span style={{ color: 'red' }}>*</span>
-              </label>
-              <textarea
-                value={form.message}
-                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                className="w-full font-metro resize-none"
-                style={{
-                  height: '150px',
-                  backgroundColor: '#eeeeee',
-                  border: '1px solid #d9d9d9',
-                  borderRadius: '4px',
-                  padding: '12px 14px',
-                  fontSize: '12px',
-                  outline: 'none',
-                }}
-              />
+                <span style={{ color: '#000' }}>Make An Enquiry </span>
+                <span style={{ color: '#1863da' }}>For Our Motors.</span>
+              </h3>
+              <p className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
+                <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+              </p>
             </div>
-          </div>
 
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              aria-label="Submit Enquiry"
-              className="block"
-            >
-              <img
-                src={submitEnquiry}
-                alt="Submit Enquiry"
-                className="block"
-                style={{ width: '150px', height: 'auto' }}
-              />
-            </button>
-          </div>
-        </form>
+            <div className="flex flex-col" style={{ gap: '12px' }}>
+              <div className="flex items-center" style={{ gap: '8px' }}>
+                <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
+                  Define motor type
+                </span>
+                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+              </div>
+              <div className="grid grid-cols-2" style={{ gap: '8px' }}>
+                <SelectField
+                  label="Motor Application"
+                  options={MOTOR_APPLICATIONS}
+                  value={form.motorApplication}
+                  onChange={set('motorApplication')}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col" style={{ gap: '12px' }}>
+              <div className="flex items-center" style={{ gap: '8px' }}>
+                <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
+                  Contact Information
+                </span>
+                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+              </div>
+              <div className="grid grid-cols-2" style={{ gap: '8px' }}>
+                <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />
+                <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required />
+                <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required />
+                <TextField
+                  label={<>{'Company Name '}<span style={{ fontSize: '5px' }}>(N/A if you do not belong to any company)</span></>}
+                  value={form.company}
+                  onChange={set('company')}
+                  required
+                />
+              </div>
+              <div className="flex flex-col" style={{ gap: '4px' }}>
+                <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+                  Your Question or Inquiry. <span style={{ color: 'red' }}>*</span>
+                </label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  className="w-full font-metro resize-none"
+                  style={{ height: '150px', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: '12px 14px', fontSize: '12px', outline: 'none' }}
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button type="submit" aria-label="Submit Enquiry" className="block">
+                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
+              </button>
+            </div>
+          </form>
+        )}
+
+        {activeCategory === 'investment' && (
+          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
+            <div className="text-center">
+              <h3
+                className="font-nexa"
+                style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}
+              >
+                <span style={{ color: '#000' }}>Investment</span>
+              </h3>
+              <p className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
+                <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+              </p>
+            </div>
+
+            <div className="flex flex-col" style={{ gap: '12px' }}>
+              <TextField label="Investment Company Name" value={form.investmentCompanyName} onChange={set('investmentCompanyName')} required fullWidth />
+              <TextField label="Company Website" value={form.companyWebsite} onChange={set('companyWebsite')} required fullWidth />
+              <TextField label="Full Name" value={form.fullName} onChange={set('fullName')} fullWidth />
+              <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+              <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
+            </div>
+
+            <div className="flex justify-center">
+              <button type="submit" aria-label="Submit Enquiry" className="block">
+                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
+              </button>
+            </div>
+          </form>
+        )}
+
+        {activeCategory === 'other' && (
+          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
+            <div className="text-center">
+              <h3
+                className="font-nexa"
+                style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}
+              >
+                <span style={{ color: '#000' }}>Other</span>
+              </h3>
+              <p className="font-metro" style={{ fontSize: '8px', color: '#9d9d9d' }}>
+                <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+              </p>
+            </div>
+
+            <div className="flex flex-col" style={{ gap: '12px' }}>
+              <TextField label="Company Name" value={form.company} onChange={set('company')} required fullWidth />
+              <TextField label="Your Name" value={form.fullName} onChange={set('fullName')} required fullWidth />
+              <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required fullWidth />
+              <TextField label="Phone No." type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+              <TextField label="Website Link" value={form.websiteLink} onChange={set('websiteLink')} required fullWidth />
+              <div className="flex flex-col" style={{ gap: '4px' }}>
+                <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+                  What other things you want to explore? <span style={{ color: 'red' }}>*</span>
+                </label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  className="w-full font-metro resize-none"
+                  style={{ height: '150px', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: '12px 14px', fontSize: '12px', outline: 'none' }}
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button type="submit" aria-label="Submit Enquiry" className="block">
+                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
+              </button>
+            </div>
+          </form>
+        )}
+
+        {activeCategory === 'partnership' && (
+          <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: '22px' }}>
+            <div className="text-center">
+              <h3 className="font-nexa" style={{ fontSize: '20px', fontWeight: 400, lineHeight: '1.25', marginBottom: '4px' }}>
+                <span style={{ color: '#000' }}>Want to Partner with Us?</span>
+              </h3>
+              <p className="font-metro" style={{ fontSize: '8px', color: '#515151' }}>
+                Fill out this short form below or email us directly at{' '}
+                <a href="mailto:partnerships@naxatralabs.com" style={{ color: '#1863da', textDecoration: 'none' }}>
+                  partnerships@naxatralabs.com
+                </a>
+              </p>
+            </div>
+
+            <div className="flex flex-col" style={{ gap: '12px' }}>
+              <TextField label="Company Name" value={form.company} onChange={set('company')} required fullWidth />
+              <TextField label="Website Link" value={form.websiteLink} onChange={set('websiteLink')} required fullWidth />
+
+              <div className="flex flex-col" style={{ gap: '6px' }}>
+                <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+                  Type of Potential Partnership
+                </label>
+                {['Commercial', 'Manufacturing', 'Supply Chain', 'Other'].map((opt) => (
+                  <label key={opt} className="flex items-center font-metro" style={{ gap: '8px', fontSize: '7px', color: '#515151', cursor: 'pointer' }}>
+                    <input type="radio" name="partnershipType-mobile" value={opt} checked={form.partnershipType === opt} onChange={() => set('partnershipType')(opt)} style={{ accentColor: '#1863da' }} />
+                    {opt}
+                  </label>
+                ))}
+              </div>
+
+              <TextField label="Your Name" value={form.fullName} onChange={set('fullName')} required fullWidth />
+              <TextField label="Phone No." type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+              <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required fullWidth />
+
+              <div className="flex flex-col" style={{ gap: '4px' }}>
+                <label className="font-metro" style={{ fontSize: '7px', color: '#515151', fontWeight: 500 }}>
+                  Which area do you see us partnering in? <span style={{ color: 'red' }}>*</span>
+                </label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  className="w-full font-metro resize-none"
+                  style={{ height: '150px', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: '12px 14px', fontSize: '12px', outline: 'none' }}
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button type="submit" aria-label="Submit Enquiry" className="block">
+                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
+              </button>
+            </div>
+          </form>
+        )}
       </div>
 
       <div
@@ -333,7 +419,7 @@ export default function ContactFormSection() {
         <div className="flex flex-wrap items-start" style={{ gap: 'clamp(24px, 2.6vw, 50px)' }}>
           {/* Left: category cards */}
           <div
-            className="flex flex-col flex-shrink-0"
+            className="flex flex-col shrink-0"
             style={{ width: 'clamp(220px, 22.9vw, 440px)', gap: 'clamp(12px, 1.04vw, 20px)' }}
           >
             {CATEGORIES.map((cat) => {
@@ -374,139 +460,201 @@ export default function ContactFormSection() {
           </div>
 
           {/* Right: form */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col"
-            style={{ flex: '1 1 clamp(280px, 52.3vw, 1005px)', gap: 'clamp(24px, 2.5vw, 48px)' }}
-          >
-            {/* Form title */}
-            <div>
-              <h3
-                className="font-nexa"
-                style={{ fontSize: 'clamp(18px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}
-              >
-                <span style={{ color: '#000' }}>Make an enquiry </span>
-                <span style={{ color: '#1863da' }}>for our motors.</span>
-              </h3>
-              <p
-                className="font-metro"
-                style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151' }}
-              >
-                <span style={{ color: 'red' }}>*</span> marked fields are mandatory
-              </p>
-            </div>
+          <div style={{ flex: '1 1 clamp(280px, 52.3vw, 1005px)' }}>
+            {activeCategory === 'motors' && (
+              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: 'clamp(24px, 2.5vw, 48px)' }}>
+                <div>
+                  <h3
+                    className="font-nexa"
+                    style={{ fontSize: 'clamp(18px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}
+                  >
+                    <span style={{ color: '#000' }}>Make an enquiry </span>
+                    <span style={{ color: '#1863da' }}>for our motors.</span>
+                  </h3>
+                  <p className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151' }}>
+                    <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+                  </p>
+                </div>
 
-            {/* Section: Define motor type */}
-            <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
-              <div className="flex items-center" style={{ gap: '12px' }}>
-                <span
-                  className="font-metro flex-shrink-0"
-                  style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}
-                >
-                  Define motor type
-                </span>
-                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
-              </div>
+                <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
+                  <div className="flex items-center" style={{ gap: '12px' }}>
+                    <span className="font-metro shrink-0" style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}>
+                      Define motor type
+                    </span>
+                    <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                  </div>
+                  <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+                    <SelectField label="Motor Application" options={MOTOR_APPLICATIONS} value={form.motorApplication} onChange={set('motorApplication')} required />
+                  </div>
+                </div>
 
-              <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
-                <SelectField
-                  label="Motor Application"
-                  options={MOTOR_APPLICATIONS}
-                  value={form.motorApplication}
-                  onChange={set('motorApplication')}
-                  required
-                />
-              </div>
-            </div>
+                <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
+                  <div className="flex items-center" style={{ gap: '12px' }}>
+                    <span className="font-metro shrink-0" style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}>
+                      Contact Information
+                    </span>
+                    <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                  </div>
+                  <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+                    <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />
+                    <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required />
+                    <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required />
+                    <TextField
+                      label={<>{'Company Name '}<span className="hidden md:inline">(N/A if you do not belong to any company)</span></>}
+                      value={form.company}
+                      onChange={set('company')}
+                      required
+                    />
+                  </div>
+                  <div className="flex flex-col" style={{ gap: '4px' }}>
+                    <label className="font-metro" style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}>
+                      Your Question or Inquiry. <span style={{ color: 'red' }}>*</span>
+                    </label>
+                    <textarea
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      className="w-full font-metro resize-none"
+                      style={{ height: 'clamp(140px, 18.75vw, 360px)', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: 'clamp(12px, 1.09vw, 21px) clamp(14px, 1.46vw, 33px)', fontSize: 'clamp(13px, 0.94vw, 18px)', outline: 'none' }}
+                    />
+                  </div>
+                </div>
 
-            {/* Section: Contact Information */}
-            <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
-              <div className="flex items-center" style={{ gap: '12px' }}>
-                <span
-                  className="font-metro flex-shrink-0"
-                  style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}
-                >
-                  Contact Information
-                </span>
-                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
-              </div>
+                <div className="flex justify-center">
+                  <button type="submit" aria-label="Submit Enquiry" className="block">
+                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
+                  </button>
+                </div>
+              </form>
+            )}
 
-              <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
-                <TextField
-                  label="Full Name (Required)"
-                  value={form.fullName}
-                  onChange={set('fullName')}
-                  required
-                />
-                <TextField
-                  label="Business Email ID"
-                  type="email"
-                  value={form.email}
-                  onChange={set('email')}
-                  required
-                />
-                <TextField
-                  label="Contact Number"
-                  type="tel"
-                  value={form.phone}
-                  onChange={set('phone')}
-                  required
-                />
-                <TextField
-                  label={
-                    <>
-                      {'Company Name '}
-                      <span className="md:hidden" style={{ fontSize: '5px' }}>(N/A if you do not belong to any company)</span>
-                      <span className="hidden md:inline">(N/A if you do not belong to any company)</span>
-                    </>
-                  }
-                  value={form.company}
-                  onChange={set('company')}
-                  required
-                />
-              </div>
+            {activeCategory === 'investment' && (
+              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: 'clamp(24px, 2.5vw, 48px)' }}>
+                <div>
+                  <h3
+                    className="font-nexa"
+                    style={{ fontSize: 'clamp(18px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}
+                  >
+                    <span style={{ color: '#000' }}>Investment</span>
+                  </h3>
+                  <p className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151' }}>
+                    <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+                  </p>
+                </div>
 
-              {/* Textarea */}
-              <div className="flex flex-col" style={{ gap: '4px' }}>
-                <label
-                  className="font-metro"
-                  style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}
-                >
-                  Your Question or Inquiry. <span style={{ color: 'red' }}>*</span>
-                </label>
-                <textarea
-                  value={form.message}
-                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                  className="w-full font-metro resize-none"
-                  style={{
-                    height: 'clamp(140px, 18.75vw, 360px)',
-                    backgroundColor: '#eeeeee',
-                    border: '1px solid #d9d9d9',
-                    borderRadius: '4px',
-                    padding: 'clamp(12px, 1.09vw, 21px) clamp(14px, 1.46vw, 33px)',
-                    fontSize: 'clamp(13px, 0.94vw, 18px)',
-                    outline: 'none',
-                  }}
-                />
-              </div>
-            </div>
+                <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+                  <TextField label="Investment Company Name" value={form.investmentCompanyName} onChange={set('investmentCompanyName')} required fullWidth />
+                  <TextField label="Company Website" value={form.companyWebsite} onChange={set('companyWebsite')} required fullWidth />
+                  <TextField label="Full Name" value={form.fullName} onChange={set('fullName')} fullWidth />
+                  <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+                  <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
+                </div>
 
-            {/* Submit */}
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                aria-label="Submit Enquiry"
-                className="block"
-              >
-                <img
-                  src={submitEnquiry}
-                  alt="Submit Enquiry"
-                  className="block"
-                  style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }}
-                />
-              </button>
-            </div>
-          </form>
+                <div className="flex justify-center">
+                  <button type="submit" aria-label="Submit Enquiry" className="block">
+                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {activeCategory === 'other' && (
+              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: 'clamp(24px, 2.5vw, 48px)' }}>
+                <div>
+                  <h3
+                    className="font-nexa"
+                    style={{ fontSize: 'clamp(18px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}
+                  >
+                    <span style={{ color: '#000' }}>Other</span>
+                  </h3>
+                  <p className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151' }}>
+                    <span style={{ color: 'red' }}>*</span> marked fields are mandatory
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+                  <TextField label="Company Name" value={form.company} onChange={set('company')} required fullWidth />
+                  <TextField label="Your Name" value={form.fullName} onChange={set('fullName')} required fullWidth />
+                  <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required fullWidth />
+                  <TextField label="Phone No." type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+                  <TextField label="Website Link" value={form.websiteLink} onChange={set('websiteLink')} required fullWidth />
+                  <div className="flex flex-col w-full" style={{ gap: '4px' }}>
+                    <label className="font-metro" style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}>
+                      What other things you want to explore? <span style={{ color: 'red' }}>*</span>
+                    </label>
+                    <textarea
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      className="w-full font-metro resize-none"
+                      style={{ height: 'clamp(140px, 18.75vw, 360px)', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: 'clamp(12px, 1.09vw, 21px) clamp(14px, 1.46vw, 33px)', fontSize: 'clamp(13px, 0.94vw, 18px)', outline: 'none' }}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <button type="submit" aria-label="Submit Enquiry" className="block">
+                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {activeCategory === 'partnership' && (
+              <form onSubmit={handleSubmit} className="flex flex-col" style={{ gap: 'clamp(24px, 2.5vw, 48px)' }}>
+                <div>
+                  <h3 className="font-nexa" style={{ fontSize: 'clamp(18px, 1.67vw, 32px)', fontWeight: 400, lineHeight: '1.25', marginBottom: 'clamp(4px, 0.42vw, 8px)' }}>
+                    <span style={{ color: '#000' }}>Want to Partner with Us?</span>
+                  </h3>
+                  <p className="font-metro" style={{ fontSize: 'clamp(11px, 0.73vw, 14px)', color: '#515151' }}>
+                    Fill out this short form below or email us directly at{' '}
+                    <a href="mailto:partnerships@naxatralabs.com" style={{ color: '#1863da', textDecoration: 'none' }}>
+                      partnerships@naxatralabs.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
+                  <TextField label="Company Name" value={form.company} onChange={set('company')} required fullWidth />
+                  <TextField label="Website Link" value={form.websiteLink} onChange={set('websiteLink')} required fullWidth />
+
+                  <div className="flex flex-col w-full" style={{ gap: 'clamp(6px, 0.6vw, 12px)' }}>
+                    <label className="font-metro" style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}>
+                      Type of Potential Partnership
+                    </label>
+                    <div className="flex flex-col" style={{ gap: 'clamp(6px, 0.6vw, 12px)' }}>
+                      {['Commercial', 'Manufacturing', 'Supply Chain', 'Other'].map((opt) => (
+                        <label key={opt} className="flex items-center font-metro" style={{ gap: '10px', fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', cursor: 'pointer' }}>
+                          <input type="radio" name="partnershipType-desktop" value={opt} checked={form.partnershipType === opt} onChange={() => set('partnershipType')(opt)} style={{ accentColor: '#1863da', width: '16px', height: '16px' }} />
+                          {opt}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <TextField label="Your Name" value={form.fullName} onChange={set('fullName')} required fullWidth />
+                  <TextField label="Phone No." type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
+                  <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} required fullWidth />
+
+                  <div className="flex flex-col w-full" style={{ gap: '4px' }}>
+                    <label className="font-metro" style={{ fontSize: 'clamp(12px, 0.83vw, 16px)', color: '#515151', fontWeight: 500 }}>
+                      Which area do you see us partnering in? <span style={{ color: 'red' }}>*</span>
+                    </label>
+                    <textarea
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      className="w-full font-metro resize-none"
+                      style={{ height: 'clamp(140px, 18.75vw, 360px)', backgroundColor: '#eeeeee', border: '1px solid #d9d9d9', borderRadius: '4px', padding: 'clamp(12px, 1.09vw, 21px) clamp(14px, 1.46vw, 33px)', fontSize: 'clamp(13px, 0.94vw, 18px)', outline: 'none' }}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <button type="submit" aria-label="Submit Enquiry" className="block">
+                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>
