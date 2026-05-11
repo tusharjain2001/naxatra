@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 export function countAnimatedCharacters(text = '') {
   return Array.from(text.replace(/\s+/g, '')).length;
 }
@@ -17,12 +19,26 @@ export default function AnimatedTextReveal({
   delay = 0,
   stagger = 0.03,
   duration = 0.58,
+  repeatInterval = 5000,
 }) {
+  const [cycleKey, setCycleKey] = useState(0);
   const words = text.trim().split(/\s+/).filter(Boolean);
   let characterIndex = 0;
 
+  useEffect(() => {
+    if (!repeatInterval || repeatInterval <= 0) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setCycleKey((currentKey) => currentKey + 1);
+    }, repeatInterval);
+
+    return () => window.clearInterval(intervalId);
+  }, [repeatInterval]);
+
   return (
-    <Tag aria-label={text} className={className}>
+    <Tag key={cycleKey} aria-label={text} className={className}>
       {words.map((word, wordIndex) => (
         <span key={`${word}-${wordIndex}`} aria-hidden="true">
           <span className="inline-block whitespace-nowrap">

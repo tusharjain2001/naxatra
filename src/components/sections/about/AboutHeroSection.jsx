@@ -12,24 +12,26 @@ export default function AboutHeroSection() {
   return (
     <>
       <section className="relative w-full bg-black overflow-hidden md:hidden" style={{ minHeight: '268px' }}>
-        <img
-          src={aboutHeroGrid}
-          alt=""
-          className="pointer-events-none absolute object-fill opacity-22"
-          style={{ bottom: '20px', right: '-5vw', height: '160px', width: '48.8vw' }}
-        />
-        <img
-          src={aboutHeroEllipse}
-          alt=""
-          className="pointer-events-none absolute object-contain opacity-30"
-          style={{ bottom: '16px', right: '-2.5vw', width: '47.3vw' }}
-        />
-        <img
-          src={aboutHeroImage}
-          alt="Naxatra Labs Electric Vehicle"
-          className="absolute object-contain"
-          style={{ bottom: '30px', right: '4.5vw', width: '40.5vw' }}
-        />
+        <div
+          className="absolute"
+          style={{ bottom: '10px', right: '-2vw', width: '58vw', height: '194px' }}
+        >
+          <img
+            src={aboutHeroGrid}
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full object-fill opacity-38"
+          />
+          <img
+            src={aboutHeroEllipse}
+            alt=""
+            className="pointer-events-none absolute left-1/2 top-1/2 h-auto w-[126%] -translate-x-1/2 -translate-y-1/2 object-contain opacity-52"
+          />
+          <img
+            src={aboutHeroImage}
+            alt="Naxatra Labs Electric Vehicle"
+            className="absolute bottom-[6px] left-1/2 h-auto w-[83%] -translate-x-1/2 object-contain opacity-95"
+          />
+        </div>
 
         <div className="relative z-10" style={{ paddingLeft: '4.7vw', paddingTop: '48px' }}>
           <h1
