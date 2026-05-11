@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import ctaBg from '../../assets/images/cta-bg.svg';
 import oneSize from '../../assets/images/one-size.png';
+import DownloadBrochureModal from './product/DownloadBrochureModal';
 
 const primaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 16px) 100%, 0 100%)';
 const secondaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%)';
 
 export default function CTASection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
+    <>
     <section className="w-full bg-[#f5fafa]">
       <div className="relative max-[560px]:hidden" style={{ height: 'clamp(460px, 32.08vw, 616px)' }}>
         {/* Dark cut-corner background */}
@@ -64,7 +69,7 @@ export default function CTASection() {
             </p>
 
             <a
-              href="#contact"
+              href="/products"
               aria-label="Learn More About Our Tailored Solutions"
               className="font-nexa"
               style={{
@@ -98,8 +103,9 @@ export default function CTASection() {
                 padding: '2px',
               }}
             >
-              <a
-                href="#products"
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
                 aria-label="Browse Our Motor Catalog"
                 className="font-nexa"
                 style={{
@@ -118,10 +124,12 @@ export default function CTASection() {
                   textAlign: 'left',
                   backgroundColor: '#050608',
                   whiteSpace: 'nowrap',
+                  border: 'none',
+                  cursor: 'pointer',
                 }}
               >
                 Browse Our Motor Catalog
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -149,7 +157,7 @@ export default function CTASection() {
             </p>
 
             <a
-              href="#contact"
+              href="/products"
               aria-label="Learn More About Our Tailored Solutions"
               className="mx-auto mt-8 flex h-[31px] w-[239px] items-center justify-center bg-[#1863da] px-3 text-center font-nexa text-[10px] font-semibold leading-none text-white no-underline"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 10px) 100%, 0 100%)' }}
@@ -161,18 +169,25 @@ export default function CTASection() {
               className="mx-auto mt-[10px] h-[34px] w-[170px] bg-white p-[1px]"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)' }}
             >
-              <a
-                href="#products"
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
                 aria-label="Browse Our Motor Catalog"
                 className="flex h-full w-full items-center justify-center bg-[#050608] font-nexa text-[10px] font-semibold leading-none text-white no-underline"
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)' }}
+                style={{
+                  clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
               >
                 Browse Our Motor Catalog
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 }

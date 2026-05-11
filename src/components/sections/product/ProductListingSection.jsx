@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import downloadSpecSheet from '../../../assets/images/download-spec-sheet.svg';
 import viewDetails from '../../../assets/images/view-details.svg';
+import DownloadBrochureModal from './DownloadBrochureModal';
 import { PRODUCTS, APPLICATIONS } from '../../../data/products';
 
 const CATEGORIES = [
@@ -18,7 +19,7 @@ const CATEGORIES = [
 
 const APP_ICON_MAP = Object.fromEntries(APPLICATIONS.map((a) => [a.id, a.icon]));
 
-function ProductCard({ product, mobileVariant = 'compact' }) {
+function ProductCard({ product, mobileVariant = 'compact', onOpenBrochure }) {
   const isCompactMobile = mobileVariant === 'compact';
 
   return (
@@ -131,6 +132,7 @@ function ProductCard({ product, mobileVariant = 'compact' }) {
         </Link>
 
         <button
+          onClick={onOpenBrochure}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -156,7 +158,7 @@ function ProductCard({ product, mobileVariant = 'compact' }) {
   );
 }
 
-function AllProductsView() {
+function AllProductsView({ onOpenBrochure }) {
   return (
     <div
       className="grid grid-cols-3 max-[980px]:!grid-cols-2 max-[560px]:!grid-cols-2"
@@ -174,14 +176,14 @@ function AllProductsView() {
               : ''
           }
         >
-          <ProductCard product={product} />
+          <ProductCard product={product} onOpenBrochure={onOpenBrochure} />
         </div>
       ))}
     </div>
   );
 }
 
-function ApplicationsView() {
+function ApplicationsView({ onOpenBrochure }) {
   const [activeCategory, setActiveCategory] = useState('scooters');
   const catProducts = PRODUCTS.filter((p) => p.applications.includes(activeCategory));
   const catLabel = CATEGORIES.find((c) => c.id === activeCategory)?.label ?? activeCategory;
@@ -260,7 +262,7 @@ function ApplicationsView() {
             }}
             className="max-[560px]:!grid-cols-1 max-[560px]:!gap-4"
           >
-            {catProducts.map((product) => <ProductCard key={product.id} product={product} mobileVariant="regular" />)}
+            {catProducts.map((product) => <ProductCard key={product.id} product={product} mobileVariant="regular" onOpenBrochure={onOpenBrochure} />)}
           </div>
         )}
       </div>
@@ -270,6 +272,7 @@ function ApplicationsView() {
 
 export default function ProductListingSection() {
   const [activeTab, setActiveTab] = useState('all');
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <section className="w-full" style={{ background: '#fff', paddingBottom: 'clamp(40px, 4vw, 72px)' }}>
@@ -311,8 +314,11 @@ export default function ProductListingSection() {
 
       {/* Tab content */}
       <div className="max-[560px]:!px-4" style={{ maxWidth: '1470px', margin: '0 auto', padding: '0 clamp(14px, 11.72vw, 225px)' }}>
-        {activeTab === 'all' ? <AllProductsView /> : <ApplicationsView />}
+        {activeTab === 'all'
+          ? <AllProductsView onOpenBrochure={() => setModalOpen(true)} />
+          : <ApplicationsView onOpenBrochure={() => setModalOpen(true)} />}
       </div>
+      <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

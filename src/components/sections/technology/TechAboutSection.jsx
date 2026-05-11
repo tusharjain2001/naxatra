@@ -68,7 +68,7 @@ export default function TechAboutSection() {
               </div>
 
               <a
-                href="#contact"
+                href="/products"
                 className="inline-flex items-center justify-center font-nexa text-white"
                 aria-label="Learn More About Our Tailored Solutions"
                 style={{
@@ -119,7 +119,7 @@ export default function TechAboutSection() {
                 </p>
               </div>
 
-              <a href="#contact" className="inline-flex items-center justify-center">
+              <a href="/products" className="inline-flex items-center justify-center">
                 <img
                   src={techSectionTwo}
                   alt="Learn More About Our Tailored Solutions"

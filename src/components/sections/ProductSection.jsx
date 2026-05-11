@@ -68,7 +68,7 @@ export default function ProductSection() {
               <span className="max-[720px]:block">equipment, power tools and beyond.</span>
             </p>
             <a
-              href="#products"
+              href="/products"
               className="mt-[clamp(12px,1.4vw,22px)] inline-flex items-center text-decoration-none"
               aria-label="View all products"
             >
