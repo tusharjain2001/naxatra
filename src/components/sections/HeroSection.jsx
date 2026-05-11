@@ -8,8 +8,10 @@ export default function HeroSection() {
   const advancedText = 'Advanced';
   const motorsText = 'Motors &';
   const controllersText = 'Controllers';
-  const motorsDelay = countAnimatedCharacters(advancedText) * 0.018;
-  const controllersDelay = motorsDelay + countAnimatedCharacters(motorsText) * 0.018;
+  const heroTextStagger = 0.03;
+  const heroTextDuration = 0.58;
+  const motorsDelay = countAnimatedCharacters(advancedText) * heroTextStagger;
+  const controllersDelay = motorsDelay + countAnimatedCharacters(motorsText) * heroTextStagger;
 
   return (
     <section className="relative w-full overflow-hidden bg-white pt-[96px]">
@@ -37,13 +39,13 @@ export default function HeroSection() {
         <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
           <h1 className="font-nexa text-[clamp(43px,5.2vw,100px)] font-semibold leading-[0.91] tracking-normal text-black max-[720px]:text-[26px]">
             <span className="block max-[720px]:mr-[0.2em] max-[720px]:inline text-[#1863da]">
-              <AnimatedTextReveal text={advancedText} />
+              <AnimatedTextReveal text={advancedText} stagger={heroTextStagger} duration={heroTextDuration} />
             </span>
             <span className="block max-[720px]:inline">
-              <AnimatedTextReveal text={motorsText} delay={motorsDelay} />
+              <AnimatedTextReveal text={motorsText} delay={motorsDelay} stagger={heroTextStagger} duration={heroTextDuration} />
             </span>
             <span className="block">
-              <AnimatedTextReveal text={controllersText} delay={controllersDelay} />
+              <AnimatedTextReveal text={controllersText} delay={controllersDelay} stagger={heroTextStagger} duration={heroTextDuration} />
             </span>
           </h1>
           <p className="mt-[clamp(10px,0.95vw,18px)] font-metro text-[clamp(10px,1.15vw,22px)] leading-[1.25] text-[#515151] max-[720px]:text-[12px]">

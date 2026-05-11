@@ -15,8 +15,8 @@ export default function AnimatedTextReveal({
   as: Tag = 'span',
   className = '',
   delay = 0,
-  stagger = 0.018,
-  duration = 0.42,
+  stagger = 0.03,
+  duration = 0.58,
 }) {
   const words = text.trim().split(/\s+/).filter(Boolean);
   let characterIndex = 0;
