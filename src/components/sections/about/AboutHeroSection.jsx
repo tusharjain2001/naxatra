@@ -1,22 +1,78 @@
 import aboutHeroGrid from '../../../assets/images/about-hero-grid.png';
 import aboutHeroEllipse from '../../../assets/images/about-hero-ellipse.png';
 import aboutHeroImage from '../../../assets/images/about-hero-image.png';
-import mobileAboutHero from '../../../assets/images/about-mobile-hero.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
 export default function AboutHeroSection() {
+  const textStagger = 0.03;
   const whatText = 'What ';
   const drivesText = 'Drives Us?';
-  const drivesDelay = countAnimatedCharacters(whatText) * 0.018;
+  const drivesDelay = countAnimatedCharacters(whatText) * textStagger;
 
   return (
     <>
-      <section className="relative w-full bg-black overflow-hidden md:hidden">
+      <section className="relative w-full bg-black overflow-hidden md:hidden" style={{ minHeight: '268px' }}>
         <img
-          src={mobileAboutHero}
-          alt="What Drives Us?"
-          className="block w-full h-auto"
+          src={aboutHeroGrid}
+          alt=""
+          className="pointer-events-none absolute object-fill opacity-22"
+          style={{ bottom: '20px', right: '-5vw', height: '160px', width: '48.8vw' }}
         />
+        <img
+          src={aboutHeroEllipse}
+          alt=""
+          className="pointer-events-none absolute object-contain opacity-30"
+          style={{ bottom: '16px', right: '-2.5vw', width: '47.3vw' }}
+        />
+        <img
+          src={aboutHeroImage}
+          alt="Naxatra Labs Electric Vehicle"
+          className="absolute object-contain"
+          style={{ bottom: '30px', right: '4.5vw', width: '40.5vw' }}
+        />
+
+        <div className="relative z-10" style={{ paddingLeft: '4.7vw', paddingTop: '48px' }}>
+          <h1
+            className="font-nexa text-white"
+            style={{ fontSize: '26px', lineHeight: '1.46', fontWeight: 400, margin: 0, whiteSpace: 'nowrap' }}
+          >
+            <span className="text-white">
+              <AnimatedTextReveal text="What" stagger={textStagger} />
+            </span>
+            {' '}
+            <span style={{ color: '#4dd6c4' }}>
+              <AnimatedTextReveal text={drivesText} delay={drivesDelay} stagger={textStagger} />
+            </span>
+          </h1>
+
+          <p
+            className="font-metro"
+            style={{
+              width: '56vw',
+              fontSize: '12px',
+              lineHeight: '16px',
+              color: '#d9d9d9',
+              fontWeight: 600,
+              marginTop: '5px',
+              marginBottom: 0,
+            }}
+          >
+            Powering the Future with Efficient, Compact and High torque motors.
+          </p>
+        </div>
+
+        <p
+          className="absolute font-metro text-white z-10"
+          style={{
+            left: '4.7vw',
+            top: '150px',
+            width: '39.3vw',
+            fontSize: '10px',
+            lineHeight: '14px',
+          }}
+        >
+          At Naxatra Labs, we understand that every application has unique requirements. They&apos;re engineered to fit your needs. We customize every detail to ensure optimal performance and efficiency.
+        </p>
       </section>
 
       <section
@@ -42,8 +98,9 @@ export default function AboutHeroSection() {
               className="font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 600 }}
             >
-              <span className="text-white"><AnimatedTextReveal text={whatText} /></span>
-              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={drivesText} delay={drivesDelay} /></span>
+              <span className="text-white"><AnimatedTextReveal text="What" stagger={textStagger} /></span>
+              {' '}
+              <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={drivesText} delay={drivesDelay} stagger={textStagger} /></span>
             </h1>
             <p
               className="font-metro"
@@ -61,7 +118,7 @@ export default function AboutHeroSection() {
 
           {/* Right: layered hero visual */}
           <div
-            className="relative flex-shrink-0"
+            className="relative shrink-0"
             style={{
               width: 'clamp(340px, 45vw, 869px)',
               aspectRatio: '869 / 590',
