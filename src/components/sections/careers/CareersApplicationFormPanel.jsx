@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import submitEnquiry from '../../../assets/images/submit-enquiry.png';
+import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
 import careersPhoto from '../../../assets/images/careers-photo.png';
 
 const CAREERS_API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');

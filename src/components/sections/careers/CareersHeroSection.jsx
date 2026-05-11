@@ -2,7 +2,7 @@ import { useState } from 'react';
 import careersHeroGrid from '../../../assets/images/careers-hero-grid.png';
 import careersHeroEllipse from '../../../assets/images/careers-hero-elllipse.png';
 import careersHeroImage from '../../../assets/images/careers-hero-image.png';
-import requestBrochure from '../../../assets/images/request-brochure.png';
+import requestBrochure from '../../../assets/images/request-brochure.svg';
 import DownloadBrochureModal from '../product/DownloadBrochureModal';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import heroGrid from '../../../assets/images/contact-hero-grid.png';
 import heroEllipse from '../../../assets/images/contact-hero-ellipse.png';
 import heroImage from '../../../assets/images/contact-hero-image.png';
-import requestBrochure from '../../../assets/images/request-brochure.png';
+import requestBrochure from '../../../assets/images/request-brochure.svg';
 import DownloadBrochureModal from '../product/DownloadBrochureModal';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import submitEnquiry from '../../../assets/images/submit-enquiry.png';
+import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
 
 const CATEGORIES = [
   {
