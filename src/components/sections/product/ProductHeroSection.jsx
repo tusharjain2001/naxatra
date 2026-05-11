@@ -34,16 +34,17 @@ export default function ProductHeroSection() {
 
       {/* Main heading */}
       <h1
-        className="font-nexa font-semibold text-center capitalize absolute w-full max-[560px]:px-4"
+        className="font-nexa font-semibold text-center capitalize absolute w-full whitespace-nowrap max-[560px]:px-4"
         style={{
           top: 'clamp(30px, 3.6vw, 64px)',
-          fontSize: 'clamp(28px, 5.2vw, 100px)',
+          fontSize: 'clamp(24px, 5.2vw, 100px)',
           lineHeight: '0.933',
           color: '#000',
           letterSpacing: 'normal',
         }}
       >
         <span style={{ color: '#1863da' }}><AnimatedTextReveal text={powerText} /></span>
+        {' '}
         <AnimatedTextReveal text={movesText} delay={movesDelay} />
       </h1>
 
