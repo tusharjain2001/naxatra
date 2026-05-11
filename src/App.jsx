@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import StickyContactSidebar from './components/common/StickyContactSidebar';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -44,6 +45,7 @@ function App() {
           },
         }}
       />
+      <StickyContactSidebar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductPage />} />

@@ -7,21 +7,49 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Build output
 dist
 dist-ssr
-*.local
+build
+out
+
+# Environment variables
 .env
 .env.*
 !.env.example
+*.local
+
+# Claude
+CLAUDE.md
+.claude/
+
+# Cache & temp
+.cache
+.temp
+.tmp
+*.tsbuildinfo
+vite.config.js.timestamp-*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Package manager locks (keep only one — currently using npm)
+yarn.lock
+pnpm-lock.yaml
