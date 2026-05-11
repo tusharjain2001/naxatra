@@ -266,11 +266,20 @@ export default function Footer() {
             left: 0,
             right: 0,
             height: `clamp(44px, 3.96vw, ${COPYRIGHT_BAR_HEIGHT}px)`,
-            background: 'radial-gradient(ellipse 100% 100% at 50% 50%, #1863da 0%, #154da6 25%, #123773 50%, #102c59 62.5%, #0f213f 75%, #0d1625 87.5%, #0b0b0b 100%)',
+            background: '#000',
             display: 'flex',
             alignItems: 'center',
           }}
         >
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: px(110),
+              right: px(110),
+              borderTop: '1px solid rgba(255, 255, 255, 0.9)',
+            }}
+          />
           <span style={{ position: 'absolute', left: px(129), color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap' }}>
             Copyright © 2026
           </span>
@@ -400,8 +409,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" flex items-center justify-between bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,#1863da_0%,#154da6_25%,#123773_50%,#102c59_62.5%,#0f213f_75%,#0d1625_87.5%,#0b0b0b_100%)] px-[18px] py-4 text-[10px] leading-none text-white">
+        <div className="relative flex items-center justify-between bg-black px-[18px] py-4 text-[10px] leading-none text-white">
           <span>Copyright © 2026</span>
+          <div className="absolute left-[18px] right-[18px] top-0 border-t border-white/90" aria-hidden="true" />
           <div className="flex items-center gap-4">
             <span>Privacy Policy</span>
             <span>Terms of Use</span>
