@@ -1,4 +1,12 @@
-import featuredArticle from '../../../assets/images/featured-article.png';
+import blog1 from '../../../assets/images/blog-1.jpg';
+
+const featuredArticle = {
+  title: 'National Technology Week',
+  date: 'May 11, 2023',
+  desc: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
+  href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+  img: blog1,
+};
 
 export default function BlogsFeaturedSection() {
   return (
@@ -29,35 +37,37 @@ export default function BlogsFeaturedSection() {
           <span style={{ color: '#000' }}>Articles</span>
         </h2>
 
-        <img
-          src={featuredArticle}
-          alt="Naxatra Labs Fund Raise"
-          className="block w-full h-auto object-contain"
-          style={{ maxWidth: '332px' }}
-        />
+        <a href={featuredArticle.href} target="_blank" rel="noreferrer" style={{ display: 'block', maxWidth: '332px' }}>
+          <img
+            src={featuredArticle.img}
+            alt={featuredArticle.title}
+            className="block w-full h-auto object-contain"
+          />
+        </a>
 
         <div
           className="w-full text-center"
           style={{ maxWidth: '332px', marginTop: '18px' }}
         >
-          <h3
-            className="font-nexa capitalize"
-            style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.2', fontWeight: 400, margin: 0 }}
-          >
-            Fund Raise
-          </h3>
+          <a href={featuredArticle.href} target="_blank" rel="noreferrer" className="no-underline">
+            <h3
+              className="font-nexa capitalize"
+              style={{ color: '#1863da', fontSize: '16px', lineHeight: '1.2', fontWeight: 400, margin: 0 }}
+            >
+              {featuredArticle.title}
+            </h3>
+          </a>
           <p
             className="font-metro"
             style={{ fontSize: '10px', color: '#929292', marginTop: '4px' }}
           >
-            May 11, 2023
+            {featuredArticle.date}
           </p>
           <p
             className="font-metro text-black"
             style={{ fontSize: '10px', lineHeight: '1.5', marginTop: '10px', marginBottom: 0 }}
           >
-            Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions,
-            our motors deliver unmatched durability and performance wherever the journey takes you.
+            {featuredArticle.desc}
           </p>
         </div>
       </div>
@@ -79,35 +89,37 @@ export default function BlogsFeaturedSection() {
           <span style={{ color: '#000' }}>Articles</span>
         </h2>
 
-        <img
-          src={featuredArticle}
-          alt="Naxatra Labs Fund Raise"
-          className="block w-full h-auto object-contain"
-          style={{ maxWidth: 'clamp(320px, 48vw, 740px)' }}
-        />
+        <a href={featuredArticle.href} target="_blank" rel="noreferrer" style={{ display: 'block', maxWidth: 'clamp(320px, 48vw, 740px)', width: '100%' }}>
+          <img
+            src={featuredArticle.img}
+            alt={featuredArticle.title}
+            className="block w-full h-auto object-contain"
+          />
+        </a>
 
         <div
           className="w-full"
           style={{ maxWidth: 'clamp(320px, 48vw, 740px)', marginTop: 'clamp(12px, 1.25vw, 24px)' }}
         >
-          <h3
-            className="font-nexa capitalize"
-            style={{ color: '#1863da', fontSize: 'clamp(20px, 1.9vw, 36px)', lineHeight: '1.2', fontWeight: 600, margin: 0 }}
-          >
-            Fund Raise
-          </h3>
+          <a href={featuredArticle.href} target="_blank" rel="noreferrer" className="no-underline">
+            <h3
+              className="font-nexa capitalize"
+              style={{ color: '#1863da', fontSize: 'clamp(20px, 1.9vw, 36px)', lineHeight: '1.2', fontWeight: 600, margin: 0 }}
+            >
+              {featuredArticle.title}
+            </h3>
+          </a>
           <p
             className="font-metro"
             style={{ fontSize: 'clamp(10px, 0.72vw, 14px)', color: '#929292', marginTop: 'clamp(4px, 0.42vw, 8px)' }}
           >
-            May 11, 2023
+            {featuredArticle.date}
           </p>
           <p
             className="font-metro text-black"
             style={{ fontSize: 'clamp(11px, 0.83vw, 16px)', lineHeight: '1.5', marginTop: 'clamp(4px, 0.42vw, 8px)' }}
           >
-            Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions,
-            our motors deliver unmatched durability and performance wherever the journey takes you.
+            {featuredArticle.desc}
           </p>
         </div>
       </div>

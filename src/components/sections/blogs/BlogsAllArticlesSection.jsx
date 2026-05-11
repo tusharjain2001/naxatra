@@ -1,14 +1,36 @@
 import { useState } from 'react';
-import articleThumb from '../../../assets/images/blogs-article-thumb.png';
+import blog1 from '../../../assets/images/blog-1.jpg';
+import blog2 from '../../../assets/images/blog-2.jpg';
+import blog3 from '../../../assets/images/blog-3.jpg';
 
 const CATEGORIES = ['All', 'Latest', 'Events', 'Blogs'];
 
-const ARTICLES = Array.from({ length: 4 }, (_, i) => ({
-  id: i,
-  date: 'May 11, 2023',
-  title: 'National Technology Week',
-  body: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
-}));
+const ARTICLES = [
+  {
+    id: 1,
+    date: 'May 11, 2023',
+    title: 'National Technology Week',
+    body: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+    img: blog1,
+  },
+  {
+    id: 2,
+    date: 'Nov 21, 2024',
+    title: 'EV India Expo',
+    body: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-cleanenergy-sustainablemobility-ugcPost-7264498234008436736--t9S/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+    img: blog2,
+  },
+  {
+    id: 3,
+    date: 'Jan 21, 2025',
+    title: 'Bharat Mobility Global Expo',
+    body: 'A defining moment where we unveiled a groundbreaking mobility solutions, setting new benchmarks in sustainable and high-performance transportation...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-bharatmobilityexpo-autoexpo2025-share-7286605063093972993-E4-B/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+    img: blog3,
+  },
+];
 
 export default function BlogsAllArticlesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -73,7 +95,7 @@ export default function BlogsAllArticlesSection() {
             </button>
 
             <img
-              src={articleThumb}
+              src={featuredArticle.img}
               alt={featuredArticle.title}
               className="block h-auto object-cover"
               style={{ width: '286px', maxWidth: '100%' }}
@@ -188,38 +210,41 @@ export default function BlogsAllArticlesSection() {
                 key={article.id}
                 className="grid items-start"
                 style={{
-                  gridTemplateColumns: 'clamp(280px, 28vw, 480px) minmax(320px, 620px)',
-                  gap: 'clamp(20px, 2vw, 34px)',
+                  gridTemplateColumns: 'clamp(280px, 26vw, 450px) minmax(320px, 1fr)',
+                  gap: 'clamp(20px, 1.8vw, 30px)',
                 }}
               >
                 <img
-                  src={articleThumb}
+                  src={article.img}
                   alt={article.title}
                   className="block w-full h-auto object-cover"
+                  style={{ aspectRatio: '16 / 9' }}
                 />
 
-                <div style={{ maxWidth: '620px' }}>
+                <div style={{ maxWidth: '760px', paddingTop: 'clamp(4px, 0.35vw, 6px)' }}>
                   <p
                     className="font-metro"
-                    style={{ fontSize: '16px', color: '#929292', marginBottom: 'clamp(6px, 0.45vw, 8px)' }}
+                    style={{ fontSize: 'clamp(12px, 0.9vw, 17px)', color: '#929292', marginBottom: 'clamp(6px, 0.45vw, 8px)' }}
                   >
                     {article.date}
                   </p>
-                  <h3
-                    className="font-nexa"
-                    style={{
-                      fontSize: '40px',
-                      fontWeight: 400,
-                      color: '#1863da',
-                      lineHeight: '1.2',
-                      marginBottom: 'clamp(4px, 0.35vw, 6px)',
-                    }}
-                  >
-                    {article.title}
-                  </h3>
+                  <a href={article.href} target="_blank" rel="noreferrer" className="no-underline">
+                    <h3
+                      className="font-nexa"
+                      style={{
+                        fontSize: 'clamp(24px, 2.3vw, 44px)',
+                        fontWeight: 400,
+                        color: '#1863da',
+                        lineHeight: '1.14',
+                        marginBottom: 'clamp(10px, 0.8vw, 14px)',
+                      }}
+                    >
+                      {article.title}
+                    </h3>
+                  </a>
                   <p
                     className="font-metro text-black"
-                    style={{ fontSize: '20px', lineHeight: '1.45', maxWidth: '620px' }}
+                    style={{ fontSize: 'clamp(14px, 1.15vw, 22px)', lineHeight: '1.5', maxWidth: '720px', margin: 0 }}
                   >
                     {article.body}
                   </p>
