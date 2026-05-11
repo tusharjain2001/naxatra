@@ -15,7 +15,7 @@ const features = [
   {
     icon: iconCompact,
     bg: featureBg1,
-    title: 'Smart, Compact & More Efficient',
+    title: 'Compact & More Efficient',
     desc: 'Experience 10% higher average efficiency and 20% less weight - more power, less energy waste.',
   },
   {
