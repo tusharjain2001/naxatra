@@ -43,7 +43,7 @@ const ITEMS = [
 
 export default function StickyContactSidebar() {
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end">
+    <div className="fixed right-0 top-1/2 z-50 flex -translate-y-1/2 flex-col items-end overflow-hidden rounded-l-lg">
       {ITEMS.map((item) => {
         const Tag = item.href ? 'a' : 'div';
         const linkProps = item.href
@@ -59,7 +59,7 @@ export default function StickyContactSidebar() {
           {/* Label — slides out to the left on hover */}
           <div className="overflow-hidden max-w-0 group-hover:max-w-[180px] transition-all duration-300 ease-in-out">
             <div
-              className="flex items-center gap-2 h-full px-4 bg-[#1863DA] text-white text-sm font-semibold whitespace-nowrap"
+              className="flex h-full items-center gap-2 whitespace-nowrap bg-[#1863DA] px-4 text-sm font-semibold text-white"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               {item.label}
@@ -70,7 +70,7 @@ export default function StickyContactSidebar() {
           </div>
 
           {/* Icon box */}
-          <div className="w-12 h-12 bg-[#1863DA] flex items-center justify-center shrink-0 transition-colors duration-200 group-hover:bg-[#1456c0]">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#1863DA] transition-colors duration-200 group-hover:bg-[#1456c0]">
             {item.icon}
           </div>
         </Tag>
