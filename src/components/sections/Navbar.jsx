@@ -9,6 +9,7 @@ const navItems = [
   { to: '/technology', label: 'Technology' },
   { to: '/case-studies', label: 'Case Studies' },
   { to: '/insights-blogs', label: 'Insights & Blogs' },
+  { to: '/careers', label: 'Careers' },
   { to: '/about', label: 'About' },
 ];
 
