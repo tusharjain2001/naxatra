@@ -1,5 +1,5 @@
 import { useState } from "react";
-import reqForCust from "../../../assets/images/req-for-cust.png";
+import reqForCust from "../../../assets/images/req-for-cust.svg";
 import wireframe from "../../../assets/images/product-detail-wireframe.png";
 import expandButton from "../../../assets/socialhandles/expand.png";
 import {

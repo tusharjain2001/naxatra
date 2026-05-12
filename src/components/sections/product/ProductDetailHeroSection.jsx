@@ -1,5 +1,5 @@
-import reqForCust from '../../../assets/images/req-for-cust.png';
-import reqSpecSheet from '../../../assets/images/req-spec-sheet.png';
+import reqForCust from '../../../assets/images/req-for-cust.svg';
+import reqSpecSheet from '../../../assets/images/req-spec-sheet.svg';
 import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
 export default function ProductDetailHeroSection({ product }) {

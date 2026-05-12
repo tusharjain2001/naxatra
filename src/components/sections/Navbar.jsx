@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const isDark = pathname !== '/' && pathname !== '/products' && !pathname.startsWith('/products/');
 
-  const linkClass = `group inline-flex items-center text-[clamp(10px,0.55vw,12px)] uppercase font-medium transition-colors duration-300 ${
+  const linkClass = `group inline-flex items-center text-[clamp(11px,0.55vw,12px)] uppercase font-medium transition-colors duration-300 ${
     isDark ? 'text-white hover:text-[#8bb5ff]' : 'text-[#515151] hover:text-[#1863da]'
   }`;
   const bracketClass = `inline-block transition-all duration-300 ${

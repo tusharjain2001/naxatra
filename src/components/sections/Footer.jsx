@@ -3,12 +3,10 @@ import footerVectorDeco from '../../assets/images/footer-vector-deco.svg';
 import footerEllipseDeco from '../../assets/images/footer-ellipse-deco.svg';
 import footerPlusGrid from '../../assets/images/footer-plus-grid.png';
 import footerBrandCard from '../../assets/images/footer-brand-card.svg';
-import footerPinCorp from '../../assets/images/footer-pin-corp.svg';
-import footerPinMfg from '../../assets/images/footer-pin-mfg.svg';
-import facebookIcon from '../../assets/socialhandles/fbblue.png';
-import instagramIcon from '../../assets/socialhandles/intsablue.png';
-import linkedinIcon from '../../assets/socialhandles/linkedinblue.png';
-import twitterIcon from '../../assets/socialhandles/twitterblue.png';
+import facebookIcon from '../../assets/socialhandles/facebook.svg';
+import instagramIcon from '../../assets/socialhandles/insta.svg';
+import linkedinIcon from '../../assets/socialhandles/linkedin.svg';
+import twitterIcon from '../../assets/socialhandles/twitter.svg';
 
 const W = 1920;
 const H = 763;
@@ -83,6 +81,13 @@ const locateAddressStyle = {
   whiteSpace: 'normal',
 };
 
+const socialIconStyle = {
+  width: '24px',
+  height: '24px',
+  objectFit: 'contain',
+  display: 'block',
+};
+
 export default function Footer() {
   return (
     <footer id="contact" className="font-nexa">
@@ -137,33 +142,22 @@ export default function Footer() {
         <div
           className="absolute"
           style={{
-            left: px(185),
+            left: px(207),
             top: py(432),
             display: 'flex',
             alignItems: 'center',
+            gap: 'clamp(14px, 1.25vw, 24px)',
           }}
         >
-          {SOCIAL_ICONS.map((icon, index) => (
+          {SOCIAL_ICONS.map((icon) => (
             <a
               key={icon.alt}
               href={icon.href}
               target="_blank"
               rel="noreferrer"
-              style={{
-                marginLeft: index === 0 ? '0' : '-34px',
-                display: 'block',
-              }}
+              style={{ display: 'block' }}
             >
-              <img
-                src={icon.src}
-                alt={icon.alt}
-                style={{
-                  width: '68px',
-                  height: '68px',
-                  objectFit: 'contain',
-                  display: 'block',
-                }}
-              />
+              <img src={icon.src} alt={icon.alt} style={socialIconStyle} />
             </a>
           ))}
         </div>
@@ -206,25 +200,12 @@ export default function Footer() {
             <div>
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: 'clamp(10px, 0.9vw, 17px)',
                   marginBottom: 'clamp(8px, 0.78vw, 15px)',
                 }}
               >
-                <img
-                  src={footerPinCorp}
-                  alt=""
-                  style={{
-                    width: 'clamp(10px, 0.94vw, 18px)',
-                    height: 'clamp(10px, 0.94vw, 18px)',
-                    objectFit: 'contain',
-                    display: 'block',
-                  }}
-                />
                 <p style={locateTitleStyle}>Corporate Office</p>
               </div>
-              <div style={{ marginLeft: 'clamp(20px, 1.85vw, 36px)' }}>
+              <div>
                 <p style={locateAddressStyle}>Sector 44, Gurugram,</p>
                 <p style={locateAddressStyle}>Haryana 122003</p>
               </div>
@@ -233,25 +214,12 @@ export default function Footer() {
             <div>
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: 'clamp(10px, 0.9vw, 17px)',
                   marginBottom: 'clamp(8px, 0.78vw, 15px)',
                 }}
               >
-                <img
-                  src={footerPinMfg}
-                  alt=""
-                  style={{
-                    width: 'clamp(10px, 0.94vw, 18px)',
-                    height: 'clamp(10px, 0.94vw, 18px)',
-                    objectFit: 'contain',
-                    display: 'block',
-                  }}
-                />
                 <p style={locateTitleStyle}>Manufacturing Facility</p>
               </div>
-              <div style={{ marginLeft: 'clamp(20px, 1.85vw, 36px)' }}>
+              <div>
                 <p style={locateAddressStyle}>Paldi-Kankaj, Dakroi Ahmedabad,</p>
                 <p style={locateAddressStyle}>Gujarat 382425</p>
               </div>
@@ -326,21 +294,17 @@ export default function Footer() {
               </p>
               <div
                 className="relative mt-5 flex items-center"
-                style={{ width: 'fit-content', margin: '20px auto 0', transform: 'translateX(10px)' }}
+                style={{ width: 'fit-content', margin: '20px auto 0', gap: '18px' }}
               >
-                {SOCIAL_ICONS.map((icon, index) => (
+                {SOCIAL_ICONS.map((icon) => (
                   <a
                     key={icon.alt}
                     href={icon.href}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ marginLeft: index === 0 ? '0' : '-34px', display: 'block' }}
+                    style={{ display: 'block' }}
                   >
-                    <img
-                      src={icon.src}
-                      alt={icon.alt}
-                      className="h-[68px] w-[68px] object-contain"
-                    />
+                    <img src={icon.src} alt={icon.alt} className="h-[19.36px] w-[19.36px] object-contain" />
                   </a>
                 ))}
               </div>
@@ -383,22 +347,20 @@ export default function Footer() {
                 </h4>
                 <div className="grid grid-cols-2 gap-[18px]">
                   <div>
-                    <div className="flex items-center gap-2">
-                      <img src={footerPinCorp} alt="" className="h-[10px] w-[10px] object-contain" />
+                    <div>
                       <p className="whitespace-nowrap mt-[5px] text-[10px] font-extrabold uppercase leading-[1.3] text-white">Corporate Office</p>
                     </div>
-                    <div className="ml-[18px] mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
+                    <div className="mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
                       <p>Sector 44, Gurugram,</p>
                       <p>Haryana 122003</p>
                     </div>
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-2">
-                      <img src={footerPinMfg} alt="" className=" h-[10px] w-[10px] object-contain" />
+                    <div>
                       <p className="whitespace-nowrap mt-[5px] text-[10px] font-extrabold uppercase leading-[1.3] text-white">Manufacturing Facility</p>
                     </div>
-                    <div className="ml-[18px] mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
+                    <div className="mt-1 space-y-[2px] text-[10px] leading-[1.35] text-white">
                       <p>Paldi-Kankaj, Dakroi</p>
                       <p>Ahmedabad, Gujarat 382425</p>
                     </div>
