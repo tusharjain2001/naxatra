@@ -26,6 +26,26 @@ const CATEGORIES = [
 
 const MOTOR_APPLICATIONS = ['Industrial', 'E-Mobility', 'Power Tools', 'Robotics', 'Other'];
 
+function SubmitRow({ loading, success, error, imgStyle }) {
+  return (
+    <div className="flex flex-col items-center" style={{ gap: '8px' }}>
+      <button type="submit" disabled={loading} aria-label="Submit Enquiry" className="block disabled:opacity-60">
+        <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={imgStyle} />
+      </button>
+      {success && (
+        <p className="font-metro text-center" style={{ color: '#16a34a', fontSize: 'clamp(11px, 0.73vw, 14px)' }}>
+          Submitted successfully! We'll be in touch soon.
+        </p>
+      )}
+      {error && (
+        <p className="font-metro text-center" style={{ color: '#dc2626', fontSize: 'clamp(11px, 0.73vw, 14px)' }}>
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function SelectField({ label, options, value, onChange, required }) {
   return (
     <div className="flex flex-col" style={{ gap: '4px', flex: '1 1 clamp(200px, 25.6vw, 491px)' }}>
@@ -115,10 +135,61 @@ export default function ContactFormSection() {
     partnershipType: '',
   });
 
+  const [status, setStatus] = useState({ loading: false, success: false, error: '' });
   const set = (key) => (val) => setForm((f) => ({ ...f, [key]: val }));
 
-  const handleSubmit = (e) => {
+  const API_BASE = import.meta.env.VITE_API_URL || '';
+
+  const PAYLOADS = {
+    motors: () => ({
+      motorApplication: form.motorApplication,
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      company: form.company,
+      message: form.message,
+    }),
+    investment: () => ({
+      investmentCompanyName: form.investmentCompanyName,
+      companyWebsite: form.companyWebsite,
+      fullName: form.fullName,
+      phone: form.phone,
+      email: form.email,
+    }),
+    partnership: () => ({
+      company: form.company,
+      websiteLink: form.websiteLink,
+      partnershipType: form.partnershipType,
+      fullName: form.fullName,
+      phone: form.phone,
+      email: form.email,
+      message: form.message,
+    }),
+    other: () => ({
+      company: form.company,
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      websiteLink: form.websiteLink,
+      message: form.message,
+    }),
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus({ loading: true, success: false, error: '' });
+    try {
+      const res = await fetch(`${API_BASE}/api/contact/${activeCategory}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(PAYLOADS[activeCategory]()),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Submission failed.');
+      setStatus({ loading: false, success: true, error: '' });
+    } catch (err) {
+      setStatus({ loading: false, success: false, error: err.message });
+    }
   };
 
   return (
@@ -252,11 +323,7 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <button type="submit" aria-label="Submit Enquiry" className="block">
-                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
-              </button>
-            </div>
+            <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
 
@@ -282,11 +349,7 @@ export default function ContactFormSection() {
               <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
             </div>
 
-            <div className="flex justify-center">
-              <button type="submit" aria-label="Submit Enquiry" className="block">
-                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
-              </button>
-            </div>
+            <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
 
@@ -323,11 +386,7 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <button type="submit" aria-label="Submit Enquiry" className="block">
-                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
-              </button>
-            </div>
+            <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
 
@@ -378,11 +437,7 @@ export default function ContactFormSection() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <button type="submit" aria-label="Submit Enquiry" className="block">
-                <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: '150px', height: 'auto' }} />
-              </button>
-            </div>
+            <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
       </div>
@@ -519,11 +574,7 @@ export default function ContactFormSection() {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
-                  <button type="submit" aria-label="Submit Enquiry" className="block">
-                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
-                  </button>
-                </div>
+                <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
             )}
 
@@ -549,11 +600,7 @@ export default function ContactFormSection() {
                   <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
                 </div>
 
-                <div className="flex justify-center">
-                  <button type="submit" aria-label="Submit Enquiry" className="block">
-                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
-                  </button>
-                </div>
+                <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
             )}
 
@@ -590,11 +637,7 @@ export default function ContactFormSection() {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
-                  <button type="submit" aria-label="Submit Enquiry" className="block">
-                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
-                  </button>
-                </div>
+                <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
             )}
 
@@ -647,11 +690,7 @@ export default function ContactFormSection() {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
-                  <button type="submit" aria-label="Submit Enquiry" className="block">
-                    <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
-                  </button>
-                </div>
+                <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
             )}
           </div>
