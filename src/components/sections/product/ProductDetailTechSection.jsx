@@ -473,8 +473,8 @@ function TechnicalDetailsContent({
 export default function ProductDetailTechSection({ product }) {
   const [techOpen, setTechOpen] = useState(true);
   const [techExpanded, setTechExpanded] = useState(false);
-  const [appOpen, setAppOpen] = useState(false);
-  const [motorOpen, setMotorOpen] = useState(false);
+  const [appOpen, setAppOpen] = useState(true);
+  const [motorOpen, setMotorOpen] = useState(true);
 
   const isSingle = !!product.singleSpec;
   const variants = product.variants || [];
