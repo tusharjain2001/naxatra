@@ -73,6 +73,9 @@ export default function ProductDetailHeroSection({ product }) {
                 height: '173px',
                 objectFit: 'cover',
                 zIndex: 2,
+                borderRadius: '18px',
+                WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 58%, rgba(0,0,0,0.92) 72%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0) 100%)',
+                maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 58%, rgba(0,0,0,0.92) 72%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0) 100%)',
               }}
             />
           ) : (
@@ -246,9 +249,12 @@ export default function ProductDetailHeroSection({ product }) {
                 transform: 'translateX(-50%)',
                 top: 'clamp(60px, 6.9vw, 133px)',
                 width: 'clamp(200px, 32.3vw, 620px)',
-                height: 'clamp(155px, 28.2vw, 543px)',
+                height: 'clamp(140px, 24.8vw, 480px)',
                 objectFit: 'cover',
                 zIndex: 2,
+                borderRadius: 'clamp(18px, 2vw, 32px)',
+                WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 58%, rgba(0,0,0,0.92) 72%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0) 100%)',
+                maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 58%, rgba(0,0,0,0.92) 72%, rgba(0,0,0,0.45) 88%, rgba(0,0,0,0) 100%)',
               }}
             />
           ) : (
