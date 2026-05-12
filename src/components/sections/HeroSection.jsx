@@ -1,8 +1,8 @@
 import heroBg from '../../assets/images/hero-bg.svg';
-import heroOverlay from '../../assets/images/hero-overlay.svg';
-import heroMotor from '../../assets/images/hero-motor.png';
 import exploreOptions from '../../assets/images/explore-options.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
+
+const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778601850/Hero_frame_m2stbb.mp4';
 
 export default function HeroSection() {
   const advancedText = 'Advanced';
@@ -66,12 +66,15 @@ export default function HeroSection() {
         </a>
 
         <div className="absolute right-[clamp(48px,8vw,168px)] top-[clamp(44px,5vw,132px)] aspect-[729/537] w-[clamp(250px,33vw,610px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:w-[199px] max-[720px]:h-[153.943px]">
-          <img
-            src={heroMotor}
-            alt="Advanced Motor"
-            className="absolute bottom-0 left-[11.5%] right-[11.8%] top-[4.7%] h-[95.3%] w-[76.7%] object-contain"
+          <video
+            src={HERO_VIDEO_URL}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Advanced Motor"
+            className="absolute inset-0 h-full w-full object-cover"
           />
-          <img src={heroOverlay} alt="" className="absolute inset-0 h-full w-full" />
         </div>
       </div>
     </section>
