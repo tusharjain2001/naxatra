@@ -4,7 +4,7 @@ const featuredArticle = {
   title: 'Fund Raise',
   date: 'May 11, 2023',
   desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
-  href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+  href: 'https://www.linkedin.com/posts/abhilashmaurya_were-thrilled-to-announce-that-naxatra-labs-share-7409155986005012482-OHGe?utm_source=social_share_send&utm_medium=ios_app&rcm=ACoAACNV4IgBez6-heMHV_IPrxSHlTlMR7CqRco&utm_campaign=copy_link',
   img: featuredArticleImage,
 };
 

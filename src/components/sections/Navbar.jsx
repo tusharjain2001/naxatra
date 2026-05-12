@@ -35,14 +35,14 @@ export default function Navbar() {
         <div className="mx-auto flex h-full w-[calc(100%_-_46px)] max-w-[1793px] items-center justify-between max-[720px]:w-[calc(100%_-_24px)]">
 
           {/* Logo */}
-          <div className="h-[18px] max-[720px]:h-[14px] w-auto">
+          <Link to="/" className="block h-[18px] max-[720px]:h-[14px] w-auto" aria-label="Go to homepage">
             <img
               src={logo}
               alt="Naxatra Labs"
               className="h-full w-auto object-contain"
               style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
             />
-          </div>
+          </Link>
 
           {/* Desktop nav links */}
           <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">

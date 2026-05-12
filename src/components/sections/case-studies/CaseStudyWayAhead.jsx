@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import aheadMotor from '../../../assets/images/cs-ahead-motor.png';
-import wayAheadCta from '../../../assets/images/awy-ahead-cta.png';
+import wayAheadCta from '../../../assets/images/awy-ahead-cta.svg';
 
 export default function CaseStudyWayAhead() {
   return (
