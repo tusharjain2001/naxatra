@@ -1,19 +1,41 @@
+import { useState } from 'react';
 import efficientMotors from '../../assets/images/efficient-motors.png';
 import scooter from '../../assets/images/scooter.jpg';
+import agricultureImage from '../../assets/socialhandles/agriculture-equipment.jpg';
+import powerToolsImage from '../../assets/socialhandles/powertools.jpg';
+import droneImage from '../../assets/socialhandles/drone.jpg';
 
 const categories = [
   {
+    id: 'ev-scooters',
     label: 'EV Scooters',
+    image: scooter,
     desc: 'Designed to tackle Indian conditions, diverse terrains, and tough environmental conditions, our motors deliver unmatched durability and performance wherever the journey takes you.',
   },
-  { label: 'Agricultural Equipment' },
-  { label: 'Power Tools' },
-  { label: 'Drone' },
+  {
+    id: 'agricultural-equipment',
+    label: 'Agricultural Equipment',
+    image: agricultureImage,
+    desc: 'Where Farming Gets Smarter - Advanced motor solutions designed to enhance productivity in modern farming. Our motors power essential agricultural tools, offering high efficiency, durability, and ease of use in harsh rural environments. From irrigation systems to automated machinery, we help farmers grow more with less effort.',
+  },
+  {
+    id: 'power-tools',
+    label: 'Power Tools',
+    image: powerToolsImage,
+    desc: 'Where Precision Powers Performance - High torque motors for power tools that deliver strength and durability with every turn. Built to withstand rigorous use, our motors enable craftsmen, carpenters, and industrial users to work with speed, safety, and accuracy every single day.',
+  },
+  {
+    id: 'drone',
+    label: 'Drone',
+    image: droneImage,
+    desc: 'Where Innovation Takes Flight - Reliable, high speed motors built for smooth flying and stable performance. Perfect for everything from capturing aerial shots, designed to handle different conditions with ease, making every flight safe and steady.',
+  },
 ];
 
 export default function ApplicationsSection() {
-  const activeCategory = categories[0];
-  const inactiveCategories = categories.slice(1);
+  const [activeId, setActiveId] = useState(categories[0].id);
+  const activeCategory = categories.find((category) => category.id === activeId) ?? categories[0];
+  const inactiveCategories = categories.filter((category) => category.id !== activeCategory.id);
 
   return (
     <section className="w-full bg-[#f5fafa] py-[clamp(42px,5vw,96px)] max-[720px]:py-10">
@@ -45,8 +67,8 @@ export default function ApplicationsSection() {
           <div className="border-t border-black/12 pt-[clamp(16px,1.2vw,20px)] max-[720px]:border-t-0 max-[720px]:pt-0">
             <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-start gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
               <img
-                src={scooter}
-                alt="EV Scooters"
+                src={activeCategory.image}
+                alt={activeCategory.label}
                 className="block aspect-[424/259] w-full object-cover max-[720px]:w-[276px] max-[720px]:h-[168.594px] max-[720px]:aspect-auto max-[720px]:mx-auto"
               />
 
@@ -66,20 +88,24 @@ export default function ApplicationsSection() {
           </div>
 
           <div className="mt-[clamp(20px,1.8vw,34px)] border-t border-black/12">
-            {inactiveCategories.map((category) => (
-              <div
-                key={category.label}
-                className="border-b border-black/12 py-[clamp(12px,1.1vw,20px)]"
-              >
-                <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
-                  <div className="max-[920px]:hidden" />
-                  <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 max-[920px]:text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
-                    <span>{category.label}</span>
-                    <span className="hidden max-[720px]:inline text-[#515151] text-[18px] font-light leading-none shrink-0">+</span>
-                  </p>
-                </div>
-              </div>
-            ))}
+            {inactiveCategories.map((category) => {
+              return (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => setActiveId(category.id)}
+                  className="block w-full border-b border-black/12 bg-transparent py-[clamp(12px,1.1vw,20px)]"
+                >
+                  <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
+                    <div className="max-[920px]:hidden" />
+                    <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
+                      <span>{category.label}</span>
+                      <span className="hidden max-[720px]:inline text-[18px] font-light leading-none shrink-0">+</span>
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
