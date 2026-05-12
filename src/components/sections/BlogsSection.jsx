@@ -1,6 +1,6 @@
-import blog1 from '../../assets/images/blog-1.jpg';
-import blog2 from '../../assets/images/blog-2.jpg';
-import blog3 from '../../assets/images/blog-3.jpg';
+import blog1 from '../../assets/images/blog-1.png';
+import blog2 from '../../assets/images/blog-2.png';
+import blog3 from '../../assets/images/blog-3.png';
 import bg1 from '../../assets/images/blog-bg-1.svg';
 import bg2 from '../../assets/images/blog-bg-2.svg';
 
@@ -60,13 +60,6 @@ export default function BlogsSection() {
                     alt={blog.title}
                     className="h-full w-full object-cover"
                     style={{ display: 'block' }}
-                  />
-                  <div
-                    className="absolute bottom-0 left-0 right-0"
-                    style={{
-                      height: 'clamp(70px, 7vw, 112px)',
-                      background: 'linear-gradient(to top, rgba(77,214,196,0.8) 0.443%, rgba(77,214,196,0) 100%)',
-                    }}
                   />
                 </div>
 
