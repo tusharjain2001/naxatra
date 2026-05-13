@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from "../../assets/images/logo.svg";
 import contact from "../../assets/images/navbar-contact.svg";
+import contactGray from "../../assets/images/contact-gray.svg";
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -60,9 +61,8 @@ export default function Navbar() {
             <Link
               to="/contact"
               className="overflow-hidden h-[42px] max-[720px]:h-[32px]"
-              
             >
-              <img src={contact} alt="Contact us" className="h-full w-auto" />
+              <img src={isDark ? contactGray : contact} alt="Contact us" className="h-full w-auto" />
             </Link>
 
             <button
