@@ -60,7 +60,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               className="overflow-hidden h-[42px] max-[720px]:h-[32px]"
-              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 71%, 84% 100%, 0 100%)' }}
+              
             >
               <img src={contact} alt="Contact us" className="h-full w-auto" />
             </Link>

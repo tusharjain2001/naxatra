@@ -248,7 +248,7 @@ export default function Footer() {
               borderTop: '1px solid rgba(255, 255, 255, 0.9)',
             }}
           />
-          <span style={{ position: 'absolute', left: px(129), color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap' }}>
+          <span style={{ position: 'absolute', left: px(149), color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap' }}>
             Copyright © 2026
           </span>
           <div

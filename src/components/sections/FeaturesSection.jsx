@@ -40,7 +40,7 @@ export default function FeaturesSection() {
           {features.map((feature, i) => (
             <div
               key={i}
-              className="relative min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
+              className="relative md:w-[320px] min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
             >
               <img
                 src={feature.bg}

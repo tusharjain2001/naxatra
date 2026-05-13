@@ -78,24 +78,24 @@ export default function CaseStudyContent() {
                 </p>
                 <ul className="font-metro" style={{ fontSize: '10px', lineHeight: '1.45', color: '#000', paddingLeft: '1.1em', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.45em' }}>
                   <li>
-                    <strong>Inefficiency &amp; Energy Loss:</strong> Brushed motors operate through physical
+                    <span className="font-medium">Inefficiency &amp; Energy Loss:</span> Brushed motors operate through physical
                     contact between brushes and a commutator, causing friction. This leads
                     to energy loss as heat, with peak efficiencies typically limited to ~75-80%.
                   </li>
                   <li>
-                    <strong>Shorter Runtime:</strong> Energy waste reduces battery life, limiting cordless
+                    <span className="font-medium">Shorter Runtime:</span> Energy waste reduces battery life, limiting cordless
                     tool performance in high-demand environments.
                   </li>
                   <li>
-                    <strong>Wear &amp; Maintenance:</strong> Constant friction causes brush and commutator
+                    <span className="font-medium">Wear &amp; Maintenance:</span> Constant friction causes brush and commutator
                     wear, increasing maintenance frequency and downtime.
                   </li>
                   <li>
-                    <strong>Noise &amp; Vibration:</strong> Mechanical contact creates excessive operational
+                    <span className="font-medium">Noises &amp; Vibration:</span> Mechanical contact creates excessive operational
                     noise and vibrations-problematic in tools used for 8+ hours a day.
                   </li>
                   <li>
-                    <strong>Safety Concerns:</strong> Electrical arcing at the contact points makes brushed
+                    <span className="font-medium">Safety Concerns:</span> Electrical arcing at the contact points makes brushed
                     motors unsuitable for hazardous environments unless heavily certified.
                   </li>
                 </ul>
@@ -173,25 +173,25 @@ export default function CaseStudyContent() {
               </p>
               <ul className="font-metro" style={{ ...BODY_TEXT, paddingLeft: '1.5em', display: 'flex', flexDirection: 'column', gap: '0.5em' }}>
                 <li>
-                  <strong>Inefficiency &amp; Energy Loss:</strong>{' '}
+                  <span className='font-medium'>Inefficiency &amp; Energy Loss:</span>{' '}
                   Brushed motors operate through physical contact between brushes and a commutator, causing friction. This
                   leads to energy loss as heat, with peak efficiencies typically limited to ~75-80%.
                 </li>
                 <li>
-                  <strong>Shorter Runtime:</strong>{' '}
+                  <span className='font-medium'>Shorter Runtime:</span>{' '}
                   Energy waste reduces battery life, limiting cordless tool performance in high-demand environments.
                 </li>
                 <li>
-                  <strong>Wear &amp; Maintenance:</strong>{' '}
+                  <span className='font-medium'>Wear &amp; Maintenance:</span>{' '}
                   Constant friction causes brush and commutator wear, increasing maintenance frequency and downtime.
                 </li>
                 <li>
-                  <strong>Noise &amp; Vibration:</strong>{' '}
+                  <span className='font-medium'>Noises &amp; Vibration:</span>{' '}
                   Mechanical contact creates excessive operational noise and vibrations-problematic in tools used for 8+
                   hours a day.
                 </li>
                 <li>
-                  <strong>Safety Concerns:</strong>{' '}
+                  <span className='font-medium'>Safety Concerns:</span>{' '}
                   Electrical arcing at the contact points makes brushed motors unsuitable for hazardous environments unless
                   heavily certified.
                 </li>

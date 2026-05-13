@@ -1,5 +1,5 @@
 import cardBorder from '../../../assets/images/tech-about-image.svg';
-import techSectionTwo from '../../../assets/images/tech-sectiontwo.png';
+import techSectionTwo from '../../../assets/images/learn-more.svg';
 
 export default function TechAboutSection() {
   return (
