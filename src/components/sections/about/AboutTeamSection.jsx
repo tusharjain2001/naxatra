@@ -1,19 +1,11 @@
 import abhilash from '../../../assets/images/abhilash.png';
 import arnav from '../../../assets/images/arnav.png';
 import piyush from '../../../assets/images/piyush.png';
-import aditya from '../../../assets/images/aditya.png';
-import amit from '../../../assets/images/amit.png';
-import vijay from '../../../assets/images/vijay.png';
 
 const TEAM = [
   { name: 'Abhilash Maurya', card: abhilash },
-  { name: 'Arnav Biswas', card: arnav },
   { name: 'Piyush Verma', card: piyush },
-  { name: 'Aditya Singh', card: aditya },
-  { name: 'Amit Kendre', card: amit },
-  { name: 'Vijay Nair', card: vijay },
-  { name: 'Amit Kendre duplicate', card: amit },
-  { name: 'Vijay Nair duplicate', card: vijay },
+  { name: 'Arnav Biswas', card: arnav },
 ];
 
 function PersonCard({ person }) {
@@ -38,7 +30,7 @@ export default function AboutTeamSection() {
         className="mx-auto md:hidden"
         style={{
           maxWidth: '460px',
-          padding: '22px 14px 28px',
+          padding: '22px 30px 28px',
         }}
       >
         <div
@@ -110,7 +102,7 @@ export default function AboutTeamSection() {
         </h3>
 
         <div
-          className="grid grid-cols-2"
+          className="grid grid-cols-1"
           style={{
             gap: '12px',
           }}
@@ -209,10 +201,10 @@ export default function AboutTeamSection() {
           </h3>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3"
             style={{
               gap: 'clamp(12px, 1vw, 20px)',
-              marginTop: 'clamp(24px, 2.5vw, 48px)',
+              marginTop: 0,
             }}
           >
             {TEAM.map((p) => <PersonCard key={p.name} person={p} />)}
