@@ -11,7 +11,7 @@ import narayan from '../../../assets/images/narayanenv.png';
 const TOP_INVESTORS = [
   { name: 'Mohit Tandon', card: mohit, aspectRatio: '315 / 359' },
   { name: 'Himanshu Aggarwal', card: himanshu, aspectRatio: '315 / 359' },
-  { name: 'Vijay Shekhar Sharma', card: vijayShekhar, aspectRatio: '291 / 358' },
+  { name: 'Vijay Shekhar Sharma', card: vijayShekhar, aspectRatio: '315 / 359' },
 ];
 
 const BOTTOM_INVESTORS = [
@@ -60,7 +60,7 @@ export default function AboutInvestorsSection() {
         </h2>
 
         <div
-          className="flex items-center justify-center"
+          className="flex items-center flex-col justify-center"
           style={{
             gap: '26px',
             marginBottom: '24px',
@@ -70,10 +70,11 @@ export default function AboutInvestorsSection() {
             src={logoNavi}
             alt="Rainmatter"
             style={{
-              width: '132px',
+              width: '232px',
               height: 'auto',
               objectFit: 'contain',
               flexShrink: 0,
+              marginTop: '-82px',
             }}
           />
           <img
@@ -84,6 +85,7 @@ export default function AboutInvestorsSection() {
               height: 'auto',
               objectFit: 'contain',
               flexShrink: 0,
+              marginTop: '-122px',
             }}
           />
         </div>
@@ -130,7 +132,7 @@ export default function AboutInvestorsSection() {
           <div
             className="justify-self-start text-left"
             style={{
-              width: 'clamp(180px, 18vw, 260px)',
+              width: '320px',
             }}
           >
             <h2
@@ -146,30 +148,37 @@ export default function AboutInvestorsSection() {
             </h2>
 
             <div
-              className="flex items-center justify-start"
+              className="flex flex-col items-start justify-start"
               style={{
-                gap: 'clamp(14px, 1.6vw, 24px)',
-                flexWrap: 'nowrap',
+                gap: '4px',
+                marginTop: '-6px',
               }}
             >
               <img
                 src={logoNavi}
                 alt="Rainmatter"
                 style={{
-                  width: 'clamp(86px, 7.4vw, 118px)',
-                  height: 'auto',
+                  width: '400px',
+                  height: '300px',
                   objectFit: 'contain',
+                  objectPosition: 'left center',
                   flexShrink: 0,
+                  display: 'block',
+                  marginBottom: '-12px',
+                  marginTop: '-92px',
+                  marginLeft: '-30px',
                 }}
               />
               <img
                 src={logoBvfl}
                 alt="GVFL"
                 style={{
-                  width: 'clamp(74px, 6.8vw, 108px)',
+                  width: '138px',
                   height: 'auto',
                   objectFit: 'contain',
                   flexShrink: 0,
+                  display: 'block',
+                  marginTop: '-92px',
                 }}
               />
             </div>
