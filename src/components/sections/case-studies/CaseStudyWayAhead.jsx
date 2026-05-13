@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import aheadMotor from '../../../assets/images/cs-ahead-motor.png';
 import wayAheadCta from '../../../assets/images/awy-ahead-cta.svg';
+import backToCase from '../../../assets/images/back to case.svg';
 
 export default function CaseStudyWayAhead() {
   return (
@@ -60,17 +61,13 @@ export default function CaseStudyWayAhead() {
               />
             </a>
 
-            <Link
-              to="/case-studies"
-              className="font-metro underline flex items-center gap-2"
-              style={{
-                color: '#1863da',
-                fontSize: '10px',
-                lineHeight: '1.5',
-              }}
-            >
-              Back to Case Studies
-              <span style={{ fontSize: '1.1em' }}>-&gt;</span>
+            <Link to="/case-studies" className="inline-flex items-center justify-center">
+              <img
+                src={backToCase}
+                alt="Back to Case Studies"
+                className="block h-auto object-contain"
+                style={{ width: '210px' }}
+              />
             </Link>
           </div>
         </div>
@@ -111,8 +108,8 @@ export default function CaseStudyWayAhead() {
               style={{ fontSize: '14px', lineHeight: '1.7' }}
             >
               As the industry shifts toward brushless systems, offering BLDC-powered tools is no longer a premium
-              add-on - it's becoming a baseline expectation. The results of this study unequivocally demonstrate that
-              Naxatra Labs' motor technology provides a transformative upgrade over traditional brushed DC motors for
+              add-on - it&apos;s becoming a baseline expectation. The results of this study unequivocally demonstrate that
+              Naxatra Labs&apos; motor technology provides a transformative upgrade over traditional brushed DC motors for
               power tool applications. The documented improvements in efficiency, power, battery runtime, durability,
               thermal management, and noise reduction collectively address the core limitations of brushed technology
               and directly translate into significant business advantages for power tool manufacturers.
@@ -121,7 +118,7 @@ export default function CaseStudyWayAhead() {
               className="font-metro text-black"
               style={{ fontSize: '14px', lineHeight: '1.7' }}
             >
-              If you're a power tool manufacturer looking to future-proof your products and stay ahead of the curve,
+              If you&apos;re a power tool manufacturer looking to future-proof your products and stay ahead of the curve,
               Naxatra Labs can help. Our team specializes in custom BLDC motor solutions designed for high-performance
               industrial applications.
             </p>
@@ -145,16 +142,15 @@ export default function CaseStudyWayAhead() {
 
               <Link
                 to="/case-studies"
-                className="font-metro underline flex mt-10 items-center gap-2 self-end"
-                style={{
-                  color: '#1863da',
-                  fontSize: 'clamp(12px, 1.04vw, 20px)',
-                  lineHeight: '1.5',
-                  marginRight: 0,
-                }}
+                className="inline-flex mt-10 items-center self-end"
+                style={{ marginRight: 0 }}
               >
-                Back to Case Studies
-                <span style={{ fontSize: '1.1em' }}>-&gt;</span>
+                <img
+                  src={backToCase}
+                  alt="Back to Case Studies"
+                  className="block h-auto object-contain"
+                  style={{ width: '280px' }}
+                />
               </Link>
             </div>
           </div>

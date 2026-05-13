@@ -110,7 +110,10 @@ export default function CaseStudyContent() {
             >
               Our Solution
             </h2>
-            <div className="relative overflow-hidden" style={{ borderRadius: '4px' }}>
+            <div
+              className="relative overflow-hidden"
+              style={{ borderRadius: '4px', clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%)' }}
+            >
               <div
                 className="relative flex flex-col"
                 style={{ padding: '14px', background: '#000', borderRadius: '4px', gap: '12px' }}
@@ -205,7 +208,7 @@ export default function CaseStudyContent() {
 
           <div
             className="relative overflow-hidden"
-            style={{ borderRadius: '4px' }}
+            style={{ borderRadius: '4px', clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%)' }}
           >
             <div
               className="relative flex gap-6"
