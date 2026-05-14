@@ -158,14 +158,14 @@ export default function AboutInvestorsSection() {
                 src={logoNavi}
                 alt="Rainmatter"
                 style={{
-                  width: '400px',
-                  height: '300px',
+                  width: '700px',
+                  height: '500px',
                   objectFit: 'contain',
                   objectPosition: 'left center',
                   flexShrink: 0,
                   display: 'block',
                   marginBottom: '-12px',
-                  marginTop: '-92px',
+                  marginTop: '-182px',
                   marginLeft: '-30px',
                 }}
               />
@@ -173,12 +173,12 @@ export default function AboutInvestorsSection() {
                 src={logoBvfl}
                 alt="GVFL"
                 style={{
-                  width: '138px',
+                  width: '248px',
                   height: 'auto',
                   objectFit: 'contain',
                   flexShrink: 0,
                   display: 'block',
-                  marginTop: '-92px',
+                  marginTop: '-182px',
                 }}
               />
             </div>

@@ -34,8 +34,6 @@ const categories = [
 
 export default function ApplicationsSection() {
   const [activeId, setActiveId] = useState(categories[0].id);
-  const activeCategory = categories.find((category) => category.id === activeId) ?? categories[0];
-  const inactiveCategories = categories.filter((category) => category.id !== activeCategory.id);
 
   return (
     <section className="w-full bg-[#f5fafa] py-[clamp(42px,5vw,96px)] max-[720px]:py-10">
@@ -64,46 +62,47 @@ export default function ApplicationsSection() {
         </div>
 
         <div className="w-full max-[720px]:border-t max-[720px]:border-black/12 max-[720px]:pt-5">
-          <div className="border-t border-black/12 pt-[clamp(16px,1.2vw,20px)] max-[720px]:border-t-0 max-[720px]:pt-0">
-            <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-start gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
-              <img
-                src={activeCategory.image}
-                alt={activeCategory.label}
-                className="block aspect-[424/259] w-full object-cover max-[720px]:w-[276px] max-[720px]:h-[168.594px] max-[720px]:aspect-auto max-[720px]:mx-auto"
-              />
+          <div className="border-t border-black/12">
+            {categories.map((category) => {
+              const isActive = category.id === activeId;
 
-              <div className="pt-[clamp(6px,0.4vw,10px)]">
-                <h3
-                  className="font-nexa font-light leading-none text-[#1863da] text-[36px] max-[720px]:text-[16px]"
-                >
-                  {activeCategory.label}
-                </h3>
-                <p
-                  className="mt-[clamp(14px,1vw,18px)] max-w-[620px] font-metro leading-[1.55] text-black text-[19.537px] max-[720px]:text-[10px]"
-                >
-                  {activeCategory.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-[clamp(20px,1.8vw,34px)] border-t border-black/12">
-            {inactiveCategories.map((category) => {
               return (
-                <button
-                  key={category.id}
-                  type="button"
-                  onClick={() => setActiveId(category.id)}
-                  className="block w-full border-b border-black/12 bg-transparent py-[clamp(12px,1.1vw,20px)]"
-                >
-                  <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
-                    <div className="max-[920px]:hidden" />
-                    <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
-                      <span>{category.label}</span>
-                      <span className="hidden max-[720px]:inline text-[18px] font-light leading-none shrink-0">+</span>
-                    </p>
-                  </div>
-                </button>
+                <div key={category.id} className="border-b border-black/12">
+                  {isActive ? (
+                    <div className="py-[clamp(16px,1.2vw,20px)]">
+                      <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-start gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
+                        <img
+                          src={category.image}
+                          alt={category.label}
+                          className="block aspect-[424/259] w-full object-cover max-[720px]:w-[276px] max-[720px]:h-[168.594px] max-[720px]:aspect-auto max-[720px]:mx-auto"
+                        />
+
+                        <div className="pt-[clamp(6px,0.4vw,10px)]">
+                          <h3 className="font-nexa font-light leading-none text-[#1863da] text-[36px] max-[720px]:text-[16px]">
+                            {category.label}
+                          </h3>
+                          <p className="mt-[clamp(14px,1vw,18px)] max-w-[620px] font-metro leading-[1.55] text-black text-[19.537px] max-[720px]:text-[10px]">
+                            {category.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setActiveId(category.id)}
+                      className="block w-full bg-transparent py-[clamp(12px,1.1vw,20px)]"
+                    >
+                      <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
+                        <div className="max-[920px]:hidden" />
+                        <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
+                          <span>{category.label}</span>
+                          <span className="hidden max-[720px]:inline text-[18px] font-light leading-none shrink-0">+</span>
+                        </p>
+                      </div>
+                    </button>
+                  )}
+                </div>
               );
             })}
           </div>

@@ -275,11 +275,11 @@ export default function ContactFormSection() {
             </div>
 
             <div className="flex flex-col" style={{ gap: '12px' }}>
-              <div className="flex items-center" style={{ gap: '8px' }}>
+              <div className="flex flex-col" style={{ gap: '6px' }}>
                 <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
                   Define motor type
                 </span>
-                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                <div style={{ width: '100%', height: '1px', backgroundColor: '#d9d9d9' }} />
               </div>
               <div className="grid grid-cols-2" style={{ gap: '8px' }}>
                 <SelectField
@@ -293,11 +293,11 @@ export default function ContactFormSection() {
             </div>
 
             <div className="flex flex-col" style={{ gap: '12px' }}>
-              <div className="flex items-center" style={{ gap: '8px' }}>
+              <div className="flex flex-col" style={{ gap: '6px' }}>
                 <span className="font-metro" style={{ fontSize: '7px', color: '#9d9d9d' }}>
                   Contact Information
                 </span>
-                <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                <div style={{ width: '100%', height: '1px', backgroundColor: '#d9d9d9' }} />
               </div>
               <div className="grid grid-cols-2" style={{ gap: '8px' }}>
                 <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />
@@ -532,11 +532,11 @@ export default function ContactFormSection() {
                 </div>
 
                 <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
-                  <div className="flex items-center" style={{ gap: '12px' }}>
+                  <div className="flex flex-col" style={{ gap: 'clamp(6px, 0.52vw, 10px)' }}>
                     <span className="font-metro shrink-0" style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}>
                       Define motor type
                     </span>
-                    <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                    <div style={{ width: '100%', height: '1px', backgroundColor: '#d9d9d9' }} />
                   </div>
                   <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
                     <SelectField label="Motor Application" options={MOTOR_APPLICATIONS} value={form.motorApplication} onChange={set('motorApplication')} required />
@@ -544,11 +544,11 @@ export default function ContactFormSection() {
                 </div>
 
                 <div className="flex flex-col" style={{ gap: 'clamp(14px, 1.46vw, 28px)' }}>
-                  <div className="flex items-center" style={{ gap: '12px' }}>
+                  <div className="flex flex-col" style={{ gap: 'clamp(6px, 0.52vw, 10px)' }}>
                     <span className="font-metro shrink-0" style={{ fontSize: 'clamp(13px, 1.25vw, 24px)', color: '#9d9d9d' }}>
                       Contact Information
                     </span>
-                    <div style={{ flex: 1, height: '1px', backgroundColor: '#d9d9d9' }} />
+                    <div style={{ width: '100%', height: '1px', backgroundColor: '#d9d9d9' }} />
                   </div>
                   <div className="flex flex-wrap" style={{ gap: 'clamp(12px, 1.25vw, 24px)' }}>
                     <TextField label="Full Name (Required)" value={form.fullName} onChange={set('fullName')} required />

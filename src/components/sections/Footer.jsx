@@ -26,7 +26,6 @@ const QUICK_LINKS = [
   { label: 'Case Studies', to: '/case-studies' },
   { label: 'Insights & Blogs', to: '/insights-blogs' },
   { label: 'Media Kit', to: '/media-kit' },
-  { label: 'Careers', to: '/careers' },
 ];
 
 const SOCIAL_ICONS = [

@@ -13,7 +13,7 @@ export default function TechPowerSection() {
         }}
       >
         <div
-          className="max-[768px]:order-1 max-[768px]:w-full max-[768px]:max-w-[380px] max-[768px]:mx-auto"
+          className="max-[768px]:order-1 max-[768px]:w-full max-[768px]:max-w-[380px] max-[768px]:mx-auto md:order-2"
           style={{ maxWidth: 'clamp(280px, 33.6vw, 645px)' }}
         >
           <h2
@@ -43,7 +43,7 @@ export default function TechPowerSection() {
         </div>
 
         <div
-          className="max-[768px]:order-2 max-[768px]:!w-[calc(100vw-80px)] max-[768px]:!max-w-none max-[768px]:mx-auto max-[768px]:flex max-[768px]:justify-center md:flex-shrink-0 overflow-hidden"
+          className="max-[768px]:order-2 max-[768px]:!w-[calc(100vw-80px)] max-[768px]:!max-w-none max-[768px]:mx-auto max-[768px]:flex max-[768px]:justify-center md:order-1 md:flex-shrink-0 overflow-hidden"
           style={{
             width: 'clamp(260px, 38.3vw, 736px)',
             maxWidth: '736px',
