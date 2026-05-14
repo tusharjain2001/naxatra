@@ -2,7 +2,7 @@ import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
 
-const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778601850/Hero_frame_m2stbb.mp4';
+const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778753654/Hero_frame_for_web_qezh9n.webm';
 
 export default function HeroSection() {
   const advancedText = 'Advanced';
@@ -55,7 +55,7 @@ export default function HeroSection() {
 
         <a
           href="#products"
-          className="absolute bottom-[clamp(28px,3.1vw,64px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
+          className="absolute bottom-[clamp(44px,4vw,82px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
           aria-label="Explore Options"
         >
           <img
@@ -65,7 +65,7 @@ export default function HeroSection() {
           />
         </a>
 
-        <div className="absolute right-[clamp(48px,8vw,168px)] top-[clamp(44px,5vw,132px)] aspect-[729/537] w-[clamp(250px,33vw,610px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:w-[199px] max-[720px]:h-[153.943px]">
+        <div className="absolute right-[clamp(72px,10vw,210px)] top-[clamp(28px,3.8vw,104px)] w-[588px] h-[451px] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:w-[199px] max-[720px]:h-[153.943px]">
           <video
             src={HERO_VIDEO_URL}
             autoPlay
