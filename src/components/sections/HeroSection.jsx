@@ -2,7 +2,7 @@ import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
 
-const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778753654/Hero_frame_for_web_qezh9n.webm';
+const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778761476/Hero_frame_1_iaau97.webm';
 
 export default function HeroSection() {
   const advancedText = 'Advanced';
