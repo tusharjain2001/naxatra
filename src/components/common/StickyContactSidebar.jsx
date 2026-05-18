@@ -1,13 +1,12 @@
 const ITEMS = [
   {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/naxatra-labs/',
+    label: 'enquiry@naxatralabs.com',
+    href: 'mailto:enquiry@naxatralabs.com',
     target: '_blank',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.15" />
         <path
-          d="M7.5 9.5H5V19H7.5V9.5ZM6.25 8.5C7.08 8.5 7.75 7.83 7.75 7C7.75 6.17 7.08 5.5 6.25 5.5C5.42 5.5 4.75 6.17 4.75 7C4.75 7.83 5.42 8.5 6.25 8.5ZM19 19H16.5V14.25C16.5 13.15 16.48 11.75 14.98 11.75C13.46 11.75 13.22 12.94 13.22 14.17V19H10.72V9.5H13.11V10.75H13.15C13.49 10.1 14.33 9.38 15.58 9.38C18.1 9.38 19 11.02 19 13.18V19Z"
+          d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
           fill="white"
         />
       </svg>
@@ -27,13 +26,14 @@ const ITEMS = [
     ),
   },
   {
-    label: 'Gmail',
-    href: 'mailto:enquiry@naxatralabs.com',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/naxatra-labs/',
     target: '_blank',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.15" />
         <path
-          d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
+          d="M7.5 9.5H5V19H7.5V9.5ZM6.25 8.5C7.08 8.5 7.75 7.83 7.75 7C7.75 6.17 7.08 5.5 6.25 5.5C5.42 5.5 4.75 6.17 4.75 7C4.75 7.83 5.42 8.5 6.25 8.5ZM19 19H16.5V14.25C16.5 13.15 16.48 11.75 14.98 11.75C13.46 11.75 13.22 12.94 13.22 14.17V19H10.72V9.5H13.11V10.75H13.15C13.49 10.1 14.33 9.38 15.58 9.38C18.1 9.38 19 11.02 19 13.18V19Z"
           fill="white"
         />
       </svg>
@@ -57,7 +57,7 @@ export default function StickyContactSidebar() {
           aria-label={item.label}
         >
           {/* Label — slides out to the left on hover */}
-          <div className="overflow-hidden max-w-0 group-hover:max-w-[180px] transition-all duration-300 ease-in-out">
+          <div className="overflow-hidden max-w-0 group-hover:max-w-[260px] transition-all duration-300 ease-in-out">
             <div
               className="flex h-full items-center gap-2 whitespace-nowrap bg-[#1863DA] px-4 text-sm font-semibold text-white"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
