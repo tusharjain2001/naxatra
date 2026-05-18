@@ -48,8 +48,8 @@ export default function ProductSection() {
               <span className="max-[720px]:block">motors from 1kW to 15kW.</span>
             </h3>
             <p className="mt-[clamp(8px,1vw,14px)] font-metro text-[#515151] text-[clamp(12px,1.25vw,24px)] leading-[1.45] max-[720px]:text-[10px]">
-              <span className="max-[720px]:block">Perfect for electric vehicles, farming</span>
-              <span className="max-[720px]:block">equipment, power tools and beyond.</span>
+              <span className="max-[720px]:block">Perfect for Electric Vehicles, Farming</span>
+              <span className="max-[720px]:block"> Equipment, Power Tools and Beyond.</span>
             </p>
             <a
               href="/products"

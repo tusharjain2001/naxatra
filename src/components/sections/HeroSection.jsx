@@ -1,8 +1,7 @@
 import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
+import heroVideo from '../../assets/videos/Hero frame_1.webm';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
-
-const HERO_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778761476/Hero_frame_1_iaau97.webm';
 
 export default function HeroSection() {
   const advancedText = 'Advanced';
@@ -67,7 +66,7 @@ export default function HeroSection() {
 
         <div className="absolute right-[clamp(72px,10vw,210px)] top-[clamp(28px,3.8vw,104px)] w-[588px] h-[451px] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:w-[199px] max-[720px]:h-[153.943px]">
           <video
-            src={HERO_VIDEO_URL}
+            src={heroVideo}
             autoPlay
             loop
             muted

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import efficientMotors from '../../assets/images/efficient-motors.png';
 import scooter from '../../assets/images/scooter.jpg';
-import agricultureImage from '../../assets/socialhandles/agriculture-equipment.jpg';
+import agricultureImage from '../../assets/socialhandles/agriculture-equipment.png';
 import powerToolsImage from '../../assets/socialhandles/powertools.jpg';
 import droneImage from '../../assets/socialhandles/drone.jpg';
 
