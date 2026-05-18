@@ -1,10 +1,13 @@
 import logoNavi from '../../../assets/images/about-investor-logo-navi.png';
+import logoGiraffe from '../../../assets/images/about-investor-logo-giraffe.png';
 import logoBvfl from '../../../assets/images/about-investor-logo-bvfl.png';
 import mohit from '../../../assets/images/mohitinv.png';
 import himanshu from '../../../assets/images/himanshuenv.png';
 import vijayShekhar from '../../../assets/images/vijayenv.png';
 import aloke from '../../../assets/images/alokeinv.png';
+import anupam from '../../../assets/images/anupam.png';
 import rajnish from '../../../assets/images/rajnishenv.png';
+import soumitra from '../../../assets/images/soumitra.png';
 import sunil from '../../../assets/images/sunilenv.png';
 import narayan from '../../../assets/images/narayanenv.png';
 
@@ -16,9 +19,17 @@ const TOP_INVESTORS = [
 
 const BOTTOM_INVESTORS = [
   { name: 'Aloke Bajpai', card: aloke },
+  { name: 'Anupam', card: anupam },
   { name: 'Rajnish Kumar', card: rajnish },
   { name: 'Sunil Kalra', card: sunil },
   { name: 'Narayan', card: narayan },
+  { name: 'Soumitra', card: soumitra },
+];
+
+const INVESTOR_LOGOS = [
+  { name: 'Rainmatter', src: logoNavi, width: '232px', desktopWidth: '220px' },
+  { name: 'Giraffe', src: logoGiraffe, width: '168px', desktopWidth: '150px' },
+  { name: 'GVFL', src: logoBvfl, width: '150px', desktopWidth: '120px' },
 ];
 
 function InvestorImage({ person, size = 'regular' }) {
@@ -31,7 +42,7 @@ function InvestorImage({ person, size = 'regular' }) {
         aspectRatio: person.aspectRatio || '291 / 332',
         objectFit: 'cover',
         boxShadow: '0 3px 12px rgba(0,0,0,0.1)',
-        maxWidth: size === 'large' ? 'clamp(150px, 15.5vw, 315px)' : 'clamp(140px, 14.3vw, 291px)',
+        maxWidth: size === 'large' ? 'clamp(140px, 14.2vw, 290px)' : 'clamp(150px, 15vw, 305px)',
       }}
     />
   );
@@ -59,35 +70,21 @@ export default function AboutInvestorsSection() {
           Investors
         </h2>
 
-        <div
-          className="flex items-center flex-col justify-center"
-          style={{
-            gap: '26px',
-            marginBottom: '24px',
-          }}
-        >
-          <img
-            src={logoNavi}
-            alt="Rainmatter"
-            style={{
-              width: '232px',
-              height: 'auto',
-              objectFit: 'contain',
-              flexShrink: 0,
-              marginTop: '-82px',
-            }}
-          />
-          <img
-            src={logoBvfl}
-            alt="GVFL"
-            style={{
-              width: '128px',
-              height: 'auto',
-              objectFit: 'contain',
-              flexShrink: 0,
-              marginTop: '-122px',
-            }}
-          />
+        <div className="flex flex-col items-center" style={{ gap: '18px', marginBottom: '24px' }}>
+          {INVESTOR_LOGOS.map((logo) => (
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              style={{
+                width: logo.width,
+                height: 'auto',
+                objectFit: 'contain',
+                flexShrink: 0,
+                display: 'block',
+              }}
+            />
+          ))}
         </div>
 
         <div
@@ -118,13 +115,13 @@ export default function AboutInvestorsSection() {
         className="mx-auto hidden md:block"
         style={{
           maxWidth: '1920px',
-          padding: 'clamp(42px, 5.8vw, 92px) clamp(24px, 9.9vw, 191px)',
+          padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)',
         }}
       >
         <div
-          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(220px,18vw,320px)_minmax(280px,1fr)]"
+          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(150px,12.6vw,242px)_minmax(280px,1fr)]"
           style={{
-            columnGap: 'clamp(28px, 5.3vw, 102px)',
+            columnGap: 'clamp(20px, 3.4vw, 64px)',
             rowGap: 'clamp(20px, 3vw, 36px)',
             paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
@@ -132,7 +129,7 @@ export default function AboutInvestorsSection() {
           <div
             className="justify-self-start text-left"
             style={{
-              width: '320px',
+              width: '242px',
             }}
           >
             <h2
@@ -150,37 +147,26 @@ export default function AboutInvestorsSection() {
             <div
               className="flex flex-col items-start justify-start"
               style={{
-                gap: '4px',
-                marginTop: '-6px',
+                gap: '20px',
+                marginTop: 0,
+                width: '100%',
               }}
             >
-              <img
-                src={logoNavi}
-                alt="Rainmatter"
-                style={{
-                  width: '700px',
-                  height: '500px',
-                  objectFit: 'contain',
-                  objectPosition: 'left center',
-                  flexShrink: 0,
-                  display: 'block',
-                  marginBottom: '-12px',
-                  marginTop: '-182px',
-                  marginLeft: '-30px',
-                }}
-              />
-              <img
-                src={logoBvfl}
-                alt="GVFL"
-                style={{
-                  width: '248px',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  flexShrink: 0,
-                  display: 'block',
-                  marginTop: '-182px',
-                }}
-              />
+              {INVESTOR_LOGOS.map((logo) => (
+                <img
+                  key={logo.name}
+                  src={logo.src}
+                  alt={logo.name}
+                  style={{
+                    width: logo.desktopWidth,
+                    height: 'auto',
+                    objectFit: 'contain',
+                    objectPosition: 'left center',
+                    flexShrink: 0,
+                    display: 'block',
+                  }}
+                />
+              ))}
             </div>
           </div>
 
@@ -188,7 +174,7 @@ export default function AboutInvestorsSection() {
             <div
               className="grid grid-cols-1 sm:grid-cols-3 justify-items-center lg:justify-items-end lg:ml-auto"
               style={{
-                gap: 'clamp(14px, 1.8vw, 26px)',
+                gap: 'clamp(12px, 1.3vw, 20px)',
                 width: 'fit-content',
                 maxWidth: '100%',
                 marginTop: 'clamp(24px, 2.5vw, 48px)',
@@ -201,9 +187,9 @@ export default function AboutInvestorsSection() {
             </div>
 
             <div
-              className="grid grid-cols-2 sm:grid-cols-4 justify-items-center lg:justify-items-end lg:ml-auto"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 justify-items-center lg:justify-items-end lg:ml-auto"
               style={{
-                gap: 'clamp(14px, 1.8vw, 26px)',
+                gap: 'clamp(10px, 1.1vw, 16px)',
                 width: 'fit-content',
                 maxWidth: '100%',
               }}
