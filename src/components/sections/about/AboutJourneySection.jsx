@@ -35,7 +35,7 @@ const milestones = [
   { year: '2025', title: 'Leading the Charge', desc: 'Showcasing at Bharat Mobility Expo, cementing our role as an industry pioneer.', img: j14 },
   { year: '2025', title: 'Another Production Facility', desc: 'Inaugurated our another state-of-the-art production unit in August 2025, enabling higher production capacity and precision manufacturing for next-generation motors.', img: j15 },
   { year: '2025', title: 'Showcasing Innovation', desc: 'Exhibited at EV India Expo 2025, presented our advancements in motor technologies and forging key international collaborations.', img: j16 },
-];
+].reverse();
 
 export default function AboutJourneySection() {
   const cardsRef = useRef(null);
@@ -128,7 +128,6 @@ export default function AboutJourneySection() {
                     position: 'relative',
                     width: '18px',
                     height: '18px',
-                    borderRadius: '999px',
                     background: '#1863da',
                     margin: '0 auto',
                   }}
@@ -255,7 +254,6 @@ export default function AboutJourneySection() {
                       position: 'relative',
                       width: '22px',
                       height: '22px',
-                      borderRadius: '999px',
                       background: '#1863da',
                       margin: '0 auto',
                     }}
