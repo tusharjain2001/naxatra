@@ -10,6 +10,7 @@ import rajnish from '../../../assets/images/rajnishenv.png';
 import soumitra from '../../../assets/images/soumitra.png';
 import sunil from '../../../assets/images/sunilenv.png';
 import narayan from '../../../assets/images/narayanenv.png';
+import investorsSection from '../../../assets/images/investors-section.png';
 
 const TOP_INVESTORS = [
   { name: 'Mohit Tandon', card: mohit, aspectRatio: '315 / 359' },
@@ -115,91 +116,21 @@ export default function AboutInvestorsSection() {
         className="mx-auto hidden md:block"
         style={{
           maxWidth: '1920px',
-          padding: 'clamp(48px, 4.7vw, 91px) clamp(24px, 9.9vw, 191px)',
+          paddingTop: 'clamp(48px, 4.7vw, 91px)',
+          paddingBottom: 'clamp(48px, 4.7vw, 91px)',
+          paddingLeft: 'clamp(24px, 9.9vw, 191px)',
+          paddingRight: 'clamp(12px, 4.2vw, 80px)',
         }}
       >
-        <div
-          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(150px,12.6vw,242px)_minmax(280px,1fr)]"
+        <img
+          src={investorsSection}
+          alt="Investors section"
+          className="block w-full"
           style={{
-            columnGap: 'clamp(20px, 3.4vw, 64px)',
-            rowGap: 'clamp(20px, 3vw, 36px)',
-            paddingLeft: 'clamp(30px, 6.2vw, 119px)',
+            maxWidth: '100%',
+            height: 'auto',
           }}
-        >
-          <div
-            className="justify-self-start text-left"
-            style={{
-              width: '242px',
-            }}
-          >
-            <h2
-              className="font-nexa text-black"
-              style={{
-                fontSize: 'clamp(24px, 2.6vw, 44px)',
-                lineHeight: 1.1,
-                fontWeight: 400,
-                margin: '0 0 clamp(12px, 1.15vw, 18px)',
-              }}
-            >
-              Investors
-            </h2>
-
-            <div
-              className="flex flex-col items-start justify-start"
-              style={{
-                gap: '20px',
-                marginTop: 0,
-                width: '100%',
-              }}
-            >
-              {INVESTOR_LOGOS.map((logo) => (
-                <img
-                  key={logo.name}
-                  src={logo.src}
-                  alt={logo.name}
-                  style={{
-                    width: logo.desktopWidth,
-                    height: 'auto',
-                    objectFit: 'contain',
-                    objectPosition: 'left center',
-                    flexShrink: 0,
-                    display: 'block',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col items-start">
-            <div
-              className="grid grid-cols-1 sm:grid-cols-3 justify-items-center lg:justify-items-end lg:ml-auto"
-              style={{
-                gap: 'clamp(12px, 1.3vw, 20px)',
-                width: 'fit-content',
-                maxWidth: '100%',
-                marginTop: 'clamp(24px, 2.5vw, 48px)',
-                marginBottom: 'clamp(16px, 1.8vw, 26px)',
-              }}
-            >
-              {TOP_INVESTORS.map((person) => (
-                <InvestorImage key={person.name} person={person} size="large" />
-              ))}
-            </div>
-
-            <div
-              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 justify-items-center lg:justify-items-end lg:ml-auto"
-              style={{
-                gap: 'clamp(10px, 1.1vw, 16px)',
-                width: 'fit-content',
-                maxWidth: '100%',
-              }}
-            >
-              {BOTTOM_INVESTORS.map((person) => (
-                <InvestorImage key={person.name} person={person} />
-              ))}
-            </div>
-          </div>
-        </div>
+        />
       </div>
     </section>
   );

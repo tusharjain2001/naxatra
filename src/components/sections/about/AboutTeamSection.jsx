@@ -90,7 +90,7 @@ export default function AboutTeamSection() {
         </div>
 
         <h3
-          className="font-nexa text-black text-center"
+          className="font-nexa font-bold text-black text-center"
           style={{
             fontSize: '20px',
             fontWeight: 400,
