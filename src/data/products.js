@@ -251,6 +251,7 @@ export const PRODUCTS = [
     coolingType: 'Forced Air Cooled',
     image: motorPT500,
     applications: ['grinder', 'electric-drill', 'industrial-tools'],
+    hiddenSingleSpecRows: ['comm'],
     singleSpec: {
       motorTypeFull: 'IPMSM Radial Flux',
       voltage:    '18 V',

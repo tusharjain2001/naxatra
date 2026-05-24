@@ -255,6 +255,10 @@ function MotorDetailedContent({ product }) {
 }
 
 function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expanded = false }) {
+  const visibleSingleSpecRows = SINGLE_SPEC_ROWS.filter(
+    (row) => !product.hiddenSingleSpecRows?.includes(row.key)
+  );
+
   const labelCellStyle = {
     padding: expanded
       ? "10px 18px"
@@ -321,7 +325,7 @@ function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expande
             </tr>
           </thead>
           <tbody>
-            {SINGLE_SPEC_ROWS.map((row, idx) => {
+            {visibleSingleSpecRows.map((row, idx) => {
               const bg = idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "transparent";
               return (
                 <tr key={row.key} style={{ background: bg }}>
