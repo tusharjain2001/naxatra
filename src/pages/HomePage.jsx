@@ -1,5 +1,6 @@
 import Navbar from '../components/sections/Navbar';
 import HeroSection from '../components/sections/HeroSection';
+import InViewReveal from '../components/common/InViewReveal';
 import AboutSection from '../components/sections/AboutSection';
 import FeaturesSection from '../components/sections/FeaturesSection';
 import ProductSection from '../components/sections/ProductSection';
@@ -17,17 +18,39 @@ export default function HomePage() {
     <div className="w-full overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <AboutSection />
-      <FeaturesSection />
-      <ProductSection />
-      <StatsSection />
-      <ApplicationsSection />
-      <WhyUsSection />
-      <InnovationSection />
-      <CTASection />
-      <JourneySection />
-      <BlogsSection />
-      <Footer />
+      <InViewReveal delay={40}>
+        <AboutSection />
+      </InViewReveal>
+      <InViewReveal delay={70}>
+        <FeaturesSection />
+      </InViewReveal>
+      <InViewReveal delay={90}>
+        <ProductSection />
+      </InViewReveal>
+      <InViewReveal delay={110}>
+        <StatsSection />
+      </InViewReveal>
+      <InViewReveal delay={130}>
+        <ApplicationsSection />
+      </InViewReveal>
+      <InViewReveal delay={150}>
+        <WhyUsSection />
+      </InViewReveal>
+      <InViewReveal delay={170}>
+        <InnovationSection />
+      </InViewReveal>
+      <InViewReveal delay={190}>
+        <CTASection />
+      </InViewReveal>
+      <InViewReveal delay={210}>
+        <JourneySection />
+      </InViewReveal>
+      <InViewReveal delay={230}>
+        <BlogsSection />
+      </InViewReveal>
+      <InViewReveal delay={120}>
+        <Footer />
+      </InViewReveal>
     </div>
   );
 }
