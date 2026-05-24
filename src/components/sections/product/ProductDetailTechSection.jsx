@@ -451,6 +451,7 @@ function TechnicalDetailsContent({
           Request a solution tailored to your needs. Customize it your way.
         </p>
         <button
+          className="cta-asset"
           style={{
             background: "transparent",
             border: "none",

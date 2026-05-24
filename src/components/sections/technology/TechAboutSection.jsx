@@ -119,7 +119,7 @@ export default function TechAboutSection() {
                 </p>
               </div>
 
-              <a href="/products" className="inline-flex items-center justify-center">
+              <a href="/products" className="cta-asset inline-flex items-center justify-center">
                 <img
                   src={techSectionTwo}
                   alt="Learn More About Our Tailored Solutions"

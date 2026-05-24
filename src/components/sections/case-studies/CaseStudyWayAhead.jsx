@@ -52,7 +52,7 @@ export default function CaseStudyWayAhead() {
           </p>
 
           <div className="flex flex-col items-center" style={{ gap: '12px' }}>
-            <a href="#contact" className="inline-flex items-center justify-center">
+            <a href="#contact" className="cta-asset inline-flex items-center justify-center">
               <img
                 src={wayAheadCta}
                 alt="Contact us to explore collaboration opportunities"
@@ -61,7 +61,7 @@ export default function CaseStudyWayAhead() {
               />
             </a>
 
-            <Link to="/case-studies" className="inline-flex items-center justify-center">
+            <Link to="/case-studies" className="cta-asset inline-flex items-center justify-center">
               <img
                 src={backToCase}
                 alt="Back to Case Studies"
@@ -131,7 +131,7 @@ export default function CaseStudyWayAhead() {
                 marginTop: 'clamp(24px, 3vw, 56px)',
               }}
             >
-              <a href="#contact" className="inline-flex items-center justify-center">
+              <a href="#contact" className="cta-asset inline-flex items-center justify-center">
                 <img
                   src={wayAheadCta}
                   alt="Contact us to explore collaboration opportunities"
@@ -142,7 +142,7 @@ export default function CaseStudyWayAhead() {
 
               <Link
                 to="/case-studies"
-                className="inline-flex mt-10 items-center self-end"
+                className="cta-asset inline-flex mt-10 items-center self-end"
                 style={{ marginRight: 0 }}
               >
                 <img

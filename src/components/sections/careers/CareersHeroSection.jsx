@@ -79,7 +79,7 @@ export default function CareersHeroSection() {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="absolute"
+          className="cta-asset absolute"
           style={{
             left: '50%',
             transform: 'translateX(-50%)',
@@ -142,7 +142,7 @@ export default function CareersHeroSection() {
               <span className="text-white"><AnimatedTextReveal text={thirdText} delay={thirdDelay} stagger={textStagger} /></span>
             </h1>
 
-            <button type="button" aria-label="Request Brochure" className="block" onClick={() => setModalOpen(true)}>
+            <button type="button" aria-label="Request Brochure" className="cta-asset block" onClick={() => setModalOpen(true)}>
               <img
                 src={requestBrochure}
                 alt="Request Brochure"

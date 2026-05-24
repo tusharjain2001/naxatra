@@ -76,7 +76,7 @@ export default function MediaKitHeroSection() {
         <a
           href="#download"
           aria-label="Download Kit"
-          className="absolute"
+          className="cta-asset absolute"
           style={{
             left: '50%',
             transform: 'translateX(-50%)',
@@ -155,7 +155,7 @@ export default function MediaKitHeroSection() {
             <a
               href="#download"
               aria-label="Download Kit"
-              className="relative block"
+              className="cta-asset relative block"
               style={{ width: 'fit-content' }}
             >
               <img

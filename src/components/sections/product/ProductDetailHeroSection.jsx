@@ -102,7 +102,7 @@ export default function ProductDetailHeroSection({ product }) {
             Customization full-width */}
         <div style={{ width: '167px', margin: `${product.heroVideo ? '16px' : '0'} auto 0`, display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div style={{ paddingLeft: '20px' }}>
-            <a href="#" aria-label={`Request spec sheet for ${product.name}`}>
+            <a href="#" aria-label={`Request spec sheet for ${product.name}`} className="cta-asset inline-block">
               <img
                 src={reqSpecSheet}
                 alt="Request Spec Sheet"
@@ -112,6 +112,7 @@ export default function ProductDetailHeroSection({ product }) {
           </div>
           <button
             type="button"
+            className="cta-asset"
             style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', display: 'block', width: '167px' }}
             aria-label={`Request customization for ${product.name}`}
           >
@@ -292,6 +293,7 @@ export default function ProductDetailHeroSection({ product }) {
           >
             <a
               href="#"
+              className="cta-asset"
               style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
               aria-label={`Request spec sheet for ${product.name}`}
             >
@@ -304,6 +306,7 @@ export default function ProductDetailHeroSection({ product }) {
             </a>
 
             <button
+              className="cta-asset"
               style={{
                 background: 'transparent',
                 border: 'none',

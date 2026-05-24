@@ -1,4 +1,5 @@
 import Navbar from '../components/sections/Navbar';
+import InViewReveal from '../components/common/InViewReveal';
 import Footer from '../components/sections/Footer';
 import ProductHeroSection from '../components/sections/product/ProductHeroSection';
 import ProductListingSection from '../components/sections/product/ProductListingSection';
@@ -11,10 +12,18 @@ export default function ProductPage() {
       <Navbar />
       <div className="pt-[55px]">
         <ProductHeroSection />
-        <ProductListingSection />
-        <ProductCTASection />
-        <ProductFeaturesSection />
-        <Footer />
+        <InViewReveal delay={40}>
+          <ProductListingSection />
+        </InViewReveal>
+        <InViewReveal delay={70}>
+          <ProductCTASection />
+        </InViewReveal>
+        <InViewReveal delay={100}>
+          <ProductFeaturesSection />
+        </InViewReveal>
+        <InViewReveal delay={130}>
+          <Footer />
+        </InViewReveal>
       </div>
     </div>
   );

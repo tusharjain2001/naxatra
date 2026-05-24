@@ -62,7 +62,7 @@ export default function CaseStudyFeatureSection() {
           {/* Read Case Studies CTA: top 163px, centered, 129×26px */}
           <Link
             to="/case-studies/bldc-power-tools"
-            className="absolute inline-flex items-center justify-center"
+            className="cta-asset absolute inline-flex items-center justify-center"
             style={{ top: '163px', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}
           >
             <img
@@ -150,7 +150,7 @@ export default function CaseStudyFeatureSection() {
 
             <Link
               to="/case-studies/bldc-power-tools"
-              className="inline-flex items-center justify-center"
+              className="cta-asset inline-flex items-center justify-center"
             >
               <img
                 src={readCaseCta}

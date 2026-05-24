@@ -211,6 +211,15 @@ export default function CareersJobsSection() {
                 background: '#f2fbfb',
                 border: '1px solid #d9e5e4',
                 clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%)',
+                transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+              }}
+              onMouseEnter={(event) => {
+                event.currentTarget.style.transform = 'translateY(-4px)';
+                event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+              }}
+              onMouseLeave={(event) => {
+                event.currentTarget.style.transform = 'translateY(0)';
+                event.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div
@@ -433,6 +442,15 @@ export default function CareersJobsSection() {
                 background: '#f2fbfb',
                 border: '1px solid #d9e5e4',
                 clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 0 100%)',
+                transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+              }}
+              onMouseEnter={(event) => {
+                event.currentTarget.style.transform = 'translateY(-4px)';
+                event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+              }}
+              onMouseLeave={(event) => {
+                event.currentTarget.style.transform = 'translateY(0)';
+                event.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div

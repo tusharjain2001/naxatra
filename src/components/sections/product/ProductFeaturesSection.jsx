@@ -60,6 +60,15 @@ export default function ProductFeaturesSection() {
               gap: 'clamp(12px, 0.9vw, 18px)',
               minHeight: 'clamp(210px, 20vw, 316px)',
               overflow: 'hidden',
+              transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+            }}
+            onMouseEnter={(event) => {
+              event.currentTarget.style.transform = 'translateY(-4px)';
+              event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+            }}
+            onMouseLeave={(event) => {
+              event.currentTarget.style.transform = 'translateY(0)';
+              event.currentTarget.style.boxShadow = 'none';
             }}
           >
             <svg

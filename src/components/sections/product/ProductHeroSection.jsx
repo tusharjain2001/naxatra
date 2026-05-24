@@ -76,7 +76,7 @@ export default function ProductHeroSection() {
           <button
             type="button"
             onClick={() => setModalOpen(true)}
-            className="bg-transparent p-0"
+            className="cta-asset bg-transparent p-0"
             style={{ border: 'none', cursor: 'pointer' }}
             aria-label="Download Brochure"
           >

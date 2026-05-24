@@ -83,7 +83,7 @@ export default function ProductCTASection() {
 
           <a
             href="/contact"
-            className="max-[560px]:!inline-flex"
+            className="cta-asset max-[560px]:!inline-flex"
             style={{
               display: "inline-flex",
               alignItems: "center",

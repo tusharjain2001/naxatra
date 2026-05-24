@@ -1,4 +1,5 @@
 import Navbar from '../components/sections/Navbar';
+import InViewReveal from '../components/common/InViewReveal';
 import CareersHeroSection from '../components/sections/careers/CareersHeroSection';
 import CareersJobsSection from '../components/sections/careers/CareersJobsSection';
 import CareersApplySection from '../components/sections/careers/CareersApplySection';
@@ -10,9 +11,15 @@ export default function CareersPage() {
       <Navbar />
       <div className="pt-[55px]">
         <CareersHeroSection />
-        <CareersJobsSection />
-        <CareersApplySection />
-        <Footer />
+        <InViewReveal delay={40}>
+          <CareersJobsSection />
+        </InViewReveal>
+        <InViewReveal delay={70}>
+          <CareersApplySection />
+        </InViewReveal>
+        <InViewReveal delay={100}>
+          <Footer />
+        </InViewReveal>
       </div>
     </div>
   );

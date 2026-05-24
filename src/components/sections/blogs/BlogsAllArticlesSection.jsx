@@ -223,6 +223,19 @@ export default function BlogsAllArticlesSection() {
                 style={{
                   gridTemplateColumns: 'clamp(280px, 26vw, 450px) minmax(320px, 1fr)',
                   gap: 'clamp(20px, 1.8vw, 30px)',
+                  transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1), background-color 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+                  borderRadius: '8px',
+                  padding: 'clamp(10px, 0.9vw, 18px)',
+                }}
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.transform = 'translateY(-4px)';
+                  event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+                  event.currentTarget.style.backgroundColor = '#edf6ff';
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.transform = 'translateY(0)';
+                  event.currentTarget.style.boxShadow = 'none';
+                  event.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
                 <img

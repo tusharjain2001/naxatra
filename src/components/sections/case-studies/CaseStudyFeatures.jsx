@@ -39,7 +39,23 @@ export default function CaseStudyFeatures() {
 
           <div className="flex flex-col" style={{ gap: '10px' }}>
             {features.map((f) => (
-              <div key={f.title} className="relative">
+              <div
+                key={f.title}
+                className="relative"
+                style={{
+                  overflow: 'hidden',
+                  clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%)',
+                  transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+                }}
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.transform = 'translateY(-4px)';
+                  event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.transform = 'translateY(0)';
+                  event.currentTarget.style.boxShadow = 'none';
+                }}
+              >
                 <img
                   src={f.card === 'dark' ? featureDark : featureLight}
                   alt=""
@@ -86,7 +102,23 @@ export default function CaseStudyFeatures() {
           style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: 'clamp(24px, 2.5vw, 48px)' }}
         >
           {features.map((f) => (
-            <div key={f.title} className="relative">
+            <div
+              key={f.title}
+              className="relative"
+              style={{
+                overflow: 'hidden',
+                clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%)',
+                transition: 'transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1)',
+              }}
+              onMouseEnter={(event) => {
+                event.currentTarget.style.transform = 'translateY(-4px)';
+                event.currentTarget.style.boxShadow = '0 16px 32px rgba(24, 99, 218, 0.10)';
+              }}
+              onMouseLeave={(event) => {
+                event.currentTarget.style.transform = 'translateY(0)';
+                event.currentTarget.style.boxShadow = 'none';
+              }}
+            >
               <img
                 src={f.card === 'dark' ? featureDark : featureLight}
                 alt=""

@@ -38,7 +38,7 @@ export default function MediaKitDownloadSection() {
             href="#"
             onClick={(e) => e.preventDefault()}
             aria-label="Download Kit"
-            className="relative block"
+            className="cta-asset relative block"
             style={{
               width: '188px',
               height: '40px',
@@ -116,7 +116,7 @@ export default function MediaKitDownloadSection() {
               href="#"
               onClick={(e) => e.preventDefault()}
               aria-label="Download Kit"
-              className="relative block"
+              className="cta-asset relative block"
               style={{ width: 'fit-content' }}
             >
               <img

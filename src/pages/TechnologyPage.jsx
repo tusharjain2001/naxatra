@@ -1,4 +1,5 @@
 import Navbar from '../components/sections/Navbar';
+import InViewReveal from '../components/common/InViewReveal';
 import TechHeroSection from '../components/sections/technology/TechHeroSection';
 import TechAboutSection from '../components/sections/technology/TechAboutSection';
 import TechStatsSection from '../components/sections/technology/TechStatsSection';
@@ -12,11 +13,19 @@ export default function TechnologyPage() {
       <div className="flex flex-1 flex-col pt-[55px]">
         <div className="flex-1">
           <TechHeroSection />
-          <TechAboutSection />
-          <TechStatsSection />
-          <TechPowerSection />
+          <InViewReveal delay={40}>
+            <TechAboutSection />
+          </InViewReveal>
+          <InViewReveal delay={70}>
+            <TechStatsSection />
+          </InViewReveal>
+          <InViewReveal delay={100}>
+            <TechPowerSection />
+          </InViewReveal>
         </div>
-        <Footer />
+        <InViewReveal delay={70}>
+          <Footer />
+        </InViewReveal>
       </div>
     </div>
   );

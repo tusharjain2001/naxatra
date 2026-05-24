@@ -113,6 +113,7 @@ function ProductCard({ product, mobileVariant = 'compact', onOpenBrochure }) {
 
         <Link
           to={`/products/${product.id}`}
+          className="cta-asset"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -133,6 +134,7 @@ function ProductCard({ product, mobileVariant = 'compact', onOpenBrochure }) {
 
         <button
           onClick={onOpenBrochure}
+          className="cta-asset"
           style={{
             display: 'flex',
             alignItems: 'center',

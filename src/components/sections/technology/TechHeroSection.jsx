@@ -98,7 +98,7 @@ export default function TechHeroSection() {
         {/* Connect Now button: centered, top 188px, height 27px */}
         <a
           href="#contact"
-          className="absolute"
+          className="cta-asset absolute"
           style={{
             left: '50%',
             transform: 'translateX(-50%)',
@@ -175,7 +175,7 @@ export default function TechHeroSection() {
           </div>
 
           {/* CTA image */}
-          <a href="#contact" className="self-start">
+          <a href="#contact" className="cta-asset self-start">
             <img
               src={connectNow}
               alt="Connect Now"

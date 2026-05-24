@@ -203,7 +203,7 @@ export default function CareersApplicationFormPanel({
           } ${desktopSubmitAlign === 'center' ? 'md:justify-center' : 'md:justify-end'}`}
           style={{ marginTop: '10px' }}
         >
-          <button type="submit" aria-label="Submit Enquiry" className="block" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.75 : 1 }}>
+          <button type="submit" aria-label="Submit Enquiry" className="cta-asset block" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.75 : 1 }}>
             <img
               src={submitEnquiry}
               alt="Submit Enquiry"

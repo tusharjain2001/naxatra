@@ -1,4 +1,5 @@
 import Navbar from '../components/sections/Navbar';
+import InViewReveal from '../components/common/InViewReveal';
 import CaseStudyDetailHero from '../components/sections/case-studies/CaseStudyDetailHero';
 import CaseStudyContent from '../components/sections/case-studies/CaseStudyContent';
 import CaseStudyFeatures from '../components/sections/case-studies/CaseStudyFeatures';
@@ -13,12 +14,24 @@ export default function CaseStudyDetailPage() {
       <Navbar />
       <div className="pt-[55px]">
         <CaseStudyDetailHero />
-        <CaseStudyContent />
-        <CaseStudyFeatures />
-        <CaseStudyComparison />
-        <CaseStudyImpact />
-        <CaseStudyWayAhead />
-        <Footer />
+        <InViewReveal delay={40}>
+          <CaseStudyContent />
+        </InViewReveal>
+        <InViewReveal delay={70}>
+          <CaseStudyFeatures />
+        </InViewReveal>
+        <InViewReveal delay={100}>
+          <CaseStudyComparison />
+        </InViewReveal>
+        <InViewReveal delay={130}>
+          <CaseStudyImpact />
+        </InViewReveal>
+        <InViewReveal delay={160}>
+          <CaseStudyWayAhead />
+        </InViewReveal>
+        <InViewReveal delay={120}>
+          <Footer />
+        </InViewReveal>
       </div>
     </div>
   );

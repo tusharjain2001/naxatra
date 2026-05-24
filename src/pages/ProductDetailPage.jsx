@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/sections/Navbar';
+import InViewReveal from '../components/common/InViewReveal';
 import Footer from '../components/sections/Footer';
 import ProductDetailHeroSection from '../components/sections/product/ProductDetailHeroSection';
 import ProductDetailTechSection from '../components/sections/product/ProductDetailTechSection';
@@ -42,10 +43,18 @@ export default function ProductDetailPage() {
       <Navbar />
       <div className="pt-[55px]">
         <ProductDetailHeroSection product={product} />
-        <ProductDetailTechSection product={product} />
-        <ProductCTASection />
-        <ProductFeaturesSection />
-        <Footer />
+        <InViewReveal delay={40}>
+          <ProductDetailTechSection product={product} />
+        </InViewReveal>
+        <InViewReveal delay={70}>
+          <ProductCTASection />
+        </InViewReveal>
+        <InViewReveal delay={100}>
+          <ProductFeaturesSection />
+        </InViewReveal>
+        <InViewReveal delay={130}>
+          <Footer />
+        </InViewReveal>
       </div>
     </div>
   );

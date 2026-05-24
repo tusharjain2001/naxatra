@@ -120,7 +120,7 @@ export default function BlogsHeroSection() {
             }}
           >
             <AnimatedTextReveal text={introText} />
-            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={middleText} delay={middleDelay} stagger={textStagger} /></span>
+            <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={middleText} delay={middleDelay} stagger={textStagger} /></span>{' '}
             <AnimatedTextReveal text={endText} delay={endDelay} stagger={textStagger} />
           </h1>
           <p

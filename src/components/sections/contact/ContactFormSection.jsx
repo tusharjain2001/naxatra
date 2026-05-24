@@ -29,7 +29,7 @@ const MOTOR_APPLICATIONS = ['Industrial', 'E-Mobility', 'Power Tools', 'Robotics
 function SubmitRow({ loading, success, error, imgStyle }) {
   return (
     <div className="flex flex-col items-center" style={{ gap: '8px' }}>
-      <button type="submit" disabled={loading} aria-label="Submit Enquiry" className="block disabled:opacity-60">
+      <button type="submit" disabled={loading} aria-label="Submit Enquiry" className="cta-asset block disabled:opacity-60">
         <img src={submitEnquiry} alt="Submit Enquiry" className="block" style={imgStyle} />
       </button>
       {success && (
