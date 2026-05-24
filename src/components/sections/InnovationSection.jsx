@@ -48,7 +48,7 @@ export default function InnovationSection() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="relative min-h-[clamp(250px,21vw,364px)] px-[clamp(26px,2vw,40px)] pt-[clamp(28px,2.2vw,42px)] pb-[clamp(24px,1.9vw,36px)] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:pt-4 max-[560px]:pb-[18px]"
+              className="group relative min-h-[clamp(250px,21vw,364px)] px-[clamp(26px,2vw,40px)] pt-[clamp(28px,2.2vw,42px)] pb-[clamp(24px,1.9vw,36px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:pt-4 max-[560px]:pb-[18px]"
             >
               <img
                 src={card.bg}

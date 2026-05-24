@@ -45,13 +45,14 @@ export default function BlogsSection() {
 
         <div className="grid grid-cols-3 gap-[clamp(16px,1.4vw,26px)] max-[980px]:grid-cols-1 max-[720px]:mx-auto max-[720px]:max-w-[297.289px] max-[720px]:gap-5">
           {blogs.map((blog, i) => (
-            <div key={i} className="relative min-h-[clamp(390px,30vw,528px)] max-[720px]:h-[345.193px] max-[720px]:min-h-0 max-[720px]:w-[297.289px]">
+            <div key={i} className="group relative min-h-[clamp(390px,30vw,528px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[720px]:h-[345.193px] max-[720px]:min-h-0 max-[720px]:w-[297.289px]">
               <img
                 src={blog.bg}
                 alt=""
-                className="absolute inset-0 h-full w-full"
+                className="absolute inset-0 h-full w-full transition duration-300 ease-out group-hover:opacity-90"
                 style={{ display: 'block' }}
               />
+              <div className="absolute inset-0 bg-[#edf6ff] opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
 
               <div className="relative z-10 px-[clamp(18px,1.45vw,28px)] pt-[clamp(20px,1.7vw,34px)] pb-[clamp(20px,1.6vw,30px)] max-[720px]:px-[16.5px] max-[720px]:pt-[15px] max-[720px]:pb-[18px]">
                 <div className="relative h-[clamp(180px,16vw,247px)] overflow-hidden rounded-[5.28px] max-[720px]:mx-auto max-[720px]:h-[148.826px] max-[720px]:w-[263.756px] max-[720px]:rounded-[4px]">
@@ -77,9 +78,14 @@ export default function BlogsSection() {
                     href={blog.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-[clamp(12px,0.9vw,16px)] block text-right font-metro text-[16.2px] leading-[1.55] text-[#1863da] no-underline max-[720px]:text-[10px]"
+                    className="group mt-[clamp(12px,0.9vw,16px)] block text-right font-metro text-[16.2px] leading-[1.55] text-[#1863da] no-underline transition duration-300 ease-out hover:tracking-[0.01em] max-[720px]:text-[10px]"
                   >
-                    Read More <span aria-hidden="true">-&gt;</span>
+                    <span className="border-b border-transparent transition-colors duration-300 ease-out group-hover:border-[#1863da]">
+                      Read More
+                    </span>{' '}
+                    <span aria-hidden="true" className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-0.5">
+                      -&gt;
+                    </span>
                   </a>
                 </div>
               </div>

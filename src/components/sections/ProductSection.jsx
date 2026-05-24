@@ -53,7 +53,7 @@ export default function ProductSection() {
             </p>
             <a
               href="/products"
-              className="mt-[clamp(12px,1.4vw,22px)] inline-flex items-center text-decoration-none"
+              className="group mt-[clamp(12px,1.4vw,22px)] inline-flex items-center text-decoration-none transition-transform duration-300 ease-out hover:-translate-y-0.5"
               aria-label="View all products"
             >
               <img

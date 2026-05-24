@@ -54,13 +54,13 @@ export default function HeroSection() {
 
         <a
           href="#products"
-          className="absolute bottom-[clamp(44px,4vw,82px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
+          className="group absolute bottom-[clamp(44px,4vw,82px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline transition-transform duration-300 ease-out hover:-translate-y-0.5 max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
           aria-label="Explore Options"
         >
           <img
             src={exploreOptions}
             alt=""
-            className="block h-auto w-[clamp(85px,10.4vw,200px)] max-[720px]:w-[160px]"
+            className="block h-auto w-[clamp(85px,10.4vw,200px)] transition duration-300 ease-out group-hover:scale-[1.03] group-hover:brightness-105 group-hover:drop-shadow-[0_10px_22px_rgba(24,99,218,0.18)] max-[720px]:w-[160px]"
           />
         </a>
 

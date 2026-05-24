@@ -91,13 +91,13 @@ export default function ApplicationsSection() {
                     <button
                       type="button"
                       onClick={() => setActiveId(category.id)}
-                      className="block w-full bg-transparent py-[clamp(12px,1.1vw,20px)]"
+                      className="group block w-full bg-transparent py-[clamp(12px,1.1vw,20px)]"
                     >
                       <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-center gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
                         <div className="max-[920px]:hidden" />
-                        <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 text-left max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
+                        <p className="font-nexa text-[clamp(18px,1.5vw,30px)] font-light leading-[1.2] text-[#515151]/55 text-left transition duration-300 ease-out group-hover:text-[#1863da] max-[720px]:flex max-[720px]:items-center max-[720px]:justify-between">
                           <span>{category.label}</span>
-                          <span className="hidden max-[720px]:inline text-[18px] font-light leading-none shrink-0">+</span>
+                          <span className="hidden text-[18px] font-light leading-none shrink-0 transition duration-300 ease-out group-hover:text-[#1863da] max-[720px]:inline">+</span>
                         </p>
                       </div>
                     </button>
