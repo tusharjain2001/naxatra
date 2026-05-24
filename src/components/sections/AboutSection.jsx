@@ -1,4 +1,5 @@
-import aboutSectionPhoto from '../../assets/images/about-section-photo.png';
+const aboutSectionVideo =
+  'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779610703/Corporate_Video_VO_D1_1_bcmskq.mp4';
 
 export default function AboutSection() {
   return (
@@ -16,9 +17,13 @@ export default function AboutSection() {
         </h2>
 
         <div className="mt-[clamp(18px,2.4vw,34px)] w-full rounded-[clamp(20px,2.1vw,34px)] shadow-[0_18px_45px_rgba(24,99,218,0.10)]">
-          <img
-            src={aboutSectionPhoto}
-            alt="Efficient Motors, Better Performance, Greener Future"
+          <video
+            src={aboutSectionVideo}
+            autoPlay
+            muted
+            loop
+            controls
+            playsInline
             className="block aspect-[1235/683] w-full rounded-[inherit] object-cover"
           />
         </div>

@@ -111,8 +111,8 @@ export const PRODUCTS = [
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
-        voltage: 72, ratedPower: 2.2, peakPower: 3.5, peakSpeed: 3600, ratedTorque: 10.5,
-        peakTorque: 30, efficiency: '>92%', cooling: 'Air Cooled', mass: '6.5 kg',
+        voltage: 72, ratedPower: 2.2, peakPower: 4, peakSpeed: 3600, ratedTorque: 10.5,
+        peakTorque: 36.2, efficiency: '>92%', cooling: 'Air Cooled', mass: '6.5 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
@@ -136,13 +136,13 @@ export const PRODUCTS = [
     applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'forklift', 'loader'],
     variants: [
       {
-        voltage: 48, ratedPower: 3.3, peakPower: 4.5, peakSpeed: 3600, ratedTorque: 14.5,
-        peakTorque: 45, efficiency: '>92%', cooling: 'Air Cooled', mass: '7.7 kg',
+        voltage: 48, ratedPower: 3.3, peakPower: 4.5, peakSpeed: 3600, ratedTorque: 12,
+        peakTorque: 47.5, efficiency: '>92%', cooling: 'Air Cooled', mass: '7.5 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
-        voltage: 72, ratedPower: 3.3, peakPower: 4.8, peakSpeed: 5000, ratedTorque: 14.5,
-        peakTorque: 45, efficiency: '>92%', cooling: 'Air Cooled', mass: '7.7 kg',
+        voltage: 72, ratedPower: 3.3, peakPower: 4.8, peakSpeed: 5000, ratedTorque: 13,
+        peakTorque: 54.5, efficiency: '>92%', cooling: 'Air Cooled', mass: '7.5 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
@@ -166,12 +166,12 @@ export const PRODUCTS = [
     applications: ['scooters', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
     variants: [
       {
-        voltage: 48, ratedPower: 5.5, peakPower: 8, peakSpeed: 4000, ratedTorque: 19.5,
-        peakTorque: 55, efficiency: '>92%', cooling: 'Air Cooled', mass: '10.5 kg',
+        voltage: 48, ratedPower: 5.5, peakPower: 8, peakSpeed: 3600, ratedTorque: 14,
+        peakTorque: 44.5, efficiency: '>92%', cooling: 'Air Cooled', mass: '10.5 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
-        voltage: 72, ratedPower: 5.5, peakPower: 8, peakSpeed: 4000, ratedTorque: 19.5,
+        voltage: 72, ratedPower: 5.5, peakPower: 8, peakSpeed: 3600, ratedTorque: 16,
         peakTorque: 65, efficiency: '>92%', cooling: 'Air Cooled', mass: '10.5 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
@@ -196,13 +196,13 @@ export const PRODUCTS = [
     applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
     variants: [
       {
-        voltage: 48, ratedPower: 6.5, peakPower: 12.5, peakSpeed: 6500, ratedTorque: 20,
-        peakTorque: 62, efficiency: '>93%', cooling: 'Air Cooled', mass: '15 kg',
+        voltage: 48, ratedPower: 6.5, peakPower: 11.5, peakSpeed: 6500, ratedTorque: 20,
+        peakTorque: 62, efficiency: '>93%', cooling: 'Air Cooled', mass: '13.6 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {
-        voltage: 72, ratedPower: 6.5, peakPower: 13, peakSpeed: 6500, ratedTorque: 20,
-        peakTorque: 62, efficiency: '>94%', cooling: 'Air Cooled', mass: '15 kg',
+        voltage: 72, ratedPower: 6.5, peakPower: 11.5, peakSpeed: 6500, ratedTorque: 24,
+        peakTorque: 71, efficiency: '>93%', cooling: 'Air Cooled', mass: '13.6 kg',
         insulation: 'F Class', sensor: 'Enc (hall signals)', ip: 'IP67', comm: 'CAN / one-line',
       },
       {

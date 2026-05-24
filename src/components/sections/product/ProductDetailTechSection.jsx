@@ -134,9 +134,9 @@ function MotorDetailedContent({ product }) {
           overflow: "hidden",
         }}
       >
-        {product.heroVideo ? (
+        {product.detailedVideo || product.heroVideo ? (
           <video
-            src={product.heroVideo}
+            src={product.detailedVideo || product.heroVideo}
             autoPlay
             loop
             muted
@@ -145,6 +145,8 @@ function MotorDetailedContent({ product }) {
               width: "clamp(160px, 26.8vw, 515px)",
               height: "clamp(120px, 22.6vw, 434px)",
               objectFit: "cover",
+              backgroundColor: "transparent",
+              mixBlendMode: product.detailedVideo ? "screen" : "normal",
               transform: `scale(${zoom})`,
               transition: "transform 0.2s ease",
             }}
