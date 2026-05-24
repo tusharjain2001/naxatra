@@ -18,10 +18,10 @@ import appSweeper from '../assets/vehicle/sweepers.png';
 export const APPLICATIONS = [
   { id: 'scooters',           label: 'Scooters',              icon: appScooter },
   { id: 'bikes',              label: 'Bikes',                 icon: appBike },
-  { id: 'sweepers',           label: 'Sweepers',              icon: appSweeper },
+  { id: 'sweepers',           label: 'Ride on Sweeper',       icon: appSweeper },
   { id: 'agribot',            label: 'Agri-Bot',              icon: appAgriBot },
-  { id: 'weeder',             label: 'Power Weeder',          icon: appWeeder },
-  { id: 'loader',             label: 'Loader Vehicle',        icon: appLoader },
+  { id: 'weeder',             label: 'Power Weeder',          icon: appLoader },
+  { id: 'loader',             label: 'Loader Vehicle',        icon: appWeeder },
   { id: 'forklift',           label: 'Forklift',              icon: appForklift },
   { id: 'erickshaw',          label: 'E-Rickshaw',            icon: appErickshaw },
   { id: 'tiller',             label: 'Electric Tiller',       icon: appTiller },
@@ -78,7 +78,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF15,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778521840/RF_15_zqlcg8.mp4',
-    applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'forklift', 'erickshaw'],
+    applications: ['scooters', 'weeder', 'erickshaw'],
     variants: [
       {
         voltage: 48, ratedPower: 1.5, peakPower: 3.5, peakSpeed: 4500, ratedTorque: 5,
@@ -133,7 +133,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF33,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522605/RF_33_ytaenx.mp4',
-    applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'forklift', 'loader'],
+    applications: ['scooters', 'agribot', 'weeder', 'forklift', 'loader'],
     variants: [
       {
         voltage: 48, ratedPower: 3.3, peakPower: 4.5, peakSpeed: 3600, ratedTorque: 12,
@@ -163,7 +163,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF55,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522666/RF_55_buqlqx.mp4',
-    applications: ['scooters', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
+    applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
     variants: [
       {
         voltage: 48, ratedPower: 5.5, peakPower: 8, peakSpeed: 3600, ratedTorque: 14,
@@ -193,7 +193,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF66,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522722/RF_66_dtfdjs.mp4',
-    applications: ['scooters', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
+    applications: ['scooters', 'sweepers', 'loader', 'tiller'],
     variants: [
       {
         voltage: 48, ratedPower: 6.5, peakPower: 11.5, peakSpeed: 6500, ratedTorque: 20,
