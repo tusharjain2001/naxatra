@@ -312,103 +312,131 @@ function CertificationCard({ item }) {
 }
 
 function PlatformAdvantageCard({ item }) {
-  const borderId = `platform-card-border-${item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
+  const outerClipPath = 'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)';
+  const innerClipPath = 'polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%)';
+  const mobileCardStyle = {
+    clipPath: outerClipPath,
+    background: '#F4FCFB',
+    border: '1px solid #9D9D9D',
+    padding: '22px 22px 20px 22px',
+  };
+  const desktopShellStyle = {
+    clipPath: outerClipPath,
+    background: 'linear-gradient(93deg, #F0F0F0 0.83%, #C3C3C3 44.19%, #F0F0F0 98.87%)',
+  };
+  const desktopInnerStyle = {
+    clipPath: innerClipPath,
+    background: '#F4FCFB',
+    padding: '22px 22px 20px 22px',
+  };
 
   return (
-    <article
-      className="relative h-full"
-    >
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id={borderId} x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0.83%" stopColor="#F0F0F0" />
-            <stop offset="44.19%" stopColor="#C3C3C3" />
-            <stop offset="98.87%" stopColor="#F0F0F0" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
-          fill="rgba(77, 214, 196, 0.06)"
-        />
-        <path
-          d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
-          fill="none"
-          stroke="#9D9D9D"
-          className="md:hidden"
-          vectorEffect="non-scaling-stroke"
-        />
-        <path
-          d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
-          fill="none"
-          stroke={`url(#${borderId})`}
-          strokeWidth="1.2"
-          className="hidden md:block"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
-      <div
-        className="relative z-10 flex h-full flex-col md:min-h-[180px]"
+    <>
+      <article
+        className="h-full p-[1px] md:hidden"
         style={{
-          padding: '22px 22px 20px 22px',
+          clipPath: outerClipPath,
+          background: '#9D9D9D',
         }}
       >
-        <img
-          src={item.icon}
-          alt=""
-          aria-hidden="true"
-          className="mb-3 block object-contain md:mb-5"
-          style={{ width: '18px', height: '18px' }}
-        />
-        <h3
-          className="mb-2.5 font-nexa md:mb-4"
+        <div
+          className="flex h-full flex-col"
           style={{
-            color: '#1863DA',
-            fontSize: '16px',
-            lineHeight: '1.18',
-            fontWeight: 600,
+            ...mobileCardStyle,
+            clipPath: innerClipPath,
+            border: 'none',
           }}
         >
-          <span className="md:hidden">{item.title}</span>
-          <span className="hidden md:block">
-            {item.titleLines.map((line) => (
-              <span
-                key={line}
-                className="block whitespace-nowrap"
-                style={{ fontSize: '25px' }}
-              >
-                {line}
-              </span>
-            ))}
-          </span>
-        </h3>
-        <p
-          className="font-metro text-black"
-          style={{
-            fontSize: '10px',
-            lineHeight: '1.45',
-            opacity: 0.82,
-          }}
+          <img
+            src={item.icon}
+            alt=""
+            aria-hidden="true"
+            className="mb-3 block object-contain"
+            style={{ width: '18px', height: '18px' }}
+          />
+          <h3
+            className="mb-2.5 font-nexa"
+            style={{
+              color: '#1863DA',
+              fontSize: '16px',
+              lineHeight: '1.18',
+              fontWeight: 600,
+            }}
+          >
+            {item.title}
+          </h3>
+          <p
+            className="font-metro text-black"
+            style={{
+              fontSize: '10px',
+              lineHeight: '1.45',
+              opacity: 0.82,
+            }}
+          >
+            {item.description}
+          </p>
+        </div>
+      </article>
+
+      <article
+        className="relative hidden h-full p-[1px] md:block"
+        style={desktopShellStyle}
+      >
+        <div
+          className="flex h-full flex-col md:min-h-[180px]"
+          style={desktopInnerStyle}
         >
-          <span className="md:hidden">{item.description}</span>
-          <span className="hidden pr-6 md:block">
-            {item.descriptionLines.map((line) => (
-              <span
-                key={line}
+          <img
+            src={item.icon}
+            alt=""
+            aria-hidden="true"
+            className="mb-5 block object-contain"
+            style={{ width: '18px', height: '18px' }}
+          />
+          <h3
+            className="mb-4 font-nexa"
+            style={{
+              color: '#1863DA',
+              fontSize: '16px',
+              lineHeight: '1.18',
+              fontWeight: 600,
+            }}
+          >
+            <span className="block">
+              {item.titleLines.map((line) => (
+                <span
+                  key={line}
+                  className="block whitespace-nowrap"
+                  style={{ fontSize: '25px' }}
+                >
+                  {line}
+                </span>
+              ))}
+            </span>
+          </h3>
+          <p
+            className="font-metro text-black"
+            style={{
+              fontSize: '10px',
+              lineHeight: '1.45',
+              opacity: 0.82,
+            }}
+          >
+            <span className="pr-6">
+              {item.descriptionLines.map((line) => (
+                <span
+                  key={line}
                 className="block whitespace-nowrap"
                 style={{ fontSize: '16px' }}
               >
                 {line}
-              </span>
-            ))}
-          </span>
-        </p>
-      </div>
-    </article>
+                </span>
+              ))}
+            </span>
+          </p>
+        </div>
+      </article>
+    </>
   );
 }
 
