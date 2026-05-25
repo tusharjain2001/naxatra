@@ -2,6 +2,7 @@ import Navbar from '../components/sections/Navbar';
 import InViewReveal from '../components/common/InViewReveal';
 import TechHeroSection from '../components/sections/technology/TechHeroSection';
 import TechAboutSection from '../components/sections/technology/TechAboutSection';
+import TechPlatformSection from '../components/sections/technology/TechPlatformSection';
 import TechStatsSection from '../components/sections/technology/TechStatsSection';
 import TechPowerSection from '../components/sections/technology/TechPowerSection';
 import Footer from '../components/sections/Footer';
@@ -15,6 +16,9 @@ export default function TechnologyPage() {
           <TechHeroSection />
           <InViewReveal delay={40}>
             <TechAboutSection />
+          </InViewReveal>
+          <InViewReveal delay={55}>
+            <TechPlatformSection />
           </InViewReveal>
           <InViewReveal delay={70}>
             <TechStatsSection />

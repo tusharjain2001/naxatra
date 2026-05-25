@@ -21,7 +21,7 @@ export default function TechAboutSection() {
         className="relative mx-auto flex flex-wrap items-center justify-center max-[768px]:!px-3"
         style={{
           maxWidth: '1840px',
-          padding: 'clamp(20px, 2.2vw, 42px) clamp(20px, 4.2vw, 80px)',
+          padding: 'clamp(44px, 4.8vw, 88px) clamp(20px, 4.2vw, 80px) clamp(20px, 2.2vw, 42px)',
           gap: 'clamp(16px, 3vw, 56px)',
         }}
       >
