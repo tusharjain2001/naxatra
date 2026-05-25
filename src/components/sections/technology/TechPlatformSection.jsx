@@ -1,10 +1,16 @@
 import controllerIcon from '../../../assets/new-tech-sections/controller.svg';
 import customerValueIcon from '../../../assets/new-tech-sections/customer-value.svg';
 import defensibilityIcon from '../../../assets/new-tech-sections/defensibility.svg';
+import threeYearWarrantyIcon from '../../../assets/new-tech-sections/3 year warranty.svg';
+import araiIcon from '../../../assets/new-tech-sections/arai.svg';
 import economicsIcon from '../../../assets/new-tech-sections/economics.svg';
 import fasterTurnaroundIcon from '../../../assets/new-tech-sections/faster-turnaround.svg';
 import hardToReplicaeIcon from '../../../assets/new-tech-sections/hard to replicae.svg';
 import indiaFirstSupplyIcon from '../../../assets/new-tech-sections/india first supply.svg';
+import iatfIcon from '../../../assets/new-tech-sections/iatf.svg';
+import ip67Icon from '../../../assets/new-tech-sections/ip67.svg';
+import isoIcon from '../../../assets/new-tech-sections/iso.svg';
+import madeInIndiaIcon from '../../../assets/new-tech-sections/madeinindia.svg';
 import newMarketsIcon from '../../../assets/new-tech-sections/new markets.svg';
 import supplyChainIcon from '../../../assets/new-tech-sections/supply-chain.svg';
 import youConfigureIcon from '../../../assets/new-tech-sections/you configure.svg';
@@ -103,12 +109,87 @@ const platformCards = [
   },
 ];
 
+const certificationHighlights = [
+  {
+    title: 'ISO 9001:2015',
+    description: 'Certified quality management system covering design, production, QC, and customer support.',
+    icon: isoIcon,
+  },
+  {
+    title: 'ARAI Recognised',
+    description: 'Automotive Research Association of India - credibility for EV and automotive applications.',
+    icon: araiIcon,
+  },
+  {
+    title: 'IATF 16949 In Progress',
+    description: 'Automotive-grade QMS initiated for Tier-1 and OEM supplier readiness.',
+    icon: iatfIcon,
+  },
+  {
+    title: 'IP67 - H-Class Insulation',
+    description: 'Full submersion rated H-class insulation validated for sustained high-temperature operation.',
+    icon: ip67Icon,
+  },
+  {
+    title: '3-Year Motor Warranty',
+    description: 'On every unit shipped, covering manufacturing and material defects - not just paper coverage.',
+    icon: threeYearWarrantyIcon,
+  },
+  {
+    title: '100% Made In India',
+    description: '85% localised supply chain. PLM-qualifying. Every motor designed, built, and tested in Ahmedabad.',
+    icon: madeInIndiaIcon,
+  },
+];
+
 function HighlightCard({ item }) {
   return (
     <article
       className="border-b bg-white"
       style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}
     >
+      <div
+        className="flex h-full flex-col"
+        style={{
+          padding: 'clamp(28px, 3vw, 44px) clamp(22px, 2.9vw, 40px)',
+          minHeight: 'clamp(208px, 17.5vw, 280px)',
+        }}
+      >
+        <img
+          src={item.icon}
+          alt=""
+          aria-hidden="true"
+          className="block object-contain"
+          style={{ width: '44px', height: '44px', marginBottom: 'clamp(18px, 1.8vw, 26px)' }}
+        />
+        <h3
+          className="font-nexa text-[16px] text-black md:text-[24px]"
+          style={{
+            lineHeight: '1.2',
+            fontWeight: 600,
+            marginBottom: 'clamp(14px, 1.4vw, 20px)',
+          }}
+        >
+          {item.title}
+        </h3>
+        <p
+          className="font-metro text-[10px] text-black md:text-[18px]"
+          style={{
+            lineHeight: '1.72',
+            maxWidth: '34ch',
+            opacity: 0.82,
+          }}
+        >
+          {item.description}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function CertificationCard({ item }) {
+  return (
+    <article className="border-b bg-white" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
       <div
         className="flex h-full flex-col"
         style={{
@@ -134,9 +215,10 @@ function HighlightCard({ item }) {
           {item.title}
         </h3>
         <p
-          className="font-metro text-[10px] text-black md:text-[18px]"
+          className="font-metro text-black"
           style={{
-            lineHeight: '1.72',
+            fontSize: 'clamp(10px, 0.84vw, 16px)',
+            lineHeight: '1.65',
             maxWidth: '34ch',
             opacity: 0.82,
           }}
@@ -149,6 +231,8 @@ function HighlightCard({ item }) {
 }
 
 function PlatformAdvantageCard({ item }) {
+  const borderId = `platform-card-border-${item.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
+
   return (
     <article
       className="relative h-full"
@@ -159,10 +243,30 @@ function PlatformAdvantageCard({ item }) {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient id={borderId} x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0.83%" stopColor="#F0F0F0" />
+            <stop offset="44.19%" stopColor="#C3C3C3" />
+            <stop offset="98.87%" stopColor="#F0F0F0" />
+          </linearGradient>
+        </defs>
         <path
           d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
           fill="rgba(77, 214, 196, 0.06)"
+        />
+        <path
+          d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
+          fill="none"
           stroke="#9D9D9D"
+          className="md:hidden"
+          vectorEffect="non-scaling-stroke"
+        />
+        <path
+          d="M0.5 0.5H99.5V88L88 99.5H0.5Z"
+          fill="none"
+          stroke={`url(#${borderId})`}
+          strokeWidth="1.2"
+          className="hidden md:block"
           vectorEffect="non-scaling-stroke"
         />
       </svg>
@@ -330,6 +434,70 @@ export default function TechPlatformSection() {
           {platformCards.map((item) => (
             <PlatformAdvantageCard key={item.title} item={item} />
           ))}
+        </div>
+      </div>
+
+      <div
+        className="mx-auto flex flex-col items-center text-center"
+        style={{
+          maxWidth: '1120px',
+          padding: 'clamp(56px, 7vw, 96px) clamp(24px, 4vw, 40px) clamp(40px, 5vw, 60px)',
+        }}
+      >
+        <p
+          className="font-metro uppercase text-[#5b6472]"
+          style={{
+            fontSize: 'clamp(11px, 0.9vw, 13px)',
+            lineHeight: '1.3',
+            letterSpacing: '0.12em',
+            marginBottom: 'clamp(16px, 1.3vw, 20px)',
+          }}
+        >
+          Validated & Certified
+        </p>
+        <h2
+          className="font-nexa text-black"
+          style={{
+            fontSize: 'clamp(26px, 3.2vw, 42px)',
+            lineHeight: '1.18',
+            fontWeight: 600,
+            maxWidth: '820px',
+          }}
+        >
+          <span className="hidden md:block">
+            Quality Systems <span style={{ color: '#1863DA' }}>You Can Audit</span>
+          </span>
+          <span className="md:hidden">
+            <span className="block">Quality Systems</span>
+            <span className="block" style={{ color: '#1863DA' }}>You Can Audit</span>
+          </span>
+        </h2>
+      </div>
+
+      <div className="w-full border-t border-b md:hidden" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
+        <div className="grid grid-cols-2 divide-x" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
+          {certificationHighlights.map((item) => (
+            <CertificationCard key={item.title} item={item} />
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden w-full border-t border-b md:block" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
+        <div
+          className="grid"
+          style={{
+            gridTemplateColumns: 'clamp(24px, 4vw, 60px) minmax(0, 1fr) clamp(24px, 4vw, 60px)',
+          }}
+        >
+          <div />
+          <div className="border-l border-r" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
+            <div className="grid grid-cols-2 divide-x xl:grid-cols-3" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
+              {certificationHighlights.map((item) => (
+                <CertificationCard key={item.title} item={item} />
+              ))}
+            </div>
+          </div>
+          <div />
         </div>
       </div>
     </section>
