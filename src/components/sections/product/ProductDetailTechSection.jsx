@@ -146,7 +146,6 @@ function MotorDetailedContent({ product }) {
               height: "clamp(120px, 22.6vw, 434px)",
               objectFit: "cover",
               backgroundColor: "transparent",
-              mixBlendMode: product.detailedVideo ? "screen" : "normal",
               transform: `scale(${zoom})`,
               transition: "transform 0.2s ease",
             }}
