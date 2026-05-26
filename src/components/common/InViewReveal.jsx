@@ -9,6 +9,7 @@ export default function InViewReveal({
 }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [useTransformReveal, setUseTransformReveal] = useState(true);
 
   useEffect(() => {
     const element = ref.current;
@@ -18,6 +19,11 @@ export default function InViewReveal({
     }
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
+
+    const shouldUseTransform = !(mobileQuery.matches || coarsePointerQuery.matches);
+    setUseTransformReveal(shouldUseTransform);
 
     if (mediaQuery.matches) {
       setIsVisible(true);
@@ -48,12 +54,14 @@ export default function InViewReveal({
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translate3d(0, 0, 0)' : `translate3d(0, ${distance}px, 0)`,
-        transitionProperty: 'opacity, transform',
+        transform: useTransformReveal
+          ? (isVisible ? 'translate3d(0, 0, 0)' : `translate3d(0, ${distance}px, 0)`)
+          : 'none',
+        transitionProperty: useTransformReveal ? 'opacity, transform' : 'opacity',
         transitionDuration: `${duration}ms`,
         transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
         transitionDelay: `${delay}ms`,
-        willChange: 'opacity, transform',
+        willChange: isVisible ? 'auto' : (useTransformReveal ? 'opacity, transform' : 'opacity'),
       }}
     >
       {children}
