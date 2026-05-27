@@ -64,7 +64,7 @@ export default function HeroSection() {
           />
         </a>
 
-        <div className="absolute right-[clamp(72px,10vw,210px)] top-[clamp(28px,3.8vw,104px)] w-[588px] h-[451px] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:w-[199px] max-[720px]:h-[153.943px]">
+        <div className="absolute right-[clamp(84px,10.8vw,230px)] top-[clamp(42px,4.6vw,112px)] h-[clamp(320px,24vw,395px)] w-[clamp(420px,31vw,515px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:h-[153.943px] max-[720px]:w-[199px]">
           <video
             src={heroVideo}
             autoPlay
