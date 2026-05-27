@@ -1,7 +1,12 @@
+import { useState } from 'react';
+import aboutThumbnail from '../../assets/images/Thumbnail .png';
+
 const aboutSectionVideo =
   'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779610703/Corporate_Video_VO_D1_1_bcmskq.mp4';
 
 export default function AboutSection() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
   return (
     <section id="about" className="relative mt-[44px] overflow-hidden bg-[#f5fafa] px-4 pb-[26px] pt-[18px] max-[720px]:mt-10 max-[720px]:px-3 max-[720px]:pb-6 max-[720px]:pt-4">
       <div className="pointer-events-none absolute inset-0 opacity-80">
@@ -17,15 +22,40 @@ export default function AboutSection() {
         </h2>
 
         <div className="mt-[clamp(18px,2.4vw,34px)] w-full max-w-[980px] rounded-[clamp(20px,2.1vw,34px)] shadow-[0_18px_45px_rgba(24,99,218,0.10)] max-[720px]:max-w-none">
-          <video
-            src={aboutSectionVideo}
-            autoPlay
-            muted
-            loop
-            controls
-            playsInline
-            className="block aspect-[1235/683] w-full rounded-[inherit] object-cover"
-          />
+          {isVideoPlaying ? (
+            <video
+              src={aboutSectionVideo}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              className="block aspect-[1235/683] w-full rounded-[inherit] object-cover"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setIsVideoPlaying(true)}
+              className="group relative block w-full overflow-hidden rounded-[inherit]"
+              aria-label="Play about video"
+            >
+              <img
+                src={aboutThumbnail}
+                alt="About Naxatra video thumbnail"
+                className="block aspect-[1235/683] w-full rounded-[inherit] object-cover transition duration-300 ease-out group-hover:scale-[1.01]"
+              />
+              <span className="absolute inset-0 bg-black/18 transition duration-300 group-hover:bg-black/24" />
+              <span className="absolute left-1/2 top-1/2 flex h-[clamp(58px,6vw,84px)] w-[clamp(58px,6vw,84px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition duration-300 ease-out group-hover:scale-105">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  className="ml-1 h-[clamp(22px,2.2vw,30px)] w-[clamp(22px,2.2vw,30px)] fill-[#1863da]"
+                >
+                  <path d="M8 6.5v11l9-5.5-9-5.5Z" />
+                </svg>
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </section>
