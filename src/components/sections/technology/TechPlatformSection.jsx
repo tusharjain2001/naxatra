@@ -269,22 +269,36 @@ function HighlightCard({ item }) {
 }
 
 function CertificationCard({ item }) {
+  const isAraiCertificate = item.icon === araiIcon;
+
   return (
     <article className="border-b bg-white" style={{ borderColor: 'rgba(15, 23, 42, 0.1)' }}>
       <div
-        className="flex h-full flex-col"
+        className="flex h-full flex-col items-center text-center"
         style={{
           padding: 'clamp(28px, 3vw, 44px) clamp(22px, 2.9vw, 40px)',
           minHeight: 'clamp(208px, 17.5vw, 280px)',
         }}
       >
-        <img
-          src={item.icon}
-          alt=""
-          aria-hidden="true"
-          className="block h-[56px] w-[56px] self-center object-contain md:h-[28px] md:w-[28px] md:self-start"
-          style={{ marginBottom: 'clamp(18px, 1.8vw, 26px)' }}
-        />
+        <div
+          className="flex items-center justify-center"
+          style={{
+            height: 'clamp(126px, 10vw, 140px)',
+            marginBottom: 'clamp(18px, 1.8vw, 26px)',
+          }}
+        >
+          <img
+            src={item.icon}
+            alt=""
+            aria-hidden="true"
+            className={`block object-contain ${isAraiCertificate ? '' : 'h-[72px] w-[72px] md:h-[88px] md:w-[88px]'}`}
+            style={{
+              width: isAraiCertificate ? '224px' : undefined,
+              height: isAraiCertificate ? '126px' : undefined,
+              aspectRatio: isAraiCertificate ? '16 / 9' : undefined,
+            }}
+          />
+        </div>
         <h3
           className="font-nexa text-[16px] text-black md:text-[30px]"
           style={{
@@ -301,6 +315,7 @@ function CertificationCard({ item }) {
             fontSize: 'clamp(10px, 0.84vw, 16px)',
             lineHeight: '1.65',
             maxWidth: '34ch',
+            margin: '0 auto',
             opacity: 0.82,
           }}
         >
