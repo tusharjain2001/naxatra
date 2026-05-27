@@ -198,10 +198,10 @@ export default function CaseStudyFeatureSection() {
           <div
             className="absolute"
             style={{
-              right: 'clamp(44px, 9vw, 172px)',
+              right: 'clamp(40px, 8vw, 156px)',
               bottom: 'clamp(-6px, -0.2vw, 0px)',
-              width: 'clamp(180px, 18.6vw, 356px)',
-              height: 'clamp(220px, 30vw, 392px)',
+              width: 'clamp(220px, 22vw, 420px)',
+              height: 'clamp(280px, 34vw, 470px)',
               overflow: 'visible',
               zIndex: 2,
             }}
@@ -212,7 +212,7 @@ export default function CaseStudyFeatureSection() {
                 bottom: 0,
                 left: '50%',
                 width: '100%',
-                maxWidth: 'clamp(180px, 18.6vw, 356px)',
+                maxWidth: 'clamp(220px, 22vw, 420px)',
                 borderRadius: 'clamp(5px, 0.45vw, 8px)',
                 boxShadow: '0px 14px 34px rgba(0,0,0,0.28)',
                 overflow: 'hidden',
