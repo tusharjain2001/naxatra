@@ -239,7 +239,7 @@ function MotorDetailedContent({ product }) {
         }}
       >
         <img
-          src={wireframe}
+          src={product.wireframeImage || wireframe}
           alt="Motor wireframe technical drawing"
           style={{
             width: "100%",

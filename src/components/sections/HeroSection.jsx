@@ -72,7 +72,7 @@ export default function HeroSection() {
             muted
             playsInline
             aria-label="Advanced Motor"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full "
           />
         </div>
       </div>

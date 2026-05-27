@@ -5,6 +5,13 @@ import motorRF55 from '../assets/images/product-motor-rf55.png';
 import motorRF66 from '../assets/images/product-motor-rf66.png';
 import motorAF58 from '../assets/images/product-motor-af58.png';
 import motorPT500 from '../assets/images/product-motor-pt500.png';
+import wireframeRF15 from '../assets/wireframe/Antarix-RF15.png';
+import wireframeRF22 from '../assets/wireframe/Antarix-RF22.png';
+import wireframeRF33 from '../assets/wireframe/Antarix-RF33.png';
+import wireframeRF55 from '../assets/wireframe/Antarix-RF55.jpg';
+import wireframeRF66 from '../assets/wireframe/Antarix-RF66.jpg';
+import wireframeAF58 from '../assets/wireframe/Antarix-AF58.jpg';
+import wireframePT500 from '../assets/wireframe/PT-500.jpg';
 import appAgriBot from '../assets/vehicle/agri-bot.png';
 import appBike from '../assets/vehicle/bikes.png';
 import appTiller from '../assets/vehicle/electric-triller.png';
@@ -77,6 +84,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF15,
+    wireframeImage: wireframeRF15,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778521840/RF_15_zqlcg8.mp4',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804132/RF_15_tf6p5q.webm',
     applications: ['scooters', 'weeder', 'erickshaw'],
@@ -103,6 +111,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF22,
+    wireframeImage: wireframeRF22,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522566/RF_22_Precompose_acxd0j.mp4',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804400/RF_22_vfkdfw.webm',
     applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
@@ -134,6 +143,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF33,
+    wireframeImage: wireframeRF33,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522605/RF_33_ytaenx.mp4',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804781/RF_33_qwpsbc.webm',
     applications: ['scooters', 'agribot', 'weeder', 'forklift', 'loader'],
@@ -165,6 +175,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF55,
+    wireframeImage: wireframeRF55,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522666/RF_55_buqlqx.mp4',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804817/RF_55_m0shdx.webm',
     applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
@@ -196,6 +207,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Air Cooled',
     image: motorRF66,
+    wireframeImage: wireframeRF66,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522722/RF_66_dtfdjs.mp4',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804843/RF_66_snlnq6.webm',
     applications: ['scooters', 'sweepers', 'loader', 'tiller'],
@@ -227,6 +239,7 @@ export const PRODUCTS = [
     motorType: 'Axial Flux PMSM',
     coolingType: 'Forced Air Cooled',
     image: motorAF58,
+    wireframeImage: wireframeAF58,
     applications: ['high-performance-2w', 'performance-3w', 'specialty-ev'],
     singleSpec: {
       motorTypeFull: 'Axial Flux PMSM',
@@ -255,6 +268,7 @@ export const PRODUCTS = [
     motorType: 'IPMSM Radial Flux',
     coolingType: 'Forced Air Cooled',
     image: motorPT500,
+    wireframeImage: wireframePT500,
     applications: ['grinder', 'electric-drill', 'industrial-tools'],
     hiddenSingleSpecRows: ['comm'],
     singleSpec: {
