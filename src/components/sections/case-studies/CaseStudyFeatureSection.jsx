@@ -1,11 +1,44 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import caseStudyCard from '../../../assets/images/case-study-card.png';
 import caseStudyCardMobile from '../../../assets/images/case-study-card-mobile.png';
 import cardBg from '../../../assets/images/case-study-bg.svg';
 import featureGrid from '../../../assets/images/feature-grid.png';
 import readCaseCta from '../../../assets/images/read-case-cta.svg';
 
 export default function CaseStudyFeatureSection() {
+  const desktopSectionRef = useRef(null);
+  const [isDesktopCardVisible, setIsDesktopCardVisible] = useState(false);
+
+  useEffect(() => {
+    const section = desktopSectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsDesktopCardVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsDesktopCardVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* ── MOBILE LAYOUT (pixel-matched to Figma node 3091:6982, inner 347×378px) ── */}
@@ -94,6 +127,7 @@ export default function CaseStudyFeatureSection() {
 
       {/* ── DESKTOP LAYOUT (unchanged) ── */}
       <section
+        ref={desktopSectionRef}
         className="relative w-full bg-white overflow-hidden hidden md:block"
         style={{ padding: 'clamp(48px, 7vw, 132px) clamp(20px, 6.7vw, 129px)' }}
       >
@@ -164,28 +198,28 @@ export default function CaseStudyFeatureSection() {
           <div
             className="absolute"
             style={{
-              right: 'clamp(48px, 10.8vw, 208px)',
-              bottom: 0,
-              width: 'clamp(220px, 28vw, 538px)',
-              height: 'clamp(120px, 18.8vw, 360px)',
-              overflow: 'hidden',
+              right: 'clamp(44px, 9vw, 172px)',
+              bottom: 'clamp(-6px, -0.2vw, 0px)',
+              width: 'clamp(180px, 18.6vw, 356px)',
+              height: 'clamp(220px, 30vw, 392px)',
+              overflow: 'visible',
               zIndex: 2,
             }}
           >
             <div
-              className="absolute"
+              className={`absolute ${isDesktopCardVisible ? 'case-study-feature-card-rise' : 'case-study-feature-card-rise-hidden'}`}
               style={{
                 bottom: 0,
                 left: '50%',
-                transform: 'translateX(-50%)',
                 width: '100%',
-                borderRadius: '7.6px 7.6px 0 0',
-                boxShadow: '0px 0px 26.6px 0px rgba(0,0,0,0.5)',
+                maxWidth: 'clamp(180px, 18.6vw, 356px)',
+                borderRadius: 'clamp(5px, 0.45vw, 8px)',
+                boxShadow: '0px 14px 34px rgba(0,0,0,0.28)',
                 overflow: 'hidden',
               }}
             >
               <img
-                src={caseStudyCard}
+                src={caseStudyCardMobile}
                 alt="Boosting Power Tool Performance - Case Study"
                 className="block w-full h-auto"
               />

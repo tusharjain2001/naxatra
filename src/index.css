@@ -55,6 +55,28 @@ body {
   transform: translateY(-2px);
 }
 
+.case-study-feature-card-rise {
+  animation: caseStudyFeatureCardRise 1100ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  will-change: transform, opacity;
+}
+
+.case-study-feature-card-rise-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(118px);
+}
+
+@keyframes caseStudyFeatureCardRise {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(118px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animated-letter {
     opacity: 1;
@@ -69,6 +91,13 @@ body {
 
   .cta-asset:hover {
     transform: none;
+  }
+
+  .case-study-feature-card-rise {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+    will-change: auto;
   }
 }
 
