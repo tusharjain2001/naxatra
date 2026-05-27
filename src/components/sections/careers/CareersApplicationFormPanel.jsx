@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
 import careersPhoto from '../../../assets/images/careers-photo.png';
 
@@ -67,6 +68,7 @@ export default function CareersApplicationFormPanel({
 
     if (!form.fullName || !form.email || !form.phone || !form.role || !form.linkedin || !resumeFile) {
       setSubmitState({ type: 'error', message: 'Please fill all required fields and attach your resume.' });
+      toast.error('Please fill all required fields and attach your resume.');
       return;
     }
 
@@ -77,10 +79,12 @@ export default function CareersApplicationFormPanel({
     payload.append('role', form.role);
     payload.append('linkedin', form.linkedin);
     payload.append('resume', resumeFile);
+    let toastId;
 
     try {
       setIsSubmitting(true);
       setSubmitState({ type: '', message: '' });
+      toastId = toast.loading('Submitting your application...');
 
       const response = await fetch(`${CAREERS_API_BASE_URL}/api/careers/apply`, {
         method: 'POST',
@@ -106,11 +110,14 @@ export default function CareersApplicationFormPanel({
         fileRef.current.value = '';
       }
       setSubmitState({ type: 'success', message: 'Your application has been submitted successfully.' });
+      toast.success('Your application has been submitted successfully.', { id: toastId });
     } catch (error) {
+      const message = error instanceof Error ? error.message : 'Failed to submit your application.';
       setSubmitState({
         type: 'error',
-        message: error instanceof Error ? error.message : 'Failed to submit your application.',
+        message,
       });
+      toast.error(message, toastId ? { id: toastId } : undefined);
     } finally {
       setIsSubmitting(false);
     }
