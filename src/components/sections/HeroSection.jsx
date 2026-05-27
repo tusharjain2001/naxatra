@@ -1,6 +1,6 @@
 import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
-import heroVideo from '../../assets/videos/Hero frame_1.webm';
+import heroVideo from '../../assets/videos/Hero frame_2.webm';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
 
 export default function HeroSection() {
