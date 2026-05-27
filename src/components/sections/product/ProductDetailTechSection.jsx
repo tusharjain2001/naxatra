@@ -265,6 +265,10 @@ function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expande
     fontSize: expanded ? "12px" : "clamp(11px, 1.46vw, 28px)",
     color: "#515151",
     whiteSpace: "nowrap",
+    width: expanded ? "176px" : undefined,
+    minWidth: expanded ? "176px" : undefined,
+    maxWidth: expanded ? "176px" : undefined,
+    boxSizing: "border-box",
   };
 
   const valueCellStyle = expanded
@@ -272,19 +276,181 @@ function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expande
         ...cellStyle,
         padding: "10px 18px",
         fontSize: "12px",
+        minWidth: "120px",
+        whiteSpace: "nowrap",
+        boxSizing: "border-box",
       }
     : cellStyle;
 
   const headerPadding = expanded ? "10px 18px" : "clamp(8px, 0.52vw, 10px) clamp(16px, 1.98vw, 38px)";
   const valueHeaderPadding = expanded ? "10px 18px" : "clamp(8px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)";
+  const expandedRowBackground = (idx) =>
+    idx % 2 === 0 ? "rgba(131,255,239,0.10)" : "#ffffff";
+
+  if (expanded) {
+    if (isSingle) {
+      return (
+        <div style={{ display: "flex", alignItems: "stretch" }}>
+          <table
+            style={{
+              width: "176px",
+              minWidth: "176px",
+              maxWidth: "176px",
+              borderCollapse: "collapse",
+              tableLayout: "fixed",
+              flexShrink: 0,
+            }}
+          >
+            <thead>
+              <tr>
+                <th
+                  className="font-nexa capitalize"
+                  style={{
+                    textAlign: "left",
+                    padding: headerPadding,
+                    fontSize: "13px",
+                    color: "#fff",
+                    background: "#1863da",
+                    borderBottom: "1px solid #d9d9d9",
+                    fontWeight: 400,
+                    whiteSpace: "nowrap",
+                    width: "176px",
+                    minWidth: "176px",
+                    maxWidth: "176px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Specification
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleSingleSpecRows.map((row, idx) => (
+                <tr key={row.key} style={{ background: expandedRowBackground(idx) }}>
+                  <td
+                    className="font-nexa capitalize"
+                    style={{
+                      ...labelCellStyle,
+                      background: expandedRowBackground(idx),
+                    }}
+                  >
+                    {row.label}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div style={{ overflowX: "auto", flex: 1 }}>
+            <table
+              style={{
+                width: "max-content",
+                minWidth: "120px",
+                borderCollapse: "collapse",
+                tableLayout: "fixed",
+              }}
+            >
+              <thead>
+                <tr>
+                  <th
+                    className="font-nexa capitalize"
+                    style={{
+                      textAlign: "left",
+                      padding: valueHeaderPadding,
+                      fontSize: "13px",
+                      color: "#fff",
+                      background: "#1863da",
+                      borderLeft: "1px solid rgba(255,255,255,0.3)",
+                      borderBottom: "1px solid #d9d9d9",
+                      fontWeight: 400,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Value
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {visibleSingleSpecRows.map((row, idx) => (
+                  <tr key={row.key} style={{ background: expandedRowBackground(idx) }}>
+                    <td className="font-nexa capitalize" style={valueCellStyle}>
+                      {product.singleSpec[row.key]}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div style={{ display: "flex", alignItems: "stretch" }}>
+        <table
+          style={{
+            width: "176px",
+            minWidth: "176px",
+            maxWidth: "176px",
+            borderCollapse: "collapse",
+            tableLayout: "fixed",
+            flexShrink: 0,
+          }}
+        >
+          <tbody>
+            {SPEC_ROWS.map((row, idx) => (
+              <tr key={row.key} style={{ background: expandedRowBackground(idx) }}>
+                <td
+                  className="font-nexa capitalize"
+                  style={{
+                    ...labelCellStyle,
+                    background: expandedRowBackground(idx),
+                  }}
+                >
+                  {row.label}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div style={{ overflowX: "auto", flex: 1 }}>
+          <table
+            style={{
+              width: "max-content",
+              minWidth: `${variants.length * 120}px`,
+              borderCollapse: "collapse",
+              tableLayout: "fixed",
+            }}
+          >
+            <tbody>
+              {SPEC_ROWS.map((row, idx) => (
+                <tr key={row.key} style={{ background: expandedRowBackground(idx) }}>
+                  {variants.map((v) => (
+                    <td
+                      key={`${row.key}-${v.voltage}`}
+                      className="font-nexa capitalize"
+                      style={valueCellStyle}
+                    >
+                      {v[row.key]}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ overflowX: "auto" }}>
       {isSingle ? (
         <table
           style={{
-            width: expanded ? "max-content" : "100%",
-            minWidth: expanded ? "620px" : "400px",
+            width: "100%",
+            minWidth: "400px",
             borderCollapse: "collapse",
           }}
         >
@@ -342,8 +508,8 @@ function TechnicalDetailsTable({ isSingle, product, variants, cellStyle, expande
       ) : (
         <table
           style={{
-            width: expanded ? "max-content" : "100%",
-            minWidth: expanded ? "720px" : "100%",
+            width: "100%",
+            minWidth: "100%",
             borderCollapse: "collapse",
           }}
         >
