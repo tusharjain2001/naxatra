@@ -282,8 +282,8 @@ function CertificationCard({ item }) {
           src={item.icon}
           alt=""
           aria-hidden="true"
-          className="block object-contain"
-          style={{ width: '28px', height: '28px', marginBottom: 'clamp(18px, 1.8vw, 26px)' }}
+          className="block h-[56px] w-[56px] self-center object-contain md:h-[28px] md:w-[28px] md:self-start"
+          style={{ marginBottom: 'clamp(18px, 1.8vw, 26px)' }}
         />
         <h3
           className="font-nexa text-[16px] text-black md:text-[30px]"
