@@ -133,7 +133,7 @@ function ProductCard({ product, mobileVariant = 'compact', onOpenBrochure }) {
         </Link>
 
         <button
-          onClick={onOpenBrochure}
+          onClick={() => onOpenBrochure(product.name)}
           className="cta-asset"
           style={{
             display: 'flex',
@@ -275,6 +275,16 @@ function ApplicationsView({ onOpenBrochure }) {
 export default function ProductListingSection() {
   const [activeTab, setActiveTab] = useState('all');
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProductName, setSelectedProductName] = useState('');
+
+  function handleOpenSpecSheet(productName) {
+    setSelectedProductName(productName);
+    setModalOpen(true);
+  }
+
+  function handleCloseSpecSheet() {
+    setModalOpen(false);
+  }
 
   return (
     <section className="w-full" style={{ background: '#fff', paddingBottom: 'clamp(40px, 4vw, 72px)' }}>
@@ -317,12 +327,13 @@ export default function ProductListingSection() {
       {/* Tab content */}
       <div className="max-[560px]:!px-4" style={{ maxWidth: '1470px', margin: '0 auto', padding: '0 clamp(14px, 11.72vw, 225px)' }}>
         {activeTab === 'all'
-          ? <AllProductsView onOpenBrochure={() => setModalOpen(true)} />
-          : <ApplicationsView onOpenBrochure={() => setModalOpen(true)} />}
+          ? <AllProductsView onOpenBrochure={handleOpenSpecSheet} />
+          : <ApplicationsView onOpenBrochure={handleOpenSpecSheet} />}
       </div>
       <DownloadSpecSheetModal
         isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={handleCloseSpecSheet}
+        productInterestedIn={selectedProductName}
       />
     </section>
   );

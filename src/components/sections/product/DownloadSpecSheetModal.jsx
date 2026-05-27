@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
-export default function DownloadSpecSheetModal({ isOpen, onClose }) {
+export default function DownloadSpecSheetModal({ isOpen, onClose, productInterestedIn = '' }) {
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -36,7 +36,10 @@ export default function DownloadSpecSheetModal({ isOpen, onClose }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          productInterestedIn,
+        }),
       });
 
       const result = await response.json().catch(() => ({}));

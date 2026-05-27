@@ -65,6 +65,7 @@ export default function ProductDetailPage() {
       <DownloadSpecSheetModal
         isOpen={specSheetModalOpen}
         onClose={() => setSpecSheetModalOpen(false)}
+        productInterestedIn={product.name}
       />
     </div>
   );
