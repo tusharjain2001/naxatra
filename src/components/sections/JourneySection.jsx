@@ -41,6 +41,16 @@ export default function JourneySection() {
   const cardsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const scrollCardsByStep = (direction) => {
+    const cards = cardsRef.current;
+    if (!cards) return;
+
+    cards.scrollBy({
+      top: direction * cards.clientHeight,
+      behavior: 'smooth',
+    });
+  };
+
   useEffect(() => {
     const cards = cardsRef.current;
     if (!cards) return;
@@ -102,7 +112,7 @@ export default function JourneySection() {
           </div>
 
           {/* Right timeline */}
-          <div className="w-[430px] justify-self-end max-[560px]:mx-auto max-[560px]:w-full max-[560px]:max-w-[284px]">
+          <div className="relative w-[430px] justify-self-end max-[560px]:mx-auto max-[560px]:w-full max-[560px]:max-w-[284px]">
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
                 <p className="font-nexa max-[560px]:text-[22px] max-[560px]:leading-[1]" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
@@ -165,6 +175,32 @@ export default function JourneySection() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="absolute right-[-58px] top-[calc(50%+38px)] hidden -translate-y-1/2 md:flex md:flex-col md:gap-2.5">
+              <button
+                type="button"
+                onClick={() => scrollCardsByStep(-1)}
+                aria-label="Scroll journey cards up"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1863da] text-white shadow-[0_8px_18px_rgba(24,99,218,0.22)] transition-transform duration-200 hover:-translate-y-0.5"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 14L12 8L18 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollCardsByStep(1)}
+                aria-label="Scroll journey cards down"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1863da] text-white shadow-[0_8px_18px_rgba(24,99,218,0.22)] transition-transform duration-200 hover:translate-y-0.5"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 10L12 16L18 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
