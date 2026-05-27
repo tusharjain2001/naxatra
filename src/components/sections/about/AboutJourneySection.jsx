@@ -211,7 +211,7 @@ export default function AboutJourneySection() {
         >
           <div style={{ paddingTop: 0 }}>
             <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
-              [A journey from 2020 to beyond.]
+              [A journey from 2020 to beyond]
             </p>
             <h2 className="font-nexa mt-10" style={{ fontSize: '54px', lineHeight: '1.02', fontWeight: 600, marginBottom: '44px', maxWidth: '520px' }}>
               <span style={{ color: '#000' }}>The Road To </span>

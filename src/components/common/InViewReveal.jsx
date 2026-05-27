@@ -4,12 +4,10 @@ export default function InViewReveal({
   children,
   className = '',
   delay = 0,
-  distance = 24,
-  duration = 700,
+  duration = 450,
 }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [useTransformReveal, setUseTransformReveal] = useState(true);
 
   useEffect(() => {
     const element = ref.current;
@@ -18,14 +16,7 @@ export default function InViewReveal({
       return undefined;
     }
 
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const mobileQuery = window.matchMedia('(max-width: 768px)');
-    const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
-
-    const shouldUseTransform = !(mobileQuery.matches || coarsePointerQuery.matches);
-    setUseTransformReveal(shouldUseTransform);
-
-    if (mediaQuery.matches) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setIsVisible(true);
       return undefined;
     }
@@ -38,8 +29,8 @@ export default function InViewReveal({
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: '0px 0px -8% 0px',
+        threshold: 0.08,
+        rootMargin: '0px 0px -6% 0px',
       }
     );
 
@@ -54,14 +45,7 @@ export default function InViewReveal({
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: useTransformReveal
-          ? (isVisible ? 'translate3d(0, 0, 0)' : `translate3d(0, ${distance}px, 0)`)
-          : 'none',
-        transitionProperty: useTransformReveal ? 'opacity, transform' : 'opacity',
-        transitionDuration: `${duration}ms`,
-        transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-        transitionDelay: `${delay}ms`,
-        willChange: isVisible ? 'auto' : (useTransformReveal ? 'opacity, transform' : 'opacity'),
+        transition: `opacity ${duration}ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
       }}
     >
       {children}

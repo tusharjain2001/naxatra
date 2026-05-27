@@ -56,7 +56,7 @@ export default function ProductHeroSection() {
             color: '#515151',
           }}
         >
-          Lighter, Stronger, Smarter Motors for the Future.
+          Lighter, Stronger, Smarter Motors for the Future
         </p>
 
         {/* Video */}

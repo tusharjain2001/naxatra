@@ -46,7 +46,7 @@ export default function AboutTimelineSection() {
           }}
         >
           <p className="font-metro" style={{ fontSize: 'clamp(12px, 1.25vw, 24px)', color: '#747474' }}>
-            [A journey from 2020 to beyond.]
+            [A journey from 2020 to beyond]
           </p>
           <h2
             className="font-nexa text-black"

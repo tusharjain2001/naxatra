@@ -81,7 +81,7 @@ export default function JourneySection() {
             }}
           >
             <p className="font-metro uppercase text-[#747474] text-[14px] leading-[18px] tracking-[1.2px] mb-[14px] max-[560px]:text-[10px] max-[560px]:leading-[14px] max-[560px]:tracking-[0.08em] max-[560px]:text-[#7c8694]">
-              [A journey from 2020 to beyond.]
+              [A journey from 2020 to beyond]
             </p>
             <h2 className="font-nexa mt-10 text-[54px] leading-[1.02] font-semibold mb-[44px] max-w-[520px] max-[560px]:mt-5 max-[560px]:mb-7 max-[560px]:mx-auto max-[560px]:max-w-[360px] max-[560px]:text-[26px] max-[560px]:leading-[1.05]" >
               <span className="max-[560px]:hidden" style={{ color: '#000' }}>The Road To </span>

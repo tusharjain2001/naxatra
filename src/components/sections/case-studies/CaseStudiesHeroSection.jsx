@@ -77,7 +77,7 @@ export default function CaseStudiesHeroSection() {
             opacity: 0.95,
           }}
         >
-          Lighter, Stronger, Smarter Motors for the Future.
+          Lighter, Stronger, Smarter Motors for the Future
         </p>
       </section>
 
@@ -131,7 +131,7 @@ export default function CaseStudiesHeroSection() {
               opacity: 0.95,
             }}
           >
-            Lighter, Stronger, Smarter Motors for the Future.
+            Lighter, Stronger, Smarter Motors for the Future
           </p>
         </div>
 

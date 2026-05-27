@@ -44,7 +44,7 @@ export default function ProductSection() {
           />
           <div className="relative z-10 px-[clamp(22px,3vw,48px)] py-[clamp(24px,3vw,44px)] text-center max-[720px]:px-4 max-[720px]:py-5">
             <h3 className="font-nexa text-black text-[clamp(20px,2vw,38px)] leading-[1.28] max-[720px]:text-[14px]">
-              <span className="max-[720px]:block">Explore our versatile range of</span>
+              <span className="max-[720px]:block">Explore our versatile range of </span>
               <span className="max-[720px]:block">motors from 1kW to 15kW.</span>
             </h3>
             <p className="mt-[clamp(8px,1vw,14px)] font-metro text-[#515151] text-[clamp(12px,1.25vw,24px)] leading-[1.45] max-[720px]:text-[10px]">

@@ -92,7 +92,7 @@ export default function TechHeroSection() {
             lineHeight: '14px',
           }}
         >
-          Lighter, Stronger, Smarter Motors for the Future.
+          Lighter, Stronger, Smarter Motors for the Future
         </p>
 
         {/* Connect Now button: centered, top 188px, height 27px */}
@@ -170,7 +170,7 @@ export default function TechHeroSection() {
               className="font-metro text-white"
               style={{ fontSize: 'clamp(14px, 1.25vw, 24px)', lineHeight: '1.5', whiteSpace: 'nowrap' }}
             >
-              Lighter, Stronger, Smarter Motors for the Future.
+              Lighter, Stronger, Smarter Motors for the Future
             </p>
           </div>
 
