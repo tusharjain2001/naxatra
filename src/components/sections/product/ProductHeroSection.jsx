@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import downloadBrochure from '../../../assets/images/download-brochure.svg';
 import greenBg from '../../../assets/images/green-bg.png';
+import DownloadBrochureModal from './DownloadBrochureModal';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
 
-export default function ProductHeroSection({ onOpenBrochure }) {
+export default function ProductHeroSection() {
+  const [modalOpen, setModalOpen] = useState(false);
   const powerText = 'Power ';
   const movesText = 'That Moves You.';
   const movesDelay = countAnimatedCharacters(powerText) * 0.018;
@@ -71,7 +74,7 @@ export default function ProductHeroSection({ onOpenBrochure }) {
         <div className="flex justify-center">
           <button
             type="button"
-            onClick={onOpenBrochure}
+            onClick={() => setModalOpen(true)}
             className="cta-asset bg-transparent p-0"
             style={{ border: 'none', cursor: 'pointer' }}
             aria-label="Download Brochure"
@@ -85,6 +88,7 @@ export default function ProductHeroSection({ onOpenBrochure }) {
           </button>
         </div>
       </div>
+      <DownloadBrochureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

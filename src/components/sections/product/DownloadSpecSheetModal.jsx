@@ -3,11 +3,7 @@ import toast from 'react-hot-toast';
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
-export default function DownloadBrochureModal({
-  isOpen,
-  onClose,
-  title = 'Download Brochure',
-}) {
+export default function DownloadSpecSheetModal({ isOpen, onClose }) {
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -35,7 +31,7 @@ export default function DownloadBrochureModal({
       setIsSubmitting(true);
       setSubmitState({ type: '', message: '' });
 
-      const response = await fetch(`${API_BASE_URL}/api/brochure/request`, {
+      const response = await fetch(`${API_BASE_URL}/api/spec-sheet/request`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +42,7 @@ export default function DownloadBrochureModal({
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(result.message || 'Failed to submit brochure request.');
+        throw new Error(result.message || 'Failed to submit spec sheet request.');
       }
 
       setForm({
@@ -55,10 +51,10 @@ export default function DownloadBrochureModal({
         companyName: '',
         email: '',
       });
-      toast.success('Brochure requested successfully.');
+      toast.success('Spec sheet requested successfully.');
       onClose();
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Failed to submit brochure request.';
+      const message = error instanceof Error ? error.message : 'Failed to submit spec sheet request.';
       setSubmitState({
         type: 'error',
         message,
@@ -89,7 +85,6 @@ export default function DownloadBrochureModal({
           margin: '0 16px',
         }}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           aria-label="Close"
@@ -110,17 +105,15 @@ export default function DownloadBrochureModal({
         </button>
 
         <form onSubmit={handleSubmit}>
-          {/* Header */}
           <div style={{ borderBottom: '1px solid #d9d9d9', paddingBottom: '12px', marginBottom: '20px' }}>
             <h2
               className="font-nexa"
               style={{ fontSize: '24px', lineHeight: '32px', color: '#0a1553', fontWeight: 600 }}
             >
-              {title}
+              Download Spec Sheet
             </h2>
           </div>
 
-          {/* First / Last Name row */}
           <div
             className="grid-cols-1 md:grid-cols-2"
             style={{
@@ -133,17 +126,14 @@ export default function DownloadBrochureModal({
             <Field label="Last Name" name="lastName" value={form.lastName} placeholder="Last name" onChange={handleChange} />
           </div>
 
-          {/* Company Name */}
           <div style={{ marginBottom: '14px' }}>
             <Field label="Company Name" name="companyName" value={form.companyName} placeholder="Company name" onChange={handleChange} />
           </div>
 
-          {/* Email */}
           <div style={{ marginBottom: '20px' }}>
             <Field label="Email" name="email" type="email" value={form.email} placeholder="you@example.com" onChange={handleChange} />
           </div>
 
-          {/* Submit */}
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <button
               type="submit"
@@ -160,8 +150,7 @@ export default function DownloadBrochureModal({
                 cursor: 'pointer',
                 fontWeight: 400,
                 opacity: isSubmitting ? 0.75 : 1,
-                clipPath:
-                  'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 10px) 100%, 0 100%)',
+                clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 10px) 100%, 0 100%)',
               }}
             >
               Submit
@@ -188,17 +177,10 @@ export default function DownloadBrochureModal({
 
 function Field({ label, name, type = 'text', value, placeholder, onChange }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'stretch' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
       <label
         htmlFor={name}
-        style={{
-          fontSize: 'clamp(14px, 3.7vw, 14px)',
-          lineHeight: '26px',
-          color: '#666',
-          fontFamily: 'Montserrat, sans-serif',
-          textAlign: 'left',
-          width: '100%',
-        }}
+        style={{ fontSize: 'clamp(14px, 3.7vw, 14px)', lineHeight: '26px', color: '#666', fontFamily: 'Montserrat, sans-serif' }}
       >
         {label}
       </label>

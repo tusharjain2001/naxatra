@@ -2,7 +2,7 @@ import reqForCust from '../../../assets/images/req-for-cust.svg';
 import reqSpecSheet from '../../../assets/images/req-spec-sheet.svg';
 import AnimatedTextReveal from '../../common/AnimatedTextReveal';
 
-export default function ProductDetailHeroSection({ product }) {
+export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
   const specs = [
     { value: product.heroVoltage, label: 'Rated Voltage (DC)' },
     { value: product.heroTorque, label: 'Peak Torque' },
@@ -102,13 +102,19 @@ export default function ProductDetailHeroSection({ product }) {
             Customization full-width */}
         <div style={{ width: '167px', margin: `${product.heroVideo ? '16px' : '0'} auto 0`, display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div style={{ paddingLeft: '20px' }}>
-            <a href="#" aria-label={`Request spec sheet for ${product.name}`} className="cta-asset inline-block">
+            <button
+              type="button"
+              onClick={onOpenSpecSheet}
+              aria-label={`Request spec sheet for ${product.name}`}
+              className="cta-asset inline-block"
+              style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
+            >
               <img
                 src={reqSpecSheet}
                 alt="Request Spec Sheet"
                 style={{ height: '24px', width: 'auto', display: 'block' }}
               />
-            </a>
+            </button>
           </div>
           <button
             type="button"
@@ -291,10 +297,19 @@ export default function ProductDetailHeroSection({ product }) {
               alignItems: 'center',
             }}
           >
-            <a
-              href="#"
+            <button
+              type="button"
+              onClick={onOpenSpecSheet}
               className="cta-asset"
-              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'transparent',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+              }}
               aria-label={`Request spec sheet for ${product.name}`}
             >
               <img
@@ -303,7 +318,7 @@ export default function ProductDetailHeroSection({ product }) {
                 className="block"
                 style={{ width: 'auto', height: 'clamp(32px, 2.6vw, 50px)' }}
               />
-            </a>
+            </button>
 
             <button
               className="cta-asset"

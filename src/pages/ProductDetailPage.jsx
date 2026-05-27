@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/sections/Navbar';
 import InViewReveal from '../components/common/InViewReveal';
@@ -6,11 +7,13 @@ import ProductDetailHeroSection from '../components/sections/product/ProductDeta
 import ProductDetailTechSection from '../components/sections/product/ProductDetailTechSection';
 import ProductCTASection from '../components/sections/product/ProductCTASection';
 import ProductFeaturesSection from '../components/sections/product/ProductFeaturesSection';
+import DownloadSpecSheetModal from '../components/sections/product/DownloadSpecSheetModal';
 import { PRODUCTS } from '../data/products';
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const product = PRODUCTS.find((p) => p.id === productId);
+  const [specSheetModalOpen, setSpecSheetModalOpen] = useState(false);
 
   if (!product) {
     return (
@@ -42,7 +45,10 @@ export default function ProductDetailPage() {
     <div className="w-full overflow-x-hidden">
       <Navbar />
       <div className="pt-[55px]">
-        <ProductDetailHeroSection product={product} />
+        <ProductDetailHeroSection
+          product={product}
+          onOpenSpecSheet={() => setSpecSheetModalOpen(true)}
+        />
         <InViewReveal delay={40}>
           <ProductDetailTechSection product={product} />
         </InViewReveal>
@@ -56,6 +62,10 @@ export default function ProductDetailPage() {
           <Footer />
         </InViewReveal>
       </div>
+      <DownloadSpecSheetModal
+        isOpen={specSheetModalOpen}
+        onClose={() => setSpecSheetModalOpen(false)}
+      />
     </div>
   );
 }
