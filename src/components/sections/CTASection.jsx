@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ctaBg from '../../assets/images/cta-bg.svg';
-import oneSize from '../../assets/images/one-size.png';
 import DownloadBrochureModal from './product/DownloadBrochureModal';
 
 const primaryButtonClip = 'polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 16px) 100%, 0 100%)';
@@ -41,11 +40,43 @@ export default function CTASection() {
         >
           <div>
             <div style={{ marginBottom: '24px' }}>
-              <img
-                src={oneSize}
-                alt="One Size Doesn't Fit All. We Customize."
-                style={{ height: 'clamp(28px, 2.19vw, 42px)', width: 'auto', display: 'block', objectFit: 'contain' }}
-              />
+              <p
+                className="font-metro"
+                aria-label="One Size Doesn't Fit All. We Customize."
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'clamp(12px, 0.95vw, 18px)',
+                  color: '#f3f5f8',
+                  fontSize: 'clamp(16px, 1.4vw, 27px)',
+                  lineHeight: 1,
+                  letterSpacing: '0.02em',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontSize: 'clamp(34px, 2.85vw, 55px)',
+                    lineHeight: 0.75,
+                    fontWeight: 300,
+                  }}
+                >
+                  [
+                </span>
+                <span>One Size Doesn't Fit All. We Customize</span>
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontSize: 'clamp(34px, 2.85vw, 55px)',
+                    lineHeight: 0.75,
+                    fontWeight: 300,
+                  }}
+                >
+                  ]
+                </span>
+              </p>
             </div>
 
             <h2 className="font-nexa capitalize" style={{ fontSize: 'clamp(44px, 3.56vw, 68.35px)', lineHeight: 1.26 }}>
