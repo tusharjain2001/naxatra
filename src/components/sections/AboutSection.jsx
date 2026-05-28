@@ -45,11 +45,11 @@ export default function AboutSection() {
                 className="block aspect-[1235/683] w-full rounded-[inherit] object-cover transition duration-300 ease-out group-hover:scale-[1.01]"
               />
               <span className="absolute inset-0 bg-black/18 transition duration-300 group-hover:bg-black/24" />
-              <span className="absolute left-1/2 top-1/2 flex h-[clamp(58px,6vw,84px)] w-[clamp(58px,6vw,84px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition duration-300 ease-out group-hover:scale-105">
+              <span className="absolute left-1/2 top-1/2 flex h-[clamp(44px,4.2vw,60px)] w-[clamp(44px,4.2vw,60px)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition duration-300 ease-out group-hover:scale-105">
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  className="ml-1 h-[clamp(22px,2.2vw,30px)] w-[clamp(22px,2.2vw,30px)] fill-[#1863da]"
+                  className="ml-0.5 h-[clamp(33px,3.6vw,46px)] w-[clamp(33px,3.6vw,46px)] fill-[#1863da]"
                 >
                   <path d="M8 6.5v11l9-5.5-9-5.5Z" />
                 </svg>
