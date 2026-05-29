@@ -1,6 +1,6 @@
 import abhilash from '../../../assets/images/abhilash.png';
-import arnav from '../../../assets/images/arnav.png';
-import piyush from '../../../assets/images/piyush.png';
+import arnav from '../../../assets/images/arnav.svg';
+import piyush from '../../../assets/images/piyush.svg';
 
 const TEAM = [
   { name: 'Abhilash Maurya', card: abhilash },
@@ -181,18 +181,16 @@ export default function AboutTeamSection() {
         </div>
 
         <div
-          className="grid grid-cols-1 items-start lg:grid-cols-[clamp(150px,12.6vw,242px)_minmax(280px,1fr)]"
+          className="flex flex-col items-center"
           style={{
-            columnGap: 'clamp(28px, 5.3vw, 102px)',
-            rowGap: 'clamp(20px, 3vw, 36px)',
-            paddingLeft: 'clamp(30px, 6.2vw, 119px)',
+            rowGap: 'clamp(24px, 3vw, 46px)',
           }}
         >
           <h3
-            className="font-nexa text-black"
+            className="font-nexa text-center text-black"
             style={{
               fontSize: 'clamp(20px, 2.08vw, 40px)',
-              fontWeight: 400,
+              fontWeight: 600,
               lineHeight: 1.2,
               margin: 0,
             }}
@@ -201,10 +199,10 @@ export default function AboutTeamSection() {
           </h3>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3"
+            className="grid grid-cols-3"
             style={{
-              gap: 'clamp(12px, 1vw, 20px)',
-              marginTop: 0,
+              gap: 'clamp(14px, 1.35vw, 26px)',
+              width: 'min(100%, clamp(620px, 48vw, 860px))',
             }}
           >
             {TEAM.map((p) => <PersonCard key={p.name} person={p} />)}
