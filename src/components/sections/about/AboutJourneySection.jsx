@@ -17,6 +17,7 @@ import j13 from '../../../assets/images/journey-13.jpg';
 import j14 from '../../../assets/images/journey-14.jpg';
 import j15 from '../../../assets/images/journey-15.jpg';
 import j16 from '../../../assets/images/journey-16.jpg';
+import j17 from '../../../assets/images/journey-17.png';
 
 const milestones = [
   { year: '2020', title: 'Born to Disrupt', desc: 'Naxatra Labs takes flight with a mission to revolutionize hybrid drones.', img: j1 },
@@ -35,6 +36,7 @@ const milestones = [
   { year: '2025', title: 'Leading the Charge', desc: 'Showcasing at Bharat Mobility Expo, cementing our role as an industry pioneer.', img: j14 },
   { year: '2025', title: 'Another Production Facility', desc: 'Inaugurated our another state-of-the-art production unit in August 2025, enabling higher production capacity and precision manufacturing for next-generation motors.', img: j15 },
   { year: '2025', title: 'Showcasing Innovation', desc: 'Exhibited at EV India Expo 2025, presented our advancements in motor technologies and forging key international collaborations.', img: j16 },
+  { year: '2026', title: 'Pre-Series A ($3M)', desc: 'Motor & Controllers: Efficient Motors, Better Performance, Greener Future', img: j17 },
 ].reverse();
 
 export default function AboutJourneySection() {
@@ -42,6 +44,16 @@ export default function AboutJourneySection() {
   const mobileCardsRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+
+  const scrollCardsByStep = (direction) => {
+    const cards = cardsRef.current;
+    if (!cards) return;
+
+    cards.scrollBy({
+      top: direction * cards.clientHeight,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     const cards = cardsRef.current;
@@ -99,7 +111,7 @@ export default function AboutJourneySection() {
           >
             The future of electric mobility starts here. At Naxatra Labs, we create next-generation
             motors designed for power, efficiency, and longevity. Our Axial and Radial flux motors,
-            developed through 4+ years of research, deliver industry-leading performance with
+            developed through 5+ years of research, deliver industry-leading performance with
             uncompromising reliability.
           </p>
 
@@ -109,7 +121,7 @@ export default function AboutJourneySection() {
                 {milestones[mobileActiveIndex].year}
               </p>
               <p className="font-metro" style={{ color: '#000', fontSize: '10px', lineHeight: '1.25', marginTop: '4px' }}>
-                {mobileActiveIndex === 0 ? 'The Spark of Innovation' : milestones[mobileActiveIndex].title}
+                {milestones[mobileActiveIndex].title}
               </p>
               <div style={{ position: 'relative', width: '20px', height: '38px', margin: '10px auto 0' }}>
                 <div
@@ -224,11 +236,11 @@ export default function AboutJourneySection() {
             <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '1.7', maxWidth: '540px' }}>
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
-              4+ years of research, deliver industry-leading performance with uncompromising reliability.
+              5+ years of research, deliver industry-leading performance with uncompromising reliability.
             </p>
           </div>
 
-          <div style={{ width: '430px', justifySelf: 'end' }}>
+          <div style={{ position: 'relative', width: '430px', justifySelf: 'end' }}>
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
                 <p className="font-nexa" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
@@ -310,6 +322,32 @@ export default function AboutJourneySection() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="absolute right-[-58px] top-[calc(50%+38px)] hidden -translate-y-1/2 md:flex md:flex-col md:gap-2.5">
+              <button
+                type="button"
+                onClick={() => scrollCardsByStep(-1)}
+                aria-label="Scroll journey cards up"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1863da] text-white shadow-[0_8px_18px_rgba(24,99,218,0.22)] transition-transform duration-200 hover:-translate-y-0.5"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 14L12 8L18 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollCardsByStep(1)}
+                aria-label="Scroll journey cards down"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1863da] text-white shadow-[0_8px_18px_rgba(24,99,218,0.22)] transition-transform duration-200 hover:translate-y-0.5"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 10L12 16L18 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

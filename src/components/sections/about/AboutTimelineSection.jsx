@@ -58,7 +58,7 @@ export default function AboutTimelineSection() {
             className="font-metro text-black"
             style={{ fontSize: 'clamp(13px, 1.04vw, 20px)', lineHeight: '1.6', opacity: 0.8 }}
           >
-            The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through 4+ years of research, deliver industry-leading performance with uncompromising reliability.
+            The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through 5+ years of research, deliver industry-leading performance with uncompromising reliability.
           </p>
           {/* Year marker */}
           <div>

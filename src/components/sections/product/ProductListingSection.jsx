@@ -54,7 +54,7 @@ function ProductCard({ product, mobileVariant = 'compact', onOpenBrochure }) {
             width: 'clamp(82px, 7vw, 128px)',
             height: 'clamp(64px, 5.8vw, 102px)',
             objectFit: 'contain',
-            transform: 'rotate(180deg) scaleY(-1)',
+            
           }}
         />
       </div>

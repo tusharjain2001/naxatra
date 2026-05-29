@@ -17,6 +17,7 @@ import j13 from '../../assets/images/journey-13.jpg';
 import j14 from '../../assets/images/journey-14.jpg';
 import j15 from '../../assets/images/journey-15.jpg';
 import j16 from '../../assets/images/journey-16.jpg';
+import j17 from '../../assets/images/journey-17.png';
 
 const milestones = [
   { year: '2020', title: 'Born to Disrupt', desc: 'Naxatra Labs takes flight with a mission to revolutionize hybrid drones.', img: j1 },
@@ -35,6 +36,7 @@ const milestones = [
   { year: '2025', title: 'Leading the Charge', desc: 'Showcasing at Bharat Mobility Expo, cementing our role as an industry pioneer.', img: j14 },
   { year: '2025', title: 'Another Production Facility', desc: 'Inaugurated our another state-of-the-art production unit in August 2025, enabling higher production capacity and precision manufacturing for next-generation motors.', img: j15 },
   { year: '2025', title: 'Showcasing Innovation', desc: 'Exhibited at EV India Expo 2025, presented our advancements in motor technologies and forging key international collaborations.', img: j16 },
+  { year: '2026', title: 'Pre-Series A ($3M)', desc: 'Motor & Controllers: Efficient Motors, Better Performance, Greener Future', img: j17 },
 ].reverse();
 
 export default function JourneySection() {
@@ -107,7 +109,7 @@ export default function JourneySection() {
             <p className="font-metro text-black text-[16px] leading-[1.7] max-w-[540px] max-[560px]:mx-auto max-[560px]:max-w-[312px] max-[560px]:text-center max-[560px]:text-[10px] max-[560px]:leading-[1.6]">
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
-              4+ years of research, deliver industry-leading performance with uncompromising reliability.
+              5+ years of research, deliver industry-leading performance with uncompromising reliability.
             </p>
           </div>
 
