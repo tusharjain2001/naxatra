@@ -2,12 +2,15 @@ import { useState } from 'react';
 import blog1 from '../../../assets/images/blog-1.jpg';
 import blog2 from '../../../assets/images/blog-2.jpg';
 import blog3 from '../../../assets/images/blog-3.jpg';
+import blogThumb from '../../../assets/images/blogs-article-thumb.png';
 
-const CATEGORIES = ['All', 'Latest', 'Events', 'Blogs'];
+const CATEGORIES = ['All', 'Events', 'Blogs'];
+const BLOG_DESC = 'Motors have become a ubiquitous part of our modern life, silently existing in almost everything that makes motion possible. However, on the flip...';
 
 const ARTICLES = [
   {
     id: 1,
+    category: 'Events',
     date: 'May 11, 2023',
     title: 'National Technology Week',
     body: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
@@ -16,6 +19,7 @@ const ARTICLES = [
   },
   {
     id: 2,
+    category: 'Events',
     date: 'Nov 21, 2024',
     title: 'EV India Expo',
     body: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
@@ -24,25 +28,113 @@ const ARTICLES = [
   },
   {
     id: 3,
+    category: 'Events',
     date: 'Jan 21, 2025',
     title: 'Bharat Mobility Global Expo',
     body: 'A defining moment where we unveiled a groundbreaking mobility solutions, setting new benchmarks in sustainable and high-performance transportation...',
     href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-bharatmobilityexpo-autoexpo2025-share-7286605063093972993-E4-B/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
     img: blog3,
   },
+  {
+    id: 4,
+    category: 'Blogs',
+    date: 'October 13, 2025',
+    title: 'Efficiency is the new fuel: Rethinking motors for a sustainable future',
+    body: BLOG_DESC,
+    href: 'https://evreporter.com/efficiency-is-the-new-fuel-rethinking-motors-for-a-sustainable-future/',
+    img: blogThumb,
+  },
+  {
+    id: 5,
+    category: 'Blogs',
+    date: 'January 21, 2025',
+    title: 'Introducing Naxatra Labs',
+    body: 'When we as a fund look at climate tech investments, we’ve primarily invested in solutions around water, integrated farming, alternative green energy...',
+    href: 'https://zerodha.com/z-connect/rainmatter/introducing-naxatra-labs',
+    img: blogThumb,
+  },
+  {
+    id: 6,
+    category: 'Blogs',
+    date: 'April 2, 2025',
+    title: 'Axial Flux Motors: Future of Electric Vehicles',
+    body: 'Since the invention of electric motors in the mid 1800s, Motors are being used from industries to our homes to make our ...',
+    href: 'https://naxatra-labs.medium.com/axial-flux-technology-f1ecf6c882c7',
+    img: blogThumb,
+  },
+  {
+    id: 7,
+    category: 'Blogs',
+    date: 'April 2, 2025',
+    title: 'Applications of Axial flux motors',
+    body: 'The very first axial flux motor was invented back in the 1830s by Nikola Tesla. In principle the axial flux motor is sam...',
+    href: 'https://naxatra-labs.medium.com/applications-of-axial-flux-motors-6f39ed707a28',
+    img: blogThumb,
+  },
+  {
+    id: 8,
+    category: 'Blogs',
+    date: 'April 2, 2025',
+    title: 'A Century of Breakthroughs in Electric Motor Technology',
+    body: 'Electric motors have been a critical component of modern society, enabling countless devices to function and making our ...',
+    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
+    img: blogThumb,
+  },
+  {
+    id: 9,
+    category: 'Blogs',
+    date: 'Mar 30, 2023',
+    title: 'Efficiency in Mining Industry',
+    body: 'Mining is a highly energy-intensive industry, and a significant portion of that energy is consumed by electric motors. E...',
+    href: 'https://naxatra-labs.medium.com/efficiency-in-mining-industry-dd464b00d7e2',
+    img: blogThumb,
+  },
+  {
+    id: 10,
+    category: 'Blogs',
+    date: 'Mar 30, 2023',
+    title: 'Why Treating EVs Like ICE Vehicles Can Lead to Failures and Inefficiency',
+    body: 'Electric vehicles (EVs) are not just an electrified version of internal combustion engine (ICE) vehicles. While they may...',
+    href: 'https://naxatra-labs.medium.com/why-treating-evs-like-ice-vehicles-can-lead-to-failures-and-inefficiency-2e516c0222b8',
+    img: blogThumb,
+  },
+  {
+    id: 11,
+    category: 'Blogs',
+    date: 'Mar 30, 2023',
+    title: 'A Century of Breakthroughs in Electric Motor Technology',
+    body: 'Electric planes represent an exciting opportunity for the aviation industry to make a significant impact on the environm...',
+    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
+    img: blogThumb,
+  },
+  {
+    id: 12,
+    category: 'Blogs',
+    date: 'Mar 30, 2023',
+    title: 'Rare-Earth Free Magnet Motors',
+    body: 'Tesla, one of the leading electric car manufacturers, has been at the forefront of technical advancements in every key c...',
+    href: 'https://naxatra-labs.medium.com/rare-earth-free-magnet-motors-404e7279f30a',
+    img: blogThumb,
+  },
 ];
 
 export default function BlogsAllArticlesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [mobileArticleIndex, setMobileArticleIndex] = useState(0);
-  const featuredArticle = ARTICLES[mobileArticleIndex];
+  const visibleArticles = activeCategory === 'All' ? ARTICLES : ARTICLES.filter((article) => article.category === activeCategory);
+  const featuredArticle = visibleArticles[mobileArticleIndex] || visibleArticles[0] || ARTICLES[0];
+
+  const selectCategory = (category) => {
+    setActiveCategory(category);
+    setMobileArticleIndex(0);
+  };
 
   const showPreviousArticle = () => {
-    setMobileArticleIndex((currentIndex) => (currentIndex === 0 ? ARTICLES.length - 1 : currentIndex - 1));
+    setMobileArticleIndex((currentIndex) => (currentIndex === 0 ? visibleArticles.length - 1 : currentIndex - 1));
   };
 
   const showNextArticle = () => {
-    setMobileArticleIndex((currentIndex) => (currentIndex === ARTICLES.length - 1 ? 0 : currentIndex + 1));
+    setMobileArticleIndex((currentIndex) => (currentIndex === visibleArticles.length - 1 ? 0 : currentIndex + 1));
   };
 
   return (
@@ -65,7 +157,7 @@ export default function BlogsAllArticlesSection() {
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => selectCategory(cat)}
                 className="font-metro transition-colors"
                 style={{
                   fontSize: '10px',
@@ -91,7 +183,7 @@ export default function BlogsAllArticlesSection() {
               marginBottom: '24px',
             }}
           >
-            All Articles
+            {activeCategory}
           </h2>
 
           <div className="flex items-center justify-between" style={{ gap: '10px', marginBottom: '16px' }}>
@@ -184,7 +276,7 @@ export default function BlogsAllArticlesSection() {
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => selectCategory(cat)}
                 className="font-metro transition-colors"
                 style={{
                   fontSize: 'clamp(11px, 0.72vw, 14px)',
@@ -212,11 +304,11 @@ export default function BlogsAllArticlesSection() {
               marginBottom: 'clamp(18px, 1.8vw, 32px)',
             }}
           >
-            All Articles
+            {activeCategory}
           </h2>
 
           <div className="flex flex-col" style={{ gap: 'clamp(16px, 1.5vw, 28px)' }}>
-            {ARTICLES.map((article) => (
+            {visibleArticles.map((article) => (
               <article
                 key={article.id}
                 className="grid items-start"
