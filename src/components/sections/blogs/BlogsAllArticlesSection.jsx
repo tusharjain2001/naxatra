@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import blog1 from '../../../assets/images/blog-1.jpg';
-import blog2 from '../../../assets/images/blog-2.jpg';
-import blog3 from '../../../assets/images/blog-3.jpg';
-import blogThumb from '../../../assets/images/blogs-article-thumb.png';
+import nationalTechnologyWeekImg from '../../../assets/blogs/national technology week.png';
+import evIndiaExpo2024Img from '../../../assets/blogs/ev india expo 2024.png';
+import evIndiaExpo2025Img from '../../../assets/blogs/ev india expo.png';
+import bharatMobilityImg from '../../../assets/blogs/Bharat Mobility Global Expo.png';
+import efficiencyNewFuelImg from '../../../assets/blogs/Efficiency is the new fuel.png';
+import introducingNaxatraImg from '../../../assets/blogs/Introducing Naxatra Labs.png';
+import axialFluxMotorsImg from '../../../assets/blogs/Axial Flux Motors.png';
+import axialFluxApplicationsImg from '../../../assets/blogs/Applications of Axial flux motors.png';
+import centuryBreakthroughsImg from '../../../assets/blogs/A Century of Breakthroughs.png';
+import miningEfficiencyImg from '../../../assets/blogs/Efficiency in Mining Industry.png';
+import treatingEvsImg from '../../../assets/blogs/Why Treating EVs.png';
+import electricCenturyBreakthroughsImg from '../../../assets/blogs/second A Century of Breakthroughs in Electric.png';
+import rareEarthMotorsImg from '../../../assets/blogs/Rare-Earth Free Magnet Motors.png';
 
 const CATEGORIES = ['All', 'Events', 'Blogs'];
 const BLOG_DESC = 'Motors have become a ubiquitous part of our modern life, silently existing in almost everything that makes motion possible. However, on the flip...';
@@ -15,16 +24,16 @@ const ARTICLES = [
     title: 'National Technology Week',
     body: 'A proud moment as we presented our innovative motor and controller technology to industry leaders and policymakers, reinforcing our commitment...',
     href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
-    img: blog1,
+    img: nationalTechnologyWeekImg,
   },
   {
     id: 2,
     category: 'Events',
-    date: 'Nov 21, 2024',
-    title: 'EV India Expo',
-    body: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
-    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-cleanenergy-sustainablemobility-ugcPost-7264498234008436736--t9S/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
-    img: blog2,
+    date: '11th September 2025',
+    title: 'EV India Expo 2025',
+    body: 'We are showcasing our products at EV India Expo 2025, At Hall 1, Stall 54B. Do Come by if you are around!..,',
+    href: '#',
+    img: evIndiaExpo2025Img,
   },
   {
     id: 3,
@@ -33,88 +42,97 @@ const ARTICLES = [
     title: 'Bharat Mobility Global Expo',
     body: 'A defining moment where we unveiled a groundbreaking mobility solutions, setting new benchmarks in sustainable and high-performance transportation...',
     href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-bharatmobilityexpo-autoexpo2025-share-7286605063093972993-E4-B/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
-    img: blog3,
+    img: bharatMobilityImg,
   },
   {
     id: 4,
+    category: 'Events',
+    date: 'Nov 21, 2024',
+    title: 'EV India Expo 2024',
+    body: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
+    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-cleanenergy-sustainablemobility-ugcPost-7264498234008436736--t9S/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+    img: evIndiaExpo2024Img,
+  },
+  {
+    id: 5,
     category: 'Blogs',
     date: 'October 13, 2025',
     title: 'Efficiency is the new fuel: Rethinking motors for a sustainable future',
     body: BLOG_DESC,
     href: 'https://evreporter.com/efficiency-is-the-new-fuel-rethinking-motors-for-a-sustainable-future/',
-    img: blogThumb,
+    img: efficiencyNewFuelImg,
   },
   {
-    id: 5,
+    id: 6,
     category: 'Blogs',
     date: 'January 21, 2025',
     title: 'Introducing Naxatra Labs',
     body: 'When we as a fund look at climate tech investments, we’ve primarily invested in solutions around water, integrated farming, alternative green energy...',
     href: 'https://zerodha.com/z-connect/rainmatter/introducing-naxatra-labs',
-    img: blogThumb,
-  },
-  {
-    id: 6,
-    category: 'Blogs',
-    date: 'April 2, 2025',
-    title: 'Axial Flux Motors: Future of Electric Vehicles',
-    body: 'Since the invention of electric motors in the mid 1800s, Motors are being used from industries to our homes to make our ...',
-    href: 'https://naxatra-labs.medium.com/axial-flux-technology-f1ecf6c882c7',
-    img: blogThumb,
+    img: introducingNaxatraImg,
   },
   {
     id: 7,
     category: 'Blogs',
     date: 'April 2, 2025',
-    title: 'Applications of Axial flux motors',
-    body: 'The very first axial flux motor was invented back in the 1830s by Nikola Tesla. In principle the axial flux motor is sam...',
-    href: 'https://naxatra-labs.medium.com/applications-of-axial-flux-motors-6f39ed707a28',
-    img: blogThumb,
+    title: 'Axial Flux Motors: Future of Electric Vehicles',
+    body: 'Since the invention of electric motors in the mid 1800s, Motors are being used from industries to our homes to make our ...',
+    href: 'https://naxatra-labs.medium.com/axial-flux-technology-f1ecf6c882c7',
+    img: axialFluxMotorsImg,
   },
   {
     id: 8,
     category: 'Blogs',
     date: 'April 2, 2025',
-    title: 'A Century of Breakthroughs in Electric Motor Technology',
-    body: 'Electric motors have been a critical component of modern society, enabling countless devices to function and making our ...',
-    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
-    img: blogThumb,
+    title: 'Applications of Axial flux motors',
+    body: 'The very first axial flux motor was invented back in the 1830s by Nikola Tesla. In principle the axial flux motor is sam...',
+    href: 'https://naxatra-labs.medium.com/applications-of-axial-flux-motors-6f39ed707a28',
+    img: axialFluxApplicationsImg,
   },
   {
     id: 9,
     category: 'Blogs',
-    date: 'Mar 30, 2023',
-    title: 'Efficiency in Mining Industry',
-    body: 'Mining is a highly energy-intensive industry, and a significant portion of that energy is consumed by electric motors. E...',
-    href: 'https://naxatra-labs.medium.com/efficiency-in-mining-industry-dd464b00d7e2',
-    img: blogThumb,
+    date: 'April 2, 2025',
+    title: 'A Century of Breakthroughs in Electric Motor Technology',
+    body: 'Electric motors have been a critical component of modern society, enabling countless devices to function and making our ...',
+    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
+    img: centuryBreakthroughsImg,
   },
   {
     id: 10,
     category: 'Blogs',
     date: 'Mar 30, 2023',
-    title: 'Why Treating EVs Like ICE Vehicles Can Lead to Failures and Inefficiency',
-    body: 'Electric vehicles (EVs) are not just an electrified version of internal combustion engine (ICE) vehicles. While they may...',
-    href: 'https://naxatra-labs.medium.com/why-treating-evs-like-ice-vehicles-can-lead-to-failures-and-inefficiency-2e516c0222b8',
-    img: blogThumb,
+    title: 'Efficiency in Mining Industry',
+    body: 'Mining is a highly energy-intensive industry, and a significant portion of that energy is consumed by electric motors. E...',
+    href: 'https://naxatra-labs.medium.com/efficiency-in-mining-industry-dd464b00d7e2',
+    img: miningEfficiencyImg,
   },
   {
     id: 11,
     category: 'Blogs',
     date: 'Mar 30, 2023',
-    title: 'A Century of Breakthroughs in Electric Motor Technology',
-    body: 'Electric planes represent an exciting opportunity for the aviation industry to make a significant impact on the environm...',
-    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
-    img: blogThumb,
+    title: 'Why Treating EVs Like ICE Vehicles Can Lead to Failures and Inefficiency',
+    body: 'Electric vehicles (EVs) are not just an electrified version of internal combustion engine (ICE) vehicles. While they may...',
+    href: 'https://naxatra-labs.medium.com/why-treating-evs-like-ice-vehicles-can-lead-to-failures-and-inefficiency-2e516c0222b8',
+    img: treatingEvsImg,
   },
   {
     id: 12,
     category: 'Blogs',
     date: 'Mar 30, 2023',
+    title: 'Electric Planes : Future of Aviation',
+    body: 'Electric planes represent an exciting opportunity for the aviation industry to make a significant impact on the environm...',
+    href: 'https://naxatra-labs.medium.com/a-century-of-breakthroughs-in-electric-motor-technology-298bf97c9ad4',
+    img: electricCenturyBreakthroughsImg,
+  },
+  {
+    id: 13,
+    category: 'Blogs',
+    date: 'Mar 30, 2023',
     title: 'Rare-Earth Free Magnet Motors',
     body: 'Tesla, one of the leading electric car manufacturers, has been at the forefront of technical advancements in every key c...',
     href: 'https://naxatra-labs.medium.com/rare-earth-free-magnet-motors-404e7279f30a',
-    img: blogThumb,
+    img: rareEarthMotorsImg,
   },
 ];
 
