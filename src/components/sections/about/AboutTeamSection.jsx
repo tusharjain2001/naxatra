@@ -3,23 +3,31 @@ import arnav from '../../../assets/images/arnav.svg';
 import piyush from '../../../assets/images/piyush.svg';
 
 const TEAM = [
-  { name: 'Abhilash Maurya', card: abhilash },
-  { name: 'Piyush Verma', card: piyush },
-  { name: 'Arnav Biswas', card: arnav },
+  { name: 'Abhilash Maurya', card: abhilash, url: 'https://www.linkedin.com/in/abhilashmaurya/' },
+  { name: 'Piyush Verma', card: piyush, url: 'https://www.linkedin.com/in/piyushverma2920/' },
+  { name: 'Arnav Biswas', card: arnav, url: 'https://www.linkedin.com/in/arnav-biswas-26a4801b7/' },
 ];
 
 function PersonCard({ person }) {
   return (
-    <img
-      src={person.card}
-      alt={person.name.replace(' duplicate', '')}
+    <a
+      href={person.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open ${person.name} on LinkedIn`}
       className="block h-full w-full"
-      style={{
-        aspectRatio: '287 / 326',
-        objectFit: 'cover',
-        boxShadow: '0 3px 10px rgba(0,0,0,0.1)',
-      }}
-    />
+    >
+      <img
+        src={person.card}
+        alt={person.name.replace(' duplicate', '')}
+        className="block h-full w-full"
+        style={{
+          aspectRatio: '287 / 326',
+          objectFit: 'cover',
+          boxShadow: '0 3px 10px rgba(0,0,0,0.1)',
+        }}
+      />
+    </a>
   );
 }
 
