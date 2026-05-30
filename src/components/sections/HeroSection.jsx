@@ -1,12 +1,23 @@
 import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
-import heroVideo from '../../assets/videos/Hero frame_2.webm';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
+
+const heroVideoWebm = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780132851/00005_yishay.webm';
+const heroVideoMov = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780132851/00005_yishay.mov';
+
+function getHeroVideo() {
+  if (typeof navigator === 'undefined') {
+    return heroVideoWebm;
+  }
+
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) ? heroVideoMov : heroVideoWebm;
+}
 
 export default function HeroSection() {
   const advancedText = 'Advanced';
   const motorsText = 'Motors &';
   const controllersText = 'Controllers';
+  const heroVideo = getHeroVideo();
   const heroTextStagger = 0.03;
   const heroTextDuration = 0.58;
   const motorsDelay = countAnimatedCharacters(advancedText) * heroTextStagger;
