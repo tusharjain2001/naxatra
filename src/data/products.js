@@ -241,6 +241,7 @@ export const PRODUCTS = [
     image: motorAF58,
     wireframeImage: wireframeAF58,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317220/AF_58_h1qtzi.mp4',
+    heroVideoObjectFit: 'contain',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317267/AF_58_snhi2r.webm',
     applications: ['high-performance-2w', 'performance-3w', 'specialty-ev'],
     singleSpec: {
@@ -272,6 +273,7 @@ export const PRODUCTS = [
     image: motorPT500,
     wireframeImage: wireframePT500,
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317088/PT_500_rvzff1.mp4',
+    heroVideoObjectFit: 'contain',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317027/PT_500_trpdut.webm',
     applications: ['grinder', 'electric-drill', 'industrial-tools'],
     hiddenSingleSpecRows: ['comm'],
