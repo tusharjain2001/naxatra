@@ -142,7 +142,7 @@ export default function TechAboutSection() {
             className="font-metro text-black max-[768px]:!text-[10px] max-[768px]:!leading-[1.6]"
             style={{ fontSize: 'clamp(14px, 1.04vw, 20px)', lineHeight: '1.65' }}
           >
-            Backed by over four years of research and development, our solutions meet industry performance, durability, and efficiency standards. Our cutting-edge portfolio includes both axial and radial flux motor technologies, pushing the boundaries of electric mobility and sustainable innovation.
+            Backed by over five years of research and development, our solutions meet industry performance, durability, and efficiency standards. Our cutting-edge portfolio includes both axial and radial flux motor technologies, pushing the boundaries of electric mobility and sustainable innovation.
           </p>
         </div>
       </div>

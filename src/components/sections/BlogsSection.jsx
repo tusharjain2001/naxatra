@@ -1,6 +1,6 @@
 import blog1 from '../../assets/images/blog-1.png';
-import blog2 from '../../assets/images/blog-2.png';
 import blog3 from '../../assets/images/blog-3.png';
+import efficiencyNewFuelImg from '../../assets/blogs/Efficiency is the new fuel.png';
 import bg1 from '../../assets/images/blog-bg-1.svg';
 import bg2 from '../../assets/images/blog-bg-2.svg';
 
@@ -14,12 +14,12 @@ const blogs = [
     href: 'https://www.linkedin.com/posts/abhilashmaurya_nationaltechnologyday2023-startupindia-sustainibility-share-7064079426128363520-6C7k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
   },
   {
-    img: blog2,
+    img: efficiencyNewFuelImg,
     bg: bg2,
-    title: 'EV India Expo',
-    date: 'Nov 21, 2024',
-    desc: 'A milestone event where we unveil our latest advancements in electric vehicle technology, contributing to a cleaner and more sustainable tomorrow...',
-    href: 'https://www.linkedin.com/posts/abhilashmaurya_naxatralabs-cleanenergy-sustainablemobility-ugcPost-7264498234008436736--t9S/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACO14VQB5vnmxkT3Aaf0vGvf3_Thtn5MaXg',
+    title: 'Efficiency is the new fuel: Rethinking motors for a sustainable future',
+    date: 'October 13, 2025',
+    desc: 'Motors have become a ubiquitous part of our modern life, silently existing in almost everything that makes motion possible. However, on the flip...',
+    href: 'https://evreporter.com/efficiency-is-the-new-fuel-rethinking-motors-for-a-sustainable-future/',
   },
   {
     img: blog3,
@@ -65,7 +65,7 @@ export default function BlogsSection() {
                 </div>
 
                 <div className="mt-[clamp(16px,1.25vw,23px)] max-[720px]:mt-4">
-                  <h3 className="font-nexa text-[28.15px] capitalize leading-[1.25] text-[#1863da] max-[720px]:text-[16px]">
+                  <h3 className="font-nexa text-[24.15px] capitalize leading-[1.25] text-[#1863da] max-[720px]:text-[16px]">
                     {blog.title}
                   </h3>
                   <p className="mt-[clamp(6px,0.45vw,8px)] font-metro text-[16.2px] leading-[1.55] text-[#929292] max-[720px]:text-[10px]">

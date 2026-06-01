@@ -150,7 +150,7 @@ export default function AboutTeamSection() {
               <p
                 className="font-metro text-black"
                 style={{
-                  fontSize: 'clamp(8px, 0.63vw, 12px)',
+                  fontSize: '20px',
                   lineHeight: 1.2,
                   margin: '0 0 clamp(12px, 1vw, 18px)',
                 }}
@@ -160,7 +160,7 @@ export default function AboutTeamSection() {
               <h2
                 className="font-nexa text-black"
                 style={{
-                  fontSize: 'clamp(22px, 2.15vw, 41px)',
+                  fontSize: '50px',
                   lineHeight: 1.18,
                   fontWeight: 600,
                   margin: 0,
@@ -175,7 +175,7 @@ export default function AboutTeamSection() {
             <p
               className="font-metro text-black"
               style={{
-                fontSize: 'clamp(8px, 0.73vw, 14px)',
+                fontSize: '16px',
                 lineHeight: 1.55,
                 margin: 0,
                 maxWidth: 'clamp(360px, 41vw, 790px)',
