@@ -155,7 +155,7 @@ export default function AboutInvestorsSection() {
           <h2
             className="font-nexa text-center text-black"
             style={{
-              fontSize: 'clamp(22px, 2vw, 38px)',
+              fontSize: 'clamp(20px, 2.08vw, 40px)',
               lineHeight: 1.12,
               fontWeight: 600,
               margin: '0 0 clamp(34px, 4vw, 66px)',
