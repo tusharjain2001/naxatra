@@ -650,6 +650,7 @@ export default function ProductDetailTechSection({ product }) {
 
   const isSingle = !!product.singleSpec;
   const variants = product.variants || [];
+  const hasApplications = product.applications?.length > 0;
 
   const cellStyle = {
     padding: "clamp(6px, 0.52vw, 10px) clamp(12px, 1.25vw, 24px)",
@@ -791,13 +792,15 @@ export default function ProductDetailTechSection({ product }) {
         </div>
       )}
 
-      <AccordionRow
-        title="Applications"
-        isOpen={appOpen}
-        onToggle={() => setAppOpen((o) => !o)}
-      >
-        <ApplicationsContent productApplications={product.applications} />
-      </AccordionRow>
+      {hasApplications && (
+        <AccordionRow
+          title="Applications"
+          isOpen={appOpen}
+          onToggle={() => setAppOpen((o) => !o)}
+        >
+          <ApplicationsContent productApplications={product.applications} />
+        </AccordionRow>
+      )}
 
       <AccordionRow
         title="Motor Detailed View"

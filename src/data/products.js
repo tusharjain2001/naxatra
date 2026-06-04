@@ -275,7 +275,7 @@ export const PRODUCTS = [
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317088/PT_500_rvzff1.mp4',
     heroVideoObjectFit: 'contain',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317027/PT_500_trpdut.webm',
-    applications: ['grinder', 'electric-drill', 'industrial-tools'],
+    applications: [],
     hiddenSingleSpecRows: ['comm'],
     singleSpec: {
       motorTypeFull: 'IPMSM Radial Flux',
