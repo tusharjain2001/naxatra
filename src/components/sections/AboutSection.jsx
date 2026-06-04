@@ -2,7 +2,7 @@ import { useState } from 'react';
 import aboutThumbnail from '../../assets/images/Thumbnail .png';
 
 const aboutSectionVideo =
-  'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780588091/Logo_blurred_auto_w8qcfv.mp4';
+  'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780592747/Save_as_this_rua3re.mp4';
 
 export default function AboutSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
