@@ -21,6 +21,9 @@ import appLoader from '../assets/vehicle/loader-vehicle.png';
 import appWeeder from '../assets/vehicle/power-weeder.png';
 import appScooter from '../assets/vehicle/scooters.png';
 import appSweeper from '../assets/vehicle/sweepers.png';
+import appGrinder from '../assets/images/grinder.png';
+import appElectricDrill from '../assets/images/electric drill.png';
+import appIndustrialTool from '../assets/images/industrial tool.png';
 
 export const APPLICATIONS = [
   { id: 'scooters',           label: 'Scooters',              icon: appScooter },
@@ -35,9 +38,9 @@ export const APPLICATIONS = [
   { id: 'high-performance-2w',label: 'High-Performance 2W',   icon: appBike },
   { id: 'performance-3w',     label: 'Performance 3W',        icon: appErickshaw },
   { id: 'specialty-ev',       label: 'Specialty EV',          icon: appForklift },
-  { id: 'grinder',            label: 'Grinder',               icon: appWeeder },
-  { id: 'electric-drill',     label: 'Electric Drill',        icon: appLoader },
-  { id: 'industrial-tools',   label: 'Industrial Tools',      icon: appForklift },
+  { id: 'grinder',            label: 'Grinder',               icon: appGrinder },
+  { id: 'electric-drill',     label: 'Electric Drill',        icon: appElectricDrill },
+  { id: 'industrial-tools',   label: 'Industrial Tool',       icon: appIndustrialTool },
 ];
 
 export const SPEC_ROWS = [
@@ -275,7 +278,7 @@ export const PRODUCTS = [
     heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317088/PT_500_rvzff1.mp4',
     heroVideoObjectFit: 'contain',
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780317027/PT_500_trpdut.webm',
-    applications: [],
+    applications: ['grinder', 'electric-drill', 'industrial-tools'],
     hiddenSingleSpecRows: ['comm'],
     singleSpec: {
       motorTypeFull: 'IPMSM Radial Flux',
