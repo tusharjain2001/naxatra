@@ -46,7 +46,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] md:flex">
+          <div className="hidden items-center gap-[clamp(18px,3.4vw,62px)] min-[1101px]:flex">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className={linkClass}>
                 <span className={`${bracketClass} mr-[1px] -translate-x-[4px] opacity-0 group-hover:translate-x-0 group-hover:opacity-100`}>[</span>
@@ -66,7 +66,7 @@ export default function Navbar() {
             </Link>
 
             <button
-              className="md:hidden flex flex-col justify-center gap-[4px]"
+              className="hidden max-[1100px]:flex flex-col justify-center gap-[4px]"
               aria-label="Toggle menu"
               onClick={() => setMenuOpen((o) => !o)}
             >
@@ -82,7 +82,7 @@ export default function Navbar() {
       {/* Mobile menu drawer */}
       {menuOpen && (
         <div
-          className="fixed left-0 top-[82px] z-40 w-full md:hidden shadow-lg"
+          className="fixed left-0 top-[82px] z-40 w-full max-[1100px]:block min-[1101px]:hidden shadow-lg"
           style={{ background: isDark ? '#3a3a3a' : 'rgba(255,255,255,0.97)', backdropFilter: 'blur(8px)' }}
         >
           <nav className="flex flex-col divide-y divide-gray-100">

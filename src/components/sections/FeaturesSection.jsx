@@ -36,11 +36,11 @@ export default function FeaturesSection() {
   return (
     <section className="w-full bg-white max-[560px]:mt-6">
       <div className="mx-auto max-w-[1840px] px-[clamp(20px,4.2vw,80px)] py-[clamp(28px,4.8vw,72px)] max-[560px]:px-[18px] max-[560px]:py-[26px]">
-        <div className="grid grid-cols-4 gap-[clamp(24px,1.9vw,35px)] max-[980px]:grid-cols-2 max-[560px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-[clamp(24px,1.9vw,35px)] max-[1279px]:grid-cols-2 min-[561px]:max-[1279px]:max-w-[860px] min-[561px]:max-[1279px]:mx-auto min-[561px]:max-[1279px]:gap-8 max-[560px]:grid-cols-1 max-[560px]:max-w-none">
           {features.map((feature, i) => (
             <div
               key={i}
-              className="group relative md:w-[320px] min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
+              className="group relative md:w-[320px] min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[1279px]:w-full min-[561px]:max-[1279px]:min-h-[220px] min-[561px]:max-[1279px]:px-8 min-[561px]:max-[1279px]:py-8 max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
             >
               <img
                 src={feature.bg}
@@ -51,12 +51,12 @@ export default function FeaturesSection() {
                 <img
                   src={feature.icon}
                   alt=""
-                  className="h-[clamp(17px,1.45vw,28px)] w-[clamp(17px,1.45vw,28px)] object-contain max-[560px]:h-[23px] max-[560px]:w-[23px]"
+                  className="h-[clamp(17px,1.45vw,28px)] w-[clamp(17px,1.45vw,28px)] object-contain min-[561px]:max-[1279px]:h-[24px] min-[561px]:max-[1279px]:w-[24px] max-[560px]:h-[23px] max-[560px]:w-[23px]"
                 />
-                <h3 className="mt-[clamp(14px,1.2vw,24px)] font-nexa text-[clamp(12px,1.05vw,20px)] capitalize leading-[1.18] tracking-normal text-[#1863da] font-bold max-[560px]:text-[16px] max-[560px]:mt-3">
+                <h3 className="mt-[clamp(14px,1.2vw,24px)] font-nexa text-[clamp(12px,1.05vw,20px)] capitalize leading-[1.18] tracking-normal text-[#1863da] font-bold min-[561px]:max-[1279px]:text-[16px] min-[561px]:max-[1279px]:mt-4 max-[560px]:text-[16px] max-[560px]:mt-3">
                   {feature.title}
                 </h3>
-                <p className="mt-[clamp(10px,0.95vw,18px)] font-metro text-[clamp(8px,0.72vw,14px)] leading-[1.5] tracking-normal text-black max-[560px]:text-[10px] max-[560px]:mt-2">
+                <p className="mt-[clamp(10px,0.95vw,18px)] font-metro text-[clamp(8px,0.72vw,14px)] leading-[1.5] tracking-normal text-black min-[561px]:max-[1279px]:text-[12px] min-[561px]:max-[1279px]:leading-[1.45] min-[561px]:max-[1279px]:mt-3 max-[560px]:text-[10px] max-[560px]:mt-2">
                   {feature.desc}
                 </p>
               </div>
