@@ -119,7 +119,111 @@ export default function TechHeroSection() {
       </section>
 
       {/* ── DESKTOP LAYOUT (unchanged) ── */}
-      <section className="relative w-full bg-black overflow-hidden hidden md:block" style={{ height: '90vh' }}>
+      <section
+        className="relative hidden w-full overflow-hidden bg-black min-[768px]:max-[1100px]:block"
+        style={{ height: 'clamp(460px, 60vw, 600px)' }}
+      >
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: '52%',
+            right: '-12%',
+            transform: 'translateY(-50%)',
+            width: 'clamp(430px, 58vw, 620px)',
+            height: 'clamp(430px, 58vw, 620px)',
+            background: 'radial-gradient(ellipse at center, rgba(77,214,196,0.2) 0%, rgba(77,214,196,0.08) 38%, rgba(0,0,0,0) 72%)',
+            borderRadius: '50%',
+          }}
+        />
+        <div
+          className="absolute flex flex-col"
+          style={{
+            left: 'clamp(48px, 8vw, 86px)',
+            top: '50%',
+            transform: 'translateY(-42%)',
+            gap: '20px',
+            zIndex: 2,
+          }}
+        >
+          <div className="flex flex-col" style={{ gap: '10px' }}>
+            <h1
+              className="font-nexa text-white"
+              style={{
+                fontSize: 'clamp(38px, 5.2vw, 56px)',
+                lineHeight: '1.04',
+                maxWidth: 'clamp(390px, 52vw, 520px)',
+                fontWeight: 600,
+              }}
+            >
+              <span className="block">
+                <AnimatedTextReveal text={lineOneFirstText} stagger={textStagger} />
+                {' '}
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineOneSecondText} delay={lineOneSecondDelay} stagger={textStagger} /></span>
+              </span>
+              <span className="block">
+                <span style={{ color: '#4dd6c4' }}><AnimatedTextReveal text={lineTwoFirstText} delay={lineTwoFirstDelay} stagger={textStagger} /></span>
+                {' '}
+                <AnimatedTextReveal text={lineTwoSecondText} delay={lineTwoSecondDelay} stagger={textStagger} />
+              </span>
+              <span className="block"><AnimatedTextReveal text={lineThreeText} delay={lineThreeDelay} stagger={textStagger} /></span>
+            </h1>
+            <p
+              className="font-metro text-white"
+              style={{ fontSize: '12px', lineHeight: '1.5', whiteSpace: 'nowrap' }}
+            >
+              Lighter, Stronger, Smarter Motors for the Future
+            </p>
+          </div>
+          <a href="#contact" className="cta-asset self-start">
+            <img
+              src={connectNow}
+              alt="Connect Now"
+              className="block h-auto object-contain"
+              style={{ width: '128px' }}
+            />
+          </a>
+        </div>
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            top: '50%',
+            right: 'clamp(32px, 7vw, 80px)',
+            transform: 'translateY(-50%)',
+            width: 'clamp(310px, 42vw, 430px)',
+            aspectRatio: '867 / 598',
+          }}
+        >
+          <img
+            src={techHeroGrid}
+            alt=""
+            className="absolute inset-0 h-full w-full object-fill"
+          />
+          <img
+            src={techHeroEllipse}
+            alt="Motor Diagram"
+            className="absolute z-10 block h-auto object-contain"
+            style={{
+              width: 'clamp(142px, 19vw, 190px)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+          <img
+            src={techRightHero}
+            alt="Motor Render"
+            className="absolute z-20 block h-auto object-contain"
+            style={{
+              width: 'clamp(142px, 19vw, 190px)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+        </div>
+      </section>
+
+      <section className="relative w-full bg-black overflow-hidden hidden min-[1101px]:block" style={{ height: '90vh' }}>
         {/* Background radial glow */}
         <div
           className="absolute pointer-events-none"
