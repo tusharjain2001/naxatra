@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
 
 const CATEGORIES = [
@@ -25,6 +26,19 @@ const CATEGORIES = [
 ];
 
 const MOTOR_APPLICATIONS = ['Industrial', 'E-Mobility', 'Power Tools', 'Robotics', 'Other'];
+
+const INITIAL_FORM = {
+  motorApplication: '',
+  fullName: '',
+  email: '',
+  phone: '',
+  company: '',
+  message: '',
+  investmentCompanyName: '',
+  companyWebsite: '',
+  websiteLink: '',
+  partnershipType: '',
+};
 
 function SubmitRow({ loading, success, error, imgStyle }) {
   return (
@@ -122,18 +136,7 @@ function TextField({ label, type = 'text', value, onChange, required, fullWidth 
 
 export default function ContactFormSection() {
   const [activeCategory, setActiveCategory] = useState('motors');
-  const [form, setForm] = useState({
-    motorApplication: '',
-    fullName: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    investmentCompanyName: '',
-    companyWebsite: '',
-    websiteLink: '',
-    partnershipType: '',
-  });
+  const [form, setForm] = useState(INITIAL_FORM);
 
   const [status, setStatus] = useState({ loading: false, success: false, error: '' });
   const set = (key) => (val) => setForm((f) => ({ ...f, [key]: val }));
@@ -178,6 +181,7 @@ export default function ContactFormSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: '' });
+    const toastId = toast.loading('Submitting your enquiry...');
     try {
       const res = await fetch(`${API_BASE}/api/contact/${activeCategory}`, {
         method: 'POST',
@@ -186,9 +190,13 @@ export default function ContactFormSection() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Submission failed.');
+      setForm(INITIAL_FORM);
       setStatus({ loading: false, success: true, error: '' });
+      toast.success("Submitted successfully! We'll be in touch soon.", { id: toastId });
     } catch (err) {
-      setStatus({ loading: false, success: false, error: err.message });
+      const message = err instanceof Error ? err.message : 'Submission failed.';
+      setStatus({ loading: false, success: false, error: message });
+      toast.error(message, { id: toastId });
     }
   };
 
