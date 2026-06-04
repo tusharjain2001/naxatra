@@ -21,7 +21,7 @@ const GRID_CONTENT_HEIGHT = 430;
 const pgx = (v) => `calc(${((v / PLUS_GRID_HEIGHT) * 100).toFixed(4)}% - ${(v / PLUS_GRID_HEIGHT).toFixed(6)} * clamp(44px, 3.96vw, ${COPYRIGHT_BAR_HEIGHT}px))`;
 
 const QUICK_LINKS = [
-  { label: 'Products', to: null },
+  { label: 'Products', to: '/products' },
   { label: 'Technology', to: '/technology' },
   { label: 'Case Studies', to: '/case-studies' },
   { label: 'Insights & Blogs', to: '/insights-blogs' },
