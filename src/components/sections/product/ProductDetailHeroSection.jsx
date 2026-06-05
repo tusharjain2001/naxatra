@@ -203,14 +203,14 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
 
       {/* ── DESKTOP LAYOUT (unchanged) ── */}
       <section
-        className="relative w-full overflow-hidden hidden md:flex"
+        className="product-detail-hero-desktop relative w-full overflow-hidden hidden md:flex"
         style={{ background: '#f5fafa', minHeight: 'clamp(380px, 40vw, 770px)' }}
       >
         {/* ── LEFT: Glow + watermark + motor + CTAs ── */}
-        <div className="relative" style={{ width: '50%' }}>
+        <div className="product-detail-hero-visual relative" style={{ width: '50%' }}>
           {/* Radial glow */}
           <div
-            className="absolute pointer-events-none"
+            className="product-detail-hero-glow absolute pointer-events-none"
             style={{
               left: '50%', transform: 'translateX(-50%)',
               top: 'clamp(30px, 3.3vw, 63px)',
@@ -224,7 +224,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
           {/* Watermark: hidden when video is present */}
           {!product.heroVideo && (
             <p
-              className="absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
+              className="product-detail-hero-watermark absolute w-full text-center font-nexa capitalize pointer-events-none select-none"
               style={{
                 top: 'clamp(60px, 6.9vw, 133px)',
                 left: 0,
@@ -250,7 +250,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
               loop
               muted
               playsInline
-              className="absolute"
+              className="product-detail-hero-video absolute"
               style={{
                 left: '50%',
                 transform: 'translateX(-50%)',
@@ -266,7 +266,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
             />
           ) : (
             <div
-              className="absolute"
+              className="product-detail-hero-image-wrap absolute"
               style={{
                 left: '50%',
                 transform: 'translateX(calc(-50% + 3.4%)) rotate(180deg)',
@@ -286,7 +286,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
 
           {/* CTAs — bottom-anchored to match specs bottom */}
           <div
-            className="absolute"
+            className="product-detail-hero-ctas absolute"
             style={{
               bottom: sharedBottom,
               left: 'clamp(16px, 10.6vw, 203px)',
@@ -315,7 +315,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
               <img
                 src={reqSpecSheet}
                 alt="Request Spec Sheet"
-                className="block"
+                className="product-detail-hero-cta-img block"
                 style={{ width: 'auto', height: 'clamp(32px, 2.6vw, 50px)' }}
               />
             </button>
@@ -337,7 +337,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
               <img
                 src={reqForCust}
                 alt="Request for Customization"
-                className="block"
+                className="product-detail-hero-cta-img block"
                 style={{ width: 'auto', height: 'clamp(32px, 2.6vw, 50px)' }}
               />
             </button>
@@ -346,7 +346,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
 
         {/* ── RIGHT: Name + specs ── */}
         <div
-          className="relative flex flex-col justify-end"
+          className="product-detail-hero-info relative flex flex-col justify-end"
           style={{
             flex: 1,
             paddingBottom: sharedBottom,
@@ -355,7 +355,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
         >
           {/* Product name — floated to top */}
           <h1
-            className="absolute font-nexa capitalize"
+            className="product-detail-hero-title absolute font-nexa capitalize"
             style={{
               top: 'clamp(60px, 9.3vw, 179px)',
               left: 0,
@@ -369,6 +369,7 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
 
           {/* Specs — bottom-anchored to match CTAs bottom via paddingBottom */}
           <div
+            className="product-detail-hero-specs"
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -379,13 +380,13 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
               <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <div>
                   <p
-                    className="font-nexa capitalize"
+                    className="product-detail-hero-spec-value font-nexa capitalize"
                     style={{ color: '#1863da', fontSize: 'clamp(16px, 1.67vw, 32px)', lineHeight: '1.25', marginBottom: '2px' }}
                   >
                     {spec.value}
                   </p>
                   <p
-                    className="font-metro"
+                    className="product-detail-hero-spec-label font-metro"
                     style={{ color: '#000', fontSize: 'clamp(12px, 1.25vw, 24px)', lineHeight: '1.5' }}
                   >
                     {spec.label}

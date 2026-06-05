@@ -87,7 +87,7 @@ export default function AboutJourneySection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f5fafa] pb-5 md:pb-30" style={{ paddingTop: 'clamp(20px, 5vw, 96px)' }}>
-      <div className="relative z-10 md:hidden" style={{ padding: '18px 14px 4px' }}>
+      <div className="relative z-10 min-[901px]:hidden" style={{ padding: '18px 14px 4px' }}>
         <div className="mx-auto" style={{ maxWidth: '460px' }}>
           <p
             className="font-metro uppercase text-center"
@@ -199,13 +199,13 @@ export default function AboutJourneySection() {
         </div>
       </div>
 
-      <div className="absolute left-[36px] top-[-12px] hidden h-[680px] w-[680px] pointer-events-none md:block">
+      <div className="absolute left-[36px] top-[-12px] hidden h-[680px] w-[680px] pointer-events-none min-[901px]:block">
         <img src={greenBg} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute left-[86px] top-[92px] hidden h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none md:block" />
+      <div className="absolute left-[86px] top-[92px] hidden h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(77,214,196,0.28)_0%,rgba(77,214,196,0.14)_42%,rgba(77,214,196,0)_74%)] pointer-events-none min-[901px]:block" />
 
       <div
-        className="relative z-10 hidden md:block"
+        className="about-journey-desktop relative z-10 hidden min-[901px]:block"
         style={{
           maxWidth: '1920px',
           margin: '0 auto',
@@ -213,6 +213,7 @@ export default function AboutJourneySection() {
         }}
       >
         <div
+          className="about-journey-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'clamp(420px, calc(420px + (100vw - 960px) * 0.14), 560px) minmax(430px, 1fr)',
@@ -221,11 +222,11 @@ export default function AboutJourneySection() {
             paddingLeft: 'clamp(30px, 6.2vw, 119px)',
           }}
         >
-          <div style={{ paddingTop: 0 }}>
+          <div className="about-journey-copy" style={{ paddingTop: 0 }}>
             <p className="font-metro uppercase" style={{ color: '#747474', fontSize: '14px', lineHeight: '18px', letterSpacing: '1.2px', marginBottom: '14px' }}>
               [A journey from 2020 to beyond]
             </p>
-            <h2 className="font-nexa mt-10" style={{ fontSize: '54px', lineHeight: '1.02', fontWeight: 600, marginBottom: '44px', maxWidth: '520px' }}>
+            <h2 className="about-journey-title font-nexa mt-10" style={{ fontSize: '54px', lineHeight: '1.02', fontWeight: 600, marginBottom: '44px', maxWidth: '520px' }}>
               <span style={{ color: '#000' }}>The Road To </span>
               <span style={{ color: '#1863da' }}>A</span>
               <br />
@@ -233,14 +234,14 @@ export default function AboutJourneySection() {
               <br />
               <span style={{ color: '#000' }}>Begins Here</span>
             </h2>
-            <p className="font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '1.7', maxWidth: '540px' }}>
+            <p className="about-journey-body font-metro" style={{ color: '#000', fontSize: '16px', lineHeight: '1.7', maxWidth: '540px' }}>
               The future of electric mobility starts here. At Naxatra Labs, we create next-generation motors
               designed for power, efficiency, and longevity. Our Axial and Radial flux motors, developed through
               5+ years of research, deliver industry-leading performance with uncompromising reliability.
             </p>
           </div>
 
-          <div style={{ position: 'relative', width: '430px', justifySelf: 'end' }}>
+          <div className="about-journey-timeline" style={{ position: 'relative', width: '430px', justifySelf: 'end' }}>
             <div style={{ zIndex: 50, background: '#f5fafa', padding: '0' }}>
               <div style={{ position: 'relative', textAlign: 'center' }}>
                 <p className="font-nexa" style={{ color: '#1863da', fontSize: '42px', lineHeight: '42px', fontWeight: 400 }}>
@@ -276,6 +277,7 @@ export default function AboutJourneySection() {
 
             <div
               ref={cardsRef}
+              className="about-journey-cards"
               style={{
                 width: '430px',
                 height: '440px',
@@ -298,6 +300,7 @@ export default function AboutJourneySection() {
                   }}
                 >
                   <div
+                    className="about-journey-card"
                     style={{
                       width: '370px',
                       minHeight: '440px',

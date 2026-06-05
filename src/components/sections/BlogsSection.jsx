@@ -43,9 +43,9 @@ export default function BlogsSection() {
           <span className="text-[#1863da]">Blogs</span>
         </h2>
 
-        <div className="grid grid-cols-3 gap-[clamp(16px,1.4vw,26px)] max-[980px]:grid-cols-1 max-[720px]:mx-auto max-[720px]:max-w-[297.289px] max-[720px]:gap-5">
+        <div className="home-blogs-grid grid grid-cols-3 gap-[clamp(16px,1.4vw,26px)] max-[980px]:grid-cols-1 max-[720px]:mx-auto max-[720px]:max-w-[297.289px] max-[720px]:gap-5">
           {blogs.map((blog, i) => (
-            <div key={i} className="group relative min-h-[clamp(390px,30vw,528px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[720px]:h-[345.193px] max-[720px]:min-h-0 max-[720px]:w-[297.289px]">
+            <div key={i} className="home-blog-card group relative min-h-[clamp(390px,30vw,528px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[720px]:h-[345.193px] max-[720px]:min-h-0 max-[720px]:w-[297.289px]">
               <img
                 src={blog.bg}
                 alt=""
@@ -54,8 +54,8 @@ export default function BlogsSection() {
               />
               <div className="absolute inset-0 bg-[#edf6ff] opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
 
-              <div className="relative z-10 px-[clamp(18px,1.45vw,28px)] pt-[clamp(20px,1.7vw,34px)] pb-[clamp(20px,1.6vw,30px)] max-[720px]:px-[16.5px] max-[720px]:pt-[15px] max-[720px]:pb-[18px]">
-                <div className="relative h-[clamp(180px,16vw,247px)] overflow-hidden rounded-[5.28px] max-[720px]:mx-auto max-[720px]:h-[148.826px] max-[720px]:w-[263.756px] max-[720px]:rounded-[4px]">
+              <div className="home-blog-content relative z-10 px-[clamp(18px,1.45vw,28px)] pt-[clamp(20px,1.7vw,34px)] pb-[clamp(20px,1.6vw,30px)] max-[720px]:px-[16.5px] max-[720px]:pt-[15px] max-[720px]:pb-[18px]">
+                <div className="home-blog-image relative h-[clamp(180px,16vw,247px)] overflow-hidden rounded-[5.28px] max-[720px]:mx-auto max-[720px]:h-[148.826px] max-[720px]:w-[263.756px] max-[720px]:rounded-[4px]">
                   <img
                     src={blog.img}
                     alt={blog.title}
@@ -65,20 +65,20 @@ export default function BlogsSection() {
                 </div>
 
                 <div className="mt-[clamp(16px,1.25vw,23px)] max-[720px]:mt-4">
-                  <h3 className="font-nexa text-[24.15px] capitalize leading-[1.25] text-[#1863da] max-[720px]:text-[16px]">
+                  <h3 className="home-blog-title font-nexa text-[24.15px] capitalize leading-[1.25] text-[#1863da] max-[720px]:text-[16px]">
                     {blog.title}
                   </h3>
-                  <p className="mt-[clamp(6px,0.45vw,8px)] font-metro text-[16.2px] leading-[1.55] text-[#929292] max-[720px]:text-[10px]">
+                  <p className="home-blog-date mt-[clamp(6px,0.45vw,8px)] font-metro text-[16.2px] leading-[1.55] text-[#929292] max-[720px]:text-[10px]">
                     {blog.date}
                   </p>
-                  <p className="mt-[clamp(4px,0.3vw,6px)] font-metro text-[16.2px] leading-[1.55] text-black max-[720px]:text-[10px]">
+                  <p className="home-blog-desc mt-[clamp(4px,0.3vw,6px)] font-metro text-[16.2px] leading-[1.55] text-black max-[720px]:text-[10px]">
                     {blog.desc}
                   </p>
                   <a
                     href={blog.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group mt-[clamp(12px,0.9vw,16px)] block text-right font-metro text-[16.2px] leading-[1.55] text-[#1863da] no-underline transition duration-300 ease-out hover:tracking-[0.01em] max-[720px]:text-[10px]"
+                    className="home-blog-link group mt-[clamp(12px,0.9vw,16px)] block text-right font-metro text-[16.2px] leading-[1.55] text-[#1863da] no-underline transition duration-300 ease-out hover:tracking-[0.01em] max-[720px]:text-[10px]"
                   >
                     <span className="border-b border-transparent transition-colors duration-300 ease-out group-hover:border-[#1863da]">
                       Read More

@@ -33,11 +33,11 @@ const FEATURES = [
 export default function ProductFeaturesSection() {
   return (
     <section
-      className="w-full"
+      className="product-features-section w-full"
       style={{ background: '#fff', padding: 'clamp(34px, 4.8vw, 82px) clamp(20px, 4.2vw, 80px)' }}
     >
       <div
-        className="max-[980px]:grid-cols-2 max-[560px]:!grid-cols-1 max-[560px]:!gap-3"
+        className="product-features-grid max-[980px]:grid-cols-2 max-[560px]:!grid-cols-1 max-[560px]:!gap-3"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, minmax(220px, 280px))',
@@ -50,7 +50,7 @@ export default function ProductFeaturesSection() {
         {FEATURES.map((feature, idx) => (
           <div
             key={idx}
-            className="max-[560px]:!min-h-[130px] max-[560px]:!px-4 max-[560px]:!pt-3 max-[560px]:!pb-4"
+            className="product-feature-card max-[560px]:!min-h-[130px] max-[560px]:!px-4 max-[560px]:!pt-3 max-[560px]:!pb-4"
             style={{
               position: 'relative',
               padding: 'clamp(24px, 1.8vw, 34px) clamp(18px, 1.45vw, 28px) clamp(24px, 1.9vw, 34px)',
@@ -104,7 +104,7 @@ export default function ProductFeaturesSection() {
 
             {/* Title */}
             <h3
-              className="font-nexa capitalize max-[560px]:!text-[16px] max-[560px]:!leading-[1.18] max-[560px]:!max-w-none"
+              className="product-feature-title font-nexa capitalize max-[560px]:!text-[16px] max-[560px]:!leading-[1.18] max-[560px]:!max-w-none"
               style={{
                 color: '#1863da',
                 fontSize: 'clamp(18px, 1.25vw, 24px)',
@@ -119,7 +119,7 @@ export default function ProductFeaturesSection() {
 
             {/* Description */}
             <p
-              className="font-metro max-[560px]:!text-[10px] max-[560px]:!leading-[1.5] max-[560px]:!max-w-none"
+              className="product-feature-description font-metro max-[560px]:!text-[10px] max-[560px]:!leading-[1.5] max-[560px]:!max-w-none"
               style={{
                 color: '#1f1f1f',
                 fontSize: 'clamp(11px, 0.76vw, 14px)',

@@ -104,7 +104,7 @@ export default function CareersHeroSection() {
       </section>
 
       <section
-        className="relative hidden w-full bg-black overflow-hidden md:block"
+        className="careers-hero-desktop relative hidden w-full bg-black overflow-hidden md:block"
         style={{ minHeight: 'clamp(380px, 42.6vw, 818px)' }}
       >
         <div
@@ -120,7 +120,7 @@ export default function CareersHeroSection() {
 
         {/* Content */}
         <div
-          className="relative mx-auto flex flex-wrap items-center justify-between lg:flex-nowrap"
+          className="careers-hero-inner relative mx-auto flex flex-wrap items-center justify-between lg:flex-nowrap"
           style={{
             maxWidth: '1920px',
             minHeight: 'inherit',
@@ -130,11 +130,11 @@ export default function CareersHeroSection() {
         >
           {/* Left: heading + CTA */}
           <div
-            className="flex flex-col items-start"
+            className="careers-hero-copy flex flex-col items-start"
             style={{ maxWidth: 'clamp(280px, 40vw, 760px)', gap: 'clamp(24px, 2.5vw, 48px)' }}
           >
             <h1
-              className="font-nexa"
+              className="careers-hero-title font-nexa"
               style={{ fontSize: 'clamp(32px, 5.2vw, 100px)', lineHeight: '1.01', fontWeight: 400 }}
             >
               <span className="text-white block"><AnimatedTextReveal text={firstText} stagger={textStagger} /></span>
@@ -154,7 +154,7 @@ export default function CareersHeroSection() {
 
           {/* Right: layered hero visual */}
           <div
-            className="relative flex-shrink-0"
+            className="careers-hero-visual relative flex-shrink-0"
             style={{
               width: 'clamp(520px, 45vw, 869px)',
               aspectRatio: '869 / 601',

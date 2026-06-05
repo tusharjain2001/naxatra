@@ -11,12 +11,12 @@ export default function CTASection() {
   return (
     <>
     <section className="w-full bg-[#f5fafa]">
-      <div className="relative max-[560px]:hidden" style={{ height: 'clamp(460px, 32.08vw, 616px)' }}>
+      <div className="home-cta-desktop relative max-[560px]:hidden" style={{ height: 'clamp(460px, 32.08vw, 616px)' }}>
         {/* Dark cut-corner background */}
         <img
           src={ctaBg}
           alt=""
-          className="absolute"
+          className="home-cta-bg absolute"
           style={{
             top: 'clamp(40px, 2.76vw, 53px)',
             left: 'clamp(24px, 3.85vw, 74px)',
@@ -28,7 +28,7 @@ export default function CTASection() {
 
         {/* Content */}
         <div
-          className="absolute"
+          className="home-cta-content absolute"
           style={{
             top: 'clamp(112px, 8.33vw, 160px)',
             left: 'clamp(72px, 10.94vw, 210px)',
@@ -41,7 +41,7 @@ export default function CTASection() {
           <div>
             <div style={{ marginBottom: '24px' }}>
               <p
-                className="font-metro"
+                className="home-cta-eyebrow font-metro"
                 aria-label="One Size Doesn't Fit All. We Customize."
                 style={{
                   display: 'inline-flex',
@@ -79,15 +79,15 @@ export default function CTASection() {
               </p>
             </div>
 
-            <h2 className="font-nexa capitalize" style={{ fontSize: 'clamp(44px, 3.56vw, 68.35px)', lineHeight: 1.26 }}>
+            <h2 className="home-cta-heading font-nexa capitalize" style={{ fontSize: 'clamp(44px, 3.56vw, 68.35px)', lineHeight: 1.26 }}>
               <span style={{ color: '#fff' }}>From Ground to Sky, </span>
               <span style={{ color: '#1863da' }}>We Power It All</span>
             </h2>
           </div>
 
-          <div style={{ paddingTop: '0' }}>
+          <div className="home-cta-copy-panel" style={{ paddingTop: '0' }}>
             <p
-              className="font-metro"
+              className="home-cta-copy font-metro"
               style={{
                 color: '#fff',
                 fontSize: 'clamp(15px, 1.02vw, 19.54px)',
@@ -102,7 +102,7 @@ export default function CTASection() {
             <a
               href="/products"
               aria-label="Learn More About Our Tailored Solutions"
-              className="font-nexa"
+              className="home-cta-primary font-nexa"
               style={{
                 width: 'min(100%, 560px)',
                 height: 'clamp(54px, 3.75vw, 72px)',
@@ -126,6 +126,7 @@ export default function CTASection() {
             </a>
 
             <div
+              className="home-cta-secondary-wrap"
               style={{
                 width: 'min(100%, 373px)',
                 height: 'clamp(54px, 3.75vw, 72px)',
@@ -138,7 +139,7 @@ export default function CTASection() {
                 type="button"
                 onClick={() => setModalOpen(true)}
                 aria-label="Browse Our Motor Catalog"
-                className="font-nexa"
+                className="home-cta-secondary font-nexa"
                 style={{
                   width: '100%',
                   height: '100%',

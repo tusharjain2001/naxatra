@@ -36,18 +36,18 @@ export default function FeaturesSection() {
   return (
     <section className="w-full bg-white max-[560px]:mt-6">
       <div className="mx-auto max-w-[1840px] px-[clamp(20px,4.2vw,80px)] py-[clamp(28px,4.8vw,72px)] max-[560px]:px-[18px] max-[560px]:py-[26px]">
-        <div className="grid grid-cols-4 gap-[clamp(24px,1.9vw,35px)] max-[1279px]:grid-cols-2 min-[561px]:max-[1279px]:max-w-[860px] min-[561px]:max-[1279px]:mx-auto min-[561px]:max-[1279px]:gap-8 max-[560px]:grid-cols-1 max-[560px]:max-w-none">
+        <div className="grid grid-cols-4 gap-[clamp(24px,1.9vw,35px)] max-[1279px]:grid-cols-2 min-[561px]:max-[1279px]:max-w-[860px] min-[561px]:max-[1279px]:mx-auto min-[561px]:max-[1279px]:gap-8 min-[561px]:max-[1279px]:justify-items-stretch max-[560px]:grid-cols-1 max-[560px]:max-w-none">
           {features.map((feature, i) => (
             <div
               key={i}
-              className="group relative md:w-[320px] min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[1279px]:w-full min-[561px]:max-[1279px]:min-h-[220px] min-[561px]:max-[1279px]:px-8 min-[561px]:max-[1279px]:py-8 max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
+              className="group relative md:w-[320px] min-h-[clamp(170px,18.4vw,354px)] px-[clamp(22px,2.8vw,52px)] py-[clamp(22px,2.8vw,52px)] transition duration-300 ease-out hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(24,99,218,0.10)] max-[1279px]:w-full min-[561px]:max-[1279px]:!w-full min-[561px]:max-[1279px]:min-h-[260px] min-[561px]:max-[1279px]:px-8 min-[561px]:max-[1279px]:py-8 max-[560px]:h-[152px] max-[560px]:min-h-0 max-[560px]:px-5 max-[560px]:py-4"
             >
               <img
                 src={feature.bg}
                 alt=""
                 className="absolute inset-0 h-full w-full"
               />
-              <div className="relative z-10 flex max-w-[clamp(160px,15vw,290px)] flex-col items-start max-[560px]:max-w-none">
+              <div className="relative z-10 flex max-w-[clamp(160px,15vw,290px)] flex-col items-start min-[561px]:max-[1279px]:max-w-full max-[560px]:max-w-none">
                 <img
                   src={feature.icon}
                   alt=""

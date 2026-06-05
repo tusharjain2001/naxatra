@@ -24,8 +24,8 @@ export default function HeroSection() {
   const controllersDelay = motorsDelay + countAnimatedCharacters(motorsText) * heroTextStagger;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-[96px]">
-      <div className="relative mx-auto h-[clamp(300px,34vw,590px)] w-[calc(100%_-_46px)] max-w-[1793px] max-[720px]:h-[400px] max-[720px]:w-[calc(100%_-_40px)]">
+    <section className="home-hero-section relative w-full overflow-hidden bg-white pt-[96px]">
+      <div className="home-hero-frame relative mx-auto h-[clamp(300px,34vw,590px)] w-[calc(100%_-_46px)] max-w-[1793px] max-[720px]:h-[400px] max-[720px]:w-[calc(100%_-_40px)]">
         <img src={heroBg} alt="" className="absolute inset-0 h-full w-full max-[720px]:hidden" />
         <div
           className="absolute inset-0 hidden max-[720px]:block"
@@ -46,7 +46,7 @@ export default function HeroSection() {
         </div>
         <div className="pointer-events-none absolute inset-0 bg-[image:linear-gradient(rgba(77,214,196,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(77,214,196,0.18)_1px,transparent_1px)] bg-[length:108px_100px]" />
 
-        <div className="absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
+        <div className="home-hero-copy absolute left-[clamp(44px,5vw,132px)] top-[clamp(32px,4vw,92px)] w-[min(43vw,560px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:top-[32px] max-[720px]:w-full max-[720px]:px-3 max-[720px]:text-center">
           <h1 className="font-nexa text-[clamp(43px,5.2vw,100px)] font-semibold leading-[0.91] tracking-normal text-black max-[720px]:text-[26px]">
             <span className="block max-[720px]:mr-[0.2em] max-[720px]:inline text-[#1863da]">
               <AnimatedTextReveal text={advancedText} stagger={heroTextStagger} duration={heroTextDuration} />
@@ -65,7 +65,7 @@ export default function HeroSection() {
 
         <a
           href="#products"
-          className="group absolute bottom-[clamp(44px,4vw,82px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline transition-transform duration-300 ease-out hover:-translate-y-0.5 max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
+          className="home-hero-cta group absolute bottom-[clamp(44px,4vw,82px)] left-[clamp(44px,5vw,132px)] inline-flex items-center justify-center no-underline transition-transform duration-300 ease-out hover:-translate-y-0.5 max-[720px]:top-[330px] max-[720px]:bottom-auto max-[720px]:left-0 max-[720px]:right-0 max-[720px]:justify-center"
           aria-label="Explore Options"
         >
           <img
@@ -75,7 +75,7 @@ export default function HeroSection() {
           />
         </a>
 
-        <div className="absolute right-[clamp(84px,10.8vw,230px)] top-[clamp(42px,4.6vw,112px)] h-[clamp(320px,24vw,395px)] w-[clamp(420px,31vw,515px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:h-[153.943px] max-[720px]:w-[199px]">
+        <div className="home-hero-video-wrap absolute right-[clamp(84px,10.8vw,230px)] top-[clamp(42px,4.6vw,112px)] h-[clamp(320px,24vw,395px)] w-[clamp(420px,31vw,515px)] max-[720px]:left-0 max-[720px]:right-0 max-[720px]:mx-auto max-[720px]:top-[155px] max-[720px]:h-[153.943px] max-[720px]:w-[199px]">
           <video
             src={heroVideo}
             autoPlay
