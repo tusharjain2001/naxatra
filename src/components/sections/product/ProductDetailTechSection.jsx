@@ -91,7 +91,7 @@ function ApplicationsContent({ productApplications }) {
             <img
               src={app.icon}
               alt={app.label}
-              style={{ width: "50%", height: "60%", objectFit: "contain" }}
+              style={{ width: "68%", height: "72%", objectFit: "contain" }}
             />
           </div>
           <p

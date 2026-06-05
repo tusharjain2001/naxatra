@@ -15,6 +15,9 @@ const CATEGORIES = [
   { id: 'forklift', label: 'Forklift' },
   { id: 'erickshaw', label: 'E-Rickshaw' },
   { id: 'tiller', label: 'Electric Tiller' },
+  { id: 'grinder', label: 'Grinder' },
+  { id: 'electric-drill', label: 'Electric Drill' },
+  { id: 'industrial-tools', label: 'Industrial Tool' },
 ];
 
 const APP_ICON_MAP = Object.fromEntries(APPLICATIONS.map((a) => [a.id, a.icon]));
@@ -227,7 +230,7 @@ function ApplicationsView({ onOpenBrochure }) {
                 }}
               >
                 {iconImg && (
-                  <img src={iconImg} alt={cat.label} style={{ width: '70%', height: '70%', objectFit: 'contain' }} />
+                  <img src={iconImg} alt={cat.label} style={{ width: '82%', height: '82%', objectFit: 'contain' }} />
                 )}
               </div>
               <span
