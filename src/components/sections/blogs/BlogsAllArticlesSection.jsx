@@ -140,7 +140,24 @@ export default function BlogsAllArticlesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [mobileArticleIndex, setMobileArticleIndex] = useState(0);
   const visibleArticles = activeCategory === 'All' ? ARTICLES : ARTICLES.filter((article) => article.category === activeCategory);
-  const featuredArticle = visibleArticles[mobileArticleIndex] || visibleArticles[0] || ARTICLES[0];
+  const orderedVisibleArticles =
+    activeCategory === 'All'
+      ? [...visibleArticles].sort((left, right) => {
+          const pinnedOrder = {
+            'National Technology Week': 0,
+            'Introducing Naxatra Labs': 1,
+          };
+          const leftRank = pinnedOrder[left.title];
+          const rightRank = pinnedOrder[right.title];
+
+          if (leftRank !== undefined || rightRank !== undefined) {
+            return (leftRank ?? Number.MAX_SAFE_INTEGER) - (rightRank ?? Number.MAX_SAFE_INTEGER);
+          }
+
+          return 0;
+        })
+      : visibleArticles;
+  const featuredArticle = orderedVisibleArticles[mobileArticleIndex] || orderedVisibleArticles[0] || ARTICLES[0];
 
   const selectCategory = (category) => {
     setActiveCategory(category);
@@ -326,7 +343,7 @@ export default function BlogsAllArticlesSection() {
           </h2>
 
           <div className="flex flex-col" style={{ gap: 'clamp(16px, 1.5vw, 28px)' }}>
-            {visibleArticles.map((article) => (
+            {orderedVisibleArticles.map((article) => (
               <article
                 key={article.id}
                 className="grid items-start"
