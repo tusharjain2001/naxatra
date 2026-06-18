@@ -2,8 +2,8 @@ import heroBg from '../../assets/images/hero-bg.svg';
 import exploreOptions from '../../assets/images/explore-options.svg';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../common/AnimatedTextReveal';
 
-const heroVideoWebm = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780132851/00005_yishay.webm';
-const heroVideoMov = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1780132851/00005_yishay.mov';
+const heroVideoWebm = 'https://res.cloudinary.com/dccp724cq/video/upload/v1781782602/00005_yishay_dunwah.webm';
+const heroVideoMov = 'https://res.cloudinary.com/dccp724cq/video/upload/v1781782602/00005_yishay_dunwah.mov';
 
 function getHeroVideo() {
   if (typeof navigator === 'undefined') {
