@@ -3,6 +3,7 @@ import designAndDevelopmentEngineerPdf from '../../../assets/pdfs/Design and Dev
 import marketingAndContentAssociatePdf from '../../../assets/pdfs/JD_marketing and content associate.pdf';
 import mechanicalSimulationEngineerPdf from '../../../assets/pdfs/Mechanical Simulation Engineer NX JD.pdf';
 import testingAndValidationEngineerPdf from '../../../assets/pdfs/Testing and Validation Engineer NX JD.pdf';
+import senioraccountant from '../../../assets/pdfs/senior accountant.pdf';
 import CareersApplicationFormPanel from './CareersApplicationFormPanel';
 
 const HIRING_VIDEO_URL = 'https://res.cloudinary.com/dccp724cq/video/upload/v1781799033/Updated_Hiring_Focused_Narrative_Video_V6_bbbnd6.mp4';
@@ -43,6 +44,15 @@ const JOBS = [
     description:
       'Plan and execute testing for motors and systems. Analyze failures and drive data-led improvements.',
     pdf: testingAndValidationEngineerPdf,
+  },
+  {
+    id: 7,
+    title: 'Senior Accountant & Finance Operations',
+    location: 'Ahmedabad (Onsite)',
+    type: 'Full-Time',
+    description:
+      'Oversee accounting, compliance, payroll, MIS reporting, audits, and financial controls while driving process improvements and supporting business growth.',
+    pdf: senioraccountant,
   },
 ];
 
