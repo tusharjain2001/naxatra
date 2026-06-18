@@ -24,6 +24,11 @@ import appSweeper from '../assets/vehicle/sweepers.png';
 import appGrinder from '../assets/images/grinder.png';
 import appElectricDrill from '../assets/images/electric drill.png';
 import appIndustrialTool from '../assets/images/industrial tool.png';
+import rf15Video from '../assets/videos/RF 15.mp4';
+import rf22Video from '../assets/videos/RF 22 Precompose.mp4';
+import rf33Video from '../assets/videos/RF 33.mp4';
+import rf55Video from '../assets/videos/RF 55.mp4';
+import rf66Video from '../assets/videos/RF 66.mp4';
 
 export const APPLICATIONS = [
   { id: 'scooters',           label: 'Scooters',              icon: appScooter },
@@ -88,7 +93,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF15,
     wireframeImage: wireframeRF15,
-    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778521840/RF_15_zqlcg8.mp4',
+    heroVideo: rf15Video,
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804132/RF_15_tf6p5q.webm',
     applications: ['scooters', 'weeder', 'erickshaw'],
     variants: [
@@ -115,7 +120,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF22,
     wireframeImage: wireframeRF22,
-    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522566/RF_22_Precompose_acxd0j.mp4',
+    heroVideo: rf22Video,
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804400/RF_22_vfkdfw.webm',
     applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'weeder', 'loader', 'forklift', 'erickshaw'],
     variants: [
@@ -147,7 +152,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF33,
     wireframeImage: wireframeRF33,
-    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522605/RF_33_ytaenx.mp4',
+    heroVideo: rf33Video,
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804781/RF_33_qwpsbc.webm',
     applications: ['scooters', 'agribot', 'weeder', 'forklift', 'loader'],
     variants: [
@@ -179,7 +184,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF55,
     wireframeImage: wireframeRF55,
-    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522666/RF_55_buqlqx.mp4',
+    heroVideo: rf55Video,
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804817/RF_55_m0shdx.webm',
     applications: ['scooters', 'bikes', 'sweepers', 'agribot', 'tiller', 'forklift', 'loader'],
     variants: [
@@ -211,7 +216,7 @@ export const PRODUCTS = [
     coolingType: 'Air Cooled',
     image: motorRF66,
     wireframeImage: wireframeRF66,
-    heroVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778522722/RF_66_dtfdjs.mp4',
+    heroVideo: rf66Video,
     detailedVideo: 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1779804843/RF_66_snlnq6.webm',
     applications: ['scooters', 'sweepers', 'loader', 'tiller'],
     variants: [
