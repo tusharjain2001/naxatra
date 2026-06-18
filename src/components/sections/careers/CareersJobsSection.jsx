@@ -5,7 +5,7 @@ import mechanicalSimulationEngineerPdf from '../../../assets/pdfs/Mechanical Sim
 import testingAndValidationEngineerPdf from '../../../assets/pdfs/Testing and Validation Engineer NX JD.pdf';
 import CareersApplicationFormPanel from './CareersApplicationFormPanel';
 
-const HIRING_VIDEO_URL = 'https://res.cloudinary.com/dgr33gxhd/video/upload/v1778422346/hiring_video_dn8rih.mp4';
+const HIRING_VIDEO_URL = 'https://res.cloudinary.com/dccp724cq/video/upload/v1781799033/Updated_Hiring_Focused_Narrative_Video_V6_bbbnd6.mp4';
 
 const JOBS = [
   {
