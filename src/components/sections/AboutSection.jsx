@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import aboutThumbnail from '../../assets/images/Thumbnail .png';
-import aboutSectionVideo from '../../assets/videos/corporatevideo.mp4';
+import aboutSectionVideo from '../../assets/videos/corporatenew.mp4';
 
 export default function AboutSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
