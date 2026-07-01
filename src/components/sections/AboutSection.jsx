@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import aboutThumbnail from '../../assets/images/Thumbnail .png';
-import aboutSectionVideo from '../../assets/videos/corporatenew.mp4';
+
+const ABOUT_SECTION_VIDEO_URL = 'https://res.cloudinary.com/dccp724cq/video/upload/v1782903206/corporatenew_fi1r7k.mp4';
 
 export default function AboutSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -22,7 +23,7 @@ export default function AboutSection() {
         <div className="mt-[clamp(18px,2.4vw,34px)] w-full max-w-[980px] rounded-[clamp(20px,2.1vw,34px)] shadow-[0_18px_45px_rgba(24,99,218,0.10)] max-[720px]:max-w-none">
           {isVideoPlaying ? (
             <video
-              src={aboutSectionVideo}
+              src={ABOUT_SECTION_VIDEO_URL}
               autoPlay
               muted
               loop
