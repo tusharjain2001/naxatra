@@ -261,10 +261,17 @@ export default function Footer() {
               width: 'clamp(240px, 22vw, 420px)',
             }}
           >
-            {['Privacy Policy', 'Terms of Use'].map((t) => (
-              <span key={t} style={{ color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap', cursor: 'pointer' }}>
-                {t}
-              </span>
+            {[
+              { label: 'Privacy Policy', to: '/privacy-policy' },
+              { label: 'Terms of Use', to: '/terms-of-use' },
+            ].map(({ label, to }) => (
+              <Link
+                key={label}
+                to={to}
+                style={{ color: '#fff', fontSize: 'clamp(9px, 0.94vw, 18px)', whiteSpace: 'nowrap', cursor: 'pointer', textDecoration: 'none' }}
+              >
+                {label}
+              </Link>
             ))}
           </div>
         </div>
@@ -374,8 +381,8 @@ export default function Footer() {
           <span>Copyright © 2026</span>
           <div className="absolute left-[18px] right-[18px] top-0 border-t border-white/90" aria-hidden="true" />
           <div className="flex items-center gap-4">
-            <span>Privacy Policy</span>
-            <span>Terms of Use</span>
+            <Link to="/privacy-policy" className="text-white no-underline">Privacy Policy</Link>
+            <Link to="/terms-of-use" className="text-white no-underline">Terms of Use</Link>
           </div>
         </div>
       </div>

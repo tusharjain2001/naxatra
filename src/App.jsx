@@ -13,6 +13,8 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import AboutPage from './pages/AboutPage';
 import MediaKitPage from './pages/MediaKitPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -58,6 +60,8 @@ function App() {
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/media-kit" element={<MediaKitPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       </Routes>
     </BrowserRouter>
   );
