@@ -5,8 +5,14 @@ import ProductHeroSection from '../components/sections/product/ProductHeroSectio
 import ProductListingSection from '../components/sections/product/ProductListingSection';
 import ProductCTASection from '../components/sections/product/ProductCTASection';
 import ProductFeaturesSection from '../components/sections/product/ProductFeaturesSection';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function ProductPage() {
+  usePageMeta(
+    'Power That Moves You',
+    'Explore the Antarix range of BLDC motors and controllers from Naxatra Labs — lighter, stronger, smarter motors for the future of electric mobility.'
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar />

@@ -9,11 +9,19 @@ import ProductCTASection from '../components/sections/product/ProductCTASection'
 import ProductFeaturesSection from '../components/sections/product/ProductFeaturesSection';
 import DownloadSpecSheetModal from '../components/sections/product/DownloadSpecSheetModal';
 import { PRODUCTS } from '../data/products';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const product = PRODUCTS.find((p) => p.id === productId);
   const [specSheetModalOpen, setSpecSheetModalOpen] = useState(false);
+
+  usePageMeta(
+    product ? product.name : 'Product Not Found',
+    product
+      ? `Technical specifications, features, and applications of the ${product.name} motor from Naxatra Labs.`
+      : undefined
+  );
 
   if (!product) {
     return (

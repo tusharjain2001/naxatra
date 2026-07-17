@@ -4,8 +4,14 @@ import CareersHeroSection from '../components/sections/careers/CareersHeroSectio
 import CareersJobsSection from '../components/sections/careers/CareersJobsSection';
 import CareersApplySection from '../components/sections/careers/CareersApplySection';
 import Footer from '../components/sections/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function CareersPage() {
+  usePageMeta(
+    'Careers',
+    'We’re hiring! Join Naxatra Labs and help build the future of electric mobility together.'
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar />

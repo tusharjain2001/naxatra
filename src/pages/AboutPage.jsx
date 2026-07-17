@@ -7,8 +7,14 @@ import AboutTeamSection from '../components/sections/about/AboutTeamSection';
 import AboutInvestorsSection from '../components/sections/about/AboutInvestorsSection';
 import AboutJourneySection from '../components/sections/about/AboutJourneySection';
 import Footer from '../components/sections/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function AboutPage() {
+  usePageMeta(
+    'About Us',
+    'What drives us? Learn about Naxatra Labs — our values, team, investors, and journey in electric mobility.'
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar />

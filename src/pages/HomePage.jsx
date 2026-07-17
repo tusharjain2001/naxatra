@@ -12,8 +12,14 @@ import CTASection from '../components/sections/CTASection';
 import JourneySection from '../components/sections/JourneySection';
 import BlogsSection from '../components/sections/BlogsSection';
 import Footer from '../components/sections/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function HomePage() {
+  usePageMeta(
+    null,
+    'The future of electric mobility starts here. Naxatra Labs builds next-generation BLDC motors and controllers designed for power, efficiency, and longevity.'
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar />

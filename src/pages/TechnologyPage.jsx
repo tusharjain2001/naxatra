@@ -6,8 +6,14 @@ import TechPlatformSection from '../components/sections/technology/TechPlatformS
 import TechStatsSection from '../components/sections/technology/TechStatsSection';
 import TechPowerSection from '../components/sections/technology/TechPowerSection';
 import Footer from '../components/sections/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function TechnologyPage() {
+  usePageMeta(
+    'Technology',
+    'From concept to creation — the motor and controller technology platform driving EV innovation at Naxatra Labs.'
+  );
+
   return (
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
       <Navbar />

@@ -38,23 +38,27 @@ export default function AnimatedTextReveal({
   }, [repeatInterval]);
 
   return (
-    <Tag key={cycleKey} aria-label={text} className={className}>
-      {words.map((word, wordIndex) => (
-        <span key={`${word}-${wordIndex}`} aria-hidden="true">
-          <span className="inline-block whitespace-nowrap">
-            {Array.from(word).map((char, charIndex) => {
-              const currentIndex = characterIndex;
-              characterIndex += 1;
+    <Tag className={className}>
+      <span className="sr-only">{text}</span>
+      {/* data-nosnippet keeps the per-letter spans out of Google's titles/snippets */}
+      <span key={cycleKey} aria-hidden="true" data-nosnippet="">
+        {words.map((word, wordIndex) => (
+          <span key={`${word}-${wordIndex}`}>
+            <span className="inline-block whitespace-nowrap">
+              {Array.from(word).map((char, charIndex) => {
+                const currentIndex = characterIndex;
+                characterIndex += 1;
 
-              return renderCharacter(char, `${char}-${wordIndex}-${charIndex}`, {
-                animationDelay: `${delay + currentIndex * stagger}s`,
-                animationDuration: `${duration}s`,
-              });
-            })}
+                return renderCharacter(char, `${char}-${wordIndex}-${charIndex}`, {
+                  animationDelay: `${delay + currentIndex * stagger}s`,
+                  animationDuration: `${duration}s`,
+                });
+              })}
+            </span>
+            {wordIndex < words.length - 1 ? ' ' : null}
           </span>
-          {wordIndex < words.length - 1 ? ' ' : null}
-        </span>
-      ))}
+        ))}
+      </span>
     </Tag>
   );
 }

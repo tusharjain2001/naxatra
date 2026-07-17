@@ -7,8 +7,14 @@ import CaseStudyComparison from '../components/sections/case-studies/CaseStudyCo
 import CaseStudyImpact from '../components/sections/case-studies/CaseStudyImpact';
 import CaseStudyWayAhead from '../components/sections/case-studies/CaseStudyWayAhead';
 import Footer from '../components/sections/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function CaseStudyDetailPage() {
+  usePageMeta(
+    'Boosting Power Tool Performance — BLDC Case Study',
+    'How Naxatra Labs boosted power tool performance with a custom BLDC motor solution.'
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar />
