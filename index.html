@@ -9,6 +9,18 @@
       content="The future of electric mobility starts here. Naxatra Labs builds next-generation BLDC motors and controllers designed for power, efficiency, and longevity."
     />
     <title>Naxatra Labs</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y755QCR35"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      /* send_page_view is disabled because this is a React SPA:
+         page views are sent on every route change from the app instead. */
+      gtag('config', 'G-5Y755QCR35', { send_page_view: false });
+    </script>
   </head>
   <body>
     <div id="root"></div>

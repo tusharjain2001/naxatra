@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { trackPageView } from './lib/analytics';
 import StickyContactSidebar from './components/common/StickyContactSidebar';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
@@ -26,10 +27,25 @@ function ScrollToTop() {
   return null;
 }
 
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Deferred so usePageMeta has updated document.title before the hit is sent
+    const id = setTimeout(() => {
+      trackPageView(location.pathname + location.search);
+    }, 0);
+    return () => clearTimeout(id);
+  }, [location.pathname, location.search]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
       <Toaster
         position="top-center"
         toastOptions={{
