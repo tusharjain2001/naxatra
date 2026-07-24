@@ -3,6 +3,7 @@ import downloadBrochure from '../../../assets/images/download-brochure.svg';
 import greenBg from '../../../assets/images/green-bg.png';
 import DownloadBrochureModal from './DownloadBrochureModal';
 import AnimatedTextReveal, { countAnimatedCharacters } from '../../common/AnimatedTextReveal';
+import Breadcrumbs from '../../common/Breadcrumbs';
 
 export default function ProductHeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,6 +32,15 @@ export default function ProductHeroSection() {
       </div>
 
       <div className="relative z-10 pt-[clamp(30px,3.6vw,64px)] pb-10">
+        {/* Breadcrumb */}
+        <Breadcrumbs
+          items={[
+            { label: 'Home', to: '/' },
+            { label: 'Product' },
+          ]}
+          style={{ marginBottom: 'clamp(12px, 1.6vw, 28px)' }}
+        />
+
         {/* Main heading */}
         <h1
           className="font-nexa font-semibold capitalize whitespace-nowrap max-[560px]:px-4"

@@ -1,6 +1,7 @@
 import reqForCust from '../../../assets/images/req-for-cust.svg';
 import reqSpecSheet from '../../../assets/images/req-spec-sheet.svg';
 import AnimatedTextReveal from '../../common/AnimatedTextReveal';
+import Breadcrumbs from '../../common/Breadcrumbs';
 
 export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
   const specs = [
@@ -19,6 +20,16 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
         className="relative w-full flex flex-col md:hidden"
         style={{ background: '#f5fafa', overflow: 'hidden' }}
       >
+        {/* Breadcrumb */}
+        <Breadcrumbs
+          items={[
+            { label: 'Home', to: '/' },
+            { label: 'Product', to: '/products' },
+            { label: product.name },
+          ]}
+          style={{ paddingTop: '44px', position: 'relative', zIndex: 3 }}
+        />
+
         {/* Motor area */}
         <div className="relative w-full" style={{ height: '220px' }}>
           {/* Glow: Figma top=41px from page → 41-55=-14px from section */}
@@ -353,6 +364,22 @@ export default function ProductDetailHeroSection({ product, onOpenSpecSheet }) {
             paddingRight: 'clamp(20px, 4vw, 80px)',
           }}
         >
+          {/* Breadcrumb — above the product name */}
+          <Breadcrumbs
+            align="left"
+            items={[
+              { label: 'Home', to: '/' },
+              { label: 'Product', to: '/products' },
+              { label: product.name },
+            ]}
+            style={{
+              position: 'absolute',
+              top: 'clamp(30px, 5.2vw, 100px)',
+              left: 0,
+              zIndex: 3,
+            }}
+          />
+
           {/* Product name — floated to top */}
           <h1
             className="product-detail-hero-title absolute font-nexa capitalize"
