@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 // Kept dark and high contrast — light inks are what make a captcha unreadable.
 const INK_COLORS = ['#0a1553', '#1863da', '#243b7a', '#11266b'];
 
-function CaptchaCanvas({ code, width, height, radius, background }) {
+function CaptchaCanvas({ code, width, height, cssHeight, radius, background, className }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -67,9 +67,10 @@ function CaptchaCanvas({ code, width, height, radius, background }) {
       ref={canvasRef}
       role="img"
       aria-label="Captcha verification image"
+      className={className}
       style={{
         width: `${width}px`,
-        height: `${height}px`,
+        height: cssHeight,
         borderRadius: radius,
         border: '1px solid #dcdcdc',
         flexShrink: 0,
@@ -96,45 +97,60 @@ function RefreshIcon({ color }) {
 /**
  * The visible captcha: image, refresh control and the answer input.
  *
- * Every colour, radius and font is a prop so the same component can sit inside
- * forms with different design languages without looking bolted on.
+ * Every colour, size and font is a prop so the same component can sit inside
+ * forms with different design languages without looking bolted on. The
+ * `*ClassName` props exist for the responsive forms, which drive their mobile
+ * sizes through Tailwind overrides rather than inline styles.
  */
 export default function CaptchaBox({
   captcha,
+  id = 'captcha-answer',
   label = 'Enter Captcha',
   required = false,
   fontFamily = 'Montserrat, sans-serif',
   labelColor = '#666',
   labelSize = '14px',
+  labelClassName = '',
   inputBackground = '#ececec',
   inputColor = '#333',
   inputBorder = 'none',
+  inputClassName = '',
   radius = '5px',
   height = 56,
+  inputHeight,
   fontSize = '16px',
   canvasWidth = 190,
   canvasBackground = '#fbfbfc',
+  canvasClassName = '',
+  buttonWidth = 44,
+  buttonClassName = '',
   errorColor = '#d92d20',
+  errorSize = '13px',
   accentColor = '#1863da',
+  gap = '10px',
 }) {
   const { code, input, setInput, error, regenerate } = captcha;
+  const resolvedHeight = inputHeight || `${height}px`;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%' }}>
       <label
-        htmlFor="captcha-answer"
-        style={{ fontFamily, fontSize: labelSize, color: labelColor, lineHeight: '26px', textAlign: 'left' }}
+        htmlFor={id}
+        className={labelClassName}
+        style={{ fontFamily, fontSize: labelSize, color: labelColor, fontWeight: 500, textAlign: 'left' }}
       >
         {label} {required && <span style={{ color: 'red' }}>*</span>}
       </label>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap, flexWrap: 'wrap' }}>
         <CaptchaCanvas
           code={code}
           width={canvasWidth}
           height={height}
+          cssHeight={resolvedHeight}
           radius={radius}
           background={canvasBackground}
+          className={canvasClassName}
         />
 
         <button
@@ -142,14 +158,15 @@ export default function CaptchaBox({
           onClick={regenerate}
           aria-label="Get a new captcha code"
           title="Get a new code"
+          className={buttonClassName}
           style={{
-            width: `${Math.min(height, 44)}px`,
-            height: `${Math.min(height, 44)}px`,
+            width: `${buttonWidth}px`,
+            height: resolvedHeight,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             background: 'transparent',
-            border: `1px solid #dcdcdc`,
+            border: '1px solid #dcdcdc',
             borderRadius: radius,
             cursor: 'pointer',
             flexShrink: 0,
@@ -160,23 +177,23 @@ export default function CaptchaBox({
         </button>
 
         <input
-          id="captcha-answer"
+          id={id}
           name="captcha"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value.toUpperCase())}
           placeholder="Enter code"
           autoComplete="off"
-          autoCapitalize="characters"
           spellCheck="false"
           maxLength={code.length + 2}
+          className={inputClassName}
           style={{
             flex: '1 1 140px',
-            minWidth: '120px',
+            minWidth: '110px',
             background: inputBackground,
             border: inputBorder,
             borderRadius: radius,
-            height: `${height}px`,
+            height: resolvedHeight,
             padding: '0 18px',
             fontFamily,
             fontSize,
@@ -189,7 +206,7 @@ export default function CaptchaBox({
       </div>
 
       {error && (
-        <p style={{ fontFamily, fontSize: '13px', color: errorColor, marginTop: '2px' }}>
+        <p style={{ fontFamily, fontSize: errorSize, color: errorColor, marginTop: '2px' }}>
           {error}
         </p>
       )}

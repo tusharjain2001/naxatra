@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import CaptchaBox from '../../common/Captcha';
+import { useCaptcha } from '../../common/useCaptcha';
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
@@ -12,6 +14,14 @@ export default function DownloadSpecSheetModal({ isOpen, onClose, productInteres
   });
   const [submitState, setSubmitState] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const captcha = useCaptcha();
+
+  // A fresh code every time the modal is opened. Must stay above the early
+  // return so the hook order never changes between renders.
+  const { regenerate } = captcha;
+  useEffect(() => {
+    if (isOpen) regenerate();
+  }, [isOpen, regenerate]);
 
   if (!isOpen) return null;
 
@@ -24,6 +34,13 @@ export default function DownloadSpecSheetModal({ isOpen, onClose, productInteres
 
     if (!form.firstName || !form.lastName || !form.companyName || !form.email) {
       setSubmitState({ type: 'error', message: 'Please fill all fields.' });
+      return;
+    }
+
+    // Checked before the request, so a failed captcha never reaches the API.
+    // CaptchaBox renders its own message, so nothing is set here.
+    if (!captcha.validate()) {
+      setSubmitState({ type: '', message: '' });
       return;
     }
 
@@ -133,8 +150,12 @@ export default function DownloadSpecSheetModal({ isOpen, onClose, productInteres
             <Field label="Company Name" name="companyName" value={form.companyName} placeholder="Company name" onChange={handleChange} />
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: '14px' }}>
             <Field label="Email" name="email" type="email" value={form.email} placeholder="you@example.com" onChange={handleChange} />
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <CaptchaBox captcha={captcha} id="spec-sheet-captcha" />
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

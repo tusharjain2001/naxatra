@@ -1,6 +1,44 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
+import CaptchaBox from '../../common/Captcha';
+import { useCaptcha } from '../../common/useCaptcha';
+
+// The mobile and desktop layouts of this section use different type scales, so
+// the captcha carries a matching set of sizes for each.
+const MOBILE_CAPTCHA_PROPS = {
+  fontFamily: 'inherit',
+  labelColor: '#515151',
+  labelSize: '7px',
+  labelClassName: 'font-metro',
+  inputBackground: '#eeeeee',
+  inputBorder: '1px solid #d9d9d9',
+  inputClassName: 'font-metro',
+  radius: '4px',
+  height: 34,
+  inputHeight: '34px',
+  fontSize: '10px',
+  canvasWidth: 120,
+  buttonWidth: 34,
+  errorSize: '9px',
+  gap: '8px',
+};
+
+const DESKTOP_CAPTCHA_PROPS = {
+  fontFamily: 'inherit',
+  labelColor: '#515151',
+  labelSize: 'clamp(12px, 0.83vw, 16px)',
+  labelClassName: 'font-metro',
+  inputBackground: '#eeeeee',
+  inputBorder: '1px solid #d9d9d9',
+  inputClassName: 'font-metro',
+  radius: '4px',
+  height: 56,
+  inputHeight: 'clamp(44px, 3.7vw, 71px)',
+  fontSize: 'clamp(13px, 0.94vw, 18px)',
+  canvasWidth: 180,
+  errorSize: 'clamp(11px, 0.73vw, 14px)',
+};
 
 const CATEGORIES = [
   {
@@ -139,7 +177,14 @@ export default function ContactFormSection() {
   const [form, setForm] = useState(INITIAL_FORM);
 
   const [status, setStatus] = useState({ loading: false, success: false, error: '' });
+  const captcha = useCaptcha();
   const set = (key) => (val) => setForm((f) => ({ ...f, [key]: val }));
+
+  // Switching category swaps to a different form, so it should start fresh.
+  const selectCategory = (id) => {
+    setActiveCategory(id);
+    captcha.regenerate();
+  };
 
   const API_BASE = import.meta.env.VITE_API_URL || '';
 
@@ -180,6 +225,14 @@ export default function ContactFormSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Checked before the request, so a failed captcha never reaches the API.
+    // CaptchaBox renders its own message, so nothing is set here.
+    if (!captcha.validate()) {
+      setStatus({ loading: false, success: false, error: '' });
+      return;
+    }
+
     setStatus({ loading: true, success: false, error: '' });
     const toastId = toast.loading('Submitting your enquiry...');
     try {
@@ -236,7 +289,7 @@ export default function ContactFormSection() {
             return (
               <button
                 key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => selectCategory(cat.id)}
                 className="text-center"
                 style={{
                   padding: '14px 10px',
@@ -331,6 +384,8 @@ export default function ContactFormSection() {
               </div>
             </div>
 
+            <CaptchaBox captcha={captcha} id="contact-captcha-mobile" required {...MOBILE_CAPTCHA_PROPS} />
+
             <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
@@ -356,6 +411,8 @@ export default function ContactFormSection() {
               <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
               <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
             </div>
+
+            <CaptchaBox captcha={captcha} id="contact-captcha-mobile" required {...MOBILE_CAPTCHA_PROPS} />
 
             <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
@@ -393,6 +450,8 @@ export default function ContactFormSection() {
                 />
               </div>
             </div>
+
+            <CaptchaBox captcha={captcha} id="contact-captcha-mobile" required {...MOBILE_CAPTCHA_PROPS} />
 
             <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
@@ -445,6 +504,8 @@ export default function ContactFormSection() {
               </div>
             </div>
 
+            <CaptchaBox captcha={captcha} id="contact-captcha-mobile" required {...MOBILE_CAPTCHA_PROPS} />
+
             <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: '150px', height: 'auto' }} />
           </form>
         )}
@@ -490,7 +551,7 @@ export default function ContactFormSection() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
+                  onClick={() => selectCategory(cat.id)}
                   className="text-left rounded flex flex-col items-start"
                   style={{
                     width: '100%',
@@ -582,6 +643,8 @@ export default function ContactFormSection() {
                   </div>
                 </div>
 
+                <CaptchaBox captcha={captcha} id="contact-captcha-desktop" required {...DESKTOP_CAPTCHA_PROPS} />
+
                 <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
             )}
@@ -607,6 +670,8 @@ export default function ContactFormSection() {
                   <TextField label="Contact Number" type="tel" value={form.phone} onChange={set('phone')} required fullWidth />
                   <TextField label="Business Email ID" type="email" value={form.email} onChange={set('email')} fullWidth />
                 </div>
+
+                <CaptchaBox captcha={captcha} id="contact-captcha-desktop" required {...DESKTOP_CAPTCHA_PROPS} />
 
                 <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
@@ -644,6 +709,8 @@ export default function ContactFormSection() {
                     />
                   </div>
                 </div>
+
+                <CaptchaBox captcha={captcha} id="contact-captcha-desktop" required {...DESKTOP_CAPTCHA_PROPS} />
 
                 <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>
@@ -697,6 +764,8 @@ export default function ContactFormSection() {
                     />
                   </div>
                 </div>
+
+                <CaptchaBox captcha={captcha} id="contact-captcha-desktop" required {...DESKTOP_CAPTCHA_PROPS} />
 
                 <SubmitRow loading={status.loading} success={status.success} error={status.error} imgStyle={{ width: 'clamp(140px, 12.5vw, 240px)', height: 'auto' }} />
               </form>

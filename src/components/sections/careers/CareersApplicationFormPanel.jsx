@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import submitEnquiry from '../../../assets/images/submit-enquiry.svg';
 import careersPhoto from '../../../assets/images/careers-photo.png';
+import CaptchaBox from '../../common/Captcha';
+import { useCaptcha } from '../../common/useCaptcha';
 
 const CAREERS_API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
@@ -54,6 +56,7 @@ export default function CareersApplicationFormPanel({
   const [submitState, setSubmitState] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const fileRef = useRef(null);
+  const captcha = useCaptcha();
 
   const set = (key) => (val) => setForm((current) => ({ ...current, [key]: val }));
 
@@ -69,6 +72,13 @@ export default function CareersApplicationFormPanel({
     if (!form.fullName || !form.email || !form.phone || !form.role || !form.linkedin || !resumeFile) {
       setSubmitState({ type: 'error', message: 'Please fill all required fields and attach your resume.' });
       toast.error('Please fill all required fields and attach your resume.');
+      return;
+    }
+
+    // Checked before the request, so a failed captcha never reaches the API.
+    // CaptchaBox renders its own message, so nothing is set here.
+    if (!captcha.validate()) {
+      setSubmitState({ type: '', message: '' });
       return;
     }
 
@@ -203,6 +213,27 @@ export default function CareersApplicationFormPanel({
         </div>
 
         <TextField label="LinkedIn Link" type="url" value={form.linkedin} onChange={set('linkedin')} required fullWidth />
+
+        <CaptchaBox
+          captcha={captcha}
+          id="careers-captcha"
+          required
+          fontFamily="inherit"
+          labelColor="#515151"
+          labelSize="clamp(11px, 0.73vw, 14px)"
+          labelClassName="font-metro max-[768px]:!text-[9px]"
+          inputBackground="#eeeeee"
+          inputBorder="1px solid #d9d9d9"
+          inputClassName="font-metro max-[768px]:!h-[30px] max-[768px]:!text-[10px]"
+          radius="4px"
+          height={56}
+          inputHeight="clamp(42px, 3.7vw, 71px)"
+          fontSize="clamp(12px, 0.83vw, 16px)"
+          canvasWidth={170}
+          canvasClassName="max-[768px]:!h-[30px] max-[768px]:!w-[130px]"
+          buttonClassName="max-[768px]:!h-[30px] max-[768px]:!w-[30px]"
+          errorSize="clamp(11px, 0.73vw, 14px)"
+        />
 
         <div
           className={`flex ${
