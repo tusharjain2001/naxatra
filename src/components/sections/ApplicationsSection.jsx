@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import efficientMotors from '../../assets/images/efficient-motors.png';
-import scooter from '../../assets/images/scooter.jpg';
-import agricultureImage from '../../assets/socialhandles/agriculture-equipment.png';
-import powerToolsImage from '../../assets/socialhandles/powertools.jpg';
-import droneImage from '../../assets/socialhandles/drone.png';
+import scooter from '../../assets/images/scooter.webp';
+import agricultureImage from '../../assets/socialhandles/agriculture-equipment.webp';
+import powerToolsImage from '../../assets/socialhandles/powertools.webp';
+import droneImage from '../../assets/socialhandles/drone.webp';
 
 const categories = [
   {
@@ -73,6 +73,8 @@ export default function ApplicationsSection() {
                       <div className="grid grid-cols-[clamp(260px,25vw,410px)_minmax(0,1fr)] items-start gap-[clamp(24px,3.2vw,60px)] max-[920px]:grid-cols-1">
                         <img
                           src={category.image}
+                          loading="lazy"
+                          decoding="async"
                           alt={category.label}
                           className="block aspect-[424/259] w-full object-cover max-[720px]:w-[276px] max-[720px]:h-[168.594px] max-[720px]:aspect-auto max-[720px]:mx-auto"
                         />

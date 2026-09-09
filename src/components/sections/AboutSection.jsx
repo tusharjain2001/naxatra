@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import aboutThumbnail from '../../assets/images/Thumbnail .png';
+import aboutThumbnail from '../../assets/images/Thumbnail .webp';
 
 const ABOUT_SECTION_VIDEO_URL = 'https://res.cloudinary.com/dccp724cq/video/upload/v1782903206/corporatenew_fi1r7k.mp4';
 

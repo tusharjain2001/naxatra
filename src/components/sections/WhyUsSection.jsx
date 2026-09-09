@@ -1,6 +1,6 @@
-import imgRD from '../../assets/images/why-us-rd.jpg';
-import imgMotor from '../../assets/images/why-us-motor.jpg';
-import imgRoad from '../../assets/images/why-us-road.jpg';
+import imgRD from '../../assets/images/why-us-rd.webp';
+import imgMotor from '../../assets/images/why-us-motor.webp';
+import imgRoad from '../../assets/images/why-us-road.webp';
 import bg1 from '../../assets/images/why-us-bg-1.svg';
 import bg2 from '../../assets/images/why-us-bg-2.svg';
 
@@ -63,6 +63,8 @@ export default function WhyUsSection() {
               >
                 <img
                   src={card.img}
+                  loading="lazy"
+                  decoding="async"
                   alt={card.title}
                   className="min-[721px]:max-[900px]:!aspect-[393/225] max-[720px]:mx-auto max-[720px]:h-[143.834px] max-[720px]:w-[201.368px] max-[720px]:rounded-[4px]"
                   style={{

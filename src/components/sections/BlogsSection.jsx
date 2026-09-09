@@ -1,6 +1,6 @@
-import blog1 from '../../assets/images/blog-1.png';
-import blog3 from '../../assets/images/blog-3.png';
-import efficiencyNewFuelImg from '../../assets/blogs/Efficiency is the new fuel.png';
+import blog1 from '../../assets/images/blog-1.webp';
+import blog3 from '../../assets/images/blog-3.webp';
+import efficiencyNewFuelImg from '../../assets/blogs/Efficiency is the new fuel.webp';
 import bg1 from '../../assets/images/blog-bg-1.svg';
 import bg2 from '../../assets/images/blog-bg-2.svg';
 
@@ -58,6 +58,8 @@ export default function BlogsSection() {
                 <div className="home-blog-image relative h-[clamp(180px,16vw,247px)] overflow-hidden rounded-[5.28px] max-[720px]:mx-auto max-[720px]:h-[148.826px] max-[720px]:w-[263.756px] max-[720px]:rounded-[4px]">
                   <img
                     src={blog.img}
+                    loading="lazy"
+                    decoding="async"
                     alt={blog.title}
                     className="h-full w-full object-cover"
                     style={{ display: 'block' }}

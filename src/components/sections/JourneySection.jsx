@@ -1,23 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
-import greenBg from '../../assets/images/green-bg.png';
+import greenBg from '../../assets/images/green-bg.webp';
 
-import j1 from '../../assets/images/journey-1.jpg';
-import j2 from '../../assets/images/journey-2.jpg';
-import j3 from '../../assets/images/journey-3.jpg';
-import j4 from '../../assets/images/journey-4.jpg';
-import j5 from '../../assets/images/journey-5.jpg';
-import j6 from '../../assets/images/journey-6.jpg';
-import j7 from '../../assets/images/journey-7.jpg';
-import j8 from '../../assets/images/journey-8.jpg';
-import j9 from '../../assets/images/journey-9.jpg';
-import j10 from '../../assets/images/journey-10.jpg';
-import j11 from '../../assets/images/journey-11.jpg';
-import j12 from '../../assets/images/journey-12.jpg';
-import j13 from '../../assets/images/journey-13.jpg';
-import j14 from '../../assets/images/journey-14.jpg';
-import j15 from '../../assets/images/journey-15.jpg';
-import j16 from '../../assets/images/journey-16.jpg';
-import j17 from '../../assets/images/journey-17.png';
+import j1 from '../../assets/images/journey-1.webp';
+import j2 from '../../assets/images/journey-2.webp';
+import j3 from '../../assets/images/journey-3.webp';
+import j4 from '../../assets/images/journey-4.webp';
+import j5 from '../../assets/images/journey-5.webp';
+import j6 from '../../assets/images/journey-6.webp';
+import j7 from '../../assets/images/journey-7.webp';
+import j8 from '../../assets/images/journey-8.webp';
+import j9 from '../../assets/images/journey-9.webp';
+import j10 from '../../assets/images/journey-10.webp';
+import j11 from '../../assets/images/journey-11.webp';
+import j12 from '../../assets/images/journey-12.webp';
+import j13 from '../../assets/images/journey-13.webp';
+import j14 from '../../assets/images/journey-14.webp';
+import j15 from '../../assets/images/journey-15.webp';
+import j16 from '../../assets/images/journey-16.webp';
+import j17 from '../../assets/images/journey-17.webp';
 
 const milestones = [
   { year: '2020', title: 'Born to Disrupt', desc: 'Naxatra Labs takes flight with a mission to revolutionize hybrid drones.', img: j1 },
@@ -164,6 +164,8 @@ export default function JourneySection() {
                   >
                     <img
                       src={m.img}
+                      loading="lazy"
+                      decoding="async"
                       alt={m.title}
                       className="min-[901px]:max-[1279px]:!h-[170px] min-[901px]:max-[1279px]:!w-full min-[901px]:max-[1279px]:!mb-[22px] max-[560px]:mx-auto max-[560px]:mb-[14px] max-[560px]:h-[161px] max-[560px]:w-[182px] max-[560px]:rounded-[4px]"
                       style={{ width: '314px', height: '202px', objectFit: 'cover', display: 'block', marginBottom: '30px', borderRadius: '8px' }}
